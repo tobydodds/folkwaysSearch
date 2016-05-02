@@ -1,0 +1,47 @@
+﻿@* This view is responsible for rendering merchandises in list view *@
+@model SmithsonianSearch.Models.SearchResultsModels.SearchResultsModelMerchandise
+
+@helper GetRowClass(int rowIndex) { if (rowIndex % 2 == 0) { Html.Raw("alt"); } }
+
+@{
+    bool printHeader = ViewData.ContainsKey("printHeader") ? (bool)ViewData["printHeader"] : true;
+    int index = 1;
+}
+
+@if (Model.Items != null && Model.Items.Any())
+{
+    if (printHeader)
+    {
+    <text>
+        <table class="searchResultsTable">
+            <thead>
+                <tr class="header">
+                    <th><img src="~/img/header_title.png" alt="Title" title="Title" /></th>
+                    <th width="175"><img src="~/img/header_price.png" alt="Price" title="Price" /></th>
+                </tr>
+            </thead>
+            <tbody>
+     </text>
+    }
+
+    foreach (var merchandise in Model.Items)
+    {
+                <text>
+                <tr class="@GetRowClass(index++)">
+                    <td><a href='@merchandise.Url' title='@merchandise.Title'>@merchandise.Title</a></td>
+                    <td>@Html.Partial("BuyLinks", merchandise)</td>
+                </tr>
+                </text>
+    }
+
+    @ViewHelperMethods.RenderLazyLoadingLink(Model.SearchModel, 2)
+    
+    if (printHeader)
+    {
+       @:</tbody></table>
+    }
+}
+else if (Model.SearchModel != null && !string.IsNullOrEmpty(Model.SearchModel.Query))
+{
+    @Html.Partial("NoResults")
+}

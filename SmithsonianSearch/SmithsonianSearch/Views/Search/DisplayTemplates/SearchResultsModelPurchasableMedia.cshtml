@@ -1,0 +1,67 @@
+﻿@* This view is responsible for rendering mixed content (ALL tab) in list view *@
+@model SmithsonianSearch.Models.SearchResultsModels.SearchResultsModelPurchasableMedia
+
+@helper GetRowClass(int index)
+{
+    if (index % 2 == 0)
+    {
+        @:alt
+    }
+}
+
+@{
+    bool printHeader = ViewData.ContainsKey("printHeader") ? (bool)ViewData["printHeader"] : true;
+    int index = 1;
+}
+
+@if (Model.Items != null && Model.Items.Any())
+{
+    if (printHeader)
+    {
+    <text>
+        <table class="searchResultsTable">
+            <thead>
+                <tr class="header">
+                    <th></th>
+                    <th><img src="~/img/header_type.png" alt="Type" title="Type" /></th>
+                    <th><img src="~/img/header_title.png" alt="Title" title="Title" /></th>
+                    <th width="130"><img src="~/img/header_artist.png" alt="Artist" title="Artist" /></th>
+                    <th><img src="~/img/header_year.png" alt="Year" title="Year" /></th>
+                    <th width="175"><img src="~/img/header_price.png" alt="Price" title="Price" /></th>
+                </tr>
+            </thead>
+            <tbody>
+     </text>
+    }
+
+    foreach (var purchasableMediaContent in Model.Items)
+    {
+                <text>
+                    <tr class="@GetRowClass(index++)">
+                        <td>
+                            @if (purchasableMediaContent.Player != null)
+                            {
+                                <div id="@purchasableMediaContent.Player.ContainerId" class="track-player">&nbsp;</div>
+                                @Html.Partial("PicklePlayerScript", purchasableMediaContent.Player)
+                            }
+                        </td>
+                        <td class="uppercase">@purchasableMediaContent.Type</td>
+                        <td><a href='@purchasableMediaContent.Url' title='@purchasableMediaContent.Title'>@purchasableMediaContent.Title</a></td>
+                        <td>@purchasableMediaContent.Artist</td>
+                        <td>@purchasableMediaContent.Year</td>
+                        <td>@Html.Partial("BuyLinks", purchasableMediaContent)</td>
+                    </tr>
+                </text>
+    }
+    
+    @ViewHelperMethods.RenderLazyLoadingLink(Model.SearchModel, 5)
+
+    if (printHeader)
+    {
+       @:</tbody></table>
+    }
+}
+else if (Model.SearchModel != null && !string.IsNullOrEmpty(Model.SearchModel.Query))
+{
+    @Html.Partial("NoResults")
+}

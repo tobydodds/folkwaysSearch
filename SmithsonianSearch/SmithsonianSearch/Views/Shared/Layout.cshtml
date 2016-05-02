@@ -1,0 +1,278 @@
+﻿@using System.Web.Optimization
+@{
+    ViewBag.Title = "Smithsonian Folkways";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://www.folkways.si.edu/icon.png">
+    <title>Smithsonian Folkways - Search</title>
+    <!--WEB FONTS-->
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+
+    <!-- Bootstrap core CSS -->
+    @Styles.Render("~/css/bootstrap")
+
+    <!-- Styles for jquery.ui.autocomplete. -->
+    @Styles.Render("~/css/jquery")
+
+    <!--Folkways CSS-->
+    <link href="~/css/folkways_new.css" rel="stylesheet" />
+
+    <!--[if IE 8]>
+        <link href="@Url.Content("~/css/ie8.css")" rel="stylesheet">
+    <![endif]-->
+    <!--[if lt IE 8]>
+        <link href="@Url.Content("~/css/bootstrap-ie7.css")" rel="stylesheet">
+        <link href="@Url.Content("~/css/ie7.css")" rel="stylesheet">
+    <![endif]-->
+    <script type="text/javascript">var switchTo5x = true;</script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/pickle/pickle.js")"></script>
+    <link rel="stylesheet" href="@Url.Content("~/Scripts/pickle/skins/button_mini_grey/_stylesheet.css")" />
+
+    <!-- BUY BUTTON POPUP -->
+    <script type="text/javascript">
+        function addProduct(internalid) {
+
+            var data = { "internalid": internalid, "quantity": 1 };
+
+            jQuery.getJSON("http://folkways-store.si.edu/checkout-2-04-0/services/live-order-line-newgen.ss?callback=?", data, function () { })
+             .done(function (response) {
+
+                 var cartJSON = jQuery.parseJSON(response);
+                 var item = findItem(cartJSON['latest_addition'], cartJSON['lines']);
+
+
+                 //fills in the modal information from json returned
+                 jQuery('#item_thumbnail').attr('src', item[0].item.storedisplaythumbnail)
+                 jQuery('#name').html(item[0].item.displayname)
+                 jQuery('#sku').html(item[0].item.itemid)
+                 jQuery('#price').html(item[0].item.pricelevel1_formatted)
+                 jQuery('#description').html(item[0].item.storedescription)
+
+
+                 jQuery('#modalSuccess').modal('show');
+
+             });
+        }
+
+        function findItem(internalid, items) {
+            return jQuery.grep(items, function (n, i) {
+                return n.internalid == internalid;
+            });
+        };
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"><img src="~/img/nav-menu.png" class="img-responsive"></span>
+                </button>
+                <a href="http://folkways-store.si.edu/Checkout/cart.ssp" class="view-cart pull-right text-hide"><img src="~/img/nav-shopping.png" class="img-responsive" alt="View cart" /></a>
+                @*<a href="http://folkways-store.si.edu/s.nl?sc=3&c=297799&n=1&ext=T" class="view-cart pull-right text-hide"><img src="~/img/nav-shopping.png" class="img-responsive" alt="View cart" /></a>*@
+                <a class="navbar-brand" href="/"><img src="~/img/folkways-logo.png" class="img-responsive" alt="Smithsonian Institution" /></a>
+            </div>
+            <div class="collapse navbar-collapse shadow">
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" id="accountmenu">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Find Recordings<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="/new-releases/smithsonian">new releases</a></li>
+                            <li><a tabindex="-1" href="/bestsellers/smithsonian">best sellers</a></li>
+                            <li><a tabindex="-1" href="/staff-picks/smithsonian">staff picks</a></li>
+                            <li><a tabindex="-1" href="/browse-collection/smithsonian">browse by collection</a></li>
+                            <li><a tabindex="-1" href="/browse-series/smithsonian">browse by series</a></li>
+                            <li><a tabindex="-1" href="/gift-certificates/smithsonian">gift certificates</a></li>
+                            <li><a tabindex="-1" href="/books-and-teaching-kits/smithsonian">books</a></li>
+                            <li><a tabindex="-1" href="/videos-dvd-vhs/smithsonian">dvds</a></li>
+                            <li><a tabindex="-1" href="/merchandise/smithsonian">merchandise</a></li>
+                            <li><a tabindex="-1" href="http://s.si.edu/vinyl-smithsonian">vinyl</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="accountmenu">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Explore Folkways<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="/magazine">folkways magazine</a></li>
+                            <li><a tabindex="-1" href="/soundscapes/music/smithsonian">soundscapes</a></li>
+                            <li><a tabindex="-1" href="/artist-spotlight/smithsonian">artist spotlight</a></li>
+                            <li><a tabindex="-1" href="/recording-spotlight/music/smithsonian">recording spotlight</a></li>
+                            <li><a tabindex="-1" href="/peoples-picks/music/smithsonian">people's picks</a></li>
+                            <li><a tabindex="-1" href="/podcasts/smithsonian">podcasts</a></li>
+                            <li><a tabindex="-1" href="http://s.si.edu/radio-playlists-smithsonian">radio and playlists</a></li>
+                            <li><a tabindex="-1" href="http://s.si.edu/videos-smithsonian">video</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="accountmenu">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Tools for Teaching<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="/tools-for-teaching/smithsonian">introduction</a></li>
+                            <li><a tabindex="-1" href="/lesson-plans/smithsonian">lessons and activities</a></li>
+                            <li><a tabindex="-1" href="/interactive-features/smithsonian">interactive features</a></li>
+                            <li><a tabindex="-1" href="/workshops-teachers/smithsonian">workshops for teachers</a></li>
+                            <li><a tabindex="-1" href="/additional-resources/smithsonian">additional resources</a></li>
+                            <li><a tabindex="-1" href="/subscribe-folkways/smithsonian">subscribe</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="accountmenu">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">About Us<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="/mission-history/smithsonian">mission and history</a></li>
+                            <li><a tabindex="-1" href="/news-and-press">news and press</a></li>
+                            <li><a tabindex="-1" href="/folkways-staff/smithsonian">staff</a></li>
+                            <li><a tabindex="-1" href="/awards/smithsonian">awards</a></li>
+                            <li><a tabindex="-1" href="/music-partners/smithsonian">music partners</a></li>
+                            <li><a tabindex="-1" href="/sponsors/smithsonian">sponsors</a></li>
+                            <li><a tabindex="-1" href="/support-us/smithsonian">support us</a></li>
+                            <li><a tabindex="-1" href="/jobs">jobs/internships/research</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="accountmenu">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Customer Service<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="/ordering-information/smithsonian">ordering information</a></li>
+                            <li><a tabindex="-1" href="/join-our-mailing-list/smithsonian">join our mailing list</a></li>
+                            <li><a tabindex="-1" href="/world-of-sound-catalog/smithsonian">print catalogues</a></li>
+                            <li><a tabindex="-1" href="/libraries-educational-institutions/smithsonian">libraries/educational institutions</a></li>
+                            <li><a tabindex="-1" href="/retailers-distribution/smithsonian">retailers and distribution</a></li>
+                            <li><a tabindex="-1" href="/wholesale-inquiries/smithsonian">wholesale inquiries</a></li>
+                            <li><a tabindex="-1" href="/licensing-requests/smithsonian">licensing</a></li>
+                            <li><a tabindex="-1" href="/download-manager/smithsonian">download manager</a></li>
+                            <li><a tabindex="-1" href="/download-support/smithsonian">download support</a></li>
+                            <li><a tabindex="-1" href="http://folkways-store.si.edu/Checkout/cart.ssp">shopping cart</a></li>
+                            <li><a tabindex="-1" class="my-account" href="https://checkout.netsuite.com/c.297799/MyAccount/index.ssp">my account</a></li>
+                            <li><a tabindex="-1" class="faq" href="/frequently-asked-questions/smithsonian">faq</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <a href="http://folkways-store.si.edu/Checkout/cart.ssp" class="view-cart-link pull-right"><img src="~/img/nav-shopping.png" class="img-responsive" alt="View cart" /><img src="~/img/nav-shopping-desktop.png" alt="view cart" class="view-cart-icon-desktop" /> View cart</a>
+        </div>
+        <div class="row logo-folkways">
+            <a href="/"><img src="~/img/logo_folkways.png" class="img-responsive" alt="Smithsonian Folkways" /></a>
+        </div>
+
+        <div class="row">
+            <a href="/search?query=folkways.si.edu">
+                <div class="main-search">
+                    <h1 class="text-hide">Search</h1>
+                </div>
+            </a>
+        </div>
+        @RenderBody()
+
+    </div>
+    <footer role="contentinfo">
+        <ul class="container footer">
+            <li><a href="http://www.si.edu/">&copy; 2016 Smithsonian Institution</a></li>
+            <li><a href="http://www.si.edu/copyright">Copyright</a></li>
+            <li><a href="/folkways-staff/smithsonian">Contact</a></li>
+            <li><a href="http://www.si.edu/privacy/">Privacy</a></li>
+            <li><a href="/production-credits/smithsonian">Credits</a></li>
+        </ul>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    @Scripts.Render("~/Scripts/jquery")
+    @Scripts.Render("~/Scripts/bootstrap")
+    @Scripts.Render("~/Scripts/folkways")
+    <!-- Mini Profiler -->
+    @*MiniProfiler.RenderIncludes()*@
+    <script type="text/javascript">var addthis_config = { "data_track_addressbar": false };</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f4fe1f745e0431b"></script>
+    <script>
+        function toggle_visibility(id) {
+            $(".filter-option").hide();
+            $("#" + id).toggle();
+        }
+    </script>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-5756420-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <!-- END GOOGLE ANALYTICS -->
+    <!-- FORESEE AUDIENCE SURVEY -->
+    <script type="text/javascript">
+// <![CDATA[
+        cpp_value = "FOLKWAYS";
+        // ]]></script>
+    <script type="text/javascript" src="https://www.si.edu/fsrscripts/triggerParams.js"></script>
+    <!-- END FORESEE AUDIENCE SURVEY -->
+    <!-- WEBTRENDS SMARTSOURCE DATA COLLECTOR -->
+    <script type="text/javascript" src="/Themes/Bootstrap/Scripts/webtrends.js"></script>
+    <script type="text/javascript">
+// <![CDATA[
+        var _tag = new WebTrends();
+        _tag.dcsGetId();
+        // ]]></script>
+    <script type="text/javascript">
+// <![CDATA[
+        _tag.dcsCustom = function () {
+            // Add custom parameters here.
+            //_tag.DCSext.param_name=param_value;
+        }
+        _tag.dcsCollect();
+        // ]]></script>
+    <noscript>
+        <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="//logs1.smithsonian.museum/dcsv9j192cdzpxzbkq69nf44i_9p1y/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.4.0&amp;dcssip=www.folkways.si.edu" /></div>
+    </noscript>
+    <!-- END WEBTRENDS SMARTSOURCE DATA COLLECTOR -->
+    <!--BUY BUTTON POPUP CONTENT-->
+    <div class="modal fade" id="modalSuccess">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close glyphicon glyphicon-remove-circle" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">Added to Cart</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-3 thumbnail cart-item-thumbnail">
+                            <img src="" id="item_thumbnail">
+                        </div>
+                        <div class="col-xs-9 details">
+                            <div class="cart-item-details">
+                                <div class="name" id="name"></div>
+                                <div class="sku" id="sku"></div>
+                                <div class="amount" id="price"></div>
+                                <div class="description">Format: <span id="description"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="http://folkways-store.si.edu/checkout-2-04-0/cart.ssp#cart" class="btn btn-primary view-cart" data-trigger="go-to-cart">View Cart &amp; Checkout</a>
+                    <button class="btn continue-shopping" data-dismiss="modal">Continue Shopping</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--MODAL CONTENT END-->
+</body>
+
+</html>

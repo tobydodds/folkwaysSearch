@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B9B47DB-59C2-414C-B925-D8E0A0354C40}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmithsonianSearch</RootNamespace>
+    <AssemblyName>SmithsonianSearch</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>..\packages\Elmah.MVC.2.1.1\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MiniProfiler, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.1.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.2\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilters\EmbeddableIntoSameOriginFramesOnly.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Configuration\IConfig.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SuggestController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\RequireRequestParametersAttribute.cs" />
+    <Compile Include="Helpers\SearchLinksHelper.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
+    <Compile Include="Models\Filter.cs" />
+    <Compile Include="Models\PlayerModel.cs" />
+    <Compile Include="Models\SortingOption.cs" />
+    <Compile Include="Models\SpellingSuggestionsModel.cs" />
+    <Compile Include="Models\Enums\ContentTypesEnum.cs" />
+    <Compile Include="Models\Enums\SortOptionsEnum.cs" />
+    <Compile Include="Models\Enums\ViewOptionsEnum.cs" />
+    <Compile Include="Models\FiltersModel.cs" />
+    <Compile Include="Models\GSP.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Models\PaginationModel.cs" />
+    <Compile Include="Models\RelatedQueriesModel.cs" />
+    <Compile Include="Models\ResultItems\Album.cs" />
+    <Compile Include="Models\ResultItems\Article.cs" />
+    <Compile Include="Models\ResultItems\Merchandise.cs" />
+    <Compile Include="Models\ResultItems\Playlist.cs" />
+    <Compile Include="Models\ResultItems\GenericResultItem.cs" />
+    <Compile Include="Models\ResultItems\PurchasableItemOption.cs" />
+    <Compile Include="Models\ResultItems\PurchasableMediaContent.cs" />
+    <Compile Include="Models\ResultItems\PurchasableResultItem.cs" />
+    <Compile Include="Models\ResultItems\ToolForTeaching.cs" />
+    <Compile Include="Models\ResultItems\Track.cs" />
+    <Compile Include="Models\ResultItems\Video.cs" />
+    <Compile Include="Models\ResultsModelFactory.cs" />
+    <Compile Include="Models\SearchModel.cs" />
+    <Compile Include="Models\SearchResultsModels\SearchResultsModelGeneric.cs" />
+    <Compile Include="Models\SearchResultsModels\SearchResultsModelToolsForTeaching.cs" />
+    <Compile Include="Models\SearchResultsModels\SearchResultsModelMerchandise.cs" />
+    <Compile Include="Models\SearchResultsModels\SearchResultsModelPlaylists.cs" />
+    <Compile Include="Models\SearchResultsModels\SearchResultsModelVideos.cs" />
+    <Compile Include="Models\SearchResultsModels\ISearchResultsModel.cs" />
+    <Compile Include="Models\SearchResultsModels\SearchResultsModelAlbums.cs" />
+    <Compile Include="Models\SearchResultsModels\SearchResultsModelArticles.cs" />
+    <Compile Include="Models\SearchResultsModels\SearchResultsModelMixed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\SearchResultsModels\SearchResultsModelPurchasableMedia.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Models\SearchResultsModels\SearchResultsModelTracks.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="css\bootstrap-ie7.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\bootstrap_folkways.css" />
+    <Content Include="css\folkways_new.css" />
+    <Content Include="css\fonts.css" />
+    <Content Include="css\fonts\DTF_Armitage_Black-demo.html" />
+    <Content Include="css\fonts\DTF_Armitage_Bold-demo.html" />
+    <Content Include="css\fonts\DTF_Armitage_Regular-demo.html" />
+    <Content Include="css\fonts\Oswald.svg" />
+    <Content Include="css\ie7.css" />
+    <Content Include="css\ie8.css" />
+    <Content Include="css\ie9.css" />
+    <Content Include="css\jquery-ui.min.css" />
+    <Content Include="css\jquery.mobile.min.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\print.css" />
+    <Content Include="Global.asax" />
+    <Content Include="img\ajax-loader-small.gif" />
+    <Content Include="img\ajax-loader.gif" />
+    <Content Include="img\album-thumb.gif" />
+    <Content Include="img\article-thumb.gif" />
+    <Content Include="img\button_pause_audio_on.png" />
+    <Content Include="img\button_play_audio_off.png" />
+    <Content Include="img\button_play_audio_on.png" />
+    <Content Include="img\cart.png" />
+    <Content Include="img\clear.png" />
+    <Content Include="img\icon_video.png" />
+    <Content Include="img\merchandise-thumb.gif" />
+    <Content Include="img\folkways-logo-small.png" />
+    <Content Include="img\folkways-logo.png" />
+    <Content Include="img\folkways_magazine_mobile.jpg" />
+    <Content Include="img\folkways_radio_mobile.jpg" />
+    <Content Include="img\gift-certificates-mobile.jpg" />
+    <Content Include="img\header_album_title.png" />
+    <Content Include="img\header_artist.png" />
+    <Content Include="img\header_author.png" />
+    <Content Include="img\header_catalog_no.png" />
+    <Content Include="img\header_category.png" />
+    <Content Include="img\header_country.png" />
+    <Content Include="img\header_duration.png" />
+    <Content Include="img\header_grades.png" />
+    <Content Include="img\header_price.png" />
+    <Content Include="img\header_region.png" />
+    <Content Include="img\header_search.png" />
+    <Content Include="img\header_title.png" />
+    <Content Include="img\header_track_title.png" />
+    <Content Include="img\header_type.png" />
+    <Content Include="img\header_year.png" />
+    <Content Include="img\icon_grid.png" />
+    <Content Include="img\icon_list.png" />
+    <Content Include="img\join_email_button_mobile.jpg" />
+    <Content Include="img\jquery.selectBox-arrow.gif" />
+    <Content Include="img\label_artist.png" />
+    <Content Include="img\label_country.png" />
+    <Content Include="img\label_culture.png" />
+    <Content Include="img\label_decade.png" />
+    <Content Include="img\label_filter_by.png" />
+    <Content Include="img\label_format.png" />
+    <Content Include="img\label_genre.png" />
+    <Content Include="img\label_instrument.png" />
+    <Content Include="img\label_label.png" />
+    <Content Include="img\label_language.png" />
+    <Content Include="img\label_share.png" />
+    <Content Include="img\label_sort_by.png" />
+    <Content Include="img\label_type.png" />
+    <Content Include="img\label_view_as.png" />
+    <Content Include="img\logo_folkways.gif" />
+    <Content Include="img\logo_folkways.png" />
+    <Content Include="img\mobile-search-prototype.jpg" />
+    <Content Include="img\nav-menu.png" />
+    <Content Include="img\nav-search.png" />
+    <Content Include="img\nav-shopping.png" />
+    <Content Include="img\no_image.png" />
+    <Content Include="img\playlist-thumb.gif" />
+    <Content Include="img\search-prototype-left.jpg" />
+    <Content Include="img\search-prototype-main-list.jpg" />
+    <Content Include="img\search-prototype-main-top.jpg" />
+    <Content Include="img\search.png" />
+    <Content Include="img\shareLinks.jpg" />
+    <Content Include="img\si-member-mobile.jpg" />
+    <Content Include="img\sprites.png" />
+    <Content Include="img\support-us-mobile.jpg" />
+    <Content Include="img\tab_albums.png" />
+    <Content Include="img\tab_albums_selected.png" />
+    <Content Include="img\tab_all.png" />
+    <Content Include="img\tab_all_selected.png" />
+    <Content Include="img\tab_articles.png" />
+    <Content Include="img\tab_articles_selected.png" />
+    <Content Include="img\tab_merchandise.png" />
+    <Content Include="img\tab_merchandise_selected.png" />
+    <Content Include="img\tab_playlist.png" />
+    <Content Include="img\tab_playlist_selected.png" />
+    <Content Include="img\tab_tools_teaching.png" />
+    <Content Include="img\tab_tools_teaching_selected.png" />
+    <Content Include="img\tab_tracks.png" />
+    <Content Include="img\tab_tracks_selected.png" />
+    <Content Include="img\tab_videos.png" />
+    <Content Include="img\tab_videos_selected.png" />
+    <Content Include="img\title_bg.gif" />
+    <Content Include="img\tool-for-teaching-thumb.gif" />
+    <Content Include="img\track-thumb.gif" />
+    <Content Include="img\video-thumb.gif" />
+    <Content Include="Scripts\bootstrap-hover-dropdown.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\buy-button.js" />
+    <Content Include="Scripts\cufon-yui.js" />
+    <Content Include="Scripts\index.js" />
+    <Content Include="Scripts\jquery.infinite-scroll-helper.js" />
+    <Content Include="App_Code\ViewHelperMethods.cshtml" />
+    <Content Include="css\fonts\Oswald.eot" />
+    <Content Include="css\fonts\Oswald.ttf" />
+    <Content Include="css\fonts\Oswald.woff" />
+    <None Include="Properties\PublishProfiles\localiis.pubxml" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.history.js" />
+    <Content Include="Scripts\jquery.mobile.custom.js" />
+    <Content Include="Scripts\jquery.ui.autocomplete.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Knockout_500.font.js" />
+    <Content Include="Scripts\pickle\pickle.js" />
+    <Content Include="Scripts\pickle\pickle.swf" />
+    <Content Include="Scripts\pickle\pickle_reg.txt" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_pause_audio_on.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_pause_audio_on_small.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_play_audio_off.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_play_audio_off_small.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_play_audio_on.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_play_audio_on_small.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_pause.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_pause_down.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_pause_over.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_play.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_play_down.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_play_over.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\g_thinker.gif" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\_PREVIEW.html" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\_project.xml" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\_screenshot.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\_screenshot_thumb.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\_stylesheet.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Search\SearchResultsTilesView.cshtml" />
+    <Content Include="Views\Search\Tabs.cshtml" />
+    <Content Include="Views\Search\SearchBox.cshtml" />
+    <Content Include="Views\Search\Filters.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\GenericResultItem.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\Album.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\Track.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\Article.cshtml" />
+    <Content Include="Views\Search\SearchResultsTableView.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\SearchResultsModelPurchasableMedia.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\SearchResultsModelAlbums.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\SearchResultsModelArticles.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\SearchResultsModelTracks.cshtml" />
+    <Content Include="Views\Search\DisplayOptionsView.cshtml" />
+    <Content Include="Views\Search\BuyLinks.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\Video.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\Playlist.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\Merchandise.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\ToolForTeaching.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\SearchResultsModelVideos.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\SearchResultsModelPlaylists.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\SearchResultsModelMerchandise.cshtml" />
+    <Content Include="Views\Search\DisplayTemplates\SearchResultsModelToolsForTeaching.cshtml" />
+    <Content Include="Views\Search\RelatedQueries.cshtml" />
+    <Content Include="Views\Search\SearchResultsBase.cshtml" />
+    <Content Include="Views\Search\SpellingSuggestions.cshtml" />
+    <Content Include="Views\Search\TabsMobile.cshtml" />
+    <Content Include="Views\Search\Help.cshtml" />
+    <Content Include="Views\SearchFormIntegration\SearchFormIntegrationExample.cshtml" />
+    <Content Include="Scripts\pickle\.DS_Store" />
+    <Content Include="Scripts\pickle\skins\.DS_Store" />
+    <Content Include="Views\Search\PicklePlayerScript.cshtml" />
+    <Content Include="Views\Search\NoResults.cshtml" />
+    <Content Include="Views\Search\NoResultsOuttage.cshtml" />
+    <Content Include="Views\Shared\Layout-BAK2016-04-08.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Search\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\fonts\DTF_Armitage_Black-webfont.eot" />
+    <Content Include="css\fonts\DTF_Armitage_Black-webfont.svg" />
+    <Content Include="css\fonts\DTF_Armitage_Black-webfont.ttf" />
+    <Content Include="css\fonts\DTF_Armitage_Black-webfont.woff" />
+    <Content Include="css\fonts\DTF_Armitage_Bold-webfont.eot" />
+    <Content Include="css\fonts\DTF_Armitage_Bold-webfont.svg" />
+    <Content Include="css\fonts\DTF_Armitage_Bold-webfont.ttf" />
+    <Content Include="css\fonts\DTF_Armitage_Bold-webfont.woff" />
+    <Content Include="css\fonts\DTF_Armitage_Regular-webfont.eot" />
+    <Content Include="css\fonts\DTF_Armitage_Regular-webfont.svg" />
+    <Content Include="css\fonts\DTF_Armitage_Regular-webfont.ttf" />
+    <Content Include="css\fonts\DTF_Armitage_Regular-webfont.woff" />
+    <Content Include="css\fonts\leaguegothic-regular-webfont.eot" />
+    <Content Include="css\fonts\leaguegothic-regular-webfont.svg" />
+    <Content Include="css\fonts\leaguegothic-regular-webfont.ttf" />
+    <Content Include="css\fonts\leaguegothic-regular-webfont.woff" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62337</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50516/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
