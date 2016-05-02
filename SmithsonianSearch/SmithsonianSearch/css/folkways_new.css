@@ -430,3 +430,22 @@ a.imageLink img { width: 90px;}
   .col-md-3 {width: 20.3%;}
   .col-md-9 {width: 79.6%;}
 }
+
+/*ADD TO CART POPUP*/
+.modal-body .row{margin:0}
+.modal-title{ font-family: georgia;font-size: 24px; color: #000}
+.modal-header button.close{font-size: 28px; font-weight:normal;height: 35px;width: 30px;}
+.cart-item-thumbnail {border: none!important; border-radius:0;margin-bottom: 0;}
+.cart-item-details { font-size: 16px;line-height: 24px; font-family: Georgia; }
+.cart-item-details .name{ font-weight: bold; color:#000}
+.cart-item-details .sku{ display: none;}
+.cart-item-details .amount{ font-weight: bold;color: #e07007;}
+.cart-item-details .description{font: 12px/22px Verdana,Arial,sans-serif;color: #999999;margin-left: 0}
+.modal-footer .btn-primary{background-color: #526c79;border-color: #526c79;  border-radius:0;font-family: Georgia;font-size: 14px;line-height: 1.42857;padding: 3px 12px 4px;}
+.modal-footer .btn-primary:hover, .modal-footer .btn-primary:focus, .modal-footer .btn-primary:active,.modal-footer .btn-primary.active{background-color: #e07007;border-color: #e07007;}
+.modal-footer .continue-shopping{background-color: #ccc;border-color: #ccc; border-radius:0 !important;font-family: Georgia;padding: 3px 12px 4px; }
+@media (max-width: 480px) {
+    .modal-footer .btn-primary { width: 100%; font:14px/20px; height:40px}
+    .modal-footer .continue-shopping { width: 100%;margin-left: 0 !important;margin-top: 10px; font: 14px/20px;height: 40px}
+}
+
