@@ -204,6 +204,8 @@
     <Content Include="img\cart.png" />
     <Content Include="img\clear.png" />
     <Content Include="img\icon_video.png" />
+    <Content Include="img\label_region.png" />
+    <Content Include="img\label_subregion.png" />
     <Content Include="img\merchandise-thumb.gif" />
     <Content Include="img\folkways-logo-small.png" />
     <Content Include="img\folkways-logo.png" />
