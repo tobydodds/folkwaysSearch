@@ -72,3 +72,5 @@ D:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\bin\Microsoft.Web.Infr
 D:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\obj\Debug\SmithsonianSearch.csprojResolveAssemblyReference.cache
 D:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\obj\Debug\SmithsonianSearch.dll
 D:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\obj\Debug\SmithsonianSearch.pdb
+C:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\bin\Microsoft.Web.Infrastructure.dll
+C:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\bin\Microsoft.Web.Infrastructure.xml
