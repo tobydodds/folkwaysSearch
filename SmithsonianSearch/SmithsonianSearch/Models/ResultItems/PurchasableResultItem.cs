@@ -113,7 +113,8 @@
                                   new { Suffix = "customcd", Title = "Custom CD" }, 
                                   new { Suffix = "albumdownload", Title = "Digital Download" }, 
                                   new { Suffix = "boxset", Title = "Box Set" }, 
-                                  new { Suffix = "lp", Title = "LP" }
+                                  new { Suffix = "lp", Title = "LP" },
+                                  new { Suffix = "seven", Title = "7-inch" }
                               };
 
             foreach (var format in formats)
