@@ -464,5 +464,6 @@ a.imageLink img { width: 90px;}
 }
 #browse-by-geo .btn{padding: 2px 8px 2px 6px;}
 #browse-by-geo .dropdown-menu{margin-left: 0;min-width: 170px;opacity: 1; background-color: #fff; font-size: 14px;}
+#browse-by-geo .dropdown-menu > li > span, #browse-by-geo-blog .dropdown-menu > li > span, #browse-by-geo-magazine .dropdown-menu > li> span  {font-family: Verdana,Geneva,sans-serif;font-size: 11px;color: #999;font-weight: normal;line-height: 1.42857;padding: 3px 20px;text-transform: none;display: block;white-space: nowrap;}
 #browse-by-geo .dropdown-menu > li > a {color: #333;font-weight: normal;line-height: 1.42857;padding: 3px 20px;text-transform: none;}
 #browse-by-geo .dropdown-menu > li > a:hover {background-color: #edf0f1}
