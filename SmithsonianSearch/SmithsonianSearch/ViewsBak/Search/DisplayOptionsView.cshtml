@@ -1,0 +1,43 @@
+﻿@using SmithsonianSearch.Helpers
+@using SmithsonianSearch.Models
+@using SmithsonianSearch.Models.Enums
+@model SearchModel
+
+<div id="displayOptions">
+    <div class="row sort-by">
+        @{
+            var viewOptionsUrls = Model.GetViewOptionsUrls();
+
+            var tilesViewIconClass = Model.SelectedView == ViewOptionsEnum.Tiles ? "selected" : string.Empty;
+            var tableViewIconClass = Model.SelectedView == ViewOptionsEnum.Table ? "selected" : string.Empty;
+        }
+
+        <div class="col-md-4 col-xs-6">
+          <span id="contentTypeFilter">@Html.Partial("TabsMobile", Model)</span>
+        </div>
+        <div class="col-md-4 hidden-xs view">
+            <span id="viewOption" class="clearfix">
+                <img src="~/img/label_view_as.png" alt="View as" title="View as" height="7" />
+                <a href="@viewOptionsUrls[ViewOptionsEnum.Tiles]" class="view view-grid text-hide @tilesViewIconClass">Grid</a>
+                <a href="@viewOptionsUrls[ViewOptionsEnum.Table]" class="view view-list text-hide @tableViewIconClass">List</a>
+            </span>
+        </div>
+        <div class="col-md-4 col-xs-6">
+            <span id="sortOption">
+                <select class="selectpicker" data-style="btn-primary">
+                    @foreach (var option in Model.GetAvailableSortingOptions().Select(so => new
+                                                                         {
+                                                                            Text = so.Label,
+                                                                            Value = Model.GetSortingOptionUrl(so.Value),
+                                                                            Selected = Model.SortingOption == so.Value
+                                                                         }))
+                    {
+                        var selected = option.Selected ? "selected" : string.Empty;
+                      
+                        <option @selected value="@option.Value">@option.Text</option>
+                    }
+                </select>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1576 @@
+﻿/*
+	
+	  _|         |     |  |                                                        
+	 |     _ \   |  /  |  |  / \ \  \   /  _` |  |   |   __|       __|   __|   __| 
+	 __|  (   |    <   |    <   \ \  \ /  (   |  |   | \__ \      (    \__ \ \__ \ 
+	_|   \___/  _|\_\ _| _|\_\   \_/\_/  \__,_| \__, | ____/     \___| ____/ ____/ 
+	                                            ____/                              
+
+	folkways.si.edu
+	Author: Visual Dialogue
+	URL:    http://visualdialogue.com
+	Created: Fall 2016
+*/
+
+/* Imports	
+-------------------------------------------------- */
+	@charset "UTF-8";
+	@import "../Assets/common/css/fonts.scss";
+	@import "../Assets/common/css/vd-icons.scss";
+	@import "../Assets/plugins/remodal/dist/remodal.scss";
+	@import "../Assets/plugins/remodal/dist/remodal-default-theme.scss";
+	@import "../Assets/plugins/slick-carousel/slick/slick.scss";
+	@import "../Assets/plugins/slick-carousel/slick/slick-theme.scss";
+	@import "../Assets/plugins/mediaelement/build/mediaelementplayer.min.scss";
+	@import "../Assets/common/css/bootstrap.scss"; // get custom bootstrap built with less
+	@import "../Assets/common/css/reset.scss";
+	@import "../Assets/common/css/dimensions.scss";
+	@import "../Assets/common/css/media-queries.scss";
+	@import "../Assets/common/css/colors.scss"; // colors may be used in type.scss
+	// Site specific colors
+	$link: $copy;
+	$hover: $fw-hover; // 2016.12.15
+	@import "../Assets/common/css/type.scss";
+	@import "../Assets/common/css/mixins.scss";
+	@import "../Assets/common/css/icons.scss";
+	@import "../Assets/common/css/links.scss";
+	@import "../Assets/common/css/nav.scss";
+	@import "../Assets/common/css/general.scss";
+	@import "../Assets/common/css/footer.scss";
+	@import "../Assets/common/css/program.scss";
+	@import "../Assets/common/css/cards.scss";
+	@import "../Assets/common/css/audio.scss"; // after cards for cascading overrides
+
+/* Logo variation
+-------------------------------------------------- */
+	.one-line-logo {
+		margin-top:1.2rem;
+		@include respond-to(break2) {margin-top:2rem;}
+		@include respond-to(fullwidth) {margin-top:2.3rem;}
+	}
+
+/* Folkways Links & Icons
+-------------------------------------------------- */
+	.content a {color: $link;}
+	.content a:hover {color: #000;}
+	.site-toggle {
+		display: block;
+		@include respond-to(break2max) {
+			position: fixed;
+			top:0;
+			left:0;
+			width:100%;
+		}
+	}
+	.site-toggle-text {
+		display: inline-block;
+	}
+	.navbar {
+		@include respond-to(break2max) {
+			top: 3.1rem;
+			position: fixed;
+		}
+	}
+	.folkways-nav {
+		@include respond-to(break2max) {
+			display: none !important; // nav buttons try to override
+		}
+		@include sm-woodtype-extended;
+		font-family: $woodtypeNarrow;
+		padding-left: 0; // off-grid
+		margin-bottom: 0 !important;
+		position: relative;
+		z-index: 1;
+		margin-top:4rem;
+		@include respond-to(break2full) {
+			margin-top: 2.5rem !important; // buggyfill override
+			font-size: 1.665rem !important;
+		}
+		@include respond-to(fullwidth) {
+			margin-top: 2.9rem;
+			font-size: 1.873rem;
+		}
+		a {
+			color: $black65; // new header
+			// @include padding-right(4);
+			@include margin-right(4);
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+	.folkways-icons {
+		display: inline-block;
+	}
+	.desktop-folkways-icons {
+		float:right;
+		margin-right:2rem;
+	}
+	.folkways-icon.nav-icon {
+		float: none;
+		color: $black20;
+		position: relative;
+		&:hover {
+			color: #fff;
+		}
+		padding: 0;
+		margin: 0;
+		padding-top: 0.7rem;
+		@include respond-to(break2max) {
+			font-size: 1.6rem;
+			margin-right:1.5vw;
+			padding-right:1rem;
+			padding-bottom:2vw;
+			margin-left: 0;
+		}
+		@include respond-to(break2) {
+			padding:0;
+			font-size: 1.2rem;
+		}
+		@include respond-to(fullwidth) {
+			font-size: 1.8rem;
+		}
+	}
+	.folkways-icon-link {
+		@include margin-left(3);
+	}
+	:not(.home-page) .title-bar, .magazine-title-bar {
+		@include respond-to(break2max) {
+			margin-top:2.1rem;
+		}
+	}
+
+/* Banner
+-------------------------------------------------- */
+	.banner-section {
+		
+		@include margin-bottom(6);
+		@include respond-to(break2max) {
+			margin-bottom:0;
+		}
+		@include respond-to(break2) {
+			position: absolute; // so following content can be pushed down by intro section
+			z-index: 0; // below tab copy
+			width: 100%;
+			top:0;
+			bottom:0;
+			height: 100%;
+		}
+		.tag {
+			@include margin-top(0);
+			@include margin-bottom(0.5);
+		}
+		// unusual case becuase title's exist within slide for desktop and out of slide for mobile
+		.title {
+			@include md-serif;
+			&:hover {
+				color: $hover;
+			}
+			@include margin-bottom(0.5);;
+		}
+		.subtitle {
+			@include md-sans;
+			@include margin-bottom(3.4);
+			@include margin-bottom(2);
+		}
+		.textbox-inner {
+			@include padding-top(2);
+			@include padding-right(1);
+			@include padding-bottom(1);
+			@include padding-left(2);
+		}
+	}
+	.desktop-banner-nav {
+		display: none; // hide on mobile
+		// new layout has right above the fold
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+		right: 0;
+		.slick-list {
+			overflow: visible; // show taller active textboxes
+			background-color: $black30;
+		}
+		.more-link {
+			position: static;
+		}
+		@include respond-to(break2) {
+			display: block; // show for tablet
+		} 
+		// no white bar on last tab
+		.slick-track > div:last-of-type {
+			border:none;
+		}
+	}
+	.mobile-banner-nav {
+		@include respond-to(break2) {
+			bottom: 0;		
+		}
+		@include respond-to(break2) {display: none;} // hide on tablet
+	}
+	// heights
+	.slick-list.draggable, .slick-track {
+		height: 100%;
+	}
+	// hover change banner titles without highlighting
+	.slick-active a {
+		cursor: pointer; // why not default behavior???
+	}
+	.slick-current a:hover {
+		color: $link;
+	}
+	.textbox {
+		bottom: 0;
+		width: 100%;
+		position: relative;
+		z-index: 3;
+		@include respond-to(break2) {
+			border-right: 1px solid white;
+		}
+		@include respond-to(break2full) {
+			height:9vw;
+		}
+		@include respond-to(fullwidth) {
+			height:15.6rem;
+		}
+
+		// animate height
+		&-inner {
+			max-height: 200px;
+			@include padding-right(2);
+			@include padding-bottom(2);
+
+			// animation
+			// -ms-transition: 0.2s cubic-bezier(0.525, 0.175, 0.770, 0.680) max-height;
+			// -webkit-transition: 0.2s cubic-bezier(0.525, 0.175, 0.770, 0.680) max-height;
+			// transition: 0.2s cubic-bezier(0.525, 0.175, 0.770, 0.680) max-height;
+
+			// grow up from bottom
+			@include respond-to(break2) {
+				position: absolute;
+				width: 100%;
+				top: 0;
+			}
+		}
+		// initial hide
+		.subtitle, .more-link {
+			display: none;
+		}
+		.tag, .title, .subtitle {
+			color: #fff;
+		}
+	}
+	.slick-current {
+		.textbox-inner {
+			color: #fff;
+			background-color: #000;
+			max-height: 300px;
+			@include respond-to(break2) {
+				top: auto;
+				bottom: 0;
+			}
+			@include padding-bottom(2);
+		}
+		.subtitle, .more-link {
+			display: block;
+		}
+		.tag, .more-link {
+			color: $black30;
+		}
+	}
+	.mobile-dots {
+		margin-bottom: 0;
+		background-color: #fff;
+		width: 100%;
+	}
+	.slick-dots {
+		position: static;
+		li {
+			vertical-align: middle;
+		}
+	}
+	.banner-carousel {
+		height: 50vh;
+		@include respond-to(break2) {
+			height: 100vh;
+		}
+		$mobile-navbarSiteToggle: 3.1rem;
+		background-color: $black30;
+		margin-top:calc(#{$mobile-home-headerHeight} + #{$mobile-navbarSiteToggle});
+		@include respond-to(break2) {
+			//- switch to padding so don't overflow 100vh tall
+			padding-top:calc(#{$tablet-home-headerHeight});
+			margin-top: 0;
+		}
+		@include respond-to(fullwidth) {
+			padding-top:calc(#{$desktop-home-headerHeight});
+		}
+	}
+	.banner-slide {
+		background-repeat:no-repeat;
+		background-size: cover;
+		position: relative; // hold banner textbox
+		// @include bannerHeight;
+		height: 100%;
+		background-position: center;
+		@include respond-to(break2max) {
+			height: 50vh;
+		}
+		.textbox {
+			@include respond-to(break2max) {
+				display: none; // hide on mobile because redoing below
+			}
+		}
+		.details {
+			@include respond-to(break2max) {
+				padding: 2vw 2vw 0;
+			}
+			@include respond-to(break2full) {
+				padding: 1.25vw 1.2vw 0;
+			}
+			@include respond-to(fullwidth) {
+				padding: 2rem 1.7rem 2rem 2rem;
+			}
+		}
+	}
+	.banner-slide:not(.slick-active) {
+		@include respond-to(break2) {
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;right: 0;bottom: 0;left: 0;
+				background-color: rgba(0,0,0,0.6);
+			}
+		}
+	}
+	// show banner when loaded, from https://github.com/kenwheeler/slick/issues/158#issuecomment-40960041
+	.banner-carousel {
+		visibility: hidden;
+	}
+	.slick-initialized {
+		visibility: visible;
+	}
+	.slick-slide:focus {
+		outline: none; // override default
+	}
+	.slick-dotted.slick-slider {
+		background-color: #000;
+		margin-bottom: 0;
+		@include respond-to(break3max) {
+			margin-bottom: 3.4vw;
+		}
+		@include respond-to(fullwidth) {
+			margin-bottom: 5rem;
+		}
+	}
+	.slick-list {
+		position: relative; // contain abs arrows
+	}
+
+/* After banner section
+-------------------------------------------------- */
+	.mobile-dots {
+		@include respond-to(break2max) {
+			padding-top: 1.5rem;
+			padding-top: 0.5rem;
+		}
+		@include respond-to(break2) {
+			margin-top: 100vh;
+		}
+	}
+	.first-container {
+		@include padding-top(4);
+	}
+
+/* Tracks
+-------------------------------------------------- */
+	// album page and magazine article and lesson plans sidebar audio
+	.track-listing.table > tbody > tr {
+		@include border(top, 1px, $black10);
+	}
+	.track-listing.table > tbody > tr > td:first-of-type {
+		@include padding-top(0.6);
+		@include padding-bottom(0.6);
+	}
+	.track-listing.table > tbody > tr > td {
+		// bootstrap override
+		@include padding(0.8);
+		vertical-align: top;
+		border-top: none; // bootstrap reset
+	}
+	.track-number-play-button {
+		position: relative; // contain play button
+		width: 10%;
+		height: 100%;
+		@include respond-to(break2) {
+			width: 12%;
+		}
+		@include respond-to(fullwidth) {
+			width: 10%;
+		}
+	}
+	.track-number {
+		@include sm-sans;
+		@include margin-top(0.3);
+	}
+	// $mobilePlayWidth: 6vw;
+	// $mobilePlayWidth: 4.5vw;
+	$mobilePlayWidth: 2rem;
+	// $mobilePlayHeight: 6vw;
+	// $mobilePlayHeight: 4.5vw;
+	$mobilePlayHeight: 2rem;
+	.track .mejs-container {
+		background-color: transparent;
+		.mejs-controls .mejs-playpause-button, .mejs-controls .mejs-playpause-button button {
+			@include width(3);
+			@include height(3);
+			@include respond-to(break2max) {
+				width: $mobilePlayWidth;
+				height: $mobilePlayHeight;
+			}
+			&:before, &:after {
+				line-height: 1;
+				@include width(3);
+				@include height(3);
+				@include respond-to(break2max) {
+					width: 100%;
+					width: $mobilePlayWidth;
+					height: $mobilePlayHeight;
+				}
+			}
+		}
+	}
+	.track .mejs-controls .mejs-playpause-button button[title="Pause"] {
+		text-align: center;
+		&:after {
+			content: "\6b";
+			line-height: 1.45;
+			text-align: center;
+			@include respond-to(break2max) {
+				font-size:6vw;
+				padding-left: 0.3vw;
+			}
+			@include respond-to(break2full) {
+				// padding-top: 0.1rem;
+				font-size:1.5vw;
+			}
+			@include respond-to(fullwidth) {
+				font-size:1rem;
+				padding-left: 0.1rem;
+			}
+		}
+	}
+	.track-listing {
+		.track .mejs-controls .mejs-playpause-button button[title="Pause"] {
+			&:after {
+				@include respond-to(break2max) {
+					// font-size:3vw;
+					font-size: 1.5rem;
+					// padding-top: 0.3vw;
+					// padding-top: 0.1rem;
+					// padding-top: 0.4vw;
+					// padding-left: 0.3vw;
+					padding-left: 0;
+				}
+				@include respond-to(break23) {
+					// padding: 0;
+					padding-top: 0.1vw;
+					font-size: 1vw;
+				}
+				@include respond-to(break3full) {
+					padding-top: 0;
+					font-size: 1.2vw;
+				}
+				@include respond-to(fullwidth) {
+					padding-top: 0.1rem;
+					padding-left: 0;
+					font-size:2rem;
+				}
+			}			
+		}
+	}
+	.track .track-play-button, .track .mejs-controls .mejs-playpause-button {
+		display: none; // initial hide
+	}
+	// show when playing
+	.track .mejs-controls .mejs-playpause-button.mejs-pause {
+		display: block;
+	}
+	.track .track-play-button, .track .mejs-controls .mejs-playpause-button button { // more specific to override ipad vh buggyfill and mejs styles
+		// position: absolute;		
+		@include margin-top(0.3);
+		&:before, &:after {			
+			display: block; // prevent extra padding
+			font-size:2rem;
+			@include respond-to(break2full) {
+				font-size:1.8vw;
+			}
+			@include respond-to(fullwidth) {
+				font-size:3rem;
+			}
+		}
+	}
+	.table-hover > tbody > tr:hover {		
+		.track-number {
+			display: none; // hide number
+		}
+		.track-play-button, .mejs-controls .mejs-playpause-button {
+			// vertically center icons, from http://stackoverflow.com/a/18966255
+			display: block; // show play button
+		}
+	}
+	// sidebar audio only
+	.sidebar-audio {
+		table {
+			table-layout: fixed;
+		}
+		.track-number-play-button {
+			@include respond-to(break2max) {
+				// width: 8%;
+				width: 10%; // wider for play button hover
+			}
+		}
+		.track-play-button {
+			.icon-circle:before, .icon-play:before {			
+				@include respond-to(break2max) {
+					line-height: 1.1;
+				}
+			}
+		}		
+		.icon-play-button:before, .icon-play-button:after {
+			font-size: 2rem;
+			@include respond-to(break2full) {
+				font-size: 1.6vw;
+			}
+			@include respond-to(fullwidth) {
+				font-size: 2rem;
+			}
+		}
+		.track-title {
+			@include respond-to(break2max) {
+				// width: 8%;
+				width: 66%; // wider for play button hover
+				overflow: hidden;
+			}
+		}
+	}
+
+/* Album Page
+-------------------------------------------------- */
+	.album-page {
+		.title-bar {
+			background-color: $fw-red;
+			color: #fff;
+		}
+		// not sidebar titles
+		.main {
+			@include margin-bottom(3.5);
+			.tag {
+				@include margin-bottom(1);
+			}
+			h1.title {
+				@include lg-serif;
+				@include margin-top(0);
+				@include margin-bottom(0.5);
+			}
+			.artist {
+				@include xl-sans;
+				@include margin-bottom(7);
+			}
+			img {
+				@include margin-bottom(3);
+			}
+		}
+		.content p {
+			@include intro-serif;
+		}
+		.track-listing-title {
+			@include xl-sans;
+			font-weight: 600;
+			@include margin-bottom(1);
+		}
+		.track-listing {
+			width: 100%;
+			table-layout: fixed;
+			border-bottom: 1px solid $black50;
+		}
+		.track {
+			width: 100%;
+			.mejs-time-wrapper,
+			.mejs-time-rail, 
+			.mejs-horizontal-volume-slider {
+				display: none;
+			}
+		}
+		.track-play-button {
+			@include respond-to(break2max) {
+				font-size: 3rem;
+			}
+		}
+		.track-title {
+			@include md-sans;
+			font-weight: 600;
+			white-space: initial !important; // bootstrap override
+			@include padding-top(0.7);
+			@include padding-bottom(2.6);
+			width:75%;
+			display: inline-block;
+			@include respond-to(break2max) {
+				font-size: 1.6rem;
+			}
+			@include respond-to(break2) {
+				display: table-cell;
+				width:44%;
+			}
+			@include respond-to(fullwidth) {
+				width:45%;
+			}
+		}
+		.track-artist {
+			@include sm-sans;
+			width: 31%;
+			display: none;
+			@include padding-right(0.1);
+			@include respond-to(break2) {
+				display: table-cell;
+			}
+		}
+		.track-length {
+			@include sm-sans;
+			width: 5%;// 42/802
+			display: none;
+			@include respond-to(break2) {
+				display: table-cell;
+			}
+		}
+		.track-buy {
+			width: 15%;
+			@include sm-sans;
+			text-align:center;
+			display: inline-block;
+			@include respond-to(break2) {
+				display: table-cell;
+			}
+            .button-inner{
+                background-color:$black40;
+                &:hover{
+                    background-color:black;
+                }
+            }
+            input {
+                background-color:transparent;
+                color:white;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+            }
+		}
+		.sidebar h4 {
+			@include margin-top(0.2);
+		}
+		
+		.reviews {
+			@include margin-bottom(0.7);
+		}
+		.review-copy {
+			@include sm-sans;
+			line-height: 1.33 !important;
+			font-weight: 600;
+			color: $black70;
+			border-top: 1px solid $black50;
+			@include margin-bottom(0.75);
+			@include padding-top(0.75);
+		}
+		.review-author {
+			@include caption-sans;
+			text-transform: capitalize;
+			color: $black50;
+		}
+		.buy-button {
+			// clear: left;
+			@include margin-bottom(1.2);
+			@include respond-to(break2max) {
+				margin-bottom:1rem;
+			}
+			&:first-of-type() {
+				@include margin-top(4);
+			}
+		}
+	}
+	.album-info, .lesson-info {
+		.copy {
+			color: $black70;
+			@include sm-sans;
+			font-weight: 500;
+		}
+		// down arrow
+		[class^="icon-"] {
+			float: right;
+			font-size:3rem;
+			@include respond-to(break2full) {font-size:2.2vw;}
+			@include respond-to(fullwidth) {font-size:3.5rem;}
+			@include margin-right(0.3);
+			&:before {
+				display: block;
+				line-height: 0.7;
+			}
+		}
+	}
+	.lesson-info {
+		@include margin-bottom(3.2);
+	}
+	.suggested-items {
+		padding-bottom: 0;
+	}
+	.suggested-item {
+		@include clear-2;
+		@include margin-bottom(2);
+		.tag {
+			display: none;
+		}
+		.title {
+			color: #000;
+			margin: 0;
+			@include margin-top(-0.5); // move up for correct padding dimesions, b/c category not here to move up
+		}
+		.artist {
+			@include sm-sans;
+			color: $black70;
+		}
+	}
+	.liner-notes {
+		color: #fff;
+		display: block;
+		@include margin-top(0.7);
+		background-color: $black40;
+	}
+	.album-sidebar-tab, .liner-notes {
+		@include sm-sans;
+		font-weight: 600; // must come after font mixin!!!!
+		width: 100%;
+		// @include padding-top(0.6);
+		// @include padding-bottom(0.6);
+		// @include padding-left(1);
+	}
+	.album-sidebar-tab {
+		color: $black70;
+		background-color: $black20;
+		border-top: 1px solid $black50;
+		&:hover {
+			color: #fff;
+		}
+	}
+	.suggested-items {
+		@include margin-top(2);
+	}
+	.disqus {
+		&-inner {
+			@include respond-to(break2max) {
+				height: 2rem;
+			}
+			@include height(5);
+			overflow: hidden;
+			position: relative;
+		}
+		@include margin-top(1);
+	}
+	.disqus-comments {
+		@include margin-top(2);
+		@include margin-bottom(2);
+		background-color: $black50;
+		width: 100%;
+		text-align: center;
+		color: #fff;
+		@include padding-top(1);
+		@include padding-bottom(1);
+		cursor: pointer;
+		@include respond-to(break2max) {
+			margin-top:0;
+			margin-bottom:2rem;
+		}
+		&:hover {
+			background-color: $black70;
+		}
+	}
+
+/* New Releases Section
+-------------------------------------------------- */
+	.new-releases-section {
+		.border {
+			border: none;
+		}
+	}
+
+/* News & Press Section
+-------------------------------------------------- */
+	.news-press-section {
+		.details-inner {
+			@include padding-top(1.4);
+		}
+		.date {
+			@include margin-bottom(0.5);
+			font-weight: 300;
+		}
+		.title {
+			color: #000;
+			@include body-serif;
+			font-weight: bold;
+			line-height: 1.17; // 24/28
+		}
+		@include respond-to(break2max) {
+			li:nth-of-type(2n + 1) {
+				clear:left;
+			}
+		}
+	}
+
+/* Folkways Magazine Section
+-------------------------------------------------- */
+	.folkways-magazine-wrapper {
+		position: relative; // contain more link
+		.more-link {
+			right: 0;
+		}
+	}
+	.folkways-magazine-section {
+		@include padding-top(4);
+		@include padding-bottom(4);
+		@include margin-bottom(3.2);
+
+		.section-title a {
+			color: #fff;
+		}
+		.tag {
+			@include margin-bottom(0.5);
+		}
+		.title {
+			@include md-magazine-title;
+		}
+		.subtitle {
+			@include md-magazine-title;
+			font-weight: 300;
+			@include respond-to(break2full) {
+				// responsive for fixed container
+				font-size:2.1vw;
+			}
+		}
+		.details-inner {
+			background-color: #fff;
+			@include padding(2);
+			@include respond-to(break2full) {
+				// tablet min-height b/c matchheight not working here in ipad
+				min-height:11.5vw;
+				// min-height:8.5vw; // too short for iPad
+			}
+		}
+		.featurette {
+			@include respond-to(break2max) {
+				clear:none !important; // default everyone other card clear left if col-xs-6 on mobile. Because featuretts are 2 & 3 cards and should be side by side.
+			}
+			.card:after {
+				@include respond-to(break2) {
+					left:#{$full-gutter * 2};
+					right:#{$full-gutter * 2};
+					bottom: 0; // back to horizontal
+				}
+				@include respond-to(fullwidth) {
+					left:2rem;
+					right:2rem;
+				}
+			}
+			.details-inner {
+				padding-left:0;
+				@include respond-to(break2full) {padding:1vw;}
+				@include respond-to(fullwidth) {padding:2rem;}
+			}
+		}
+		.border {
+			border: none;
+		}
+		.image {
+			padding-bottom:0;
+		}
+		.section-title {
+			color: #fff;
+		}
+		.author {
+			display: none;
+		}
+		.more-link {
+			color: #fff;
+			@include respond-to(break2max) {
+				display: none;
+			}
+		}
+	}
+
+/* Essential Picks
+-------------------------------------------------- */
+	.essential-picks-section {
+		@include margin-bottom(5);
+	}
+
+/* Videos
+-------------------------------------------------- */
+	.videos-section {
+		@include margin-bottom(0);
+		.details-inner {
+			@include padding-top(1.6);
+		}
+		.title {
+			@include lg-sans;
+		}
+		.border {
+			border: none;
+		}
+	}
+
+/* Learn
+-------------------------------------------------- */
+	.learn-section {
+		@include margin-bottom(0);
+		.details-inner {
+			@include padding-right(1.5);
+		}
+		.title {
+			@include sm-serif;
+			// background-color: #fff;
+		}
+		.subtitle {
+			display: none;
+		}
+	}
+	
+/* Archived, Folkways radio
+-------------------------------------------------- */
+	.archived-item, .folkways-radio {
+		.border {
+			border: none;
+		}
+		.details {
+			background-color: $black80;
+			@include padding-top(2);
+			@include padding-right(2);
+			@include padding-bottom(2);
+			@include padding-left(2);
+		}
+		.title {
+			@include md-sans;
+			@include margin-bottom(1);
+		}
+		.artist {
+			@include sm-sans;
+		}
+	}
+	.archived-item {
+		.details, .tag {
+			color: #fff;
+		}
+		.details {
+			@include min-height(24);
+		}
+		.title {
+			font-weight: 600;
+		}
+	}
+	.folkways-radio {
+		.details {
+			background-color: #fff;
+			border: 1px solid $black15;
+		}
+		.title {
+			margin-bottom: 0;
+		}
+	}
+
+/* Browse page
+-------------------------------------------------- */
+	.browse-page {
+		.title-bar {
+			color: #fff;
+			background-color: $fw-green;
+		}
+	}
+
+/* Explore page
+-------------------------------------------------- */
+	.explore-page {
+		.title-bar {
+			color: #fff;
+			background-color: $fw-purple;
+		}
+	}
+	.explore-banner-section {
+		@include margin-top(5);
+		@include margin-bottom(6);
+		.tag {
+			@include margin-bottom(0.5);
+		}
+		.title {
+			@include lg-magazine-title;
+		}
+		.subtitle {
+			// @include margin-top(3);
+			@include lg-magazine-title;
+		}
+		.author {
+			display: none;
+		}
+		.description {
+			@include lg-sans;
+		}
+		.more-link {
+			@include respond-to(break2max) {
+				display: none;
+			}
+		}
+		.feature {
+			position: relative;
+			@include margin-bottom(4);
+			
+			.details {
+				background-color: #fff;
+				@include padding-right(1);
+				@include padding-bottom(2);
+				@include padding-left(2);
+				@include respond-to(break2max) {
+					padding-left: 0;
+				}
+				@include respond-to(break2) {
+					position: absolute;
+					// width: 22.86%;
+					width: 22.25%;
+					@include bottom(4);
+					@include left(6);	
+				}
+			}
+			.details-inner {
+				@include padding-right(0);
+			}
+		}
+		.featurettes {
+			.card {
+				// @include margin-bottom(0);
+				@include respond-to(fullwidth) {
+					@include margin-bottom(0);
+				}
+			}
+			.title {
+				margin-bottom: 1rem;
+				@include respond-to(break2max) {
+					@include sm-magazine-title;
+				}
+				@include respond-to(break2) {
+					margin-bottom: 3rem;
+				}
+			}
+			.details {
+				padding-left:$small-gutter;				
+				@include respond-to(break2) {padding-left:0;}
+			}
+			.details-inner {
+				@include padding-top(2);				
+			}
+			.description {
+				@include respond-to(break2max) {
+					font-size: 1.7rem; // body-sans size on mobile
+				}
+			}
+		}
+	}
+
+/* Shop page
+-------------------------------------------------- */
+	.shop-page {
+		.title-bar {
+			color: #fff;
+			background-color: $fw-red;
+		}
+		.first-section {
+			@include margin-bottom(3);
+		}
+	}
+
+	.shop-hero {
+		background-color: $black20;
+		@include padding-bottom(2);
+		@include margin-bottom(4);
+		.card {
+			@include respond-to(break2max) {
+				margin-bottom: 0;
+			}
+			@include respond-to(break2full) {
+				padding-top:2.5vw;
+				margin-left:2.5vw;
+			}
+			@include respond-to(fullwidth) {
+				padding-top:4rem;
+				margin-left:4rem;
+			}
+			// background color, override multiple selectors
+			&:after { 
+				background-color: $black20 !important;
+				@include respond-to(break2) {
+					bottom: -4rem !important;
+					left:-2rem !important;
+				}
+				@include respond-to(fullwidth) {
+					bottom: -4rem !important;
+					left:-2rem !important;
+				}
+			}
+		}
+		.image {
+			@include padding-left(2.1);
+			@include respond-to(break2max) {
+				padding-left: $small-gutter;
+			}
+		}
+		img {
+			// box shadow is too hard for mobile
+			@include respond-to(break2) {
+				-webkit-box-shadow: 10px 10px 71px -15px rgba(0,0,0,0.73);
+				-moz-box-shadow: 10px 10px 71px -15px rgba(0,0,0,0.73);
+				box-shadow: 10px 10px 71px -15px rgba(0,0,0,0.73);	
+			}
+		}
+		.details {
+			@include padding-right(4);
+			@include respond-to(break2max) {
+				// padding-top: 5vw;
+				padding-right: 7vw;
+				padding-bottom: 5vw;
+				padding-left: 7vw;
+			}
+			@include padding-right(3);
+		}
+		.details-inner {
+			@include padding-top(2)
+		}
+		.tag {
+			@include padding-bottom(1.3);
+			@include respond-to(break2max) {
+				padding-bottom: 0;
+			}
+		}
+		.title {
+			@include lg-serif;
+			@include padding-bottom(2);
+			@include respond-to(break2max) {
+				padding-bottom:1rem;
+			}
+		}
+		.artist {
+			@include md-serif;
+			@include margin-bottom(2);
+			color: $link;
+		}
+		.blurb {
+			@include lg-sans;
+		}
+		.more-link {
+			color: #fff; 
+			margin-top: 0;
+			margin-left: 0;
+		}
+		.more-link-text {
+			font-size: 1.8rem;
+			@include respond-to(break2full) {font-size:1.9vw;}
+			@include respond-to(fullwidth) {font-size:3rem;}
+			text-decoration: underline;
+		}
+		.more-link-arrow {
+			display: none;
+		}
+		@include respond-to(break2max) {
+			padding-bottom: 0;
+		}
+	}
+	.author {
+		@include sm-sans;
+	}
+	.merchandise-section {
+		@include margin-bottom(6);
+		.section-title {
+			color: #fff;
+		}
+	}
+	.merchandise-wrapper {
+		position: relative; // contain more link
+		background-color: $black30;
+		@include padding-top(4);
+		@include margin-right(-4);
+		@include padding-right(4);
+		@include padding-bottom(3);
+		@include margin-left(-4);
+		@include padding-left(4);
+		.more-link {
+			@include top(4);
+			@include right(4);
+			color: #fff;
+		}
+	}
+
+/* Learn page
+-------------------------------------------------- */
+	.learn-page {
+		.first-section {
+			.title {
+				@include md-serif;
+				@include margin-top(3);
+				@include margin-bottom(2);
+			}
+			.blurb {
+				@include lg-sans;
+			}
+		}
+		.title-bar {
+			color: #fff;
+			background-color: $fw-green;
+		}
+	}
+	.lesson-plans-section, .interactives-section {
+		.card {
+			position: relative;
+			@include margin-bottom(4);
+			&:after {
+				// lesson plan white bg
+				content: '';
+				// background-color: #fff;
+				position: absolute;
+				top:0;
+				@include right(2);
+				bottom:0;
+				@include left(2);
+				z-index: 1; // overtop of image
+				border: 1px solid $black50;
+				right:6px;
+				left:6px;
+				@include respond-to(break2full) {
+					right: $medium-gutter;
+					left: $medium-gutter;
+				}
+				@include respond-to(fullwidth) {
+					right: $full-gutter;
+					left: $full-gutter;
+				}
+			}
+		}
+		.details {
+			z-index:2; // on top of border
+		}
+		.details {
+			padding-left:0;
+		}
+		.details-inner {
+			@include respond-to(break2max) {
+				padding-left: 1.5rem;
+			}
+			@include padding-top(2);
+			@include padding-right(1);
+			@include padding-bottom(0.5);
+		}
+		.title {
+			@include md-serif;
+			@include margin-bottom(0.5);
+			@include respond-to(break2full) { font-size: 2.6vw; }
+		}
+		.subtitle {
+			@include sm-serif;
+			@include respond-to(break2full) { font-size: 1.7vw; }
+		}
+	}
+	.interactives-section {
+		.details-inner {
+			@include respond-to(break2max) {
+				padding-left: 0.5rem;
+			}
+		}
+	}
+	.workshops-section {
+		.tag {
+			@include respond-to(break2max) {
+				padding-top: 1rem;
+			}
+		}
+		.title {
+			@include sm-serif;
+			@include margin-bottom(0.5);
+		}
+		.blurb {
+			@include sm-sans;
+		}
+	}
+	.resources-section {
+		.title {
+			@include margin-top(1);
+			@include sm-serif;
+		}
+		.details-inner {
+			@include padding-top(0.5);
+		}
+	}
+	.subscribe-section {
+		.title {
+			@include md-serif;
+		}
+		.subtitle {
+			@include lg-sans;
+			@include margin-bottom(5.5);
+		}
+		.image {
+			@include respond-to(break2max) {
+				@include margin-bottom(3);
+			}
+		}
+		.content {
+			@include respond-to(break2) {
+				-webkit-column-count: 2; /* Chrome, Safari, Opera */
+				-moz-column-count: 2; /* Firefox */
+				column-count: 2;
+			}
+		}
+	}
+	.subscribe-button {
+		@include md-sans;
+		text-transform: uppercase;
+		font-weight: 600;
+		background-color: $black30;
+		display: inline-block;
+		color: #fff;
+		@include margin-top(3);
+		@include padding-top(1.3);
+		@include padding-right(1.9);
+		@include padding-bottom(1.3);
+		@include padding-left(1.9);
+		@include respond-to(break2max) {
+			margin-bottom:1rem;
+		}
+	}
+
+/* Lesson plan page
+-------------------------------------------------- */
+	.lesson-plan-page {
+		.title-bar {
+			color: #fff;
+			background-color: $fw-red;
+		}
+		.lesson-plan-top {
+			margin-bottom:0;
+			.details-inner {
+				padding-top: 0;
+			}
+			.tag {
+				@include margin-bottom(1);
+			}
+			.title {
+				@include margin-bottom(0.5);
+			}
+			.author {
+				@include xl-sans;
+				line-height: 1.3 !important;
+			}
+			.image {
+				@include margin-top(3);
+				@include margin-bottom(1.5);
+			}
+		}
+		.lesson-info {
+			@include margin-bottom(4);
+		}
+		.buy-button {
+			@include margin-bottom(1.8);			
+		}
+	}
+
+/* Membership page
+-------------------------------------------------- */
+	.membership-page {
+		.title-bar {
+			color: #fff;
+			background-color: $fw-brown;
+		}
+		.intro-section {
+			@include md-serif;
+			line-height: 1.1; // 42/46
+		}		
+	}
+	.become-a-member-section {
+		@include margin-top(3.3);
+		.row {
+			position: relative; // contain join now button
+		}
+		.button {
+			@include margin-top(1);
+		}
+		.button-inner {
+			background-color: $fw-orange;
+			margin-bottom: 0; // override default
+		}
+	}
+	.membership-steps {
+		@include lg-sans;
+	}
+	.membership-step-1, .membership-step-2 {
+		@include margin-bottom(2.05);
+		.dropdown {
+			background-color: $black20;
+		}
+		.first-level-dropdown-title {
+		}
+	}
+	.membership-step-3-inner {
+		// line up with bottom of become a member image
+		position: absolute;
+		bottom:0;
+	}
+	// Become a Member section
+	.membership-options-section {
+		.full-border-card > div:first-of-type {
+			border-bottom: none;
+		}
+		ul {
+			padding-bottom: 0;
+		}
+		li { 
+			margin-left: 0 !important; // specificity war
+		}
+	}
+	.membership-card {
+		@include margin-top(6);
+		border: 2px solid $black15;
+		.header-details {
+			@include padding-top(2);
+			text-align: center;
+		}
+		.title {
+			@include md-magazine-title;
+			text-transform: uppercase;
+			@include margin-bottom(1);
+			color: #000;
+		}
+		.subtitle {
+			@include xl-sans;
+			@include margin-bottom(1.3);
+			color: #000;
+		}
+		.tag {
+			@include margin-bottom(2.6);
+			color: $black70;
+		}
+		.details-inner {
+			@include padding(1);
+			@include padding-top(1.2);
+			@include padding-left(1.7);
+			@include body-serif;
+		}
+	}
+	.header-details {
+		border-bottom: 2px solid $black15;
+	}
+	.folkways-member-details {
+		background-color: $fw-red;
+	}
+	.supporting-member-details {
+		background-color: $fw-green;
+	}
+	.lifetime-member-details {
+		background-color: $fw-blue;
+	}
+
+	// Membership details section
+	.membership-details-section {
+		@include margin-top(7.6);		
+		.title {
+			@include sm-serif;
+		}
+	}
+
+	// Cover Art
+	.cover-art-section {
+		.section-title {
+			margin-right:4rem;
+			margin-left:4rem;
+		}	
+		.highlight-inner {
+			@include padding-top(3.1);
+		}
+		// not in remodal
+		.cover-art {
+			cursor: pointer;
+			@include respond-to(break2max) {
+				margin-bottom: 1.5rem;
+				@include clear-2;
+			}
+		}
+	}
+	.cover-art-set {
+		@include margin-bottom(4);
+		.title {
+			@include lg-sans;
+			@include margin-bottom(3.4);
+		}
+	}
+	.image-gallery-remodal {
+		.slick-slide {
+			width: auto;
+		}
+	}
+
+/* Search page
+-------------------------------------------------- */
+
+    .content-type-overlay {
+        position: absolute;bottom: 0;
+        background: rgba(0,0,0,.4);
+        color:#FFF; 
+        padding: 0 3px 3px;left: 0; 
+        @include nav-header;
+        font-weight:600;
+    }
+
+    .search-result {
+        .image {
+            position:relative;
+        }
+    }
+
+      #tabs .tab-all{background:#bac4c9 url(../img/tab_all_selected.png) no-repeat 50% 50%;width: 46px;} 
+      #tabs .tab-albums{width: 75px;} 
+      #tabs .tab-tracks{width: 76px;} 
+      #tabs .tab-tracks.selected{background-color:#879b02}
+      #tabs .tab-tracks:hover{background-color:#879b02}
+      #tabs .tab-videos{width: 68px;} 
+      #tabs .tab-playlists{width: 86px;} 
+      #tabs .tab-articles{width: 84px;} 
+      #tabs .tab-merchandise{width: 118px;} 
+      #tabs .tab-tools-teaching{width: 167px;}  
+
+      #tabsMobile {display:none}
+        #tabs{display:block}
+
+    #tabs {margin: 0.5em 0 1.5em;background: #bac4c9;width: 751px;}
+    #tabs img{display:none}
+    #tabs a {display: block;padding: 15px 0;height: 8px;float: left;border-right:1px solid #fff;} 
+    #tabs .tab-all{background:#bac4c9 url(../img/tab_all_selected.png) no-repeat 50% 50%;width: 51px;} 
+    #tabs .tab-all.selected, #tabs .tab-all:hover{background-color: #526c79}
+    #tabs .tab-albums{background:#bac4c9 url(../img/tab_albums_selected.png) no-repeat 50% 50%;width: 84px;} 
+    #tabs .tab-albums.selected, #tabs .tab-albums:hover{background-color:#e07007}
+    #tabs .tab-tracks{background:#bac4c9 url(../img/tab_tracks_selected.png) no-repeat 50% 50%;width: 78px;} 
+    #tabs .tab-tracks.selected, #tabs .tab-tracks:hover{background-color:#879b02}
+    #tabs .tab-videos{background:#bac4c9 url(../img/tab_videos_selected.png) no-repeat 50% 50%;width: 76px;} 
+    #tabs .tab-videos.selected, #tabs .tab-videos:hover{background-color:#ae1e02}
+    #tabs .tab-playlists{background:#bac4c9 url(../img/tab_playlist_selected.png) no-repeat 50% 50%;width: 88px;} 
+    #tabs .tab-playlists.selected, #tabs .tab-playlists:hover{background-color:#1e4b7b}
+    #tabs .tab-articles{background:#bac4c9 url(../img/tab_articles_selected.png) no-repeat 50% 50%;width: 84px;} 
+    #tabs .tab-articles.selected, #tabs .tab-articles:hover{background-color:#b58a0a}
+    #tabs .tab-merchandise{background:#bac4c9 url(../img/tab_merchandise_selected.png) no-repeat 50% 50%;width: 118px;} 
+    #tabs .tab-merchandise.selected, #tabs .tab-merchandise:hover{background-color:#3d1e7b}
+    #tabs .tab-tools-teaching{background:#bac4c9 url(../img/tab_tools_teaching_selected.png) no-repeat 50% 50%;width: 172px;} 
+    #tabs .tab-tools-teaching.selected, #tabs .tab-tools-teaching:hover{background-color:#84a8c1}
+    #tabs span{display:none !important}
+
+    

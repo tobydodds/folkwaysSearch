@@ -1,0 +1,33 @@
+﻿@using Folkways;
+@using Orchard.Mvc.Html;
+@using Orchard.UI.Resources;
+@using Orchard.Utility.Extensions;
+@{
+    Script.Require("jQuery").AtHead();
+    Script.Require("Folkways").AtFoot();
+    Style.Require("Folkways");
+
+    string title = Convert.ToString(Model.Title);
+    string siteName = Convert.ToString(WorkContext.CurrentSite.SiteName);
+
+}
+<!DOCTYPE html>
+<html lang="@WorkContext.CurrentCulture" class="static @Html.ClassForPage()">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Html.Raw(Html.Title(siteName, title.RemoveTags(true).Replace("Homepage", "")).ToString().Replace("- Smithsonian Folkways Recordings", "| Smithsonian Folkways Recordings"))</title>
+    <link rel="icon" type="image/png" href="/themes/folkways/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/themes/folkways/assets/favicons/favicon-16x16.png" sizes="16x16">
+    @Display(Model.Head)
+    <script>(function (d) { d.className = "dyn" + d.className.substring(6, d.className.length); })(document.documentElement);</script>
+    <!-- Fonts-->
+    <script src="https://use.typekit.net/eiz7zfx.js"></script>
+    <script>try { Typekit.load(); } catch (e) { }</script>
+</head>
+
+@* Layout (template) is in the Body zone @ the default position (nothing, zero, zilch) *@
+@Display(Model.Body)
+@Display(Model.Tail)
+
+</html>

@@ -1,0 +1,24 @@
+﻿@* This view is responsible for rendering an playlist in tiles view *@
+@using SmithsonianSearch.Configuration
+@using SmithsonianSearch.Helpers
+@model SmithsonianSearch.Models.ResultItems.Playlist
+
+@{
+    var imageAlt = HttpUtility.UrlDecode(string.IsNullOrEmpty(Model.Title) ? "Link" : Model.Title);
+    var imageSrc = string.IsNullOrEmpty(Model.ImageUrl) ? Url.Content("~/img/playlist-thumb.gif") : Model.ImageUrl;
+}
+
+<li class="clearfix">
+    <a class="imageLink" href="@Model.Url">
+        <img src="@imageSrc" alt="@imageAlt" />
+        <span class="content-type-overlay">PLAYLIST</span>
+    </a>
+    <ul>
+        <li><h2><a href="@Model.Url" title="@Model.Title">@Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))</a></h2></li>
+        @if (!string.IsNullOrEmpty(Model.Duration))
+        {
+            <li title="@Model.Duration"><em>Duration</em>@Model.Duration.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+        }
+    </ul>
+    
+</li>

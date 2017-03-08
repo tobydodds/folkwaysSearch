@@ -1,0 +1,33 @@
+﻿@* This view is responsible for rendering tabs in desktop browsers *@
+@using SmithsonianSearch.Helpers
+@using SmithsonianSearch.Models
+@using SmithsonianSearch.Models.Enums
+@model SearchModel
+
+<div id="tabs">     
+    @{
+        // Add an entry in the following collection in case of a new content type
+        var contentTypes = new []
+        {
+            new { ContentType = ContentTypesEnum.Mixed, Title = "All", Order = 1, CssClass = "tab-all", Image = "~/img/tab_all.png" },
+            new { ContentType = ContentTypesEnum.Album, Title = "Albums", Order = 2, CssClass = "tab-albums", Image = "~/img/tab_albums.png" },
+            new { ContentType = ContentTypesEnum.Track, Title = "Tracks", Order = 3, CssClass = "tab-tracks", Image = "~/img/tab_tracks.png" },
+            new { ContentType = ContentTypesEnum.Video, Title = "Videos", Order = 4, CssClass = "tab-videos", Image = "~/img/tab_videos.png" },
+            new { ContentType = ContentTypesEnum.Playlist, Title = "Playlists", Order = 5, CssClass = "tab-playlists", Image = "~/img/tab_playlist.png" },
+            new { ContentType = ContentTypesEnum.Article, Title = "Articles", Order = 8, CssClass = "tab-articles", Image = "~/img/tab_articles.png" },
+            new { ContentType = ContentTypesEnum.Merchandise, Title = "Merchandise", Order = 9, CssClass = "tab-merchandise", Image = "~/img/tab_merchandise.png" },
+            new { ContentType = ContentTypesEnum.ToolForTeaching, Title = "Tools for Teaching", Order = 10, CssClass = "tab-tools-teaching", Image = "~/img/tab_tools_teaching.png" }
+        };
+
+        var filteredContentTypes = Model.FiltersModel.AvailableContentTypes.Join(contentTypes, act => act, cti => cti.ContentType, (act, cti) => cti).OrderBy(cti => cti.Order);
+    }
+        
+    @foreach (var contentType in filteredContentTypes)
+    {
+        var renderResults = contentType.ContentType == Model.FiltersModel.ContentType;
+        var cssClass = renderResults ? "selected " + contentType.CssClass : contentType.CssClass;
+            
+        <a class="tab @cssClass" href="@Model.GetTabUrl(contentType.ContentType)" title=" @contentType.Title">        </a>
+    }
+    <div class="clearfix"> </div>
+</div>

@@ -2,7 +2,7 @@
 @using SmithsonianSearch.Helpers
 @model SmithsonianSearch.Models.SearchResultsModels.ISearchResultsModel
 @{ bool isEmptyOrDefaultQuery = string.IsNullOrEmpty(Model.SearchModel.Query) || Model.SearchModel.Query.Equals(Config.Instance.DefaultSearchPhrase, StringComparison.CurrentCultureIgnoreCase); }
-<div class="row">
+<div class="row" style="display:none">
     <div class="col-md-3"></div>
     <div class="col-md-6">
         <div id="search-box">
@@ -58,17 +58,6 @@
         </div>        
         <div class="filter-options">
           <span>Options:</span> <a href="#" onclick="toggle_visibility('filters');">Filter results</a><span style="display: @(Model.RelatedQueries.RelatedQueries.Any() ? "" : "none")"> | <a href="#" onclick="toggle_visibility('relatedMain');"> Related searches</a></span>
-        </div>
-    </div>
-    <div class="col-md-3 hidden-xs hidden-sm addThis-container">
-        <div class="addThis">
-            <span><img src="~/img/label_share.png" alt="Share" title="Share" width="51" /></span>
-            <div class="addthis_toolbox addthis_default_style ">
-                <a class="addthis_button_preferred_1"></a>
-                <a class="addthis_button_preferred_2"></a>
-                <a class="addthis_button_preferred_3"></a>
-                <a class="addthis_button_compact"></a>
-            </div>
         </div>
     </div>
 </div>

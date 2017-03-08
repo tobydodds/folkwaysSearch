@@ -8,19 +8,42 @@
     var imageSrc = string.IsNullOrEmpty(Model.ImageUrl) ? Url.Content("~/img/album-thumb.gif") : Model.ImageUrl;
 }
 
-<li class="clearfix">
-    <a class="imageLink" href="@Model.Url">
-        <img src="@imageSrc" alt="@imageAlt" />
-        <span class="content-type-overlay">ALBUM</span>
-    </a>
-    <ul>
-        <li><h2><a href="@Model.Url" title="@Model.Title">@Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))</a></h2></li>
-        <li title="@Model.Artist"><em>Artist</em>@Model.Artist.Truncate(Config.Instance.ItemTitleMaxLength)</li>
-        @if (!string.IsNullOrEmpty(Model.Year))
-        {
-            <li title="@Model.Year"><em>Year</em>@Model.Year.Truncate(Config.Instance.ItemTitleMaxLength)</li>
-        }    
-        <li title="@Model.CatalogNumber"><em>Catalog No.</em>@Model.CatalogNumber.Truncate(Config.Instance.ItemTitleMaxLength)</li>
-        @Html.Partial("~/Views/Search/BuyLinks.cshtml", Model)
-    </ul>
+<li class="card album-card col-xs-6 col-sm-2 search-result">
+    <div class="image">
+        <a href="@Model.Url">
+            <img src="@imageSrc" alt="@imageAlt" />
+            @*<span class="content-type-overlay">ALBUM</span>*@
+        </a>
+    </div>
+    <div class="details">
+        <div class="details-inner">
+            <a href="@Model.Url" title="@Model.Title" class="high title">
+                <span class="light">
+                    <span class="er">
+                        @Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))
+                    </span>
+                </span>
+            </a>
+            <div class="artist">
+                <p>Listen now!</p>
+            </div>
+        </div>
+    </div>
 </li>
+
+
+@*<a class="imageLink" href="@Model.Url">
+            <img src="@imageSrc" alt="@imageAlt" />
+            <span class="content-type-overlay">ALBUM</span>
+        </a>
+        <ul>
+            <li><h2><a href="@Model.Url" title="@Model.Title">@Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))</a></h2></li>
+            <li title="@Model.Artist"><em>Artist</em>@Model.Artist.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+            @if (!string.IsNullOrEmpty(Model.Year))
+            {
+                <li title="@Model.Year"><em>Year</em>@Model.Year.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+            }
+            <li title="@Model.CatalogNumber"><em>Catalog No.</em>@Model.CatalogNumber.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+            @Html.Partial("~/Views/Search/BuyLinks.cshtml", Model)
+        </ul>
+    </li>*@

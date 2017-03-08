@@ -1,0 +1,563 @@
+﻿@* This view is responsible for rendering filters *@
+@using SmithsonianSearch.Helpers
+@using SmithsonianSearch.Models
+@model SearchModel
+
+@{
+    var cssClass_1_5 = "first-5-options";
+    var cssClass_6_20 = "from-6-to-20-options";
+    var cssClass_21_40 = "from-21-to-40-options";
+
+    // Expected filters categories: [name in lower case] - [path to title image]. Add a new entry in case of a new category.
+    var filterImages = new Dictionary<string, string>()
+                            {
+                                { "artist", "~/img/label_artist.png" },
+                                { "country", "~/img/label_country.png" },
+                                { "culture", "~/img/label_culture.png" },
+                                { "decade", "~/img/label_decade.png" },
+                                { "format", "~/img/label_format.png" },
+                                { "genre", "~/img/label_genre.png" },
+                                { "gradelevel", "~/img/label_gradelevel.png" },
+                                { "instrument", "~/img/label_instrument.png" },
+                                { "label", "~/img/label_label.png" },
+                                { "language", "~/img/label_language.png" },
+                                { "region", "~/img/label_region.png" },
+                                { "share", "~/img/label_share.png" },
+                                { "subregion", "~/img/label_subregion.png" }
+                            };
+}
+
+
+@if (!string.IsNullOrEmpty(Model.Query))
+{
+    <!-- BROWSE -->
+    <div id="browse" style="display: none">
+        <h3 class="text-hide">Browse by</h3>
+        <!-- BY GENRE -->
+        <div class="dropselectgenre border">
+            <select id="ddl" runat="server" onchange="javascript:document.location.href = this.value;">
+                <option value="">Select</option>
+                <option value=""></option>
+                <option value="/search?query=African%20American%20Music">African American Music</option>
+                <option value="/search?query=African%20American%20Spoken">African American Spoken</option>
+                <option value="/search?query=American%20Folk">American Folk</option>
+                <option value="/search?query=American%20History">American History</option>
+                <option value="/search?query=American%20Indian">American Indian</option>
+                <option value="/search?query=American%20Popular">American Popular</option>
+                <option value="/search?query=Bluegrass">Bluegrass</option>
+                <option value="/search?query=Blues">Blues</option>
+                <option value="/search?query=Cajun">Cajun</option>
+                <option value="/search?query=Caribbean">Caribbean</option>
+                <option value="/search?query=Celtic">Celtic</option>
+                <option value="/search?query=Central%20Asia">Central Asia</option>
+                <option value="/search?query=Children's">Children's</option>
+                <option value="/search?query=Classical">Classical</option>
+                <option value="/search?query=Contemporary">Contemporary &amp; Electronic</option>
+                <option value="/search?query=Country">Country</option>
+                <option value="/search?query=Documentary">Documentary</option>
+                <option value="/search?query=Drama">Drama</option>
+                <option value="/search?query=Gospel">Gospel</option>
+                <option value="/search?query=Hawai'i">Hawai'i</option>
+                <option value="/search?query=Historical%20Song">Historical Song</option>
+                <option value="/search?query=Holiday">Holiday</option>
+                <option value="/search?query=Humor">Humor</option>
+                <option value="/search?query=India">India</option>
+                <option value="/search?query=Islamica">Islamica</option>
+                <option value="/search?query=Jazz">Jazz &amp; Ragtime</option>
+                <option value="/search?query=Judaica">Judaica</option>
+                <option value="/search?query=Language%20Instruction">Language Instruction</option>
+                <option value="/search?query=Latin">Latin</option>
+                <option value="/search?query=Miscellany">Miscellany</option>
+                <option value="/search?query=Music%20Instruction">Music Instruction</option>
+                <option value="/search?query=Old%20Time">Old Time</option>
+                <option value="/search?query=Oral%20History">Oral History &amp; Biography</option>
+                <option value="/search?query=Poetry">Poetry</option>
+                <option value="/search?query=Prose">Prose</option>
+                <option value="/search?query=Psychology">Psychology &amp; Health</option>
+                <option value="/search?query=Sacred">Sacred</option>
+                <option value="/search?query=Science">Science &amp; Nature</option>
+                <option value="/search?query=Sounds">Sounds</option>
+                <option value="/search?query=Soundtracks">Soundtracks &amp; Musicals</option>
+                <option value="/search?query=Spoken%20Word">Spoken Word</option>
+                <option value="/search?query=Struggle">Struggle &amp; Protest</option>
+                <option value="/search?query=World">World</option>
+                <option value="/search?query=World%20History">World History</option>
+            </select>
+        </div>
+        <!-- BY COUNTRY -->
+        <!-- BROWSE BY GEO -->
+        <div id="browse-by-geo" class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="/">Geography<span class="caret"></span> </a>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-submenu">
+                    <a href="/search?query=Africa" tabindex="-1">Africa</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Eastern%20Africa">Eastern Africa</a>
+                            <ul class="dropdown-menu">
+                                <li><span>Burundi</span></li>
+                                <li><span>Comoros</span></li>
+                                <li><span>Djibouti</span></li>
+                                <li><a href="http://s.si.edu/country-eritrea">Eritrea</a></li>
+                                <li><a href="http://s.si.edu/country-ethiopia">Ethiopia</a></li>
+                                <li><a href="http://s.si.edu/country-kenya">Kenya</a></li>
+                                <li><a href="http://s.si.edu/country-madagascar">Madagascar</a></li>
+                                <li><a href="http://s.si.edu/country-malawi">Malawi</a></li>
+                                <li><span>Mauritius</span></li>
+                                <li><span>Mayotte</span></li>
+                                <li><a href="http://s.si.edu/country-mozambique">Mozambique</a></li>
+                                <li><span>Reunion</span></li>
+                                <li><a href="http://s.si.edu/country-rwanda">Rwanda</a></li>
+                                <li><span>Seychelles</span></li>
+                                <li><a href="http://s.si.edu/country-somalia">Somalia</a></li>
+                                <li><a href="http://s.si.edu/country-tanzania">Tanzania</a></li>
+                                <li><a href="http://s.si.edu/country-uganda">Uganda</a></li>
+                                <li><a href="http://s.si.edu/country-zambia">Zambia</a></li>
+                                <li><a href="http://s.si.edu/country-zambia">Zimbabwe</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Middle%20Africa">Middle Africa</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/search?query=Burundi">Burundi</a></li>
+                                <li><a href="http://s.si.edu/country-angola">Angola</a></li>
+                                <li><a href="http://s.si.edu/country-cameroon">Cameroon</a></li>
+                                <li><a href="http://s.si.edu/country-central-african-republic">Central African Republic</a></li>
+                                <li><a href="http://s.si.edu/country-chad">Chad</a></li>
+                                <li><span>Congo (Brazzaville)</span></li>
+                                <li><a href="http://s.si.edu/country-congo-democratic-republic">Congo (Democratic Republic)</a></li>
+                                <li><a href="http://s.si.edu/country-equatorial-guinea">Equatorial Guinea</a></li>
+                                <li><a href="http://s.si.edu/country-gabon">Gabon</a></li>
+                                <li><span>Sao Tome and Principe</span></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Northern%20Africa">Northern Africa</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/search?query=Burundi">Burundi</a></li>
+                                <li><a href="http://s.si.edu/country-algeria">Algeria</a></li>
+                                <li><a href="http://s.si.edu/country-egypt">Egypt</a></li>
+                                <li><a href="http://s.si.edu/country-libya">Libya</a></li>
+                                <li><a href="http://s.si.edu/country-morocco">Morocco</a></li>
+                                <li><a href="http://s.si.edu/country-sudan">Sudan</a></li>
+                                <li><a href="http://s.si.edu/country-tunisia">Tunisia</a></li>
+                                <li><span>Western Sahara</span></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Southern%20Africa">Southern Africa</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-botswana">Botswana</a></li>
+                                <li><a href="http://s.si.edu/country-lesotho">Lesotho</a></li>
+                                <li><a href="http://s.si.edu/country-namibia">Namibia</a></li>
+                                <li><a href="http://s.si.edu/country-south-africa">South Africa</a></li>
+                                <li><a href="http://s.si.edu/country-swaziland">Swaziland</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Western%20Africa">Western Africa</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-benin">Benin</a></li>
+                                <li><a href="http://s.si.edu/country-burkina-faso">Burkina Faso</a></li>
+                                <li><span>Cape Verde</span></li>
+                                <li><a href="http://s.si.edu/country-cote-divoire">Cote d'Ivoire</a></li>
+                                <li><a href="http://s.si.edu/country-gambia">Gambia</a></li>
+                                <li><a href="http://s.si.edu/country-ghana">Ghana</a></li>
+                                <li><a href="http://s.si.edu/country-guinea">Guinea</a></li>
+                                <li><a href="http://s.si.edu/country-guinea-bissau">Guinea-Bissau</a></li>
+                                <li><a href="http://s.si.edu/country-liberia">Liberia</a></li>
+                                <li><a href="http://s.si.edu/country-mali">Mali</a></li>
+                                <li><span>Mauritania</span></li>
+                                <li><a href="http://s.si.edu/country-niger">Niger</a></li>
+                                <li><a href="http://s.si.edu/country-nigeria">Nigeria</a></li>
+                                <li><span>Saint Helena</span></li>
+                                <li><a href="http://s.si.edu/country-senegal">Senegal</a></li>
+                                <li><a href="http://s.si.edu/country-sierra-leone">Sierra Leone</a></li>
+                                <li><a href="http://s.si.edu/country-togo">Togo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a href="/search?query=Americas" tabindex="-1">Americas</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Caribbean">Caribbean</a>
+                            <ul class="dropdown-menu">
+                                <li><span>Anguilla</span></li>
+                                <li><a href="http://s.si.edu/country-antigua-and-barbuda">Antigua and Barbuda</a></li>
+                                <li><span>Aruba</span></li>
+                                <li><a href="http://s.si.edu/country-bahamas">Bahamas</a></li>
+                                <li><a href="http://s.si.edu/country-barbados">Barbados</a></li>
+                                <li><a href="http://s.si.edu/country-british-virgin-islands">British Virgin Islands</a></li>
+                                <li><span>Cayman Islands</span></li>
+                                <li><a href="http://s.si.edu/country-cuba">Cuba</a></li>
+                                <li><span>Dominica</span></li>
+                                <li><a href="http://s.si.edu/country-dominican-republic">Dominican Republic</a></li>
+                                <li><a href="http://s.si.edu/country-grenada">Grenada</a></li>
+                                <li><a href="http://s.si.edu/country-guadeloupe">Guadeloupe</a></li>
+                                <li><a href="http://s.si.edu/country-haiti">Haiti</a></li>
+                                <li><a href="http://s.si.edu/country-jamaica">Jamaica</a></li>
+                                <li><a href="http://s.si.edu/country-martinique">Martinique</a></li>
+                                <li><span>Montserrat</span></li>
+                                <li><span>Netherlands Antilles</span></li>
+                                <li><a href="http://s.si.edu/country-puerto-rico">Puerto Rico</a></li>
+                                <li><a href="http://s.si.edu/country-saint-kitts-and-nevis">Saint Kitts and Nevis</a></li>
+                                <li><a href="http://s.si.edu/country-saint-lucia">Saint Lucia</a></li>
+                                <li><span>Saint Vincent and the Grenadines</span></li>
+                                <li><a href="http://s.si.edu/country-trinidad-and-tobago">Trinidad and Tobago</a></li>
+                                <li><span>Turks and Caicos</span></li>
+                                <li><a href="http://s.si.edu/country-virgin-islands-of-the-us">Virgin Islands of the United States</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Central%20America">Central America</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-belize">Belize</a></li>
+                                <li><a href="http://s.si.edu/country-costa-rica">Costa Rica</a></li>
+                                <li><a href="http://s.si.edu/country-el-salvador">El Salvador</a></li>
+                                <li><a href="http://s.si.edu/country-guatemala">Guatemala</a></li>
+                                <li><a href="http://s.si.edu/country-honduras">Honduras</a></li>
+                                <li><a href="http://s.si.edu/country-nicaragua">Nicaragua</a></li>
+                                <li><a href="http://s.si.edu/country-panama">Panama</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Northern%20America">Northern America</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-bermuda">Bermuda</a></li>
+                                <li><a href="http://s.si.edu/country-canada">Canada</a></li>
+                                <li><a href="http://s.si.edu/country-greenland">Greenland</a></li>
+                                <li><a href="/search?query=Hawaii">Hawaii</a></li>
+                                <li><a href="http://s.si.edu/country-mexico">Mexico</a></li>
+                                <li><span>Saint Pierre and Miquelon</span></li>
+                                <li><a href="http://s.si.edu/country-united-states">United States</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Southern%20America">Southern America</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-argentina">Argentina</a></li>
+                                <li><a href="http://s.si.edu/country-bolivia">Bolivia</a></li>
+                                <li><a href="http://s.si.edu/country-brazil">Brazil</a></li>
+                                <li><a href="http://s.si.edu/country-chile">Chile</a></li>
+                                <li><a href="http://s.si.edu/country-colombia">Colombia</a></li>
+                                <li><a href="http://s.si.edu/country-ecuador">Ecuador</a></li>
+                                <li><span>Falkland Islands (Islas Malvinas)</span></li>
+                                <li><a href="http://s.si.edu/country-french-guiana">French Guiana</a></li>
+                                <li><a href="http://s.si.edu/country-guyana">Guyana</a></li>
+                                <li><a href="http://s.si.edu/country-paraguay">Paraguay</a></li>
+                                <li><a href="http://s.si.edu/country-peru">Peru</a></li>
+                                <li><a href="http://s.si.edu/country-suriname">Suriname</a></li>
+                                <li><a href="http://s.si.edu/country-uruguay">Uruguay</a></li>
+                                <li><a href="http://s.si.edu/country-venezuela">Venezuela</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a href="/search?query=Asia" tabindex="-1">Asia</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Central%20Asia">Central Asia</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-kazakhstan">Kazakhstan</a></li>
+                                <li><a href="http://s.si.edu/country-kyrgyzstan">Kyrgyzstan</a></li>
+                                <li><a href="http://s.si.edu/country-tajikistan">Tajikistan</a></li>
+                                <li><a href="http://s.si.edu/country-turkmenistan">Turkmenistan</a></li>
+                                <li><a href="http://s.si.edu/country-uzbekistan">Uzbekistan</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=North%20Eastern%20Asia">Northeastern Asia</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-china">China</a></li>
+                                <li><a href="http://s.si.edu/country-hong-kong">Hong Kong</a></li>
+                                <li><a href="http://s.si.edu/country-japan">Japan</a></li>
+                                <li><a href="http://s.si.edu/country-north-korea">Korea, North</a></li>
+                                <li><a href="http://s.si.edu/country-south-korea">Korea, South</a></li>
+                                <li><span>Macao</span></li>
+                                <li><a href="http://s.si.edu/country-mongolia">Mongolia</a></li>
+                                <li><a href="http://s.si.edu/country-taiwan">Taiwan</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=South%20Eastern%20Asia">Southeastern Asia</a>
+                            <ul class="dropdown-menu">
+                                <li><span>Brunei</span></li>
+                                <li><a href="http://s.si.edu/country-cambodia">Cambodia</a></li>
+                                <li><a href="http://s.si.edu/country-indonesia">Indonesia</a></li>
+                                <li><a href="http://s.si.edu/country-laos">Laos</a></li>
+                                <li><a href="http://s.si.edu/country-malaysia">Malaysia</a></li>
+                                <li><a href="http://s.si.edu/country-myanmar">Myanmar</a></li>
+                                <li><a href="http://s.si.edu/country-philippines">Philippines</a></li>
+                                <li><span>Singapore</span></li>
+                                <li><a href="http://s.si.edu/country-thailand">Thailand</a></li>
+                                <li><span>Timor Leste</span></li>
+                                <li><a href="http://s.si.edu/country-vietnam">Vietnam</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Southern%20Asia">Southern Asia</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-afghanistan">Afghanistan</a></li>
+                                <li><a href="http://s.si.edu/country-bangladesh">Bangladesh</a></li>
+                                <li><a href="http://s.si.edu/country-bhutan">Bhutan</a></li>
+                                <li><a href="http://s.si.edu/country-india">India</a></li>
+                                <li><a href="http://s.si.edu/country-iran">Iran</a></li>
+                                <li><span>Maldives</span></li>
+                                <li><a href="http://s.si.edu/country-nepal">Nepal</a></li>
+                                <li><a href="http://s.si.edu/country-pakistan">Pakistan</a></li>
+                                <li><a href="http://s.si.edu/country-palestinian-territory">Palestinian Territory</a></li>
+                                <li><a href="http://s.si.edu/country-sri-lanka">Sri Lanka</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=South%20Western%20Asia">Western Asia</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-armenia">Armenia</a></li>
+                                <li><a href="http://s.si.edu/country-azerbaijan">Azerbaijan</a></li>
+                                <li><span>Bahrain</span></li>
+                                <li><a href="http://s.si.edu/country-cyprus">Cyprus</a></li>
+                                <li><span>Georgia</span></li>
+                                <li><a href="http://s.si.edu/country-iraq">Iraq</a></li>
+                                <li><a href="http://s.si.edu/country-israel">Israel</a></li>
+                                <li><a href="http://s.si.edu/country-jordan">Jordan</a></li>
+                                <li><span>Kuwait</span></li>
+                                <li><a href="http://s.si.edu/country-lebanon">Lebanon</a></li>
+                                <li><a href="http://s.si.edu/country-oman">Oman</a></li>
+                                <li><span>Qatar</span></li>
+                                <li><a href="http://s.si.edu/country-saudi-arabia">Saudi Arabia</a></li>
+                                <li><a href="http://s.si.edu/country-syria">Syria</a></li>
+                                <li><a href="http://s.si.edu/country-turkey">Turkey</a></li>
+                                <li><span>United Arab Emirates</span></li>
+                                <li><a href="http://s.si.edu/country-yemen">Yemen</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a href="/search?query=Europe" tabindex="-1">Europe</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Eastern%20Europe">Eastern Europe</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-belarus">Belarus</a></li>
+                                <li><a href="http://s.si.edu/country-bulgaria">Bulgaria</a></li>
+                                <li><a href="http://s.si.edu/country-byelorussia">Byelorussia</a></li>
+                                <li><a href="http://s.si.edu/country-czech-republic">Czech Republic</a></li>
+                                <li><a href="http://s.si.edu/country-hungary">Hungary</a></li>
+                                <li><a href="http://s.si.edu/country-moldova">Moldova</a></li>
+                                <li><a href="http://s.si.edu/country-poland">Poland</a></li>
+                                <li><a href="http://s.si.edu/country-romania">Romania</a></li>
+                                <li><a href="http://s.si.edu/country-russia">Russia</a></li>
+                                <li><a href="http://s.si.edu/country-slovakia">Slovakia</a></li>
+                                <li><a href="http://s.si.edu/country-ukraine">Ukraine</a></li>
+                                <li><a href="http://s.si.edu/country-ussr">USSR (former)</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Northern%20Europe">Northern Europe</a>
+                            <ul class="dropdown-menu">
+                                <li><span>Bouvet Island</span></li>
+                                <li><span>Channel Islands</span></li>
+                                <li><a href="http://s.si.edu/country-denmark">Denmark</a></li>
+                                <li><a href="http://s.si.edu/country-england">England</a></li>
+                                <li><a href="http://s.si.edu/country-estonia">Estonia</a></li>
+                                <li><span>Faroe Islands</span></li>
+                                <li><a href="http://s.si.edu/country-finland">Finland</a></li>
+                                <li><a href="http://s.si.edu/country-iceland">Iceland</a></li>
+                                <li><a href="http://s.si.edu/country-ireland">Ireland</a></li>
+                                <li><span>Isle of Man</span></li>
+                                <li><a href="http://s.si.edu/country-latvia">Latvia</a></li>
+                                <li><a href="http://s.si.edu/country-lithuania">Lithuania</a></li>
+                                <li><a href="http://s.si.edu/country-northern-ireland">Northern Ireland</a></li>
+                                <li><a href="http://s.si.edu/country-norway">Norway</a></li>
+                                <li><a href="http://s.si.edu/country-scotland">Scotland</a></li>
+                                <li><span>Svalbard and Jan Mayen</span></li>
+                                <li><a href="http://s.si.edu/country-sweden">Sweden</a></li>
+                                <li><a href="http://s.si.edu/country-united-kingdom">United Kingdom</a></li>
+                                <li><a href="http://s.si.edu/country-wales">Wales</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Southern%20Europe">Southern Europe</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-albania">Albania</a></li>
+                                <li><span>Andorra</span></li>
+                                <li><span>Bosnia-Herzegovina</span></li>
+                                <li><a href="http://s.si.edu/country-croatia">Croatia</a></li>
+                                <li><span>Gibraltar</span></li>
+                                <li><a href="http://s.si.edu/country-greece">Greece</a></li>
+                                <li><a href="http://s.si.edu/country-italy">Italy</a></li>
+                                <li><a href="http://s.si.edu/country-macedonia">Macedonia</a></li>
+                                <li><a href="http://s.si.edu/country-malta">Malta</a></li>
+                                <li><span>Monaco</span></li>
+                                <li><a href="http://s.si.edu/country-portugal">Portugal</a></li>
+                                <li><span>San Marino</span></li>
+                                <li><span>Serbia and Montenegro</span></li>
+                                <li><a href="http://s.si.edu/country-slovenia">Slovenia</a></li>
+                                <li><a href="http://s.si.edu/country-spain">Spain</a></li>
+                                <li><span>Vatican City (Holy See)</span></li>
+                                <li><a href="http://s.si.edu/country-yugoslavia">Yugoslavia (former)</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Europe">Western Europe</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-austria">Austria</a></li>
+                                <li><a href="http://s.si.edu/country-belgium">Belgium</a></li>
+                                <li><a href="http://s.si.edu/country-france">France</a></li>
+                                <li><a href="http://s.si.edu/country-germany">Germany</a></li>
+                                <li><span>Liechtenstein</span></li>
+                                <li><span>Luxembourg</span></li>
+                                <li><a href="http://s.si.edu/country-netherlands">Netherlands</a></li>
+                                <li><a href="http://s.si.edu/country-switzerland">Switzerland</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a href="/search?query=Oceania" tabindex="-1">Oceania</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Australia%20&amp;%20New%20Zealand">Australia &amp; New Zealand</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-australia">Australia</a></li>
+                                <li><span>Christmas Island</span></li>
+                                <li><span>Cocos (Keeling) Islands</span></li>
+                                <li><a href="http://s.si.edu/country-new-zealand">New Zealand</a></li>
+                                <li><span>Norfolk Island</span></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Melanesia">Melanesia</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-fiji">Fiji</a></li>
+                                <li><span>New Caledonia</span></li>
+                                <li><a href="http://s.si.edu/country-papua-new-guinea">Papua New Guinea</a></li>
+                                <li><a href="http://s.si.edu/country-solomon-islands">Solomon Islands</a></li>
+                                <li><a href="http://s.si.edu/country-vanuatu">Vanuatu</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Micronesia">Micronesia</a>
+                            <ul class="dropdown-menu">
+                                <li><span>Guam</span></li>
+                                <li><span>Kiribati</span></li>
+                                <li><span>Marshall Islands</span></li>
+                                <li><span>Nauru</span></li>
+                                <li><span>Northern Mariana Islands</span></li>
+                                <li><span>Palau</span></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="/search?query=Polynesia">Polynesia</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://s.si.edu/country-american-samoa">American Samoa</a></li>
+                                <li><span>Cook Islands</span></li>
+                                <li><a href="http://s.si.edu/country-french-polynesia">French Polynesia</a></li>
+                                <li><span>Johnston Island</span></li>
+                                <li><span>Niue</span></li>
+                                <li><span>Pitcairn</span></li>
+                                <li><a href="http://s.si.edu/country-samoa">Samoa</a></li>
+                                <li><span>Tokelau</span></li>
+                                <li><a href="http://s.si.edu/country-tonga">Tonga</a></li>
+                                <li><span>Tuvalu</span></li>
+                                <li><span>Wallis &amp; Futuna Islands</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="filters" style="display: none">
+        <h3 class="text-hide">Filter by</h3>
+        <a class="filter clear-filter" href="@Model.GetClearFiltersUrl()">Clear Filters</a>
+        <a href="#" id="close-filter" onclick="toggle_visibility('filters');">Hide Filters</a>
+        <div class="clearfix"></div>
+        @if (Model != null && Model.FiltersModel != null && Model.FiltersModel.FiltersOptions != null && Model.FiltersModel.FiltersOptions.Count > 0)
+        {
+        if (!string.IsNullOrEmpty(Model.Query))
+        {
+        <ul class="nav-list">
+            @foreach (var filter in Model.FiltersModel.FiltersOptions)
+            {
+            if (!filter.Key.Equals(Model.FiltersModel.ContentTypeParamName.ToLowerInvariant(), StringComparison.OrdinalIgnoreCase) && filter.Value.Any())
+            {
+            var optionsCount = filter.Value.Count();
+            var seeLessClass = optionsCount > 20 ? cssClass_21_40 : optionsCount > 5 ? cssClass_6_20 : cssClass_1_5;
+
+            <li class="nav-header">@RenderFilterTitle(filter.Key, filterImages)</li>
+                <li>
+                    <ul class="values">
+                        @foreach (var option in filter.Value.Take(5))
+                        {
+                        @RenderFilterOption(filter.Key, option, cssClass_1_5, "")
+                        }
+
+                        @if (optionsCount > 5)
+                        {
+                        <a href="#" class="@cssClass_1_5 seeMoreFilterOptions">see more <span>+</span></a>
+
+                        foreach (var option in filter.Value.Skip(5).Take(15))
+                        {
+                        @RenderFilterOption(filter.Key, option, cssClass_6_20, "display:none;")
+                        }
+
+                        if (optionsCount > 20)
+                        {
+                        <a href="#" class="@cssClass_6_20 seeMoreFilterOptions" style="display:none">see more <span>+</span></a>
+
+                        foreach (var option in filter.Value.Skip(20).Take(20))
+                        {
+                        @RenderFilterOption(filter.Key, option, cssClass_21_40, "display:none;")
+                        }
+
+                        if (optionsCount > 40)
+                        {
+                        <p class="@cssClass_21_40" style="display:none"><i>Please refine your search.</i></p>
+                        }
+                        }
+
+                        <a href="#" class="@seeLessClass seeLessFilterOptions" style="display:none">see less <span>&ndash;</span></a>
+                        }
+                    </ul>
+                </li>
+            }
+            }
+        </ul>
+        }
+        }
+    </div>
+}
+
+@helper RenderFilterOption(string filterName, SmithsonianSearch.Models.Filter option, string cssClass, string styleAttrValue)
+{
+    if (option != null && !string.IsNullOrEmpty(option.Title) && !option.Title.Equals("n/a"))
+    {
+    bool isApplied = Model.FiltersModel.IsFilterApplied(filterName, option.Title);
+    string checkedAttr = isApplied ? "checked" : string.Empty;
+
+    <li class="@cssClass" style="@styleAttrValue">
+        <label for="filterValue" title="@option" class="clearfix">
+            <input type="checkbox" name="filter-value" @checkedAttr class="filter" value="@Model.GetFilterUrl(filterName, option.Title, !isApplied)" />
+            <span title="@option">@option.Title.Truncate(55) (@option.ResultsCount.ToString("n0"))</span>
+        </label>
+    </li>
+    }
+}
+
+@helper RenderFilterTitle(string filter, Dictionary<string, string> filterImages)
+{
+    if (filterImages.ContainsKey(filter.ToLowerInvariant()))
+    {
+    <img src="@Url.Content(filterImages[filter.ToLowerInvariant()])" alt="@filter" />
+    }
+    else
+    {
+    @filter
+    }
+}

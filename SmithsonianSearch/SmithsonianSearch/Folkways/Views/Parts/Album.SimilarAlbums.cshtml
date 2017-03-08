@@ -1,0 +1,14 @@
+﻿@using Folkways.Collection.Models
+@{
+    var similarAlbums = (IList<AlbumPart>)Model.SimilarAlbums;
+}
+@if (similarAlbums.Any()) {
+    <header>
+        <h1>@T("Similar Albums")</h1>
+    </header>
+    <ul>
+        @foreach (var album in similarAlbums) {
+            <li>@Html.ItemDisplayLink(album)</li>
+        }
+    </ul>
+}

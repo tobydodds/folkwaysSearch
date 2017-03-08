@@ -5,197 +5,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="http://www.folkways.si.edu/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/themes/folkways/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/themes/folkways/assets/favicons/favicon-16x16.png" sizes="16x16">
     <title>Smithsonian Folkways - Search</title>
-    <!--WEB FONTS-->
-    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
 
-    <!-- Bootstrap core CSS -->
-    @Styles.Render("~/css/bootstrap")
+    <script>(function (d) { d.className = "dyn" + d.className.substring(6, d.className.length); })(document.documentElement);</script>
+    <!-- Fonts-->
+    <script src="https://use.typekit.net/eiz7zfx.js"></script>
+    <script>try { Typekit.load(); } catch (e) { }</script>
 
-    <!-- Styles for jquery.ui.autocomplete. -->
-    @Styles.Render("~/css/jquery")
+    <script src="/Scripts/jquery.min.js" type="text/javascript"></script>
 
     <!--Folkways CSS-->
-    <link href="~/css/folkways_new.css" rel="stylesheet" />
+    <link href="/Styles/folkways.css" rel="stylesheet" />
+    @*<link href="~/css/bootstrap.css" rel="stylesheet">*@
 
-    <!--[if IE 8]>
-        <link href="@Url.Content("~/css/ie8.css")" rel="stylesheet">
-    <![endif]-->
-    <!--[if lt IE 8]>
-        <link href="@Url.Content("~/css/bootstrap-ie7.css")" rel="stylesheet">
-        <link href="@Url.Content("~/css/ie7.css")" rel="stylesheet">
-    <![endif]-->
-    <script type="text/javascript">var switchTo5x = true;</script>
-
-    <script type="text/javascript" src="@Url.Content("~/Scripts/pickle/pickle.js")"></script>
-    <link rel="stylesheet" href="@Url.Content("~/Scripts/pickle/skins/button_mini_grey/_stylesheet.css")" />
-
-    <!-- BUY BUTTON POPUP -->
-    <script type="text/javascript">
-        function addProduct(internalid) {
-
-            var data = { "internalid": internalid, "quantity": 1 };
-
-            jQuery.getJSON("http://folkways-store.si.edu/checkout-2-04-0/services/live-order-line-newgen.ss?callback=?", data, function () { })
-             .done(function (response) {
-
-                 var cartJSON = jQuery.parseJSON(response);
-                 var item = findItem(cartJSON['latest_addition'], cartJSON['lines']);
-
-
-                 //fills in the modal information from json returned
-                 jQuery('#item_thumbnail').attr('src', item[0].item.storedisplaythumbnail)
-                 jQuery('#name').html(item[0].item.displayname)
-                 jQuery('#sku').html(item[0].item.itemid)
-                 jQuery('#price').html(item[0].item.pricelevel1_formatted)
-                 jQuery('#description').html(item[0].item.storedescription)
-
-
-                 jQuery('#modalSuccess').modal('show');
-
-             });
-        }
-
-        function findItem(internalid, items) {
-            return jQuery.grep(items, function (n, i) {
-                return n.internalid == internalid;
-            });
-        };
-    </script>
 </head>
 
-<body>
-
-    <div class="container">
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"><img src="~/img/nav-menu.png" class="img-responsive"></span>
-                </button>
-                <a href="http://folkways-store.si.edu/Checkout/cart.ssp" class="view-cart pull-right text-hide"><img src="~/img/nav-shopping.png" class="img-responsive" alt="View cart" /></a>
-                @*<a href="http://folkways-store.si.edu/s.nl?sc=3&c=297799&n=1&ext=T" class="view-cart pull-right text-hide"><img src="~/img/nav-shopping.png" class="img-responsive" alt="View cart" /></a>*@
-                <a class="navbar-brand" href="/"><img src="~/img/folkways-logo.png" class="img-responsive" alt="Smithsonian Institution" /></a>
+<body class="folkways-site">
+    <a href="#main-content" class="skip-main">Skip to main content</a>
+    <!-- Site Toggle-->
+    <div id="site-toggle" class="site-toggle">
+        <div class="container">
+            <div class="smithsonian-logo">
+                <img src="/assets/images/logo/smithsonian-alt-logo_280x60.png" alt="Folklife Logo" class="visible-sm visible-md" />
+                <img src="/assets/images/logo/smithsonian-alt-logo_320x60.png" alt="Folklife Logo" class="visible-lg" />
             </div>
-            <div class="collapse navbar-collapse shadow">
-
-                <ul class="nav navbar-nav">
-                    <li class="dropdown" id="accountmenu">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Find Recordings<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="/new-releases/smithsonian">new releases</a></li>
-                            <li><a tabindex="-1" href="/bestsellers/smithsonian">best sellers</a></li>
-                            <li><a tabindex="-1" href="/staff-picks/smithsonian">staff picks</a></li>
-                            <li><a tabindex="-1" href="/browse-collection/smithsonian">browse by collection</a></li>
-                            <li><a tabindex="-1" href="/browse-series/smithsonian">browse by series</a></li>
-                            <li><a tabindex="-1" href="/gift-certificates/smithsonian">gift certificates</a></li>
-                            <li><a tabindex="-1" href="/books-and-teaching-kits/smithsonian">books</a></li>
-                            <li><a tabindex="-1" href="/videos-dvd-vhs/smithsonian">dvds</a></li>
-                            <li><a tabindex="-1" href="/merchandise/smithsonian">merchandise</a></li>
-                            <li><a tabindex="-1" href="http://s.si.edu/vinyl-smithsonian">vinyl</a></li>
+            <div class="right-site-toggle">
+                <div class="hidden-xs site-toggle-text">
+                    <div class="tagline">Music of the people, by the people, for the people</div><a href="http://folklife-refresh.si.edu" class="site-toggle-link folkways-site-toggle-link">Folklife</a><a href="http://folkways-refresh.si.edu" class="site-toggle-link folkways-site-toggle-link">Folkways</a><a href="http://festival-refresh.si.edu" class="site-toggle-link festival-site-toggle-link">Festival</a>
+                </div>
+                <div class="folkways-icons">
+                    <a href="/account" target="_blank" class="folkways-icon-link">
+                        <div aria-hidden="true" class="icon-user folkways-icon nav-icon"></div>
+                    </a><a href="/cart" target="_blank" class="folkways-icon-link">
+                        <div aria-hidden="true" class="icon-basket folkways-icon nav-icon"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar outside is a click area to close open nav-->
+    <div class="navbar-outside"></div>
+    <!-- Navbar-->
+    <nav id="navbar" class="navbar">
+        <div class="navbar-header container">
+            <div class="ul row">
+                <!-- Logo-->
+                <div class="logo-wrapper col-sm-2">
+                    <div id="logo" class="logo">
+                        <div class="one-line-logos">
+                            <a href="/" tabindex="-1">
+                                <img src="/assets/images/logo/folkways_oneLine_160.png" alt="Folkways Logo" class="one-line-logo mobile-one-line-logo visible-xs" />
+                                <img src="/assets/images/logo/folkways_oneLine_224.png" alt="Folkways Logo" class="one-line-logo tablet-one-line-logo visible-sm visible-md" />
+                                <img src="/assets/images/logo/folkways_oneLine_258.png" alt="Folkways Logo" class="one-line-logo desktop-one-line-logo visible-lg" />
+                            </a>
+                        </div>
+                        <div class="block-logos">
+                            <a href="/">
+                                <img src="/assets/images/logo/folkways_logo_200x200.png" alt="Folkways Logo" class="block-logo mobile-block-logo visible-xs visible-sm" />
+                                <img src="/assets/images/logo/folkways_logo_280x280.png" alt="Folkways Logo" class="block-logo tablet-block-logo visible-md" />
+                                <img src="/assets/images/logo/folkways_logo_320x320.png" alt="Folkways Logo" class="block-logo desktop-block-logo visible-lg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="folkways-nav col-sm-3"><a href="/explore/smithsonian">Explore</a><a href="/learn/smithsonian">Learn</a><a href="/join/smithsonian">Join</a><a href="/shop/smithsonian">Shop</a></div>
+                <!-- Search Bar-->
+                <form action="/" class="search-bar desktop-search-bar col-sm-offset-1 col-sm-5 col-md-5 col-md-offset-1 col-lg-offset-2 col-lg-6">
+                    <input id="search-input" placeholder="Search..." type="search" name="q" value="" />
+                </form>
+                <!-- Main Navigation Icons-->
+                <div class="nav-icons col-sm-3 col-lg-2">
+                    <div id="menu-icon" aria-hidden="true" title="menu" tabindex="0" class="icon-menu nav-icon main-nav-icon"></div>
+                    <div id="share-icon" aria-hidden="true" title="share" tabindex="0" class="icon-share nav-icon main-nav-icon"></div>
+                    <div id="search-icon" aria-hidden="true" title="search" tabindex="0" class="icon-search nav-icon main-nav-icon"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Full Navigation Dropdown-->
+        <div id="header-nav" class="header-nav">
+            <div class="container">
+                <ul class="header-nav-row row">
+                    <li class="header-nav-main-item col-sm-2">
+                        <a href="/explore" class="header-nav-title">Explore</a>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item visible-xs"><a href="/explore/smithsonian">Explore Overview</a></li>
+                            <li class="header-nav-sub-item"><a href="/magazine">Folkways Magazine*</a></li>
+                            <li class="header-nav-sub-item">Articles</li>
+                            <li class="header-nav-sub-item">Sounds</li>
+                            <li class="header-nav-sub-item">Videos</li>
                         </ul>
                     </li>
-                    <li class="dropdown" id="accountmenu">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Explore Folkways<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="/magazine">folkways magazine</a></li>
-                            <li><a tabindex="-1" href="/soundscapes/music/smithsonian">soundscapes</a></li>
-                            <li><a tabindex="-1" href="/artist-spotlight/smithsonian">artist spotlight</a></li>
-                            <li><a tabindex="-1" href="/recording-spotlight/music/smithsonian">recording spotlight</a></li>
-                            <li><a tabindex="-1" href="/peoples-picks/music/smithsonian">people's picks</a></li>
-                            <li><a tabindex="-1" href="/podcasts/smithsonian">podcasts</a></li>
-                            <li><a tabindex="-1" href="http://s.si.edu/radio-playlists-smithsonian">radio and playlists</a></li>
-                            <li><a tabindex="-1" href="http://s.si.edu/videos-smithsonian">video</a></li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <a href="/learn" class="header-nav-title">Learn*</a>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item visible-xs"><a href="/learn">Learn Overview*</a></li>
+                            <li class="header-nav-sub-item">Lesson Plans</li>
+                            <li class="header-nav-sub-item">Workshops</li>
+                            <li class="header-nav-sub-item">Interactives</li>
+                            <li class="header-nav-sub-item">Libraries</li>
+                            <li class="header-nav-sub-item">Partners</li>
                         </ul>
                     </li>
-                    <li class="dropdown" id="accountmenu">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Tools for Teaching<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="/tools-for-teaching/smithsonian">introduction</a></li>
-                            <li><a tabindex="-1" href="/lesson-plans/smithsonian">lessons and activities</a></li>
-                            <li><a tabindex="-1" href="/interactive-features/smithsonian">interactive features</a></li>
-                            <li><a tabindex="-1" href="/workshops-teachers/smithsonian">Courses for teachers</a></li>
-                            <li><a tabindex="-1" href="/additional-resources/smithsonian">additional resources</a></li>
-                            <li><a tabindex="-1" href="/subscribe-folkways/smithsonian">subscribe</a></li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <div class="header-nav-title">Join</div>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item"><a href="/join/membership">Memberships*</a></li>
+                            <li class="header-nav-sub-item">Jobs &amp; Internships</li>
+                            <li class="header-nav-sub-item">Proposals</li>
+                            <li class="header-nav-sub-item">Mailing List</li>
+                            <li class="header-nav-sub-item">Visit Us</li>
                         </ul>
                     </li>
-                    <li class="dropdown" id="accountmenu">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">About Us<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="/mission-history/smithsonian">mission and history</a></li>
-                            <li><a tabindex="-1" href="/news-and-press">news and press</a></li>
-                            <li><a tabindex="-1" href="/folkways-staff/smithsonian">staff</a></li>
-                            <li><a tabindex="-1" href="/awards/smithsonian">awards</a></li>
-                            <li><a tabindex="-1" href="/music-partners/smithsonian">music partners</a></li>
-                            <li><a tabindex="-1" href="/sponsors/smithsonian">sponsors</a></li>
-                            <li><a tabindex="-1" href="/support-us/smithsonian">support us</a></li>
-                            <li><a tabindex="-1" href="/jobs">jobs/internships/research</a></li>
-                            <li><a tabindex="-1" href="/membership">membership</a></li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <a href="/shop" class="header-nav-title">Shop*</a>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item visible-xs"><a href="/shop">Shop Overview*</a></li>
+                            <li class="header-nav-sub-item"><a href="/shop#new-releases">New Releases</a></li>
+                            <li class="header-nav-sub-item"><a href="/shop#best-sellers">Best Sellers</a></li>
+                            <li class="header-nav-sub-item"><a href="/shop#essential-picks">Essential Picks</a></li>
+                            <li class="header-nav-sub-item"><a href="/shop#vinyl">Vinyl</a></li>
+                            <li class="header-nav-sub-item"><a href="/shop#books">Books</a></li>
+                            <li class="header-nav-sub-item"><a href="/shop#dvds">DVDs</a></li>
+                            <li class="header-nav-sub-item"><a href="/shop#merchandise">Merchandise</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" id="accountmenu">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="1000">Customer Service<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="/ordering-information/smithsonian">ordering information</a></li>
-                            <li><a tabindex="-1" href="/join-our-mailing-list/smithsonian">join our mailing list</a></li>
-                            <li><a tabindex="-1" href="/world-of-sound-catalog/smithsonian">print catalogues</a></li>
-                            <li><a tabindex="-1" href="/libraries-educational-institutions/smithsonian">libraries/educational institutions</a></li>
-                            <li><a tabindex="-1" href="/retailers-distribution/smithsonian">retailers and distribution</a></li>
-                            <li><a tabindex="-1" href="/wholesale-inquiries/smithsonian">wholesale inquiries</a></li>
-                            <li><a tabindex="-1" href="/licensing-requests/smithsonian">licensing</a></li>
-                            <li><a tabindex="-1" href="/download-manager/smithsonian">download manager</a></li>
-                            <li><a tabindex="-1" href="/download-support/smithsonian">download support</a></li>
-                            <li><a tabindex="-1" href="http://folkways-store.si.edu/Checkout/cart.ssp">shopping cart</a></li>
-                            <li><a tabindex="-1" class="my-account" href="https://checkout.netsuite.com/c.297799/MyAccount/index.ssp">my account</a></li>
-                            <li><a tabindex="-1" class="faq" href="/frequently-asked-questions/smithsonian">faq</a></li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <div class="header-nav-title">Customer Service</div>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item">Ordering Information</li>
+                            <li class="header-nav-sub-item">Print Catalogs</li>
+                            <li class="header-nav-sub-item">Distributors</li>
+                            <li class="header-nav-sub-item">Educational Discounts</li>
+                            <li class="header-nav-sub-item">Wholesale Inquiries</li>
+                            <li class="header-nav-sub-item">Licensing Requests</li>
+                            <li class="header-nav-sub-item">Download Manager</li>
+                            <li class="header-nav-sub-item">Shopping Cart</li>
+                            <li class="header-nav-sub-item">My Account</li>
+                            <li class="header-nav-sub-item">FAQ</li>
+                        </ul>
+                    </li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <div class="header-nav-title">News</div><br class="hidden-xs" />
+                        <div class="header-nav-title">About</div>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item">Mission &amp; History</li>
+                            <li class="header-nav-sub-item">Staff</li>
+                            <li class="header-nav-sub-item">Awards</li>
                         </ul>
                     </li>
                 </ul>
-
             </div>
-            <a href="http://folkways-store.si.edu/Checkout/cart.ssp" class="view-cart-link pull-right"><img src="~/img/nav-shopping.png" class="img-responsive" alt="View cart" /><img src="~/img/nav-shopping-desktop.png" alt="view cart" class="view-cart-icon-desktop" /> View cart</a>
         </div>
-        <div class="row logo-folkways">
-            <a href="/"><img src="~/img/logo_folkways.png" class="img-responsive" alt="Smithsonian Folkways" /></a>
-        </div>
-
-        <div class="row">
-            <a href="/search?query=folkways.si.edu">
-                <div class="main-search">
-                    <h1 class="text-hide">Search</h1>
-                </div>
+        <!-- SOCIAL SHARING-->
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"></div>
+        <!-- Social sharing icons-->
+        <div class="social-icons container">
+            <div id="share-facebook" class="social-icon-link">
+                <div aria-hidden="true" class="icon-facebook social-icon nav-icon"></div>
+            </div><a href="https://twitter.com/share?url=#PageURL&via=smithsonianfolk&text=Home" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=225,width=500');return false;" class="social-icon-link">
+                <div aria-hidden="true" class="icon-twitter social-icon nav-icon"></div>
+            </a><a href="https://plus.google.com/share?url=#PageURL" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="social-icon-link">
+                <div aria-hidden="true" class="icon-gplus social-icon nav-icon"></div>
+            </a><a href="https://www.pinterest.com/pin/create/button?url=#PageURL" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=800');return false;" class="social-icon-link">
+                <div aria-hidden="true" class="icon-pinterest social-icon nav-icon"></div>
+            </a><a href="https://www.tumblr.com/widgets/share/tool?url=#PageURL" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=540');return false;" class="social-icon-link">
+                <div aria-hidden="true" class="icon-tumblr social-icon nav-icon"></div>
+            </a><a href="mailto:?Subject=&#72;&#x6f;&#109;&#x65;&body=%0D%0A%0D%0Afrom%20&#104;&#x74;&#x74;&#x70;&#58;&#x2f;&#x2f;&#x66;&#111;&#108;&#107;&#x77;&#97;&#x79;&#115;&#x2e;&#108;&#117;&#107;&#x65;&#104;&#x61;&#116;&#102;&#x69;&#101;&#108;&#100;&#46;&#x63;&#x6f;&#x6d;" class="social-icon-link">
+                <div aria-hidden="true" class="icon-mail social-icon nav-icon"></div>
             </a>
         </div>
-        @RenderBody()
+        <!-- Mobile Search-->
+        <form action="/search" class="search-bar mobile-search-bar mobile-only">
+            <input id="search-input" placeholder="Search..." type="search" name="q" value="" />
+        </form>  <div id="browsenav" class="browsenav">
+            <div class="container">
+                <div class="browsenav-title col-sm-4">Browse By</div>
+                <div class="browsenav-categories col-sm-8">
+                    <ul class="row dropdown-wrapper">
+                        <li class="col-sm-3">
+                            <div class="dropdown">
+                                <div class="first-level-dropdown-title">Genre</div>
+                                <ul class="first-level-dropdown">
+                                    <li> African American Music</li>
+                                    <li> African American Spoken</li>
+                                    <li> American Folk</li>
+                                    <li> American History</li>
+                                    <li> American Indian</li>
+                                    <li> American Popular</li>
+                                    <li> Bluegrass</li>
+                                    <li> Blues</li>
+                                    <li> Cajun</li>
+                                    <li> Caribbean</li>
+                                    <li> Celtic</li>
+                                    <li> Central Asia</li>
+                                    <li> Children's</li>
+                                    <li> Classical</li>
+                                    <li> Contemporary &amp; Electronic</li>
+                                    <li> Country</li>
+                                    <li> Documentary</li>
+                                    <li> Drama</li>
+                                    <li> Gospel</li>
+                                    <li> Hawaii</li>
+                                    <li> Historical Song</li>
+                                    <li> Holiday</li>
+                                    <li> Humor</li>
+                                    <li> India</li>
+                                    <li> Islamica</li>
+                                    <li> Jazz &amp; Ragtime</li>
+                                    <li> Judaica</li>
+                                    <li> Language Instruction</li>
+                                    <li> Latin</li>
+                                    <li> Miscellany</li>
+                                    <li> Music Instruction</li>
+                                    <li> Old Time</li>
+                                    <li> Oral History &amp; Biography</li>
+                                    <li> Poetry</li>
+                                    <li> Prose</li>
+                                    <li> Psychology &amp; Health</li>
+                                    <li> Sacred</li>
+                                    <li> Science &amp; Nature</li>
+                                    <li> Sounds</li>
+                                    <li> Soundtracks &amp; Musicals</li>
+                                    <li> Spoken Word</li>
+                                    <li> Struggle &amp; Protest</li>
+                                    <li> World</li>
+                                    <li> World History</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="col-sm-3">
+                            <div class="dropdown">
+                                <div class="first-level-dropdown-title">Location</div>
+                                <ul class="first-level-dropdown">
+                                    <li>North America</li>
+                                    <li>South America</li>
+                                    <li>Europe</li>
+                                    <li>Africa</li>
+                                    <li>Asia</li>
+                                    <li>Australia</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="col-sm-3">
+                            <div class="dropdown">
+                                <div class="first-level-dropdown-title">Artists</div>
+                                <ul class="first-level-dropdown">
+                                    <li>Bobby Susser</li>
+                                    <li>Ensemble Hilka</li>
+                                    <li>Fannie Lou Hamer</li>
+                                    <li>Guillermo Velázquez y Los Leones de la Sierra de Xichú</li>
+                                    <li>Josh White</li>
+                                    <li>José-Luis Orozco</li>
+                                    <li>Koishimaru Izutsuya</li>
+                                    <li>Mariachi Los Camperos de Nati Cano</li>
+                                    <li>Ophie &amp; Da Websites, Bo Hog &amp; Da Rooters</li>
+                                    <li>Pete Seeger</li>
+                                    <li>Stanley and the Ten Sleepless Knights</li>
+                                    <li>The Brothers Nazaroff</li>
+                                    <li>Woodie Guthrie</li>
+                                    <li>...</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="col-sm-3">
+                            <div class="dropdown">
+                                <div class="first-level-dropdown-title">Label</div>
+                                <ul class="first-level-dropdown">
+                                    <li>Arhoolie Records</li>
+                                    <li>Cook Records</li>
+                                    <li>Fast Folk</li>
+                                    <li>Fast Folk Records</li>
+                                    <li>Folkways Records</li>
+                                    <li>M.O.R.E.</li>
+                                    <li>Monitor Records</li>
+                                    <li>Paredon Records</li>
+                                    <li>...</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav><!-- End Navbar-->
+    <div id="navspacer" class="navspacer"></div>
+    <div class="search-page">
+        <div class="title-bar">
+            <div class="container title-height">
+                <h1 class="page-title">
+                    Search
+                </h1>
+            </div>
+        </div>
 
+        <div class="container general-content">
+            @RenderBody()
+        </div>
+
+        <div class="newsletter-signup-wrapper container">
+            <div class="short-newsletter-signup">
+                <div class="newsletter-signup clearfix">
+                    <div class="newsletter-signup-copy">
+                        <div class="icon-mail"></div>
+                        Join our email list for the latest news from Smithsonian Center for Folklife and Cultural Heritage
+                    </div>
+                </div>
+            </div>
+            <div class="short-newsletter-signup short-newsletter-signup-form-wrapper">
+                <form action="/" class="newsletter-signup-form newsletter">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" />
+                </form>
+            </div>
+        </div>
     </div>
-    <footer role="contentinfo">
-        <ul class="container footer">
-            <li><a href="http://www.si.edu/">&copy; 2017 Smithsonian Institution</a></li>
-            <li><a href="http://www.si.edu/copyright">Copyright</a></li>
-            <li><a href="/folkways-staff/smithsonian">Contact</a></li>
-            <li><a href="http://www.si.edu/privacy/">Privacy</a></li>
-            <li><a href="/production-credits/smithsonian">Credits</a></li>
-        </ul>
+    <footer id="footer" class="footer">
+        <div class="container">
+            <footer id="footer" class="footer">
+                <ul class="footer-row footer-row-1 row">
+                    <li class="footer-nav-main-item col-sm-2">
+                        <a href="/explore/smithsonian" " class="footer-nav-title">Explore</a>
+                        <ul class="footer-nav-list">
+                            <li class="footer-nav-sub-item visible-xs"><a href="/explore/smithsonian">Explore Overview</a></li>
+                            <li class="footer-nav-sub-item"><a href="/magazine">Folkways Magazine*</a></li>
+                            <li class="footer-nav-sub-item">Articles</li>
+                            <li class="footer-nav-sub-item">Sounds</li>
+                            <li class="footer-nav-sub-item">Videos</li>
+                        </ul>
+                    </li>
+                    <li class="footer-nav-main-item col-sm-2">
+                        <a href="/learn" class="footer-nav-title">Learn*</a>
+                        <ul class="footer-nav-list">
+                            <li class="footer-nav-sub-item visible-xs"><a href="/learn">Learn Overview*</a></li>
+                            <li class="footer-nav-sub-item">Lesson Plans</li>
+                            <li class="footer-nav-sub-item">Workshops</li>
+                            <li class="footer-nav-sub-item">Interactives</li>
+                            <li class="footer-nav-sub-item">Libraries</li>
+                            <li class="footer-nav-sub-item">Partners</li>
+                        </ul>
+                    </li>
+                    <li class="footer-nav-main-item col-sm-2">
+                        <div class="footer-nav-title">Join</div>
+                        <ul class="footer-nav-list">
+                            <li class="footer-nav-sub-item"><a href="/join/membership">Memberships*</a></li>
+                            <li class="footer-nav-sub-item">Jobs &amp; Internships</li>
+                            <li class="footer-nav-sub-item">Proposals</li>
+                            <li class="footer-nav-sub-item">Mailing List</li>
+                            <li class="footer-nav-sub-item">Visit Us</li>
+                        </ul>
+                    </li>
+                    <li class="footer-nav-main-item col-sm-2">
+                        <a href="/shop" class="footer-nav-title">Shop*</a>
+                        <ul class="footer-nav-list">
+                            <li class="footer-nav-sub-item visible-xs"><a href="/shop">Shop Overview*</a></li>
+                            <li class="footer-nav-sub-item"><a href="/shop#new-releases">New Releases</a></li>
+                            <li class="footer-nav-sub-item"><a href="/shop#best-sellers">Best Sellers</a></li>
+                            <li class="footer-nav-sub-item"><a href="/shop#essential-picks">Essential Picks</a></li>
+                            <li class="footer-nav-sub-item"><a href="/shop#vinyl">Vinyl</a></li>
+                            <li class="footer-nav-sub-item"><a href="/shop#books">Books</a></li>
+                            <li class="footer-nav-sub-item"><a href="/shop#dvds">DVDs</a></li>
+                            <li class="footer-nav-sub-item"><a href="/shop#merchandise">Merchandise</a></li>
+                        </ul>
+                    </li>
+                    <li class="footer-nav-main-item col-sm-2">
+                        <div class="footer-nav-title">About</div>
+                        <ul class="footer-nav-list">
+                            <li class="footer-nav-sub-item">Mission &amp; History</li>
+                            <li class="footer-nav-sub-item">Staff</li>
+                            <li class="footer-nav-sub-item">Awards</li>
+                        </ul>
+                        <div class="footer-nav-title news-footer-nav hidden-xs">News</div>
+                    </li>
+                    <li class="footer-nav-main-item col-sm-2">
+                        <div class="footer-nav-title">Customer Service</div>
+                        <ul class="footer-nav-list">
+                            <li class="footer-nav-sub-item">Ordering Information </li>
+                            <li class="footer-nav-sub-item">Print Catalogs</li>
+                            <li class="footer-nav-sub-item">Distributors</li>
+                            <li class="footer-nav-sub-item">Educational Discounts</li>
+                            <li class="footer-nav-sub-item">Wholesale Inquiries</li>
+                            <li class="footer-nav-sub-item">Licensing Requests</li>
+                            <li class="footer-nav-sub-item">Download Manager</li>
+                            <li class="footer-nav-sub-item">Shopping Cart</li>
+                            <li class="footer-nav-sub-item">My Account</li>
+                            <li class="footer-nav-sub-item">FAQ</li>
+                        </ul>
+                    </li>
+                    <li class="footer-nav-main-item col-sm-2 visible-xs">
+                        <div class="footer-nav-title">News</div>
+                    </li>
+                </ul>
+
+                <hr class="footer-hr" />
+                <ul class="footer-row footer-row-2 row">
+                    <li class="footer-main-item col-sm-3">
+                        <div class="footer-logo active-footer-logo">
+                            <a href="/"><img src="/assets/images/logo/smithsonian_folkways_recordings.png" alt="Smithsonian Folkways Recordings" class="footer-logo-img" /></a>
+                        </div>
+                    </li>
+                    <li class="footer-main-item col-sm-3">
+                        <div class="footer-logo">
+                            <a href="http://folklife.si.edu"><img src="/assets/images/logo/smithsonian_center_for_folklife_and_cultural_heritage.png" alt="Smithsonian Center for Folklife and Cultural Heritage" class="footer-logo-img folklife-footer-logo-img" /></a>
+                        </div>
+                    </li>
+                    <li class="footer-main-item col-sm-3">
+                        <div class="footer-logo">
+                            <a href="http://festival.si.edu"><img src="/assets/images/logo/smithsonian_folklife_festival.png" alt="Smithsonian Folklife Festival" class="footer-logo-img" /></a>
+                        </div>
+                    </li>
+                    <li class="footer-main-item col-sm-1">
+                        <ul class="footer-list copyright-list">
+                            <li class="footer-sub-item copyright-list-item"><a href="#">Copyright</a></li>
+                            <li class="footer-sub-item copyright-list-item"><a href="#">Contact</a></li>
+                            <li class="footer-sub-item copyright-list-item"><a href="#">Privacy</a></li>
+                            <li class="footer-sub-item copyright-list-item"><a href="#">Credits</a></li>
+                        </ul>
+                    </li>
+                    <li class="footer-main-item col-sm-2 social-media">
+                        <div class="footer-sub-item social-media-title">Connect with us</div>
+                        <ul class="footer-list">
+                            <!-- Folklife or Festival-->
+                            <li class="social-media-icon"><a href="http://www.facebook.com/smithsonianfolkwaysrecordings" target="_blank" class="icon-facebook"></a></li>
+                            <li class="social-media-icon"><a href="https://twitter.com/folkways" target="_blank" class="icon-twitter"></a></li>
+                            <li class="social-media-icon"><a href="https://www.youtube.com/user/SmithsonianFolkways" target="_blank" class="icon-youtube"></a></li>
+                            <li class="social-media-icon"><a href="https://www.pinterest.com/smithsofolkways/" target="_blank" class="icon-pinterest"></a></li>
+                            <li class="social-media-icon"><a href="https://www.instagram.com/smithsonianfolkways/" target="_blank" class="icon-instagrem"></a></li>
+                            <li class="social-media-icon"><a href="https://soundcloud.com/smithsonian-folkways" target="_blank" class="icon-soundcloud"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="footer-row footer-row-3 row">
+                    <li class="footer-main-item col-sm-3">
+                        <div class="smithsonian-institution-logo"><img src="/assets/images/logo/smithsonian_institution.png" alt="Smithsonian Institution" /></div>
+                    </li>
+                    <li class="footer-main-item col-sm-4">
+                        <div class="copyright">&copy; 2016 Smithsonian Institution</div>
+                    </li>
+                </ul>
+            </footer>
+        </div>
     </footer>
 
+    <script src="~/Scripts/folkways.pkgd.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    @Scripts.Render("~/Scripts/jquery")
-    @Scripts.Render("~/Scripts/bootstrap")
-    @Scripts.Render("~/Scripts/folkways")
-    <!-- Mini Profiler -->
-    @*MiniProfiler.RenderIncludes()*@
-    <script type="text/javascript">var addthis_config = { "data_track_addressbar": false };</script>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f4fe1f745e0431b"></script>
     <script>
         function toggle_visibility(id) {
             $(".filter-option").hide();
@@ -219,7 +476,7 @@
     <!-- END GOOGLE ANALYTICS -->
     <!-- FORESEE AUDIENCE SURVEY -->
     <script type="text/javascript">
-// <![CDATA[
+        // <![CDATA[
         cpp_value = "FOLKWAYS";
         // ]]></script>
     <script type="text/javascript" src="https://www.si.edu/fsrscripts/triggerParams.js"></script>
@@ -227,12 +484,12 @@
     <!-- WEBTRENDS SMARTSOURCE DATA COLLECTOR -->
     <script type="text/javascript" src="/Themes/Bootstrap/Scripts/webtrends.js"></script>
     <script type="text/javascript">
-// <![CDATA[
+        // <![CDATA[
         var _tag = new WebTrends();
         _tag.dcsGetId();
         // ]]></script>
     <script type="text/javascript">
-// <![CDATA[
+        // <![CDATA[
         _tag.dcsCustom = function () {
             // Add custom parameters here.
             //_tag.DCSext.param_name=param_value;
@@ -275,5 +532,7 @@
     </div><!-- /.modal -->
     <!--MODAL CONTENT END-->
 </body>
+
+
 
 </html>

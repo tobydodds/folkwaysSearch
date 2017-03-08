@@ -1,0 +1,22 @@
+﻿@using Folkways.Collection.Models
+@{
+    var part = (CreditsContainerPart)Model.ContentPart;
+}
+@if (part.Credits.Any())
+{
+    var agentGroups = part.Credits.GroupBy(x => x.Agent);
+    <div class="sidebar-item album-info">
+        <h4 class="genre">Credit(s)</h4>
+        <div class="copy">
+            @foreach (var group in agentGroups)
+            {
+                var agent = group.Key;
+                var agentName = agent.Name;
+                var roles = String.Join(", ", group.Where(x => x.Role != null).Select(x => x.Role.Name));
+                <span>
+                    <a href="/search?query=@Url.Encode(agent.Name)">@agent.Name</a> - @roles<br />
+                </span>
+            }
+        </div>
+    </div>
+}

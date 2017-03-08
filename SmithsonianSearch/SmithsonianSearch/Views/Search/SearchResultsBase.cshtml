@@ -9,10 +9,9 @@
     <div id="GsaUrl" style="display:none">@Html.Raw(Model.SearchModel.ComposeGsaSearchUrl(Config.Instance))</div>
 
     <div class="row">
-        <div class="col-md-3">
+        @*<div class="col-md-3">
             @Html.Partial("Filters", Model.SearchModel)
-        </div>
-        <div class="col-md-9">    
+        </div>*@  
             @Html.Partial("SpellingSuggestions", Model)
             @Html.Partial("RelatedQueries", Model)
             @Html.Partial("Tabs", Model.SearchModel)
@@ -41,4 +40,3 @@
             <a href="#" class="back-to-top">Back to Top</a>
         </div>
     </div>
-</div>
