@@ -615,7 +615,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Folkways\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
