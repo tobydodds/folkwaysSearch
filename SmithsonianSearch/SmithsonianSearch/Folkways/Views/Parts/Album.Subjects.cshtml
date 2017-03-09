@@ -1,0 +1,18 @@
+﻿@using Folkways.Collection.Models
+@{
+    var subjects = ((IEnumerable<Subject>)Model.ContentPart.Subjects).ToList();
+}
+@if (subjects.Any())
+{
+    <div class="sidebar-item album-info">
+        <h4 class="genre">Subject(s)</h4>
+        <div class="copy">
+            @for (var i = 0; i < subjects.Count; i++)
+            {
+                var subject = subjects[i];
+                <a href="/search?query=@Url.Encode(subject.Name)">@subject.Name</a>if (i < subjects.Count - 1)
+                {<span>; </span>}
+            }
+        </div>
+    </div>
+}

@@ -1,0 +1,19 @@
+﻿@using Folkways.Collection.Models
+@{
+    var countries = ((IEnumerable<Country>)Model.ContentPart.Countries).ToList();
+}
+@if (countries.Any())
+{
+    <div class="sidebar-item album-info">
+        <h4 class="genre">Country(s)</h4>
+        <div class="copy">
+            @for (var i = 0; i < countries.Count; i++)
+            {
+                var country = countries[i];
+                <a href="/search?query=@Url.Encode(country.Name)">@country.Name</a>if (i < countries.Count - 1)
+                {<span>; </span>}
+            }
+        </div>
+    </div>
+
+}

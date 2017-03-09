@@ -1,0 +1,26 @@
+﻿@* This view is responsible for rendering an album in tiles view *@
+@using SmithsonianSearch.Configuration
+@using SmithsonianSearch.Helpers
+@model SmithsonianSearch.Models.ResultItems.Album
+
+@{
+    var imageAlt = HttpUtility.UrlDecode(string.IsNullOrEmpty(Model.Title) ? "Link" : Model.Title);
+    var imageSrc = string.IsNullOrEmpty(Model.ImageUrl) ? Url.Content("~/img/album-thumb.gif") : Model.ImageUrl;
+}
+
+<li class="clearfix">
+    <a class="imageLink" href="@Model.Url">
+        <img src="@imageSrc" alt="@imageAlt" />
+        <span class="content-type-overlay">ALBUM</span>
+    </a>
+    <ul>
+        <li><h2><a href="@Model.Url" title="@Model.Title">@Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))</a></h2></li>
+        <li title="@Model.Artist"><em>Artist</em>@Model.Artist.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+        @if (!string.IsNullOrEmpty(Model.Year))
+        {
+            <li title="@Model.Year"><em>Year</em>@Model.Year.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+        }    
+        <li title="@Model.CatalogNumber"><em>Catalog No.</em>@Model.CatalogNumber.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+        @Html.Partial("~/Views/Search/BuyLinks.cshtml", Model)
+    </ul>
+</li>

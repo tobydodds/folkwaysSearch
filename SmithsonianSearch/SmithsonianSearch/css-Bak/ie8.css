@@ -1,0 +1,146 @@
+.navbar {margin: 0 -15px;position: relative;top: 0;}
+.navbar-header {float: left;}
+.navbar-form{width:90%;}
+.navbar-brand{padding: 0;}
+.navbar-collapse.collapse {
+    position: absolute;
+    left: 190px;
+    top: 0;
+    display: block !important;
+    padding: 0;
+    margin-left: 12px;
+}
+.navbar-collapse.collapse > ul > li{background:none !Important}
+.navbar-nav {margin-top:12px}
+.navbar-nav > li > a{ font-size: 11px;margin-top:0px !important;}
+.navbar-nav > li {float: left;}
+.navbar-nav > li > a:hover{color:#e07007 !Important}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {background: #fff;color: #e07007 !important;}
+.navbar-nav .open .dropdown-menu {background: #526C79;}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {background: none;}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {background: #fff !important;}
+ul.nav li.dropdown:hover > ul.dropdown-menu {display: block;}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+color: #e07007 !important;background:#fff !Important}
+.navbar .view-cart {display: none;}
+.navbar {background: url(http://www.folkways.si.edu/images/index/top-nav-bar.gif) 215px 0px no-repeat rgb(255, 255, 255);width: 980px;margin: 0px 0px 0px -15px;}
+.nav-list ul {width:190px}
+.nav-list label span {font-size:11px}
+.caret, .navbar-toggle, #tabsMobile, #clearSearchBox {display:none !Important;}
+.view-cart-link img{display:none}
+.search-results h2 {font-size: 12px !Important;}
+.search-results h2 a{background: url(../img/title_bg.gif) no-repeat 100% 52%;}
+.search-results li em { font: bold 10px verdana, arial, sans-serif; }
+.search-results > li {float: left;width: 50%;min-height: 137px;padding-bottom:0;border-bottom:none}
+.search-results > li + li {margin-top: 0em;}
+.addThis { display: block; margin-top: 16px; text-align: right; float: right; width: 147px; }
+.addThis > div {float: left;margin-top:5px}
+#filters {display:inline-block;}
+#filters, .view-cart-link, #tabs, #relatedMain{display:block;}
+#tabs .tab-tools-teaching{width:167px !important}
+.view-cart-link{font: bold 0.9em Georgia, 'Times New Roman', serif;color: #E07007;margin: 14px 15px 0 0;text-transform: uppercase;}
+#filters h3, #related h3{color:#333}
+#relatedMain{padding:1em}
+#relatedMain h3{font-size:1em}
+#relatedMain h3,  #relatedMain li{display:inline}
+#relatedMain li{font-style:italic;padding:.5em}
+.ui-btn-corner-all, .ui-btn.ui-corner-all, .ui-slider-track.ui-corner-all, .ui-flipswitch.ui-corner-all, .ui-li-count {font-size:11px;width: 180px}
+.ui-icon-carat-d:after {background:none}
+.selectpicker {width:180px;background-image: url(../img/jquery.selectBox-arrow.gif);background-repeat:no-repeat;background-position:90% 40%;line-height:1.2;position:relative;left:0;z-index:2}
+.content-type-overlay{background:#333;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";}
+a.imageLink {float:left;margin-right:10px;max-height:110px;}
+a.imageLink, a.imageLink img {width:110px;height:110px;overflow:visible}
+.search-results li ul, .search-results li li{margin:0;padding:0}
+.search-results h2 {font-size: 14px;}
+.search-results li em {font: bold 10px verdana, arial, sans-serif;font-style:normal}
+.clear-filter {color: #E07007;}
+.container{width:992px;width: expression( document.body.clientWidth > 991 ? "992px" : "auto" ); /* sets max-width for IE */}
+.container-height > .row {   height: expression( this.scrollHeight < 501 ? "500px" : "auto" ); /* sets min-height for IE */}
+#filters, .logo-folkways{display:block !important;}
+#filters{position: relative;top:-65px}
+.logo-folkways{text-align: right;padding-right: 15px;}
+.logo-folkways a{max-width: 750px;float: right;}
+.filter-options, #close-filter{display:none;}
+.addThis{display:block;margin-top: 1em;}
+.addThis > span:first-child {display: block;padding: 4px 12px 0 0;float: left;}
+.addThis > span + span span{width: 16px;overflow: hidden;top: 14px;}
+#search-box input[type=text] {width: 70%;}
+.view-grid, .view-list{display:inline-block}
+#viewOption {display: block;}
+#viewOption *{float:left}
+.view {
+text-align: right;
+margin-top: 0px;
+position: relative;
+z-index: 100;
+left: 100px;
+}
+
+.view-grid, .view-list{display:inline-block;margin: -7px 0 0 5px;}
+#displayOptions img {margin: 2px -36px -30px 50px;}
+#sortOption {float: right;}
+.ui-select {margin: 0;width: 100%;}
+.ui-btn.ui-corner-all {padding: 5px 46px 7px 6px;margin-top: -4px;}
+#loading_text #text {left:50%;}
+#tabs .tab-all {width:48px;}
+#tabs .tab-albums {width:76px;}
+#tabs .tab-tracks {width:80px;}
+#tabs .tab-videos {width:76px;}
+#tabs .tab-playlists {width:90px;}
+#tabs .tab-articles {width:88px;}
+#tabs .tab-merchandise {width:126px;}
+#tabs .tab-tools-teaching{width:166px;}
+
+.container {
+width: 980px;
+}
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11 {
+float: left;
+}
+.col-md-12 {
+width: 100%;
+}
+.col-md-11 {
+width: 91.66666666666666%;
+}
+.col-md-10 {
+width: 83.33333333333334%;
+}
+.col-md-9 {
+width: 79.6%;
+}
+.col-md-8 {
+width: 66.66666666666666%;
+}
+.col-md-7 {
+width: 58.333333333333336%;
+}
+.col-md-6 {
+width: 50%;
+}
+.col-md-5 {
+width: 41.66666666666667%;
+}
+.col-md-4 {
+width: 33.33333333333333%;
+}
+.col-md-3 {
+width: 20.3%;
+}
+.col-md-2 {
+width: 16.666666666666664%;
+}
+.col-md-1 {
+width: 8.333333333333332%;
+}
+}

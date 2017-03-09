@@ -1,0 +1,11 @@
+﻿@using Folkways.Collection.Models
+@{
+    var albumPart = (AlbumPart)Model.ContentPart;
+}
+
+@if (albumPart.Abstract != null)
+{
+    <p>
+        @T("{0}", @Html.Raw(albumPart.Abstract))
+    </p>
+}

@@ -1,0 +1,6 @@
+D:\WWW\folkways\build\Compile\Folkways.dll.config
+D:\WWW\folkways\build\Compile\Folkways.dll
+D:\WWW\folkways\build\Compile\Folkways.pdb
+D:\WWW\folkways\src\Orchard.Web\Themes\Folkways\obj\Release\Folkways.csprojResolveAssemblyReference.cache
+D:\WWW\folkways\src\Orchard.Web\Themes\Folkways\obj\Release\Folkways.dll
+D:\WWW\folkways\src\Orchard.Web\Themes\Folkways\obj\Release\Folkways.pdb

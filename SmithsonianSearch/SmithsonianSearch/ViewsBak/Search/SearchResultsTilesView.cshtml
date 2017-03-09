@@ -1,0 +1,11 @@
+﻿@model SmithsonianSearch.Models.SearchResultsModels.SearchResultsModelMixed
+
+@if (Model.Items != null)
+{
+    foreach (var res in Model.Items)
+    {
+        @Html.DisplayFor(m => res)
+    }
+
+    @ViewHelperMethods.RenderLazyLoadingLink(Model.SearchModel)
+}

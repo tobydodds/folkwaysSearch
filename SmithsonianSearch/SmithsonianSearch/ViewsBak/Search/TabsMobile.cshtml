@@ -1,0 +1,41 @@
+﻿@* This view is responsible for rendering tabs in mobile browsers *@
+@using SmithsonianSearch.Helpers
+@using SmithsonianSearch.Models
+@using SmithsonianSearch.Models.Enums
+@model SearchModel
+
+<div id="tabsMobile">     
+    @{
+        // Add an entry in the following collection in case of a new content type
+        var contentTypes = new []
+                                {
+                                    new { ContentType = ContentTypesEnum.Mixed, Title = "Choose type: All", Order = 1 },
+                                    new { ContentType = ContentTypesEnum.Album, Title = "Albums", Order = 2 },
+                                    new { ContentType = ContentTypesEnum.Track, Title = "Tracks", Order = 3 },
+                                    new { ContentType = ContentTypesEnum.Video, Title = "Videos", Order = 4 },
+                                    new { ContentType = ContentTypesEnum.Playlist, Title = "Playlists", Order = 5 },
+                                    new { ContentType = ContentTypesEnum.Article, Title = "Articles", Order = 8 },
+                                    new { ContentType = ContentTypesEnum.Merchandise, Title = "Merchandise", Order = 9 },
+                                    new { ContentType = ContentTypesEnum.ToolForTeaching, Title = "Tools for Teaching", Order = 10 }
+                                };
+
+        var filteredContentTypes = Model.FiltersModel.AvailableContentTypes.Join(contentTypes, act => act, cti => cti.ContentType, (act, cti) => cti).OrderBy(cti => cti.Order);
+    }
+    
+    @if (filteredContentTypes != null && filteredContentTypes.Any())
+    {
+        @*<img src="~/img/label_type.png" alt="Filter by type" title="Filter by type" />*@
+        
+        <div class="row-fluid">
+            <select class="selectpicker" data-style="btn-primary">
+                @foreach (var ct in filteredContentTypes)
+                {
+                    var selected = ct.ContentType == Model.FiltersModel.ContentType ? "selected" : string.Empty;
+                      
+                    <option @selected value="@Model.GetTabUrl(ct.ContentType)">@ct.Title</option>
+                }
+            </select>
+        </div>
+        <div class="clearfix"> </div>
+    }
+</div>

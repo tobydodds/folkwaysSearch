@@ -27,7 +27,7 @@
         var renderResults = contentType.ContentType == Model.FiltersModel.ContentType;
         var cssClass = renderResults ? "selected " + contentType.CssClass : contentType.CssClass;
             
-        <a class="tab @cssClass" href="@Model.GetTabUrl(contentType.ContentType)" title=" @contentType.Title">        </a>
+        <a class="tab @cssClass" href="@Model.GetTabUrl(contentType.ContentType)" title=" @contentType.Title">       </a>
     }
     <div class="clearfix"> </div>
 </div>

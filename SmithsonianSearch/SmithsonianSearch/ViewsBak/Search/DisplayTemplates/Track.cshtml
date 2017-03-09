@@ -1,0 +1,34 @@
+﻿@* This view is responsible for rendering a track in tiles view *@
+@using SmithsonianSearch.Configuration
+@using SmithsonianSearch.Helpers
+@model SmithsonianSearch.Models.ResultItems.Track
+
+@{
+    var imageAlt = HttpUtility.UrlDecode(string.IsNullOrEmpty(Model.Title) ? "Link" : Model.Title);
+    var imageSrc = string.IsNullOrEmpty(Model.ImageUrl) ? Url.Content("~/img/track-thumb.gif") : Model.ImageUrl;
+}
+
+<li class="clearfix">
+    <a class="imageLink" href="@Model.Url">
+        <img src="@imageSrc" alt="@imageAlt" />
+        <span class="content-type-overlay">TRACK</span>
+    </a>
+    @if (Model.Player != null)
+    {
+        <div id="@Model.Player.ContainerId" class="track-player">&nbsp;</div>
+    }
+    <ul>
+        <li><h2><a href="@Model.Url" title="@Model.Title">@Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))</a></h2></li>
+        <li title="@Model.Artist"><em>Artist</em>@Model.Artist.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+        <li title="@Model.AlbumTitle"><em>Album</em>@Model.AlbumTitle.Truncate(Config.Instance.ItemFieldMaxLength)</li>
+        @if (!string.IsNullOrEmpty(Model.Year))
+        {
+            <li title="@Model.Year"><em>Year</em>@Model.Year.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+        }
+        @Html.Partial("~/Views/Search/BuyLinks.cshtml", Model)
+    </ul>
+</li>
+@if (Model.Player != null)
+{
+    @Html.Partial("PicklePlayerScript", Model.Player)
+}

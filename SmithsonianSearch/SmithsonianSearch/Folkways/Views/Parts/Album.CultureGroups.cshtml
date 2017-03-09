@@ -1,0 +1,20 @@
+﻿@using Folkways.Collection.Models
+@{
+    var cultureGroups = ((IEnumerable<CultureGroup>)Model.ContentPart.CultureGroups).ToList();
+}
+@if (cultureGroups.Any())
+{
+    <span>
+        <!--googleoff:all-->
+        <span class="labels">Culture Group(s)</span>
+        <!--googleon:all-->
+        @for (var i = 0; i < cultureGroups.Count; i++)
+        {
+        var cultureGroup = cultureGroups[i];
+        <a href="/search?query=@Url.Encode(cultureGroup.Name)">@cultureGroup.Name</a>if (i < cultureGroups.Count - 1)
+        {<span>; </span>}
+        }
+    </span><br />
+}
+
+

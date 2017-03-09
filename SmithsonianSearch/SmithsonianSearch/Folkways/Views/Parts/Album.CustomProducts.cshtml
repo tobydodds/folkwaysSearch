@@ -1,0 +1,11 @@
+﻿@using Folkways.Collection.Models
+@{
+    Style.Require("Folkways");
+    var albumPart = (AlbumPart)Model.ContentPart;
+}
+@if (albumPart.CustomProducts != null)
+{
+<div style="position: relative; display: block;">
+    @T(albumPart.CustomProducts)
+</div>
+}
