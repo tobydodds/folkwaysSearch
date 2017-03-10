@@ -1538,39 +1538,8 @@
         }
     }
 
-      #tabs .tab-all{background:#bac4c9 url(../img/tab_all_selected.png) no-repeat 50% 50%;width: 46px;} 
-      #tabs .tab-albums{width: 75px;} 
-      #tabs .tab-tracks{width: 76px;} 
-      #tabs .tab-tracks.selected{background-color:#879b02}
-      #tabs .tab-tracks:hover{background-color:#879b02}
-      #tabs .tab-videos{width: 68px;} 
-      #tabs .tab-playlists{width: 86px;} 
-      #tabs .tab-articles{width: 84px;} 
-      #tabs .tab-merchandise{width: 118px;} 
-      #tabs .tab-tools-teaching{width: 167px;}  
 
-      #tabsMobile {display:none}
-        #tabs{display:block}
 
-    #tabs {margin: 0.5em 0 1.5em;background: #bac4c9;width: 751px;}
-    #tabs img{display:none}
-    #tabs a {display: block;padding: 15px 0;height: 8px;float: left;border-right:1px solid #fff;} 
-    #tabs .tab-all{background:#bac4c9 url(../img/tab_all_selected.png) no-repeat 50% 50%;width: 51px;} 
-    #tabs .tab-all.selected, #tabs .tab-all:hover{background-color: #526c79}
-    #tabs .tab-albums{background:#bac4c9 url(../img/tab_albums_selected.png) no-repeat 50% 50%;width: 84px;} 
-    #tabs .tab-albums.selected, #tabs .tab-albums:hover{background-color:#e07007}
-    #tabs .tab-tracks{background:#bac4c9 url(../img/tab_tracks_selected.png) no-repeat 50% 50%;width: 78px;} 
-    #tabs .tab-tracks.selected, #tabs .tab-tracks:hover{background-color:#879b02}
-    #tabs .tab-videos{background:#bac4c9 url(../img/tab_videos_selected.png) no-repeat 50% 50%;width: 76px;} 
-    #tabs .tab-videos.selected, #tabs .tab-videos:hover{background-color:#ae1e02}
-    #tabs .tab-playlists{background:#bac4c9 url(../img/tab_playlist_selected.png) no-repeat 50% 50%;width: 88px;} 
-    #tabs .tab-playlists.selected, #tabs .tab-playlists:hover{background-color:#1e4b7b}
-    #tabs .tab-articles{background:#bac4c9 url(../img/tab_articles_selected.png) no-repeat 50% 50%;width: 84px;} 
-    #tabs .tab-articles.selected, #tabs .tab-articles:hover{background-color:#b58a0a}
-    #tabs .tab-merchandise{background:#bac4c9 url(../img/tab_merchandise_selected.png) no-repeat 50% 50%;width: 118px;} 
-    #tabs .tab-merchandise.selected, #tabs .tab-merchandise:hover{background-color:#3d1e7b}
-    #tabs .tab-tools-teaching{background:#bac4c9 url(../img/tab_tools_teaching_selected.png) no-repeat 50% 50%;width: 172px;} 
-    #tabs .tab-tools-teaching.selected, #tabs .tab-tools-teaching:hover{background-color:#84a8c1}
-    #tabs span{display:none !important}
+
 
     

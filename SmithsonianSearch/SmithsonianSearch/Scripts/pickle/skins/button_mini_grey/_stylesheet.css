@@ -1,0 +1,73 @@
+/*************************** PLAYER WRAPPER */
+.PKL_wrapper{
+	z-index: 50;
+	width: 38px;
+	display:block;
+	height: 38px;
+	position: absolute;
+	left: 41%;
+	top: 39%;
+}
+.searchResultsTable .PKL_wrapper{
+	position:relative;
+	left:0;
+	top: -14px;
+	width: 19px;
+	height: 19px;
+}
+
+/*************************** PLAY */
+.PKL_playpause, .PKL_play{
+	left:0px;
+	display:block;
+	background-image:url("button_play_audio_off.png");
+	z-index:6;
+	background-repeat:no-repeat;
+	width: 38px;
+	top:0px;
+	cursor:pointer;
+	position:absolute;
+	height: 38px;
+}
+.searchResultsTable .PKL_playpause,.searchResultsTable .PKL_play{
+	background-image:url("button_play_audio_off_small.png");
+	width:19px;
+	height:19px
+}
+@media screen and (max-width:400px) {
+    .PKL_playpause, .PKL_play {
+        top:-10px;
+        left:-10px;
+    }
+}
+div.PKL_playpause:hover, div.PKL_play:hover{
+	background-image:url("button_play_audio_on.png");
+}
+.searchResultsTable div.PKL_playpause:hover, .searchResultsTable  div.PKL_play:hover{
+	background-image:url("button_play_audio_on_small.png");	
+}
+div.PKL_playpause:active, div.PKL_play:active{
+	background-image:url("button_play_audio_on.png");
+}
+.searchResultsTable div.PKL_playpause:active,.searchResultsTable  div.PKL_play:active{
+	background-image:url("button_play_audio_on_small.png");
+}
+div.PKL_playpause.pause, div.PKL_play.pause{
+	background-image:url("button_pause_audio_on.png");
+}
+.searchResultsTable div.PKL_playpause.pause,.searchResultsTable  div.PKL_play.pause{
+	background-image:url("button_pause_audio_on_small.png");
+}
+div.PKL_playpause.pause:hover, div.PKL_play.pause:hover, div.PKL_playpause.pause:active, div.PKL_play.pause:active{
+	background-image:url("button_pause_audio_on.png");
+}
+.searchResultsTable div.PKL_playpause.pause:hover, .searchResultsTable div.PKL_play.pause:hover, .searchResultsTable div.PKL_playpause.pause:active, .searchResultsTable div.PKL_play.pause:active{
+	background-image:url("button_pause_audio_on_small.png");
+}
+.PKL_preloader{
+	width:1px;
+	height:1px;
+	background-repeat:no-repeat;
+	background-image:url("button_play_audio_on.png#button_play_audio_on.png#button_play_audio_off.png");
+	display:none;
+}

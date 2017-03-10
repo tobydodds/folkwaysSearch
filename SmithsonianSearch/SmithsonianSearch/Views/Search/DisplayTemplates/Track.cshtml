@@ -8,7 +8,45 @@
     var imageSrc = string.IsNullOrEmpty(Model.ImageUrl) ? Url.Content("~/img/track-thumb.gif") : Model.ImageUrl;
 }
 
-<li class="clearfix">
+
+
+<li class="card album-card col-xs-6 col-sm-2 search-result">
+    <div class="image">
+        <a class="imageLink" href="@Model.Url">
+            <img src="@imageSrc" alt="@imageAlt" />
+            @*<span class="content-type-overlay">ALBUM</span>*@
+        </a>
+        @if (Model.Player != null)
+        {
+            <div id="@Model.Player.ContainerId" class="track-player"></div>
+        }
+    </div>
+    <div class="details">
+        <div class="details-inner">
+            <span class="caption">TRACK</span>
+            <a href="@Model.Url" title="@Model.Title" class="high title">
+                <span class="light">
+                    <span class="er">
+                        @Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))
+                    </span>
+                </span>
+            </a>
+            <div class="artist">
+                <p>@Model.Artist.Truncate(Config.Instance.ItemTitleMaxLength)</p>
+            </div>
+        </div>
+    </div>
+</li>
+@if (Model.Player != null)
+{
+    @Html.Partial("PicklePlayerScript", Model.Player)
+}
+
+
+
+
+
+@*<li class="clearfix">
     <a class="imageLink" href="@Model.Url">
         <img src="@imageSrc" alt="@imageAlt" />
         <span class="content-type-overlay">TRACK</span>
@@ -31,4 +69,4 @@
 @if (Model.Player != null)
 {
     @Html.Partial("PicklePlayerScript", Model.Player)
-}
+}*@
