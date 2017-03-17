@@ -38,10 +38,10 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="filter-by-title">Filter By		</div>
+                    <div class="filter-by-title clear-all-button">Clear All		</div>
                 </div>
             </div>
             <ul class="row dropdown-wrapper">
-                <li class="col-sm-2">
                     <!-- inside so 100% width takes bootstrap padding into account-->
                         @if (Model != null && Model.FiltersModel != null && Model.FiltersModel.FiltersOptions != null && Model.FiltersModel.FiltersOptions.Count > 0)
                         {
@@ -53,26 +53,26 @@
                                 {
                                     var optionsCount = filter.Value.Count();
                                     var seeLessClass = optionsCount > 20 ? cssClass_21_40 : optionsCount > 5 ? cssClass_6_20 : cssClass_1_5;
-                                    <div class="dropdown">
+                                    <li class="dropdown col-sm-2">
                                         <select id="ddl" runat="server" onchange="javascript:document.location.href = this.value;">
-                                            <div class="dropdown first-level-dropdown-title">@filter.Key</div>
+                                            <div class="dropdown first-level-dropdown-title"></div>
                                             <ul class="first-level-dropdown">
+                                                <option>@filter.Key</option>
 
                                                 @foreach (var option in filter.Value.Take(5))
                                                 {
-                                                    <li>
+                                                    
                                                         @RenderFilterOption(filter.Key, option, cssClass_1_5, "")
-                                                    </li>
+                                                    
                                                 }
                                             </ul>
                                         </select>
-                                    </div>
+                                    </li>
                                               
                                     }
                                 }
                             }
                         }
-                        </li>
                     </ul>
                 </div>
             </div>

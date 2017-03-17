@@ -88,7 +88,7 @@
             }
 
             RouteValueDictionary routeValueDictionary = tempSearchModel.GetRouteValueDictionary();
-            routeValueDictionary["action"] = "Search";
+            routeValueDictionary["action"] = "/";
             routeValueDictionary["controller"] = "Search";
 
             string url = RouteTable.Routes.GetVirtualPath(requestContext, routeValueDictionary).VirtualPath;
