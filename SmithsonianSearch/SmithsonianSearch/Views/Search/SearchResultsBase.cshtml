@@ -7,36 +7,33 @@
 
 <div class="container-height">
     <div id="GsaUrl" style="display:none">@Html.Raw(Model.SearchModel.ComposeGsaSearchUrl(Config.Instance))</div>
-
-    <div class="row">
-        <div>
-            @Html.Partial("Filters", Model.SearchModel)
-        </div>  
-            @Html.Partial("SpellingSuggestions", Model)
-            @Html.Partial("RelatedQueries", Model)
-            @Html.Partial("Tabs", Model.SearchModel)
-            @Html.Partial("DisplayOptionsView", Model.SearchModel)
-            <div id="search-results" class="clearfix">
-                @if (Model.SearchModel.SelectedView == ViewOptionsEnum.Tiles && Model is SearchResultsModelMixed)
-                {
-                    var items = (Model as SearchResultsModelMixed).Items;
+    <div>
+        @Html.Partial("Filters", Model.SearchModel)
+    </div>
+        @Html.Partial("SpellingSuggestions", Model)
+        @Html.Partial("RelatedQueries", Model)
+        @Html.Partial("Tabs", Model.SearchModel)
+        @Html.Partial("DisplayOptionsView", Model.SearchModel)
+        <div id="search-results" class="clearfix container">
+            @if (Model.SearchModel.SelectedView == ViewOptionsEnum.Tiles && Model is SearchResultsModelMixed)
+            {
+                var items = (Model as SearchResultsModelMixed).Items;
                     
-                    if (items != null && items.Any())
-                    {
-                        @:<ul class="search-results clearfix">
-                        @Html.Partial("SearchResultsTilesView", Model as SearchResultsModelMixed)
-                        @:</ul>
-                    }
-                    else if (Model.SearchModel != null && !string.IsNullOrEmpty(Model.SearchModel.Query))
-                    {
-                        @Html.Partial("NoResults")
-                    }
-                }
-                else
+                if (items != null && items.Any())
                 {
-                    @Html.Partial("SearchResultsTableView", Model)
+                    @:<ul class="search-results clearfix">
+                    @Html.Partial("SearchResultsTilesView", Model as SearchResultsModelMixed)
+                    @:</ul>
                 }
-            </div>
-            <a href="#" class="back-to-top">Back to Top</a>
+                else if (Model.SearchModel != null && !string.IsNullOrEmpty(Model.SearchModel.Query))
+                {
+                    @Html.Partial("NoResults")
+                }
+            }
+            else
+            {
+                @Html.Partial("SearchResultsTableView", Model)
+            }
         </div>
+        <a href="#" class="back-to-top">Back to Top</a>
     </div>

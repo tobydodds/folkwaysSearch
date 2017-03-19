@@ -8,15 +8,39 @@
     var imageSrc = string.IsNullOrEmpty(Model.ImageUrl) ? Url.Content("~/img/video-thumb.gif") : Model.ImageUrl;
 }
 
-<li class="clearfix">
-    <a class="imageLink" href="@Model.Url">
-        <img src="@imageSrc" alt="@imageAlt" />
-        <span class="content-type-overlay">VIDEO</span>
-    </a>
-    <ul>
-        <li><h2><a href="@Model.Url" title="@Model.Title">@Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))</a></h2></li>
-        <li title="@Model.Description">@Html.Raw(Model.Description.Truncate(Config.Instance.ItemDescriptionMaxLength))</li>        
-        <li title="@Model.Duration"><em>Duration</em>@Model.Duration.Truncate(Config.Instance.ItemTitleMaxLength)</li>
-    </ul>
-    
+<li class="card album-card col-xs-6 col-sm-2 search-result">
+    <div class="image">
+        <a href="@Model.Url">
+            <img src="@imageSrc" alt="@imageAlt" />
+            @*<span class="content-type-overlay">ALBUM</span>*@
+        </a>
+    </div>
+    <div class="details">
+        <div class="details-inner">
+            <span class="caption">ALBUM</span>
+            <a href="@Model.Url" title="@Model.Title" class="high title">
+                <span class="light">
+                    <span class="er">
+                        @Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))
+                    </span>
+                </span>
+            </a>
+            @*<div class="artist">
+                <p>@Model.Artist.Truncate(Config.Instance.ItemTitleMaxLength)</p>
+            </div>*@
+        </div>
+    </div>
 </li>
+
+@*<li class="clearfix">
+        <a class="imageLink" href="@Model.Url">
+            <img src="@imageSrc" alt="@imageAlt" />
+            <span class="content-type-overlay">VIDEO</span>
+        </a>
+        <ul>
+            <li><h2><a href="@Model.Url" title="@Model.Title">@Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))</a></h2></li>
+            <li title="@Model.Description">@Html.Raw(Model.Description.Truncate(Config.Instance.ItemDescriptionMaxLength))</li>
+            <li title="@Model.Duration"><em>Duration</em>@Model.Duration.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+        </ul>
+
+    </li>*@

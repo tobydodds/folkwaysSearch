@@ -8,7 +8,29 @@
     var imageSrc = string.IsNullOrEmpty(Model.ImageUrl) ? Url.Content("~/img/merchandise-thumb.gif") : Model.ImageUrl;
 }
 
-<li class="clearfix">
+<li class="card album-card col-xs-6 col-sm-2 search-result">
+    <div class="image">
+        <a href="@Model.Url">
+            <img src="@imageSrc" alt="@imageAlt" />
+            @*<span class="content-type-overlay">ALBUM</span>*@
+        </a>
+    </div>
+    <div class="details">
+        <div class="details-inner">
+            <span class="caption">MERCHANDISE</span>
+            <a href="@Model.Url" title="@Model.Title" class="high title">
+                <span class="light">
+                    <span class="er">
+                        @Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))
+                    </span>
+                </span>
+            </a>
+        </div>
+    </div>
+</li>
+
+
+@*<li class="clearfix">
     <a class="imageLink" href="@Model.Url">
         <img src="@imageSrc" alt="@imageAlt" />
         <span class="content-type-overlay">MERCHANDISE</span>
@@ -18,4 +40,4 @@
         @Html.Partial("~/Views/Search/BuyLinks.cshtml", Model)
     </ul>
     
-</li>
+</li>*@

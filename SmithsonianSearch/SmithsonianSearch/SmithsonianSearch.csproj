@@ -514,6 +514,27 @@
     <Content Include="Scripts\folkways.js" />
     <Content Include="Scripts\folkways.pkgd.js" />
     <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\pickle\pickle.js" />
+    <Content Include="Scripts\pickle\pickle.swf" />
+    <Content Include="Scripts\pickle\pickle_reg.txt" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_pause_audio_on.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_pause_audio_on_small.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_play_audio_off.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_play_audio_off_small.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_play_audio_on.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\button_play_audio_on_small.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_pause.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_pause_down.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_pause_over.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_play.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_play_down.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\b_play_over.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\g_thinker.gif" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\_PREVIEW.html" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\_project.xml" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\_screenshot.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\_screenshot_thumb.png" />
+    <Content Include="Scripts\pickle\skins\button_mini_grey\_stylesheet.css" />
     <Content Include="Styles\ajax-loader.gif" />
     <Content Include="Styles\folkways.css">
       <DependentUpon>folkways.scss</DependentUpon>
@@ -612,6 +633,8 @@
     <Content Include="ViewsBak\Shared\Layout-BAK2017-03-08.cshtml" />
     <Content Include="ViewsBak\Shared\Layout.cshtml" />
     <Content Include="ViewsBak\Web.config" />
+    <Content Include="Scripts\pickle\.DS_Store" />
+    <Content Include="Scripts\pickle\skins\.DS_Store" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
