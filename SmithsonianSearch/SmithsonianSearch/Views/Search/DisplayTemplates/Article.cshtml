@@ -1,0 +1,54 @@
+﻿@* This view is responsible for rendering an article in tiles view *@
+@using SmithsonianSearch.Configuration
+@using SmithsonianSearch.Helpers
+@model SmithsonianSearch.Models.ResultItems.Article
+
+@{
+    var imageAlt = HttpUtility.UrlDecode(string.IsNullOrEmpty(Model.Title) ? "Link" : Model.Title);
+    var imageSrc = string.IsNullOrEmpty(Model.ImageUrl) ? Url.Content("~/img/article-thumb.gif") : Model.ImageUrl;
+}
+
+<li class="card album-card col-xs-6 col-sm-2 search-result">
+    <div class="image">
+        <a href="@Model.Url">
+            <img src="@imageSrc" alt="@imageAlt" />
+            @*<span class="content-type-overlay">ALBUM</span>*@
+        </a>
+    </div>
+    <div class="details">
+        <div class="details-inner">
+            <span class="caption">ARTICLE</span>
+            <a href="@Model.Url" title="@Model.Title" class="high title">
+                <span class="light">
+                    <span class="er">
+                        @Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))
+                    </span>
+                </span>
+            </a>
+            @if (!string.IsNullOrEmpty(Model.Author))
+            {
+                <div class="artist">
+                    <p>@Model.Author.Truncate(Config.Instance.ItemTitleMaxLength)</p>
+                </div>
+            }
+        </div>
+    </div>
+</li>
+
+@*<li class="clearfix">
+    <a class="imageLink" href="@Model.Url">
+        <img src="@imageSrc" alt="@imageAlt" />
+        <span class="content-type-overlay">ARTICLE</span>
+    </a>
+    <ul>
+        <li><h2><a href="@Model.Url" title="@Model.Title">@Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))</a></h2></li>
+        @if (!string.IsNullOrEmpty(Model.Category))
+        {
+            <li title="@Model.Category"><em>Category</em>@Model.Category.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+        }
+        @if (!string.IsNullOrEmpty(Model.Author))
+        {
+            <li title="@Model.Author"><em>Author</em>@Model.Author.Truncate(Config.Instance.ItemTitleMaxLength)</li>
+        }
+    </ul>
+</li>*@

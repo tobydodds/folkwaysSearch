@@ -1,0 +1,13 @@
+﻿@using SmithsonianSearch.Helpers
+@model SmithsonianSearch.Models.SearchResultsModels.ISearchResultsModel
+
+@if (Model.RelatedQueries.RelatedQueries.Any())
+{
+    <div id="relatedMain">
+        <h3>Related searches:</h3>
+        @foreach (var relatedQuery in Model.RelatedQueries.RelatedQueries)
+        {
+            <li><a href="@Model.SearchModel.GetRelatedQueryUrl(relatedQuery)" class="relatedSearch">@Html.Raw(relatedQuery)</a></li>
+        }
+    </div>
+}

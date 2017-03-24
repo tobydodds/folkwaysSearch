@@ -1,0 +1,53 @@
+﻿@* This view is responsible for rendering playlists in list view *@
+@model SmithsonianSearch.Models.SearchResultsModels.SearchResultsModelPlaylists
+
+@helper GetRowClass(int index)
+{
+    if (index % 2 == 0)
+    {
+        @:alt
+    }
+}
+
+@{
+    bool printHeader = ViewData.ContainsKey("printHeader") ? (bool)ViewData["printHeader"] : true;
+    int index = 1;
+}
+
+@if (Model.Items != null && Model.Items.Any())
+{
+    if (printHeader)
+    {
+    <text>
+        <table class="searchResultsTable">
+            <thead>
+                <tr class="header">
+                    <th><img src="~/img/header_title.png" alt="Title" title="Title" /></th>
+                    <th><img src="~/img/header_duration.png" alt="Duration" title="Duration" /></th>
+                </tr>
+            </thead>
+            <tbody>
+     </text>
+    }
+
+    foreach (var playlist in Model.Items)
+    {
+                <text>
+                <tr class="@GetRowClass(index++)">
+                    <td><a href='@playlist.Url' title='@playlist.Title'>@playlist.Title</a></td>
+                    <td>@playlist.Duration</td>
+                </tr>
+                </text>
+    }
+    
+    @ViewHelperMethods.RenderLazyLoadingLink(Model.SearchModel, 2)
+
+    if (printHeader)
+    {
+       @:</tbody></table>
+    }
+}
+else if (Model.SearchModel != null && !string.IsNullOrEmpty(Model.SearchModel.Query))
+{
+    @Html.Partial("NoResults")
+}

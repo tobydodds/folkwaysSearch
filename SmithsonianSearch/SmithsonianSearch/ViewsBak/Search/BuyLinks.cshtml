@@ -1,0 +1,27 @@
+﻿@using SmithsonianSearch.Configuration
+@using SmithsonianSearch.Models.ResultItems;
+@model PurchasableResultItem
+
+@helper RenderForm(PurchasableItemOption option, string redirectUrl){
+    <form name="@("form" + option.Id)" action="javascript: addProduct('@option.Id');" class="buy" method="post">
+        <input type="hidden" value="@option.Id" name="buyid">
+        <input type="hidden" value="@redirectUrl" name="redirect">
+        <input type="hidden" value="b" name="x">
+        <input type="submit" value="@option.Format: $@option.Price" class="buy" />
+    </form>
+}
+
+@if (Model.PurchasableOptions.Any())
+{    
+    <li class="buy"><em>Buy</em>
+        @{ var lastOption = Model.PurchasableOptions.Last(); }
+        @foreach (var purchasableOption in Model.PurchasableOptions)
+        {
+            @RenderForm(purchasableOption, Model.RedirectUrl + "&addedtocart=")
+            if (purchasableOption != lastOption)
+            {
+            <span>|</span>
+            }
+        }
+    </li>
+}
