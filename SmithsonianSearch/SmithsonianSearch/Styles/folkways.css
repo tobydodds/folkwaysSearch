@@ -11988,6 +11988,48 @@ figcaption.minus-sign:before {
 	}
 }
 
+.search-page .filter-select, .past-festivals-page .filter-select {
+	font-weight: 300;
+	font-family: "acumin-pro", Arial, sans-serif;
+	line-height: 1.32;
+	font-size: 1.5rem;
+	font-weight: 600 !important;
+	line-height: 1.4;
+	font-size: 1.3rem;
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .filter-select, .past-festivals-page .filter-select {
+		font-size: 1.3vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .filter-select, .past-festivals-page .filter-select {
+		line-height: 1.32;
+		font-size: 1.8rem;
+	}
+}
+
+@media only screen and (min-width: 53.25em) {
+	.search-page .filter-select, .past-festivals-page .filter-select {
+		line-height: 1.3;
+	}
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .filter-select, .past-festivals-page .filter-select {
+		font-size: 1vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .filter-select, .past-festivals-page .filter-select {
+		line-height: 1.3;
+		font-size: 1.6rem;
+	}
+}
+
 /* Slideshow/Gallery arrows, from Folklife homepage banner
 -------------------------------------------------*/
 .slick-arrow:focus, .slick-dots button:focus {
