@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="filter-by-title">Filter By		</div>
-                    <div class="filter-by-title clear-all-button">Clear All		</div>
+                    @*<div class="filter-by-title clear-all-button">Clear All		</div>*@
                 </div>
             </div>
             <ul class="row dropdown-wrapper">
@@ -81,7 +81,7 @@
             bool isApplied = Model.FiltersModel.IsFilterApplied(filterName, option.Title);
             string checkedAttr = isApplied ? "checked" : string.Empty;
 
-            <option value="@Model.GetFilterUrl(filterName, option.Title, !isApplied)">@option.Title.Truncate(55) (@option.ResultsCount.ToString("n0"))</option>
+            <option value="@Model.GetFilterUrl(filterName, option.Title, !isApplied)">@option.Title.Truncate(55)</option>
 
             @*<li class="@cssClass" style="@styleAttrValue">
                     <label for="filterValue" title="@option" class="clearfix">
