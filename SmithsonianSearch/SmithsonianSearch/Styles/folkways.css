@@ -11869,6 +11869,12 @@ figcaption.minus-sign:before {
 	}
 }
 
+@media only screen and (min-width: 53.25em) {
+	.search-page .filter-more-button, .past-festivals-page .filter-more-button {
+		margin-top: 3.5rem;
+	}
+}
+
 .search-page .filter-more-band, .past-festivals-page .filter-more-band {
 	display: none;
 }
