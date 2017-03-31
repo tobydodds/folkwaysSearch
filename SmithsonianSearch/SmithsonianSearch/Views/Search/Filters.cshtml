@@ -47,6 +47,7 @@
                 {
                     if (!string.IsNullOrEmpty(Model.Query))
                     {
+                        int index = 0;
                         foreach (var filter in Model.FiltersModel.FiltersOptions)
                         {
                             //if (filter.Value.Any())
@@ -55,10 +56,22 @@
                             {
                                 var optionsCount = filter.Value.Count();
                                 var seeLessClass = optionsCount > 20 ? cssClass_21_40 : optionsCount > 5 ? cssClass_6_20 : cssClass_1_5;
+
+                                // add more button in fifth column of first row, but only if more results exist
+                                if (index == 5 && Model.FiltersModel.FiltersOptions.Count > 6)
+                                {
+                                    <li class="col-sm-2 hidden-xs">
+                                        <label for="" class="filter-label">&nbsp;</label>
+                                        <div class="filter-button filter-more">
+                                            More
+                                        </div>
+                                    </li>
+                                }
+
                                 <li class="dropdown filter-dropdown col-sm-2">
                                     <label for="@filter.Key" class="filter-label">@filter.Key</label>
                                     <select id="ddl" class="filter-select" name="@filter.Key" runat="server" onchange="javascript:document.location.href = this.value;">
-                                        <option>Select one</option>
+                                        <option>Select one @index @Model.FiltersModel.FiltersOptions.Count</option>
                                         @foreach (var option in filter.Value.Take(5))
                                         {
 
@@ -67,6 +80,9 @@
                                         }
                                     </select>
                                 </li>
+
+                                // increase index for showing/hiding more button
+                                index++;
 
                             }
                         }
