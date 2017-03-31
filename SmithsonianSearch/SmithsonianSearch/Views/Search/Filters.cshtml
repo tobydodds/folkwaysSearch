@@ -19,11 +19,11 @@
                                 { "genre", "~/img/label_genre_.png" },
                                 { "gradelevel", "~/img/label_gradelevel_.png" },
                                 { "instrument", "~/img/label_instrument_.png" },
-                                { "label", "~/img/label_label_.png" },
+                                { "record label", "~/img/label_label_.png" },
                                 { "language", "~/img/label_language_.png" },
                                 { "region", "~/img/label_region_.png" },
                                 { "share", "~/img/label_share_.png" },
-                                { "subregion", "~/img/label_subregion_.png" }
+                                { "sub-region", "~/img/label_subregion_.png" }
                             };
 }
 
@@ -49,9 +49,9 @@
                     {
                         foreach (var filter in Model.FiltersModel.FiltersOptions)
                         {
-                            if (filter.Value.Any())
-                            //Makes Content Type appear as filter dropdown
-                            //if (!filter.Key.Equals(Model.FiltersModel.ContentTypeParamName.ToLowerInvariant(), StringComparison.OrdinalIgnoreCase) && filter.Value.Any())
+                            //if (filter.Value.Any())
+                            //Once new site launches replace line below with line above and remove ContentType from GSA
+                            if (!filter.Key.Equals(Model.FiltersModel.ContentTypeParamName.ToLowerInvariant(), StringComparison.OrdinalIgnoreCase) && filter.Value.Any())
                             {
                                 var optionsCount = filter.Value.Count();
                                 var seeLessClass = optionsCount > 20 ? cssClass_21_40 : optionsCount > 5 ? cssClass_6_20 : cssClass_1_5;
