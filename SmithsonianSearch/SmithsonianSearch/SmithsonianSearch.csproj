@@ -562,8 +562,6 @@
     <Content Include="Styles\folkways.min.css">
       <DependentUpon>folkways.css</DependentUpon>
     </Content>
-    <Content Include="Styles\fonts\slick.svg" />
-    <Content Include="Styles\fonts\vd-icons.svg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -609,12 +607,6 @@
     <Content Include="Views\Shared\Layout-BAK2016-04-08.cshtml" />
     <Content Include="Views\Shared\Layout-BAK2017-03-08.cshtml" />
     <Content Include="Styles\folkways.scss" />
-    <Content Include="Styles\fonts\slick.eot" />
-    <Content Include="Styles\fonts\slick.ttf" />
-    <Content Include="Styles\fonts\slick.woff" />
-    <Content Include="Styles\fonts\vd-icons.eot" />
-    <Content Include="Styles\fonts\vd-icons.ttf" />
-    <Content Include="Styles\fonts\vd-icons.woff" />
     <Content Include="ViewsBak\_ViewStart.cshtml" />
     <Content Include="ViewsBak\Search\BuyLinks.cshtml" />
     <Content Include="ViewsBak\Search\DisplayOptionsView.cshtml" />
