@@ -19,11 +19,11 @@
                                 { "genre", "~/img/label_genre_.png" },
                                 { "gradelevel", "~/img/label_gradelevel_.png" },
                                 { "instrument", "~/img/label_instrument_.png" },
-                                { "label", "~/img/label_label_.png" },
+                                { "record label", "~/img/label_label_.png" },
                                 { "language", "~/img/label_language_.png" },
                                 { "region", "~/img/label_region_.png" },
                                 { "share", "~/img/label_share_.png" },
-                                { "subregion", "~/img/label_subregion_.png" }
+                                { "sub-region", "~/img/label_subregion_.png" }
                             };
 }
 
@@ -38,38 +38,44 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="filter-by-title">Filter By		</div>
-                    <div class="filter-by-title clear-all-button">Clear All		</div>
+                    @*<div class="filter-by-title clear-all-button">Clear All		</div>*@
                 </div>
             </div>
             <ul class="row dropdown-wrapper">
-                    <!-- inside so 100% width takes bootstrap padding into account-->
-                        @if (Model != null && Model.FiltersModel != null && Model.FiltersModel.FiltersOptions != null && Model.FiltersModel.FiltersOptions.Count > 0)
+                <!-- inside so 100% width takes bootstrap padding into account-->
+                @if (Model != null && Model.FiltersModel != null && Model.FiltersModel.FiltersOptions != null && Model.FiltersModel.FiltersOptions.Count > 0)
+                {
+                    if (!string.IsNullOrEmpty(Model.Query))
+                    {
+                        foreach (var filter in Model.FiltersModel.FiltersOptions)
                         {
-                            if (!string.IsNullOrEmpty(Model.Query))
+                            //if (filter.Value.Any())
+                            //Once new site launches replace line below with line above and remove ContentType from GSA
+                            if (!filter.Key.Equals(Model.FiltersModel.ContentTypeParamName.ToLowerInvariant(), StringComparison.OrdinalIgnoreCase) && filter.Value.Any())
                             {
-                            foreach (var filter in Model.FiltersModel.FiltersOptions)
-                            {
-                                if (!filter.Key.Equals(Model.FiltersModel.ContentTypeParamName.ToLowerInvariant(), StringComparison.OrdinalIgnoreCase) && filter.Value.Any())
-                                {
-                                    var optionsCount = filter.Value.Count();
-                                    var seeLessClass = optionsCount > 20 ? cssClass_21_40 : optionsCount > 5 ? cssClass_6_20 : cssClass_1_5;
-                                    <li class="dropdown filter-dropdown col-sm-2">
-                                        <label for="@filter.Key" class="filter-label">@filter.Key</label>
-                                        <select id="ddl" name="@filter.Key" runat="server" onchange="javascript:document.location.href = this.value;">
-                                            @foreach (var option in filter.Value.Take(5))
-                                            {
-                                                
-                                                    @RenderFilterOption(filter.Key, option, cssClass_1_5, "")
-                                                
-                                            }
-                                        </select>
-                                    </li>
-                                              
-                                    }
-                                }
+                                var optionsCount = filter.Value.Count();
+                                var seeLessClass = optionsCount > 20 ? cssClass_21_40 : optionsCount > 5 ? cssClass_6_20 : cssClass_1_5;
+                                <li class="dropdown filter-dropdown col-sm-2">
+                                    <label for="@filter.Key" class="filter-label">@filter.Key</label>
+                                    <select id="ddl" class="filter-select" name="@filter.Key" runat="server" onchange="javascript:document.location.href = this.value;">
+                                        <option>Select one</option>
+                                        @foreach (var option in filter.Value.Take(5))
+                                        {
+
+                                            @RenderFilterOption(filter.Key, option, cssClass_1_5, "")
+
+                                        }
+                                    </select>
+                                </li>
+
                             }
                         }
-                    </ul>
+                    }
+                }
+            </ul>
+
+
+
                 </div>
             </div>
        }
@@ -79,9 +85,9 @@
         if (option != null && !string.IsNullOrEmpty(option.Title) && !option.Title.Equals("n/a"))
         {
             bool isApplied = Model.FiltersModel.IsFilterApplied(filterName, option.Title);
-            string checkedAttr = isApplied ? "checked" : string.Empty;
+            string checkedAttr = isApplied ? "selected" : string.Empty;
 
-            <option value="@Model.GetFilterUrl(filterName, option.Title, !isApplied)">@option.Title.Truncate(55) (@option.ResultsCount.ToString("n0"))</option>
+            <option @checkedAttr value="@Model.GetFilterUrl(filterName, option.Title, !isApplied)">@option.Title.Truncate(55)</option>
 
             @*<li class="@cssClass" style="@styleAttrValue">
                     <label for="filterValue" title="@option" class="clearfix">
