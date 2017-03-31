@@ -57,15 +57,19 @@
                                 var optionsCount = filter.Value.Count();
                                 var seeLessClass = optionsCount > 20 ? cssClass_21_40 : optionsCount > 5 ? cssClass_6_20 : cssClass_1_5;
 
-                                // add more button in fifth column of first row, but only if more results exist
+
                                 if (index == 5 && Model.FiltersModel.FiltersOptions.Count > 6)
                                 {
+                                    // add more button in fifth column of first row, but only if more results exist
                                     <li class="col-sm-2 hidden-xs">
-                                        <label for="" class="filter-label">&nbsp;</label>
-                                        <div class="filter-button filter-more">
+                                        <div class="filter-button filter-more-button">
                                             More
                                         </div>
                                     </li>
+
+                                    // open new section that's hidden by default, be sure to close when done
+                                    @:</ul>
+                                    @:<ul class="row dropdown-wrapper filter-more-band">
                                 }
 
                                 <li class="dropdown filter-dropdown col-sm-2">
@@ -85,6 +89,12 @@
                                 index++;
 
                             }
+                        }
+
+                        // if have second row of hidden filters, must close <ul>
+                        if (Model.FiltersModel.FiltersOptions.Count > 6)
+                        {
+                            @:</ul>
                         }
                     }
                 }
