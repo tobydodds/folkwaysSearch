@@ -16,10 +16,10 @@
     <script src="https://use.typekit.net/eiz7zfx.js"></script>
     <script>try { Typekit.load(); } catch (e) { }</script>
 
-    <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.min.js" type="text/javascript"></script>
 
     <!--Folkways CSS-->
-    <link href="Styles/folkways.css" rel="stylesheet" />
+    <link href="~/Styles/folkways.css" rel="stylesheet" />
     @*<link href="~/css/bootstrap.css" rel="stylesheet">*@
 
     <script type="text/javascript" src="@Url.Content("~/Scripts/pickle/pickle.js")"></script>
@@ -32,8 +32,8 @@
     <div id="site-toggle" class="site-toggle">
         <div class="container">
             <div class="smithsonian-logo">
-                <img src="assets/images/logo/smithsonian-alt-logo_280x60.png" alt="Folklife Logo" class="visible-sm visible-md" />
-                <img src="assets/images/logo/smithsonian-alt-logo_320x60.png" alt="Folklife Logo" class="visible-lg" />
+                <img src="~/assets/images/logo/smithsonian-alt-logo_280x60.png" alt="Folklife Logo" class="visible-sm visible-md" />
+                <img src="~/assets/images/logo/smithsonian-alt-logo_320x60.png" alt="Folklife Logo" class="visible-lg" />
             </div>
             <div class="right-site-toggle">
                 <div class="hidden-xs site-toggle-text">
@@ -60,24 +60,24 @@
                     <div id="logo" class="logo">
                         <div class="one-line-logos">
                             <a href="/" tabindex="-1">
-                                <img src="assets/images/logo/folkways_oneLine_160.png" alt="Folkways Logo" class="one-line-logo mobile-one-line-logo visible-xs" />
-                                <img src="assets/images/logo/folkways_oneLine_224.png" alt="Folkways Logo" class="one-line-logo tablet-one-line-logo visible-sm visible-md" />
-                                <img src="assets/images/logo/folkways_oneLine_258.png" alt="Folkways Logo" class="one-line-logo desktop-one-line-logo visible-lg" />
+                                <img src="~/assets/images/logo/folkways_oneLine_160.png" alt="Folkways Logo" class="one-line-logo mobile-one-line-logo visible-xs" />
+                                <img src="~/assets/images/logo/folkways_oneLine_224.png" alt="Folkways Logo" class="one-line-logo tablet-one-line-logo visible-sm visible-md" />
+                                <img src="~/assets/images/logo/folkways_oneLine_258.png" alt="Folkways Logo" class="one-line-logo desktop-one-line-logo visible-lg" />
                             </a>
                         </div>
                         <div class="block-logos">
                             <a href="/">
-                                <img src="assets/images/logo/folkways_logo_200x200.png" alt="Folkways Logo" class="block-logo mobile-block-logo visible-xs visible-sm" />
-                                <img src="assets/images/logo/folkways_logo_280x280.png" alt="Folkways Logo" class="block-logo tablet-block-logo visible-md" />
-                                <img src="assets/images/logo/folkways_logo_320x320.png" alt="Folkways Logo" class="block-logo desktop-block-logo visible-lg" />
+                                <img src="~/assets/images/logo/folkways_logo_200x200.png" alt="Folkways Logo" class="block-logo mobile-block-logo visible-xs visible-sm" />
+                                <img src="~/assets/images/logo/folkways_logo_280x280.png" alt="Folkways Logo" class="block-logo tablet-block-logo visible-md" />
+                                <img src="~/assets/images/logo/folkways_logo_320x320.png" alt="Folkways Logo" class="block-logo desktop-block-logo visible-lg" />
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="folkways-nav col-sm-3"><a href="/explore/smithsonian">Explore</a><a href="/learn/smithsonian">Learn</a><a href="/join/smithsonian">Join</a><a href="/shop/smithsonian">Shop</a></div>
                 <!-- Search Bar-->
-                <form action="/" class="search-bar desktop-search-bar col-sm-offset-1 col-sm-5 col-md-5 col-md-offset-1 col-lg-offset-2 col-lg-6">
-                    <input id="search-input" placeholder="Search..." type="search" name="q" value="" />
+                <form action="/search/" class="search-bar desktop-search-bar col-sm-offset-1 col-sm-5 col-md-5 col-md-offset-1 col-lg-offset-2 col-lg-6">
+                    <input id="search-input" placeholder="Search..." type="search" name="query" value="" />
                 </form>
                 <!-- Main Navigation Icons-->
                 <div class="nav-icons col-sm-3 col-lg-2">

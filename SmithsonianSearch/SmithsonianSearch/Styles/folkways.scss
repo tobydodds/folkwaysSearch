@@ -1,4 +1,4 @@
-﻿/*
+/*
 	
 	  _|         |     |  |                                                        
 	 |     _ \   |  /  |  |  / \ \  \   /  _` |  |   |   __|       __|   __|   __| 
@@ -37,9 +37,11 @@
 	@import "../Assets/common/css/nav.scss";
 	@import "../Assets/common/css/general.scss";
 	@import "../Assets/common/css/footer.scss";
+	@import "article.scss";
 	@import "../Assets/common/css/program.scss";
 	@import "../Assets/common/css/cards.scss";
 	@import "../Assets/common/css/audio.scss"; // after cards for cascading overrides
+	@import "./magazine.scss"; // for folkways only
 
 /* Logo variation
 -------------------------------------------------- */
@@ -1356,7 +1358,7 @@
 	.lesson-plan-page {
 		.title-bar {
 			color: #fff;
-			background-color: $fw-red;
+			background-color: $fw-green;
 		}
 		.lesson-plan-top {
 			margin-bottom:0;
@@ -1520,41 +1522,149 @@
 		}
 	}
 
-/* Search page
--------------------------------------------------- */
+    /*Folkways Suggests - Accordion toggle*/
+    .related-features {padding:10px}
+    .related-features p{width:100%;float:left;margin:0 0 10px 0; height:90px;}
+    .related-features span {display:block;font-size:12px;line-height:17px;color:#000;width:100%;}
+    .related-features a:hover span {color:#e07007}
+    .related-features img {float:left;width:80px;height:80px;margin-right:10px}
 
-    .content-type-overlay {
-        position: absolute;bottom: 0;
-        background: rgba(0,0,0,.4);
-        color:#FFF; 
-        padding: 0 3px 3px;left: 0; 
-        @include nav-header;
-        font-weight:600;
+    .panel {
+        background-color: #fff;
+        border: none;
+        border-radius: 0 !important;
+        box-shadow:none;
+        margin-bottom: 20px;
     }
-
-    .search-result {
-        .image {
-            position:relative;
-        }
+    .panel-group .panel {
+        border-radius:0;
+        margin-bottom: 0;
+        overflow: hidden;
     }
-
-
-    .back-to-top {
-    position: fixed;
-    bottom: 2em;
-    right: 0px;
-    text-decoration: none;
-    color: #000000;
-    background-color: #EBEBEB;
-    font-size: 12px;
-    padding: 1em;
-    display: none;
-    opacity: 0.8;
-        /* IE 8 */ -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-        /* IE 5-7 */ filter: alpha(opacity=80);
-        /* Netscape */ -moz-opacity: 0.8;
-        /* Safari 1.x */ -khtml-opacity: 0.8;
+    .panel-default > .panel-heading {
+        background-color: #bac4c9;
+        border-color: #bac4c9;
+        color: #333;
+    }
+    .panel-heading {
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+        padding: 3px 0!important;
+    }
+    .panel-group .panel + .panel {
+        margin-top: 2px !important;
+    }
+    .accordion-albums {
+        background: url("/images/index/tab_albums_selected.png") no-repeat scroll 4% 50% #bac4c9;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    a:hover .accordion-albums {
+        background: url("/images/index/tab_albums_selected.png") no-repeat scroll 4% 50% #526c79;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    .accordion-albums .active {
+        background: url("/images/index/tab_albums.png") no-repeat scroll 4% 50% #bac4c9;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    .accordion-videos {
+        background: url("/images/index/tab_videos_selected.png") no-repeat scroll 4% 50% #bac4c9;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    a:hover .accordion-videos {
+        background: url("/images/index/tab_videos_selected.png") no-repeat scroll 4% 50% #526c79;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    .accordion-playlists {
+        background: url("/images/index/tab_playlist_selected.png") no-repeat scroll 4% 50% #bac4c9;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    a:hover .accordion-playlists {
+        background: url("/images/index/tab_playlist_selected.png") no-repeat scroll 4% 50% #526c79;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    .accordion-articles {
+        background: url("/images/index/tab_articles_selected.png") no-repeat scroll 4% 50% #bac4c9;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    a:hover .accordion-articles {
+        background: url("/images/index/tab_articles_selected.png") no-repeat scroll 4% 50% #526c79;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    .accordion-tools-teaching {
+        background: url("/images/index/tab_tools_teaching_selected.png") no-repeat scroll 6% 50% #bac4c9;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    a:hover .accordion-tools-teaching {
+        background: url("/images/index/tab_tools_teaching_selected.png") no-repeat scroll 6% 50% #526c79;
+        width: 100%;
+	    padding:3px 0;
+        text-indent: -9999px;
+    }
+    .accordion-albums, .accordion-albums .active, .accordion-videos, .accordion-playlists, .accordion-articles, .accordion-tools-teaching {color:transparent}
+    .accordion-toggle:after {
+        /* symbol for "opening" panels */
+        font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+        content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+        float: right;        /* adjust as needed */
+        color: grey;         /* adjust as needed */
+	    margin-top:-25px;
+	    margin-right:10px
+    }
+    .accordion-toggle.collapsed:after {
+        /* symbol for "collapsed" panels */
+        content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+    }
+    @media screen and (max-width:767px) {
+    .accordion-albums,.accordion-albums .active,.accordion-videos, .accordion-playlists, .accordion-articles, .accordion-tools-teaching {
+        background: none repeat scroll 4% 50% #bac4c9;
+        text-transform: uppercase;
+        font: bold 0.8em verdana;
+        color:#fff;
+        padding:8px 15px !important;
+        text-indent: 0;
+    }
+    a:hover .accordion-albums, a:hover .accordion-videos, a:hover .accordion-playlists, a:hover .accordion-articles, a:hover .accordion-tools-teaching {
+        background: none repeat scroll 4% 50% #526c79;
+        text-transform: uppercase;
+        font: bold 0.8em verdana;
+        color:#fff;
+        padding:8px 15px !important;
+        text-indent: 0;
+    }
 }
 
-
-    
+/* Blog Page
+-------------------------------------------------- */
+	// common styles moved to general.scss
+.blog-page, .blog-article-page {
+    .title-bar {
+        background-color: $fw-orange; 
+    }
+}
+/* Folkways General content banner
+-------------------------------------------------- */
+.general-page {
+    .title-bar {
+        background-color: $fw-dark-blue;
+    }
+}

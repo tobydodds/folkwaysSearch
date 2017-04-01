@@ -1,0 +1,13 @@
+#* text=auto
+# set to enforce end of line like Windows
+* text eol=crlf
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+*.gif binary
+*.dll binary
+*.woff binary
+*.ttf binary
+*.eot binary
+*.svg binary
