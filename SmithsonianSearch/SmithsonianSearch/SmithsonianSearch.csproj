@@ -647,6 +647,8 @@
     <Content Include="ViewsBak\Web.config" />
     <Content Include="Scripts\pickle\.DS_Store" />
     <Content Include="Scripts\pickle\skins\.DS_Store" />
+    <Content Include="Views\Shared\Layout-Folklife.cshtml" />
+    <Content Include="Views\Shared\Layout-Festival.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
