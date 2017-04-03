@@ -73,7 +73,6 @@ D:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\obj\Debug\SmithsonianS
 D:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\obj\Debug\SmithsonianSearch.dll
 D:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\obj\Debug\SmithsonianSearch.pdb
 C:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\bin\Microsoft.Web.Infrastructure.dll
-C:\WWW\folkwaysSearch\SmithsonianSearch\SmithsonianSearch\bin\Microsoft.Web.Infrastructure.xml
 C:\Users\lukej\Sites\cfch\toby\search\SmithsonianSearch\SmithsonianSearch\bin\SmithsonianSearch.dll.config
 C:\Users\lukej\Sites\cfch\toby\search\SmithsonianSearch\SmithsonianSearch\bin\SmithsonianSearch.dll
 C:\Users\lukej\Sites\cfch\toby\search\SmithsonianSearch\SmithsonianSearch\bin\SmithsonianSearch.pdb

@@ -1,0 +1,329 @@
+﻿@using System.Web.Optimization
+@{
+    ViewBag.Title = "Smithsonian Center for Folklife and Cultural Heritage";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/Themes/Folklife/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/Themes/Folklife/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <title>Smithsonian Center for Folklife and Cultural Heritage - Search</title>
+
+    <script>(function (d) { d.className = "dyn" + d.className.substring(6, d.className.length); })(document.documentElement);</script>
+    <!-- Fonts-->
+    <script src="https://use.typekit.net/eiz7zfx.js"></script>
+    <script>try { Typekit.load(); } catch (e) { }</script>
+
+    <script src="~/Scripts/jquery.min.js" type="text/javascript"></script>
+
+    <!--Folkways CSS-->
+    <link href="/Themes/Folklife/Styles/folklife.css" rel="stylesheet" />
+    @*<link href="~/css/bootstrap.css" rel="stylesheet">*@
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/pickle/pickle.js")"></script>
+    <link rel="stylesheet" href="@Url.Content("~/Scripts/pickle/skins/button_mini_grey/_stylesheet.css")" />
+</head>
+
+<body class="folklife-site">
+    <a href="#main-content" class="skip-main">Skip to main content</a>
+    <!-- Site Toggle-->
+    <div id="site-toggle" class="site-toggle">
+        <div class="container">
+            <div class="smithsonian-logo">
+                <img src="/Themes/Folklife/assets/images/logo/smithsonian-alt-logo_280x60.png" alt="Folklife Logo" class="visible-sm visible-md" />
+                <img src="/Themes/Folklife/assets/images/logo/smithsonian-alt-logo_320x60.png" alt="Folklife Logo" class="visible-lg" />
+            </div>
+            <div class="right-site-toggle">
+                <div class="hidden-xs site-toggle-text">
+                    <div class="tagline">Culture of, by, and for the People</div><a href="http://folklife-refresh.si.edu" class="site-toggle-link folklife-site-toggle-link">Folklife</a><a href="http://folkways-refresh.si.edu" class="site-toggle-link folklife-site-toggle-link">Folkways</a><a href="http://festival-refresh.si.edu" class="site-toggle-link festival-site-toggle-link">Festival</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar outside is a click area to close open nav-->
+    <div class="navbar-outside"></div>
+    <!-- Navbar-->
+    <nav id="navbar" class="navbar">
+        <div class="navbar-header container">
+            <div class="ul row">
+                <!-- Logo-->
+                <div class="logo-wrapper col-sm-2">
+                    <div id="logo" class="logo">
+                        <div class="one-line-logos">
+                            <a href="/" tabindex="-1">
+                                <img src="/Themes/Folklife/assets/images/logo/folklife_oneLine_160.png" alt="Folkways Logo" class="one-line-logo mobile-one-line-logo visible-xs" />
+                                <img src="/Themes/Folklife/assets/images/logo/folklife_oneLine_224.png" alt="Folkways Logo" class="one-line-logo tablet-one-line-logo visible-sm visible-md" />
+                                <img src="/Themes/Folklife/assets/images/logo/folklife_oneLine_258.png" alt="Folkways Logo" class="one-line-logo desktop-one-line-logo visible-lg" />
+                            </a>
+                        </div>
+                        <div class="block-logos">
+                            <a href="/">
+                                <img src="/Themes/Folklife/assets/images/logo/folklife_logo_200x200.png" alt="Folkways Logo" class="block-logo mobile-block-logo visible-xs visible-sm" />
+                                <img src="/Themes/Folklife/assets/images/logo/folklife_logo_280x280.png" alt="Folkways Logo" class="block-logo tablet-block-logo visible-md" />
+                                <img src="/Themes/Folklife/assets/images/logo/folklife_logo_320x320.png" alt="Folkways Logo" class="block-logo desktop-block-logo visible-lg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Bar-->
+                <form action="/" class="search-bar desktop-search-bar col-sm-offset-1 col-sm-5 col-md-5 col-md-offset-1 col-lg-offset-2 col-lg-6">
+                    <input id="search-input" placeholder="Search..." type="search" name="query" value="" />
+                </form>
+                <!-- Main Navigation Icons-->
+                <div class="nav-icons col-sm-3 col-lg-2">
+                    <div id="menu-icon" aria-hidden="true" title="menu" tabindex="0" class="icon-menu nav-icon main-nav-icon"></div>
+                    <div id="share-icon" aria-hidden="true" title="share" tabindex="0" class="icon-share nav-icon main-nav-icon"></div>
+                    <div id="search-icon" aria-hidden="true" title="search" tabindex="0" class="icon-search nav-icon main-nav-icon"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Full Navigation Dropdown-->
+        <div id="header-nav" class="header-nav">
+            <div class="container">
+                <ul class="header-nav-row row">
+                    <li class="header-nav-main-item col-sm-2">
+                        <div class="header-nav-title">Research*</div>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item">Cultural Industries*</li>
+                            <li class="header-nav-sub-item">Cultural Sustainability*</li>
+                            <li class="header-nav-sub-item">Endangered*</li>
+                            <li class="header-nav-sub-item">Languages*</li>
+                            <li class="header-nav-sub-item">ICH &amp; Museums*</li>
+                            <li class="header-nav-sub-item">Publications*</li>
+                        </ul>
+                    </li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <div class="header-nav-title">Cultural Sustainability</div>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item"><a href="/cultural-sustainability/my-armenia/smithsonian">My Armenia</a></li>
+                            <li class="header-nav-sub-item"><a href="/cultural-heritage-policy/smithsonian">Cultural Policy</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <a href="/education" class="header-nav-title">Education</a>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item visible-xs"><a href="/education">Education Overview</a></li>
+                            <li class="header-nav-sub-item"><a href="/education#cultural-education">Cultural Education</a></li>
+                            <li class="header-nav-sub-item"><a href="/education#resources">Resources</a></li>
+                            <li class="header-nav-sub-item"><a href="/education#publications">Publications</a></li>
+                            <li class="header-nav-sub-item"><a href="/education#exhibits">Exhibits*</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <a class="header-nav-title" href="/archives">Archives</a>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item visible-xs"><a href="/archives">Archives Overview</a></li>
+                            <li class="header-nav-sub-item"><a href="/archives#about-the-archives">About the Archives</a></li>
+                            <li class="header-nav-sub-item"><a href="/archives#collections">Collections</a></li>
+                            <li class="header-nav-sub-item"><a href="/archives#using-the-archives">Using The Archives</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <a class="header-nav-title" href="/mission-and-history/cfch-strategic-plan/smithsonian">About Us</a>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item"><a href="/mission-and-history/cfch-strategic-plan/smithsonian">Mission</a></li>
+                            <li class="header-nav-sub-item"><a href="/staff/smithsonian">Staff</a></li>
+                            <li class="header-nav-sub-item"><a href="/press/smithsonian">Press</a></li>
+                            <li class="header-nav-sub-item"><a href="/contact/smithsonian">Contact</a></li>
+                            <li class="header-nav-sub-item"><a href="/legacy-honorees/smithsonian">Legacy Honorees</a></li>
+                            <li class="header-nav-sub-item"><a href="/talk-story">Talk Story*</a></li>
+                            <li class="header-nav-sub-item"><a href="/news-and-events">News &amp; Events*</a></li>
+                            <li class="header-nav-sub-item"><a href="/supporters">Donors &amp; Supporters</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <a class="header-nav-title" href="/employment/smithsonian">Get Involved</a>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item"><a href="/employment/smithsonian">Employment</a></li>
+                            <li class="header-nav-sub-item"><a href="/fellowships/smithsonian">Fellowships</a></li>
+                            <li class="header-nav-sub-item"><a href="/internships/smithsonian">Internships</a></li>
+                            <li class="header-nav-sub-item"><a href="/volunteers/smithsonian">Volunteer</a></li>
+                            <li class="header-nav-sub-item"><a href="https://www.si.edu/giving/donate-now/unit?id=89" target="_blank">Donate</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- SOCIAL SHARING-->
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"></div>
+        <!-- Social sharing icons-->
+        <div class="social-icons container">
+            <div id="share-facebook" class="social-icon-link">
+                <div aria-hidden="true" class="icon-facebook social-icon nav-icon"></div>
+            </div><a href="https://twitter.com/share?url=#PageURL&via=smithsonianfolk&text=Home" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=225,width=500');return false;" class="social-icon-link">
+                <div aria-hidden="true" class="icon-twitter social-icon nav-icon"></div>
+            </a><a href="https://plus.google.com/share?url=#PageURL" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="social-icon-link">
+                <div aria-hidden="true" class="icon-gplus social-icon nav-icon"></div>
+            </a><a href="https://www.pinterest.com/pin/create/button?url=#PageURL" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=800');return false;" class="social-icon-link">
+                <div aria-hidden="true" class="icon-pinterest social-icon nav-icon"></div>
+            </a><a href="https://www.tumblr.com/widgets/share/tool?url=#PageURL" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=540');return false;" class="social-icon-link">
+                <div aria-hidden="true" class="icon-tumblr social-icon nav-icon"></div>
+            </a><a href="mailto:?Subject=&#72;&#x6f;&#109;&#x65;&body=%0D%0A%0D%0Afrom%20&#104;&#x74;&#x74;&#x70;&#58;&#x2f;&#x2f;&#x66;&#111;&#108;&#107;&#x77;&#97;&#x79;&#115;&#x2e;&#108;&#117;&#107;&#x65;&#104;&#x61;&#116;&#102;&#x69;&#101;&#108;&#100;&#46;&#x63;&#x6f;&#x6d;" class="social-icon-link">
+                <div aria-hidden="true" class="icon-mail social-icon nav-icon"></div>
+            </a>
+        </div>
+        <!-- Mobile Search-->
+        <form action="/" class="search-bar mobile-search-bar mobile-only">
+            <input id="search-input" placeholder="Search..." type="search" name="q" value="" />
+        </form>  
+    </nav><!-- End Navbar-->
+    <div id="navspacer" class="navspacer"></div>
+    <div class="search-page">
+        @*<div class="title-bar">
+            <div class="container title-height">
+                <h1 class="page-title">
+                    Search
+                </h1>
+            </div>
+        </div>*@
+
+        <div class="general-content">
+            @RenderBody()
+        </div>
+
+        <div class="newsletter-signup-wrapper container">
+            <div class="short-newsletter-signup">
+                <div class="newsletter-signup clearfix">
+                    <div class="newsletter-signup-copy">
+                        <div class="icon-mail"></div>
+                        Join our email list for the latest news from Smithsonian Center for Folklife and Cultural Heritage
+                    </div>
+                </div>
+            </div>
+            <div class="short-newsletter-signup short-newsletter-signup-form-wrapper">
+                <form action="/" class="newsletter-signup-form newsletter">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer id="footer" class="footer">
+        <div class="container">
+            <footer id="footer" class="footer">
+                <footer id="footer" class="footer">
+                    <ul class="footer-row footer-row-1 row">
+                        <li class="footer-nav-main-item col-sm-2">
+                            <div class="footer-nav-title">Research*</div>
+                            <ul class="footer-nav-list">
+                                <li class="footer-nav-sub-item">Cultural Industries*</li>
+                                <li class="footer-nav-sub-item">Cultural Sustainability*</li>
+                                <li class="footer-nav-sub-item">Endangered*</li>
+                                <li class="footer-nav-sub-item">Languages*</li>
+                                <li class="footer-nav-sub-item">ICH &amp; Museums*</li>
+                                <li class="footer-nav-sub-item">Publications*</li>
+                            </ul>
+                        </li>
+                        <li class="footer-nav-main-item col-sm-2">
+                            <div class="footer-nav-title">Cultural Sustainability</div>
+                            <ul class="footer-nav-list">
+                                <li class="footer-nav-sub-item"><a href="/cultural-sustainability/my-armenia/smithsonian">My Armenia</a></li>
+                                <li class="footer-nav-sub-item"><a href="/cultural-heritage-policy/smithsonian">Cultural Policy</a></li>
+                            </ul>
+                        </li>
+                        <li class="footer-nav-main-item col-sm-2">
+                            <a href="/education" class="footer-nav-title">Education</a>
+                            <ul class="footer-nav-list">
+                                <li class="footer-nav-sub-item visible-xs"><a href="/education">Education Overview</a></li>
+                                <li class="footer-nav-sub-item"><a href="/education#cultural-education">Cultural Education</a></li>
+                                <li class="footer-nav-sub-item"><a href="/education#resources">Resources</a></li>
+                                <li class="footer-nav-sub-item"><a href="/education#publications">Publications</a></li>
+                                <li class="footer-nav-sub-item"><a href="/education#exhibits">Exhibits*</a></li>
+                            </ul>
+                        </li>
+                        <li class="footer-nav-main-item col-sm-2">
+                            <a class="footer-nav-title" href="/archives">Archives</a>
+                            <ul class="footer-nav-list">
+                                <li class="footer-nav-sub-item visible-xs"><a href="/archives">Archives Overview</a></li>
+                                <li class="footer-nav-sub-item"><a href="/archives#about-the-archives">About the Archives</a></li>
+                                <li class="footer-nav-sub-item"><a href="/archives#collections">Collections</a></li>
+                                <li class="footer-nav-sub-item"><a href="/archives#collections">Using The Archives</a></li>
+                            </ul>
+                        </li>
+                        <li class="footer-nav-main-item col-sm-2">
+                            <a class="footer-nav-title" href="/mission-and-history/cfch-strategic-plan/smithsonian">About Us</a>
+                            <ul class="footer-nav-list">
+                                <li class="footer-nav-sub-item"><a href="/mission-and-history/cfch-strategic-plan/smithsonian">Mission</a></li>
+                                <li class="footer-nav-sub-item"><a href="/staff/smithsonian">Staff</a></li>
+                                <li class="footer-nav-sub-item"><a href="/press/smithsonian">Press</a></li>
+                                <li class="footer-nav-sub-item"><a href="/contact/smithsonian">Contact</a></li>
+                                <li class="footer-nav-sub-item"><a href="/legacy-honorees/smithsonian">Legacy Honorees</a></li>
+                                <li class="footer-nav-sub-item"><a href="/talkstory/">Talk Story*</a></li>
+                                <li class="footer-nav-sub-item"><a href="/news-and-events">News &amp; Events*</a></li>
+                                <li class="footer-nav-sub-item"><a href="/supporters">Donors &amp; Supporters</a></li>
+                            </ul>
+                        </li>
+                        <li class="footer-nav-main-item col-sm-2">
+                            <a class="footer-nav-title" href="/employment/smithsonian">Get Involved</a>
+                            <ul class="footer-nav-list">
+                                <li class="footer-nav-sub-item"><a href="/employment/smithsonian">Employment</a></li>
+                                <li class="footer-nav-sub-item"><a href="/fellowships/smithsonian">Fellowships</a></li>
+                                <li class="footer-nav-sub-item"><a href="/internships/smithsonian">Internships</a></li>
+                                <li class="footer-nav-sub-item"><a href="/volunteers/smithsonian">Volunteer</a></li>
+                                <li class="footer-nav-sub-item"><a href="https://www.si.edu/giving/donate-now/unit?id=89" target="_blank">Donate</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <hr class="footer-hr" />
+                    <ul class="footer-row footer-row-2 row">
+                        <li class="footer-main-item col-sm-3">
+                            <div class="footer-logo active-footer-logo"><a href="http://folklife.lukehatfield.com"><img src="/themes/folklife/assets/images/logo/smithsonian_center_for_folklife_and_cultural_heritage.png?v=2016.10.21" alt="Smithsonian Center for Folklife and Cultural Heritage" class="footer-logo-img folklife-footer-logo-img" /></a></div>
+                        </li>
+                        <li class="footer-main-item col-sm-3">
+                            <div class="footer-logo"><a href="http://folkways.lukehatfield.com"><img src="/themes/folklife/assets/images/logo/smithsonian_folkways_recordings.png?v=2016.10.21" alt="Smithsonian Folkways Recordings" class="footer-logo-img" /></a></div>
+                        </li>
+                        <li class="footer-main-item col-sm-3">
+                            <div class="footer-logo"><a href="http://on.festival.lukehatfield.com"><img src="/themes/folklife/assets/images/logo/smithsonian_folklife_festival.png?v=2016.10.21" alt="Smithsonian Folklife Festival" class="footer-logo-img" /></a></div>
+                        </li>
+                        <li class="footer-main-item col-sm-1">
+                            <ul class="footer-list copyright-list">
+                                <li class="footer-sub-item copyright-list-item"><a href="#">Copyright</a></li>
+                                <li class="footer-sub-item copyright-list-item"><a href="#">Contact</a></li>
+                                <li class="footer-sub-item copyright-list-item"><a href="#">Privacy</a></li>
+                                <li class="footer-sub-item copyright-list-item"><a href="#">Credits</a></li>
+                            </ul>
+                        </li>
+                        <li class="footer-main-item col-sm-2 social-media">
+                            <div class="footer-sub-item social-media-title">Connect with us</div>
+                            <ul class="footer-list">
+                                <!-- Folklife or Festival-->
+                                <li class="social-media-icon"><a href="https://www.facebook.com/smithsonianfolklifefestival" target="_blank" class="icon-facebook"></a></li>
+                                <li class="social-media-icon"><a href="https://twitter.com/smithsonianfolk" target="_blank" class="icon-twitter"></a></li>
+                                <li class="social-media-icon"><a href="http://smithsonianfolklife.tumblr.com/" target="_blank" class="icon-tumblr"></a></li>
+                                <li class="social-media-icon"><a href="https://www.flickr.com/groups/2016folklifefestival" target="_blank" class="icon-flickr"></a></li>
+                                <li class="social-media-icon"><a href="https://www.instagram.com/smithsonianfolklife/" target="_blank" class="icon-instagrem"></a></li>
+                                <!-- Festival-->
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="footer-row footer-row-3 row">
+                        <li class="footer-main-item col-sm-3">
+                            <div class="smithsonian-institution-logo"><img src="/themes/folklife/assets/images/logo/smithsonian_institution.png" alt="Smithsonian Institution" /></div>
+                        </li>
+                        <li class="footer-main-item col-sm-4">
+                            <div class="copyright">&copy; 2016 Smithsonian Institution</div>
+                        </li>
+                    </ul>
+                </footer>
+            </footer>
+        </div>
+    </footer>
+
+    <script src="/Themes/Folklife/Scripts/folklife.pkgd.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+
+
+    @Scripts.Render("/Themes/Folklife/Scripts/folklife")
+
+    <script>
+        function toggle_visibility(id) {
+            $(".filter-option").hide();
+            $("#" + id).toggle();
+        }
+    </script>
+
+</body>
+</html>
