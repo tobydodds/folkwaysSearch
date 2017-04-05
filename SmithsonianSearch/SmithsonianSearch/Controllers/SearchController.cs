@@ -208,6 +208,13 @@
                                                                : Config.Instance.PageSizeTableView;
                 }
 
+                //Search removed to support dropdown filters
+                //string searchPageUrl = this.Url.Action(
+                //    "Index",
+                //    "Search",
+                //    model.GetRouteValueObject(true),
+                //    this.Request.Url.Scheme);
+
                 string searchPageUrl = this.Url.Action(
                     "Index",
                     "Search",

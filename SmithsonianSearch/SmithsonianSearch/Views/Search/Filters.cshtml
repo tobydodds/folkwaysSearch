@@ -38,6 +38,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="filter-by-title">Filter By		</div>
+                    <div class="clear-filter-button"><a href="@Model.GetClearFiltersUrl()">Clear Filters</a></div>
                     @*<div class="filter-by-title clear-all-button">Clear All		</div>*@
                 </div>
             </div>
@@ -76,7 +77,7 @@
                                     <label for="@filter.Key" class="filter-label">@filter.Key</label>
                                     <select id="ddl" class="filter-select" name="@filter.Key" runat="server" onchange="javascript:document.location.href = this.value;">
                                         <option>Select one</option>
-                                        @foreach (var option in filter.Value.Take(5))
+                                        @foreach (var option in filter.Value.Take(50))
                                         {
 
                                             @RenderFilterOption(filter.Key, option, cssClass_1_5, "")

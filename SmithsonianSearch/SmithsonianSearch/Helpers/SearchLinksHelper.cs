@@ -30,7 +30,9 @@
             copyModel.PaginationModel.StartItemIndex = 0;
 
             RouteValueDictionary routeValueDictionary = copyModel.GetRouteValueDictionary();
-            routeValueDictionary["action"] = "Search";
+            //Search removed to support clearing of dropdown filters
+            //routeValueDictionary["action"] = "Search";
+            routeValueDictionary["action"] = "";
             routeValueDictionary["controller"] = "Search";
 
             string url = RouteTable.Routes.GetVirtualPath(requestContext, routeValueDictionary).VirtualPath;
@@ -88,7 +90,7 @@
             }
 
             RouteValueDictionary routeValueDictionary = tempSearchModel.GetRouteValueDictionary();
-            routeValueDictionary["action"] = "/";
+            routeValueDictionary["action"] = "";
             routeValueDictionary["controller"] = "Search";
 
             string url = RouteTable.Routes.GetVirtualPath(requestContext, routeValueDictionary).VirtualPath;

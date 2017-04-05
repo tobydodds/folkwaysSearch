@@ -13,10 +13,11 @@
 
     if (searchModel.PaginationModel.IsNextPageLinkAvailable)
     {
-        <a class="nextLink clearfix" id="@string.Format("nextLink{0}", searchModel.PaginationModel.CurrentPageIndex)" href="@searchModel.GetNextPageUrl()">See More</a>
-    }
-    else if(searchModel.PaginationModel.StartItemIndex > 0)
-    {
+        @*<a class="nextLink clearfix" id="@string.Format("nextLink{0}", searchModel.PaginationModel.CurrentPageIndex)" href="@searchModel.GetNextPageUrl()">See More</a>*@
+        <a class="nextLink clearfix" id="@string.Format("nextLink{0}", searchModel.PaginationModel.CurrentPageIndex)" href="@searchModel.GetNextPageUrl()"></a>
+}
+else if (searchModel.PaginationModel.StartItemIndex > 0)
+{
         <p class="endOfResults">The end of results.</p>
     }
     

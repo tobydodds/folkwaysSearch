@@ -45,7 +45,7 @@
             },
 
             loadPage: function (url) {
-                if (Smithsonian.Search.isConsoleDefined) { console.log('loadPage'); }
+                if (Smithsonian.Search.isConsoleDefined) { console.info('loadPage'); }
 
                 if (typeof url == "undefined" || url == '') {
                     if (Smithsonian.Search.isConsoleDefined) { console.error("loadPage: URL for Ajax request is undefined or empty.", this); }
@@ -91,9 +91,8 @@
                 if (firstTimeLoad) {
 
                     $(window).scroll(function () {
-
                         if (Smithsonian.Search.LazyLoading.loading != true &&
-                            ($(window).scrollTop() > $(document).height() - $(window).height() - 100) &&
+                            ($(window).scrollTop() > $(document).height() - $(window).height() - 1000) &&
                             Smithsonian.Search.isAnyContentInPlace()) {
 
                             Smithsonian.Search.LazyLoading.loading = true;
@@ -168,7 +167,7 @@
             if (Smithsonian.Search.isConsoleDefined) {
                 console.log("processSearchResults", typeof result == "undefined");
             }
-
+            console.info("Hi Luke");
             Smithsonian.Search.LazyLoading.setUpLazyLoading(firstTimeLoad);
 
             var resultNode = $(Smithsonian.Search.selectors.resultContainer);

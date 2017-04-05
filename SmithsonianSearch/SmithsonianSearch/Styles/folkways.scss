@@ -1,4 +1,4 @@
-/*
+﻿/*
 	
 	  _|         |     |  |                                                        
 	 |     _ \   |  /  |  |  / \ \  \   /  _` |  |   |   __|       __|   __|   __| 
@@ -37,11 +37,11 @@
 	@import "../Assets/common/css/nav.scss";
 	@import "../Assets/common/css/general.scss";
 	@import "../Assets/common/css/footer.scss";
-	@import "article.scss";
+	@import "../Assets/common/css/article.scss";
 	@import "../Assets/common/css/program.scss";
 	@import "../Assets/common/css/cards.scss";
 	@import "../Assets/common/css/audio.scss"; // after cards for cascading overrides
-	@import "./magazine.scss"; // for folkways only
+	@import "../Assets/common/css/magazine.scss"; // for folkways only
 
 /* Logo variation
 -------------------------------------------------- */
@@ -1668,3 +1668,309 @@
         background-color: $fw-dark-blue;
     }
 }
+
+/* Search, Festival Past Festival Programs
+-------------------------------------------------*/
+.search-page .svg-thin-hr, .past-festivals-page .svg-thin-hr {
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0.18519rem;
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .svg-thin-hr, .past-festivals-page .svg-thin-hr {
+		margin-bottom: 0.32vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .svg-thin-hr, .past-festivals-page .svg-thin-hr {
+		margin-bottom: 0.5rem;
+	}
+}
+
+.search-page .svg-thin-hr path, .past-festivals-page .svg-thin-hr path {
+	fill: #b3b3b3;
+}
+
+.search-page .search-query-title, .past-festivals-page .search-query-title {
+	font-family: "unit-gothic-717", "Arial Black", "Arial Bold", Gadget, sans-serif;
+	text-transform: uppercase;
+	line-height: 1;
+	text-transform: capitalize;
+	margin-bottom: 0.88889rem;
+}
+
+@media only screen and (max-width: 53.15em) {
+	.search-page .search-query-title, .past-festivals-page .search-query-title {
+		font-size: 8vw;
+	}
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .search-query-title, .past-festivals-page .search-query-title {
+		font-size: 2.9vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .search-query-title, .past-festivals-page .search-query-title {
+		font-size: 4rem;
+	}
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .search-query-title, .past-festivals-page .search-query-title {
+		margin-bottom: 1.536vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .search-query-title, .past-festivals-page .search-query-title {
+		margin-bottom: 2.4rem;
+	}
+}
+
+.search-page .highlight-bar, .past-festivals-page .highlight-bar {
+	background-color: #e6e6e6;
+	padding-top: 1.12375rem;
+	padding-bottom: 2.80938rem;
+	margin-bottom: 1.48148rem;
+	position: relative;
+	z-index: 10;
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .highlight-bar, .past-festivals-page .highlight-bar {
+		padding-top: 1.024vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .highlight-bar, .past-festivals-page .highlight-bar {
+		padding-top: 1.6rem;
+	}
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .highlight-bar, .past-festivals-page .highlight-bar {
+		padding-bottom: 2.56vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .highlight-bar, .past-festivals-page .highlight-bar {
+		padding-bottom: 4rem;
+	}
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .highlight-bar, .past-festivals-page .highlight-bar {
+		margin-bottom: 2.56vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .highlight-bar, .past-festivals-page .highlight-bar {
+		margin-bottom: 4rem;
+	}
+}
+
+@media only screen and (min-width: 53.25em) {
+	.search-page .filter-more-button, .past-festivals-page .filter-more-button {
+		margin-top: 3.5rem;
+	}
+}
+
+.search-page .filter-more-band, .past-festivals-page .filter-more-band {
+	display: none;
+}
+
+@media only screen and (min-width: 53.25em) {
+	.search-page .filter-more-band, .past-festivals-page .filter-more-band {
+		padding-top: 1.40469rem;
+	}
+}
+
+@media only screen and (min-width: 53.25em) and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .filter-more-band, .past-festivals-page .filter-more-band {
+		padding-top: 1.28vw;
+	}
+}
+
+@media only screen and (min-width: 53.25em) and (min-width: 1560px) {
+	.search-page .filter-more-band, .past-festivals-page .filter-more-band {
+		padding-top: 2rem;
+	}
+}
+
+.search-page .filter-by-title, .past-festivals-page .filter-by-title {
+	font-weight: 800;
+	text-transform: uppercase;
+	font-family: "acumin-pro-wide", Arial, sans-serif;
+	line-height: 1.2;
+	font-size: 1.7rem;
+	color: #666666;
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .filter-by-title, .past-festivals-page .filter-by-title {
+		line-height: 1.2;
+		font-size: 1vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .filter-by-title, .past-festivals-page .filter-by-title {
+		line-height: 1.4353;
+		font-size: 1.7rem;
+	}
+}
+
+@media only screen and (max-width: 53.15em) {
+	.search-page .filter-by-title, .past-festivals-page .filter-by-title {
+		font-size: 5vw;
+	}
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .filter-by-title, .past-festivals-page .filter-by-title {
+		font-size: 1.15vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .filter-by-title, .past-festivals-page .filter-by-title {
+		font-size: 1.8rem;
+	}
+}
+
+.search-page .filter-button, .past-festivals-page .filter-button {
+	background-color: #cccccc;
+	border: 1px solid #999999;
+	text-align: center;
+	cursor: pointer;
+	padding-left: 0;
+}
+
+.search-page .filter-dropdown, .past-festivals-page .filter-dropdown {
+	background-color: transparent;
+}
+
+.search-page .filter-dropdown select, .past-festivals-page .filter-dropdown select {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
+	padding: 2px 6px;
+	width: 100%;
+	background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='#444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+}
+
+.search-page .filter-label, .past-festivals-page .filter-label {
+	font-weight: 300;
+	text-transform: uppercase;
+	font-family: "acumin-pro-wide", Arial, sans-serif;
+	color: #595959;
+	position: relative;
+	line-height: 1.1;
+	letter-spacing: 0.5px;
+	margin-bottom: 0.5rem;
+	font-size: 1.2rem;
+}
+
+.search-page .clear-filter-button {
+	font-weight: 300;
+	text-transform: uppercase;
+	font-family: "acumin-pro-wide", Arial, sans-serif;
+	color: #595959;
+	position: relative;
+	line-height: 1.1;
+	letter-spacing: 0.5px;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 53.25em) {
+	.search-page .filter-label, .past-festivals-page .filter-label {
+		line-height: 1.4;
+	}
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .filter-label, .past-festivals-page .filter-label {
+		font-size: 1vw;
+		letter-spacing: 0.5px;
+		margin-bottom: 0.4vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .filter-label, .past-festivals-page .filter-label {
+		font-size: 1.6rem;
+		letter-spacing: 1px;
+		margin-bottom: 0;
+	}
+}
+
+.search-page .filter-select, .past-festivals-page .filter-select {
+	font-weight: 300;
+	font-family: "acumin-pro", Arial, sans-serif;
+	line-height: 1.32;
+	font-size: 1.5rem;
+	font-weight: 600 !important;
+	line-height: 1.4;
+	font-size: 1.3rem;
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .filter-select, .past-festivals-page .filter-select {
+		font-size: 1.3vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .filter-select, .past-festivals-page .filter-select {
+		line-height: 1.32;
+		font-size: 1.8rem;
+	}
+}
+
+@media only screen and (min-width: 53.25em) {
+	.search-page .filter-select, .past-festivals-page .filter-select {
+		line-height: 1.3;
+	}
+}
+
+@media only screen and (min-width: 53.25em) and (max-width: 1559px) {
+	.search-page .filter-select, .past-festivals-page .filter-select {
+		font-size: 1vw;
+	}
+}
+
+@media only screen and (min-width: 1560px) {
+	.search-page .filter-select, .past-festivals-page .filter-select {
+		line-height: 1.3;
+		font-size: 1.6rem;
+	}
+}
+
+/* Back to Top
+-------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    bottom: 4em;
+    right: 0;
+    text-decoration: none;
+    color: #000;
+    background-color: $black10;
+    font-size: 12px;
+    padding: 1em;
+    /*display: none;*/
+    @include sm-sans;
+}
+
+.back-to-top:hover {
+    background-color: $black20;
+}	

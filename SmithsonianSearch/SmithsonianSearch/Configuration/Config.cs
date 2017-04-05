@@ -56,7 +56,7 @@
         /// <summary>
         ///     The number of results per page in tiles view
         /// </summary>
-        private readonly int pageSizeInTilesView = 20;
+        private readonly int pageSizeInTilesView = 24;
 
         /// <summary>
         ///     Sorting parameter value for GSA URL: by date ASC
