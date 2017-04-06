@@ -19,7 +19,7 @@
     <script src="~/Scripts/jquery.min.js" type="text/javascript"></script>
 
     <!--Folkways CSS-->
-    <link href="/Themes/Folklife/Styles/folklife.css" rel="stylesheet" />
+    <link href="~/Styles/folkways.min.css" rel="stylesheet" />
     @*<link href="~/css/bootstrap.css" rel="stylesheet">*@
 
     <script type="text/javascript" src="@Url.Content("~/Scripts/pickle/pickle.js")"></script>
@@ -69,7 +69,7 @@
                 </div>
 
                 <!-- Search Bar-->
-                <form action="/" class="search-bar desktop-search-bar col-sm-offset-1 col-sm-5 col-md-5 col-md-offset-1 col-lg-offset-2 col-lg-6">
+                <form action="/search" class="search-bar desktop-search-bar col-sm-offset-1 col-sm-5 col-md-5 col-md-offset-1 col-lg-offset-2 col-lg-6">
                     <input id="search-input" placeholder="Search..." type="search" name="query" value="" />
                 </form>
                 <!-- Main Navigation Icons-->
@@ -312,11 +312,12 @@
         </div>
     </footer>
 
-    <script src="/Themes/Folklife/Scripts/folklife.pkgd.js" type="text/javascript"></script>
+
+    <script src="~/Scripts/folkways.pkgd.js" type="text/javascript"></script>
     <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
 
 
-    @Scripts.Render("/Themes/Folklife/Scripts/folklife")
+    @Scripts.Render("~/Scripts/folkways")
 
     <script>
         function toggle_visibility(id) {
