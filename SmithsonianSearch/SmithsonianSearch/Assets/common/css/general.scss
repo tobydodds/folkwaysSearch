@@ -1174,6 +1174,11 @@
   			margin-left: -5.4rem;
 		}
 	}
+    .filter-select {
+        select::-ms-expand {
+        display: none;
+    }
+        }
 	.slick-next {
 		@include respond-to(break2max) {
 			right: 3.4vw;
@@ -1189,6 +1194,10 @@
 			margin-right: -4.8rem;
 		}
 	}
+
+
+            
+
 
 /* Hide Ios Play button
 -------------------------------------------------*/

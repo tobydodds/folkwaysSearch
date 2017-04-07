@@ -12,7 +12,7 @@
 	URL:    http://visualdialogue.com
 	Created: Fall 2016
 */
-/* Imports	
+/* Imports
 -------------------------------------------------- */
 /*
 
@@ -8246,6 +8246,9 @@ figcaption {
   .slick-prev {
     left: auto;
     margin-left: -5.4rem; } }
+
+.filter-select select::-ms-expand {
+  display: none; }
 
 @media only screen and (max-width: 53.15em) {
   .slick-next {
