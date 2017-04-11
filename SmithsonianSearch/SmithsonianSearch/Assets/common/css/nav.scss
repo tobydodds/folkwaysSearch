@@ -204,9 +204,9 @@
 		top:0;
 		a {
 			display: block;
-			&:focus {
-				@include outline;
-			}
+			// &:focus {
+			// 	@include outline;
+			// }
 		}
 	}
 	// CSS only logo transition
@@ -323,10 +323,12 @@
 	.nav-icons {
 		// right: 0;
 		text-align:right;
+		margin-top: 0.2rem;
 		@include respond-to(break2) {
 			position: static;
 			float: right;
 			margin-top: 0.8rem;
+			margin-top: 1rem;
 			margin-right: -1.2vw;
 
 		}
@@ -412,11 +414,11 @@
 		@include padding-top(3.4);
 		@include padding-bottom(2.6);
 	}
-	.header-nav-sub-item {
-		&:focus {
-			@include outline;
-		}
-	}
+	// .header-nav-main-item, .header-nav-sub-item, .folkways-nav {
+	// 	a:focus {
+	// 		@include outline($black50);
+	// 	}
+	// }
 
 	.header-nav, .footer-nav {
 		// keep above outside click div

@@ -5,7 +5,8 @@
 		font-weight: 700;
 		font-family: $serif;
 		line-height: 1;
-		font-size: 4.2rem;
+		// font-size: 4.2rem;
+		font-size: 3.8rem;
 		@include respond-to(break2full) {
 			font-size: 3.5vw;
 		}
@@ -53,6 +54,7 @@
 		line-height: 1;
 		@include respond-to(break2full) {
 			font-size: 1.9vw;
+			font-size: 3.9vw;
 		}
 		@include respond-to(fullwidth) {
 			font-size: 3.5rem;
@@ -74,7 +76,7 @@
 	@mixin lg-sans {
 		font-weight: 300;
 		font-family: $sans;
-		line-height: 1.267; // taller per discussion on 1.4 at shop // 38px
+		line-height: 1.127; 
 		font-size: 2.1rem;
 		@include respond-to(break2full) {
 	  		font-size: 1.9vw;
@@ -102,12 +104,27 @@
 		line-height: 1.32; // album sidebar 2017.02.17
 		font-size: 1.5rem;
 		@include respond-to(break2full) {
-			font-size: 1.3vw;
+			font-size: 1.2vw;
 		}
 		@include respond-to(fullwidth) {
 			// line-height: 1.38; // album sidebar 2017.02.17
 			line-height: 1.32; // album sidebar 2017.02.17
 			font-size: 1.8rem;
+		}
+	}
+	@mixin sm-sans-gallano {
+		font-weight: 300;
+		font-family: $galano;
+		// line-height: 1.32;
+		line-height: 1.43;
+		font-size: 1.6rem;
+		@include respond-to(break2full) {
+			font-size: 1.2vw;
+		}
+		@include respond-to(fullwidth) {
+			// line-height: 1.32; // album sidebar 2017.02.17
+			line-height: 1.32; // album sidebar 2017.02.17
+			font-size: 2rem;
 		}
 	}
 	@mixin caption-sans {
@@ -134,7 +151,7 @@
 	@mixin date-sm {
 		@include sans-tag;
 		letter-spacing: normal;
-		text-transform: initial;
+		text-transform: none;
 		@include margin-top(0.5);
 	}
 	@mixin byline {
@@ -243,6 +260,27 @@
 			font-size: 3rem;
 		}
 	}
+	@mixin sm-magazine-issue-title {
+		font-weight: 700;
+		font-family: $serif;
+		line-height: 1;
+		// font-size: 2.2rem;
+		// font-size: 4rem;
+		font-size: 3rem;
+		@include respond-to(break2) {
+			// line-height: 1.143;
+			line-height: 1;
+		}
+		@include respond-to(break2full) {
+			// font-size: 1.8vw;
+			font-size: 2vw;
+		}
+		@include respond-to(fullwidth) {
+			// font-size: 2.8rem;
+			font-size: 3rem;
+		}
+		@include margin-bottom(1);
+	}
 	@mixin button-title {
 		font-weight: 800;
 		text-transform: uppercase;
@@ -304,10 +342,13 @@
 	@mixin intro-serif {
 		font-weight: 500;
 		font-family: $serif;
-		line-height: 1.267; // 38px
-		font-size: 1.9rem;
+		// line-height: 1.267; // 38px
+		line-height: 1.3333; // 40px updated 2017.03.21
+		// font-size: 1.9rem;
+		font-size: 2.1rem; // 2017.03.33
 		@include respond-to(break2full) {
-			font-size: 2.2vw;
+			// font-size: 2.2vw;
+			font-size: 2vw;
 		}
 		@include respond-to(fullwidth) {
 			font-size: 3rem;
@@ -484,6 +525,13 @@
 			}
 		}
 	}
+	.content .more-link {
+		position: static;
+		float: right;
+		display: inline-block;
+		border-bottom: none;
+		box-shadow: none;
+	}
 	.content-footer {
 		position: relative;
 		h2 {
@@ -494,3 +542,44 @@
 			@include body-sans;
 		}
 	}
+
+	// type classes
+	// Serif
+	.lg-serif {@include lg-serif;}
+	.md-serif {@include md-serif;}
+	.sm-serif {@include sm-serif;}
+	.sm-serif-italic {@include sm-serif;font-style: italic;}
+
+	// Sans
+	.xl-sans {@include xl-sans;}
+	.xl-sans-semi {@include xl-sans;font-weight: 600;}
+	.lg-sans {@include lg-sans;}
+	.lg-sans-semi {@include lg-sans;font-weight: 600;}
+	.md-sans {@include md-sans;}
+	.md-sans-semi {@include md-sans;font-weight: 600;}
+	.sm-sans {@include sm-sans;}
+	.sm-sans-semi {@include sm-sans;font-weight: 600;}
+	.caption-sans {@include caption-sans;}
+
+	// body type
+	.body-serif {@include body-serif;}
+	.intro-serif {@include intro-serif;}
+	.body-sans {@include body-sans;}
+	.intro-sans {@include lg-sans;}
+
+	// Woodtype Extended
+	.lg-woodtype-extended {@include lg-woodtype-extended;}
+	.md-woodtype-extended {@include md-woodtype-extended;}
+	.sm-woodtype-extended {@include sm-woodtype-extended;@include margin-top(1);}
+	.nav-header {@include nav-header;}
+
+	// Magazine
+	.lg-magazine-title {@include lg-magazine-title;}
+	.md-magazine-title {@include md-magazine-title;}
+	.sm-magazine-title {@include sm-magazine-title;}
+	.lg-magazine-issue-title {@include md-serif;}
+	.sm-magazine-issue-title {@include sm-magazine-issue-title;}
+
+	.button-title {@include button-title;}
+	.category-tag-type {@include sans-tag;}
+	.category-tag-bold-type {@include sans-tag;font-weight: 700;}
