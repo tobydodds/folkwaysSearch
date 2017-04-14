@@ -7,9 +7,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" type="image/png" href="/Themes/Folkways/assets/favicons/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/Themes/Folkways/assets/favicons/favicon-16x16.png" sizes="16x16">
     <title>Smithsonian Folkways - Search</title>
+
 
     <script>(function (d) { d.className = "dyn" + d.className.substring(6, d.className.length); })(document.documentElement);</script>
     <!-- Fonts-->
@@ -24,9 +26,17 @@
 
     <script type="text/javascript" src="@Url.Content("~/Scripts/pickle/pickle.js")"></script>
     <link rel="stylesheet" href="@Url.Content("~/Scripts/pickle/skins/button_mini_grey/_stylesheet.css")" />
+
+    <!-- Open graph tags-->
+    <meta property="og:site_name" content="Smithsonian Folkways Recordings" />
+    <meta property="og:type" content="website" />
+    <meta property="fb:app_id" content="1605520822809791" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="folkways" />
 </head>
 
 <body class="folkways-site">
+    <div id="top"></div>
     <a href="#main-content" class="skip-main">Skip to main content</a>
     <!-- Site Toggle-->
     <div id="site-toggle" class="site-toggle">
@@ -109,69 +119,71 @@
                     <li class="header-nav-main-item col-sm-2">
                         <a href="/explore" class="header-nav-title">Explore</a>
                         <ul class="header-nav-list">
-                            <li class="header-nav-sub-item visible-xs"><a href="/explore/smithsonian">Explore Overview</a></li>
-                            <li class="header-nav-sub-item"><a href="/magazine">Folkways Magazine*</a></li>
-                            <li class="header-nav-sub-item">Articles</li>
-                            <li class="header-nav-sub-item">Sounds</li>
-                            <li class="header-nav-sub-item">Videos</li>
+                            <li class="header-nav-sub-item visible-xs"><a href="/explore">Explore Overview</a></li>
+                            <li class="header-nav-sub-item"><a href="/magazine">Folkways Magazine</a></li>
+                            <li class="header-nav-sub-item"><a href="/search?query=Article">Articles</a></li>
+                            <li class="header-nav-sub-item"><a href="/search?query=Playlist">Playlists</a></li>
+                            <li class="header-nav-sub-item"><a href="/search?query=Podcast">Podcasts</a></li>
+                            <li class="header-nav-sub-item"><a href="/search?query=Video">Videos</a></li>
                         </ul>
                     </li>
                     <li class="header-nav-main-item col-sm-2">
-                        <a href="/learn" class="header-nav-title">Learn*</a>
+                        <a href="/learn" class="header-nav-title">Learn</a>
                         <ul class="header-nav-list">
                             <li class="header-nav-sub-item visible-xs"><a href="/learn">Learn Overview*</a></li>
-                            <li class="header-nav-sub-item">Lesson Plans</li>
-                            <li class="header-nav-sub-item">Workshops</li>
-                            <li class="header-nav-sub-item">Interactives</li>
-                            <li class="header-nav-sub-item">Libraries</li>
-                            <li class="header-nav-sub-item">Partners</li>
+                            <li class="header-nav-sub-item"><a href="/search?query=Lesson Plan">Lesson Plans</a></li>
+                            <li class="header-nav-sub-item"><a href="/workshops-teachers/smithsonian">Courses</a></li>
+                            <li class="header-nav-sub-item"><a href="/interactive-features/smithsonian">Interactives</a></li>
+                            <li class="header-nav-sub-item"><a href="/learn#Subscribe-to-Folkways">Libraries</a></li>
+                            <li class="header-nav-sub-item"><a href="/music-partners/smithsonian">Partners</a></li>
                         </ul>
                     </li>
                     <li class="header-nav-main-item col-sm-2">
-                        <div class="header-nav-title">Join</div>
+                        <a href="/join" class="header-nav-title">Join</a>
                         <ul class="header-nav-list">
-                            <li class="header-nav-sub-item"><a href="/join/membership">Memberships*</a></li>
-                            <li class="header-nav-sub-item">Jobs &amp; Internships</li>
-                            <li class="header-nav-sub-item">Proposals</li>
-                            <li class="header-nav-sub-item">Mailing List</li>
-                            <li class="header-nav-sub-item">Visit Us</li>
+                            <li class="header-nav-sub-item"><a href="/membership">Memberships</a></li>
+                            <li class="header-nav-sub-item"><a href="/jobs">Jobs &amp; Internships</a></li>
+                            <!--<li class="header-nav-sub-item">Proposals*</li>-->
+                            <li class="header-nav-sub-item"><a href="/join-our-mailing-list/smithsonian">Mailing List</a></li>
+                            <li class="header-nav-sub-item"><a href="/join#visit-us">Visit Us</a></li>
                         </ul>
                     </li>
                     <li class="header-nav-main-item col-sm-2">
-                        <a href="/shop" class="header-nav-title">Shop*</a>
+                        <a href="/shop" class="header-nav-title">Shop</a>
                         <ul class="header-nav-list">
-                            <li class="header-nav-sub-item visible-xs"><a href="/shop">Shop Overview*</a></li>
-                            <li class="header-nav-sub-item"><a href="/shop#new-releases">New Releases</a></li>
-                            <li class="header-nav-sub-item"><a href="/shop#best-sellers">Best Sellers</a></li>
-                            <li class="header-nav-sub-item"><a href="/shop#essential-picks">Essential Picks</a></li>
-                            <li class="header-nav-sub-item"><a href="/shop#vinyl">Vinyl</a></li>
-                            <li class="header-nav-sub-item"><a href="/shop#books">Books</a></li>
-                            <li class="header-nav-sub-item"><a href="/shop#dvds">DVDs</a></li>
-                            <li class="header-nav-sub-item"><a href="/shop#merchandise">Merchandise</a></li>
+                            <li class="header-nav-sub-item visible-xs"><a href="/shop">Shop Overview</a></li>
+                            <li class="header-nav-sub-item"><a href="/new-releases">New Releases</a></li>
+                            <li class="header-nav-sub-item"><a href="/best-sellers">Best Sellers</a></li>
+                            <li class="header-nav-sub-item"><a href="/essential-picks">Essential Picks</a></li>
+                            <li class="header-nav-sub-item"><a href="/vinyl">Vinyl</a></li>
+                            <li class="header-nav-sub-item"><a href="/books">Books</a></li>
+                            <li class="header-nav-sub-item"><a href="/dvds">DVDs</a></li>
+                            <li class="header-nav-sub-item"><a href="/stickers">Stickers</a></li>
+                            <li class="header-nav-sub-item"><a href="/posters">Posters</a></li>
                         </ul>
+                    </li>
+                    <li class="header-nav-main-item col-sm-2">
+                        <a href="/mission-history/smithsonian" class="header-nav-title">About</a>
+                        <ul class="header-nav-list">
+                            <li class="header-nav-sub-item"><a href="/mission-history/smithsonian">Mission &amp; History</a></li>
+                            <li class="header-nav-sub-item"><a href="/folkways-staff/smithsonian">Staff</a></li>
+                            <li class="header-nav-sub-item"><a href="/awards/smithsonian">Awards</a></li>
+                        </ul>
+                        <a href="/news-and-press" class="header-nav-title">News & Press</a>
                     </li>
                     <li class="header-nav-main-item col-sm-2">
                         <div class="header-nav-title">Customer Service</div>
                         <ul class="header-nav-list">
-                            <li class="header-nav-sub-item">Ordering Information</li>
-                            <li class="header-nav-sub-item">Print Catalogs</li>
-                            <li class="header-nav-sub-item">Distributors</li>
-                            <li class="header-nav-sub-item">Educational Discounts</li>
-                            <li class="header-nav-sub-item">Wholesale Inquiries</li>
-                            <li class="header-nav-sub-item">Licensing Requests</li>
-                            <li class="header-nav-sub-item">Download Manager</li>
-                            <li class="header-nav-sub-item">Shopping Cart</li>
-                            <li class="header-nav-sub-item">My Account</li>
-                            <li class="header-nav-sub-item">FAQ</li>
-                        </ul>
-                    </li>
-                    <li class="header-nav-main-item col-sm-2">
-                        <div class="header-nav-title">News</div><br class="hidden-xs" />
-                        <div class="header-nav-title">About</div>
-                        <ul class="header-nav-list">
-                            <li class="header-nav-sub-item">Mission &amp; History</li>
-                            <li class="header-nav-sub-item">Staff</li>
-                            <li class="header-nav-sub-item">Awards</li>
+                            <li class="header-nav-sub-item"><a href="/ordering-information/smithsonian">Ordering Information</a></li>
+                            <li class="header-nav-sub-item"><a href="/world-of-sound-catalog/smithsonian">Print Catalogs</a></li>
+                            <li class="header-nav-sub-item"><a href="/retailers-distribution/smithsonian">Distributors</a></li>
+                            <li class="header-nav-sub-item"><a href="/libraries-educational-institutions/smithsonian">Educational Discounts</a></li>
+                            <li class="header-nav-sub-item"><a href="/wholesale-inquiries/smithsonian">Wholesale Inquiries</a></li>
+                            <li class="header-nav-sub-item"><a href="/licensing-requests/smithsonian">Licensing Requests</a></li>
+                            <li class="header-nav-sub-item"><a href="/download-manager/smithsonian">Download Manager</a></li>
+                            <li class="header-nav-sub-item"><a href="http://shopping.netsuite.com/s.nl?sc=3&amp;c=297799&amp;n=1&amp;ext=T">Shopping Cart</a></li>
+                            <li class="header-nav-sub-item"><a href="https://checkout.netsuite.com/c.297799/myaccount-1-05-0/index.ssp">My Account</a></li>
+                            <li class="header-nav-sub-item"><a href="/frequently-asked-questions/smithsonian">FAQ</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -197,8 +209,8 @@
             </a>
         </div>
         <!-- Mobile Search-->
-        <form action="/" class="search-bar mobile-search-bar mobile-only">
-            <input id="search-input" placeholder="Search..." type="search" name="q" value="" />
+        <form action="/search" class="search-bar mobile-search-bar mobile-only">
+            <input id="search-input" placeholder="Search..." type="search" name="query" value="" />
         </form>  <div id="browsenav" class="browsenav">
             <div class="container">
                 <div class="browsenav-title col-sm-4">Browse By</div>
@@ -207,84 +219,462 @@
                         <li class="col-sm-3">
                             <div class="dropdown">
                                 <div class="first-level-dropdown-title">Genre</div>
-                                <ul class="first-level-dropdown">
-                                    <li> African American Music</li>
-                                    <li> African American Spoken</li>
-                                    <li> American Folk</li>
-                                    <li> American History</li>
-                                    <li> American Indian</li>
-                                    <li> American Popular</li>
-                                    <li> Bluegrass</li>
-                                    <li> Blues</li>
-                                    <li> Cajun</li>
-                                    <li> Caribbean</li>
-                                    <li> Celtic</li>
-                                    <li> Central Asia</li>
-                                    <li> Children's</li>
-                                    <li> Classical</li>
-                                    <li> Contemporary &amp; Electronic</li>
-                                    <li> Country</li>
-                                    <li> Documentary</li>
-                                    <li> Drama</li>
-                                    <li> Gospel</li>
-                                    <li> Hawaii</li>
-                                    <li> Historical Song</li>
-                                    <li> Holiday</li>
-                                    <li> Humor</li>
-                                    <li> India</li>
-                                    <li> Islamica</li>
-                                    <li> Jazz &amp; Ragtime</li>
-                                    <li> Judaica</li>
-                                    <li> Language Instruction</li>
-                                    <li> Latin</li>
-                                    <li> Miscellany</li>
-                                    <li> Music Instruction</li>
-                                    <li> Old Time</li>
-                                    <li> Oral History &amp; Biography</li>
-                                    <li> Poetry</li>
-                                    <li> Prose</li>
-                                    <li> Psychology &amp; Health</li>
-                                    <li> Sacred</li>
-                                    <li> Science &amp; Nature</li>
-                                    <li> Sounds</li>
-                                    <li> Soundtracks &amp; Musicals</li>
-                                    <li> Spoken Word</li>
-                                    <li> Struggle &amp; Protest</li>
-                                    <li> World</li>
-                                    <li> World History</li>
+                                <ul class="first-level-dropdown tall-dropdown">
+                                    <li> <a href="/search?query=African%20American">African American Music</a></li>
+                                    <li> <a href="/search?query=African%20American%20Spoken">African American Spoken</a></li>
+                                    <li> <a href="/search?query=American%20Folk">American Folk</a></li>
+                                    <li> <a href="/search?query=American%20History">American History</a></li>
+                                    <li> <a href="/search?query=American%20Indian">American Indian</a></li>
+                                    <li> <a href="/search?query=American%20Popular">American Popular</a></li>
+                                    <li> <a href="/search?query=Bluegrass">Bluegrass</a></li>
+                                    <li> <a href="/search?query=Blues">Blues</a></li>
+                                    <li> <a href="/search?query=Cajun">Cajun</a></li>
+                                    <li> <a href="/search?query=Caribbean">Caribbean</a></li>
+                                    <li> <a href="/search?query=Celtic">Celtic</a></li>
+                                    <li> <a href="/search?query=Central%20Asia">Central Asia</a></li>
+                                    <li> <a href="/search?query=Children's">Children's</a></li>
+                                    <li> <a href="/search?query=Classical">Classical</a></li>
+                                    <li> <a href="/search?query=Contemporary">Contemporary &amp; Electronic</a></li>
+                                    <li> <a href="/search?query=Country">Country</a></li>
+                                    <li> <a href="/search?query=Documentary">Documentary</a></li>
+                                    <li> <a href="/search?query=Drama">Drama</a></li>
+                                    <li> <a href="/search?query=Gospel">Gospel</a></li>
+                                    <li> <a href="/search?query=Hawai'i">Hawai'i</a></li>
+                                    <li> <a href="/search?query=Historical%20Song">Historical Song</a></li>
+                                    <li> <a href="/search?query=Holiday">Holiday</a></li>
+                                    <li> <a href="/search?query=Humor">Humor</a></li>
+                                    <li> <a href="/search?query=India">India</a></li>
+                                    <li> <a href="/search?query=Islamica">Islamica</a></li>
+                                    <li> <a href="/search?query=Jazz">Jazz &amp; Ragtime</a></li>
+                                    <li> <a href="/search?query=Judaica">Judaica</a></li>
+                                    <li> <a href="/search?query=Language%20Instruction">Language Instruction</a></li>
+                                    <li> <a href="/search?query=Latin">Latin</a></li>
+                                    <li> <a href="/search?query=Music%20Instruction">Music Instruction</a></li>
+                                    <li> <a href="/search?query=Old%20Time">Old Time</a></li>
+                                    <li> <a href="/search?query=Oral%20History">Oral History &amp; Biography</a></li>
+                                    <li> <a href="/search?query=Poetry">Poetry</a></li>
+                                    <li> <a href="/search?query=Prose">Prose</a></li>
+                                    <li> <a href="/search?query=Psychology">Psychology &amp; Health</a></li>
+                                    <li> <a href="/search?query=Sacred">Sacred</a></li>
+                                    <li> <a href="/search?query=Science">Science &amp; Nature</a></li>
+                                    <li> <a href="/search?query=Sounds">Sounds</a></li>
+                                    <li> <a href="/search?query=Soundtracks">Soundtracks &amp; Musicals</a></li>
+                                    <li> <a href="/search?query=Spoken%20Word">Spoken Word</a></li>
+                                    <li> <a href="/search?query=Struggle">Struggle &amp; Protest</a></li>
+                                    <li> <a href="/search?query=World">World</a></li>
+                                    <li> <a href="/search?query=World%20History">World History</a></li>
+
                                 </ul>
                             </div>
                         </li>
                         <li class="col-sm-3">
                             <div class="dropdown">
-                                <div class="first-level-dropdown-title">Location</div>
+                                <div class="first-level-dropdown-title">Geography</div>
                                 <ul class="first-level-dropdown">
-                                    <li>North America</li>
-                                    <li>South America</li>
-                                    <li>Europe</li>
-                                    <li>Africa</li>
-                                    <li>Asia</li>
-                                    <li>Australia</li>
+                                    <li>
+                                        <div class="second-level-dropdown-title">Africa</div>
+                                        <ul class="second-level-dropdown">
+                                            <li>
+                                                <div class="third-level-dropdown-title">Eastern Africa</div>
+                                                <ul class="third-level-dropdown">
+                                                    <!--li><span>Comoros</span></!--li>
+                                                <li><span>Djibouti</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-eritrea">Eritrea</a></li>
+                                                    <li><a href="http://s.si.edu/country-ethiopia">Ethiopia</a></li>
+                                                    <li><a href="http://s.si.edu/country-kenya">Kenya</a></li>
+                                                    <li><a href="http://s.si.edu/country-madagascar">Madagascar</a></li>
+                                                    <li><a href="http://s.si.edu/country-malawi">Malawi</a></li>
+                                                    <!--<li><span>Mauritius</span></li>
+                                                <li><span>Mayotte</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-mozambique">Mozambique</a></li>
+                                                    <!--<li><span>Reunion</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-rwanda">Rwanda</a></li>
+                                                    <!--<li><span>Seychelles</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-somalia">Somalia</a></li>
+                                                    <li><a href="http://s.si.edu/country-tanzania">Tanzania</a></li>
+                                                    <li><a href="http://s.si.edu/country-uganda">Uganda</a></li>
+                                                    <li><a href="http://s.si.edu/country-zambia">Zambia</a></li>
+                                                    <li><a href="http://s.si.edu/country-zambia">Zimbabwe</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Middle Africa</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="/search?query=Burundi">Burundi</a></li>
+                                                    <li><a href="http://s.si.edu/country-angola">Angola</a></li>
+                                                    <li><a href="http://s.si.edu/country-cameroon">Cameroon</a></li>
+                                                    <li><a href="http://s.si.edu/country-central-african-republic">Central African Republic</a></li>
+                                                    <li><a href="http://s.si.edu/country-chad">Chad</a></li>
+                                                    <!--<li><span>Congo (Brazzaville)</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-congo-democratic-republic">Congo (Democratic Republic)</a></li>
+                                                    <li><a href="http://s.si.edu/country-equatorial-guinea">Equatorial Guinea</a></li>
+                                                    <li><a href="http://s.si.edu/country-gabon">Gabon</a></li>
+                                                    <!--<li><span>Sao Tome and Principe</span></li>-->
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Northern Africa</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="/search?query=Burundi">Burundi</a></li>
+                                                    <li><a href="http://s.si.edu/country-algeria">Algeria</a></li>
+                                                    <li><a href="http://s.si.edu/country-egypt">Egypt</a></li>
+                                                    <li><a href="http://s.si.edu/country-libya">Libya</a></li>
+                                                    <li><a href="http://s.si.edu/country-morocco">Morocco</a></li>
+                                                    <li><a href="http://s.si.edu/country-sudan">Sudan</a></li>
+                                                    <li><a href="http://s.si.edu/country-tunisia">Tunisia</a></li>
+                                                    <!--<li><span>Western Sahara</span></li>-->
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Southern Africa</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-botswana">Botswana</a></li>
+                                                    <li><a href="http://s.si.edu/country-lesotho">Lesotho</a></li>
+                                                    <li><a href="http://s.si.edu/country-namibia">Namibia</a></li>
+                                                    <li><a href="http://s.si.edu/country-south-africa">South Africa</a></li>
+                                                    <li><a href="http://s.si.edu/country-swaziland">Swaziland</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Western Africa</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-benin">Benin</a></li>
+                                                    <li><a href="http://s.si.edu/country-burkina-faso">Burkina Faso</a></li>
+                                                    <!--<li><span>Cape Verde</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-cote-divoire">Cote d'Ivoire</a></li>
+                                                    <li><a href="http://s.si.edu/country-gambia">Gambia</a></li>
+                                                    <li><a href="http://s.si.edu/country-ghana">Ghana</a></li>
+                                                    <li><a href="http://s.si.edu/country-guinea">Guinea</a></li>
+                                                    <li><a href="http://s.si.edu/country-guinea-bissau">Guinea-Bissau</a></li>
+                                                    <li><a href="http://s.si.edu/country-liberia">Liberia</a></li>
+                                                    <li><a href="http://s.si.edu/country-mali">Mali</a></li>
+                                                    <!--<li><span>Mauritania</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-niger">Niger</a></li>
+                                                    <li><a href="http://s.si.edu/country-nigeria">Nigeria</a></li>
+                                                    <!--<li><span>Saint Helena</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-senegal">Senegal</a></li>
+                                                    <li><a href="http://s.si.edu/country-sierra-leone">Sierra Leone</a></li>
+                                                    <li><a href="http://s.si.edu/country-togo">Togo</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-dropdown-title">Americas</div>
+                                        <ul class="second-level-dropdown">
+                                            <li>
+                                                <div class="third-level-dropdown-title"> </div>
+                                                <ul class="third-level-dropdown">
+                                                    <!--<li><span>Anguilla</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-antigua-and-barbuda">Antigua and Barbuda</a></li>
+                                                    <!--<li><span>Aruba</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-bahamas">Bahamas</a></li>
+                                                    <li><a href="http://s.si.edu/country-barbados">Barbados</a></li>
+                                                    <li><a href="http://s.si.edu/country-british-virgin-islands">British Virgin Islands</a></li>
+                                                    <!--<li><span>Cayman Islands</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-cuba">Cuba</a></li>
+                                                    <!--<li><span>Dominica</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-dominican-republic">Dominican Republic</a></li>
+                                                    <li><a href="http://s.si.edu/country-grenada">Grenada</a></li>
+                                                    <li><a href="http://s.si.edu/country-guadeloupe">Guadeloupe</a></li>
+                                                    <li><a href="http://s.si.edu/country-haiti">Haiti</a></li>
+                                                    <li><a href="http://s.si.edu/country-jamaica">Jamaica</a></li>
+                                                    <li><a href="http://s.si.edu/country-martinique">Martinique</a></li>
+                                                    <!--<li><span>Montserrat</span></li>
+                                                <li><span>Netherlands Antilles</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-puerto-rico">Puerto Rico</a></li>
+                                                    <li><a href="http://s.si.edu/country-saint-kitts-and-nevis">Saint Kitts and Nevis</a></li>
+                                                    <li><a href="http://s.si.edu/country-saint-lucia">Saint Lucia</a></li>
+                                                    <!--<li><span>Saint Vincent and the Grenadines</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-trinidad-and-tobago">Trinidad and Tobago</a></li>
+                                                    <!--<li><span>Turks and Caicos</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-virgin-islands-of-the-us">Virgin Islands of the United States</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Central America</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-belize">Belize</a></li>
+                                                    <li><a href="http://s.si.edu/country-costa-rica">Costa Rica</a></li>
+                                                    <li><a href="http://s.si.edu/country-el-salvador">El Salvador</a></li>
+                                                    <li><a href="http://s.si.edu/country-guatemala">Guatemala</a></li>
+                                                    <li><a href="http://s.si.edu/country-honduras">Honduras</a></li>
+                                                    <li><a href="http://s.si.edu/country-nicaragua">Nicaragua</a></li>
+                                                    <li><a href="http://s.si.edu/country-panama">Panama</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Northern America</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-bermuda">Bermuda</a></li>
+                                                    <li><a href="http://s.si.edu/country-canada">Canada</a></li>
+                                                    <li><a href="http://s.si.edu/country-greenland">Greenland</a></li>
+                                                    <li><a href="/search?query=Hawaii">Hawaii</a></li>
+                                                    <li><a href="http://s.si.edu/country-mexico">Mexico</a></li>
+                                                    <!--<li><span>Saint Pierre and Miquelon</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-united-states">United States</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Southern America</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-argentina">Argentina</a></li>
+                                                    <li><a href="http://s.si.edu/country-bolivia">Bolivia</a></li>
+                                                    <li><a href="http://s.si.edu/country-brazil">Brazil</a></li>
+                                                    <li><a href="http://s.si.edu/country-chile">Chile</a></li>
+                                                    <li><a href="http://s.si.edu/country-colombia">Colombia</a></li>
+                                                    <li><a href="http://s.si.edu/country-ecuador">Ecuador</a></li>
+                                                    <!--<li><span>Falkland Islands (Islas Malvinas)</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-french-guiana">French Guiana</a></li>
+                                                    <li><a href="http://s.si.edu/country-guyana">Guyana</a></li>
+                                                    <li><a href="http://s.si.edu/country-paraguay">Paraguay</a></li>
+                                                    <li><a href="http://s.si.edu/country-peru">Peru</a></li>
+                                                    <li><a href="http://s.si.edu/country-suriname">Suriname</a></li>
+                                                    <li><a href="http://s.si.edu/country-uruguay">Uruguay</a></li>
+                                                    <li><a href="http://s.si.edu/country-venezuela">Venezuela</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-dropdown-title">Asia</div>
+                                        <ul class="second-level-dropdown">
+                                            <li>
+                                                <div class="third-level-dropdown-title">Central Asia</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-kazakhstan">Kazakhstan</a></li>
+                                                    <li><a href="http://s.si.edu/country-kyrgyzstan">Kyrgyzstan</a></li>
+                                                    <li><a href="http://s.si.edu/country-tajikistan">Tajikistan</a></li>
+                                                    <li><a href="http://s.si.edu/country-turkmenistan">Turkmenistan</a></li>
+                                                    <li><a href="http://s.si.edu/country-uzbekistan">Uzbekistan</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Northeastern Asia</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-china">China</a></li>
+                                                    <li><a href="http://s.si.edu/country-hong-kong">Hong Kong</a></li>
+                                                    <li><a href="http://s.si.edu/country-japan">Japan</a></li>
+                                                    <li><a href="http://s.si.edu/country-north-korea">Korea, North</a></li>
+                                                    <li><a href="http://s.si.edu/country-south-korea">Korea, South</a></li>
+                                                    <!--<li><span>Macao</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-mongolia">Mongolia</a></li>
+                                                    <li><a href="http://s.si.edu/country-taiwan">Taiwan</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Southeastern Asia</div>
+                                                <ul class="third-level-dropdown">
+                                                    <!--<li><span>Brunei</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-cambodia">Cambodia</a></li>
+                                                    <li><a href="http://s.si.edu/country-indonesia">Indonesia</a></li>
+                                                    <li><a href="http://s.si.edu/country-laos">Laos</a></li>
+                                                    <li><a href="http://s.si.edu/country-malaysia">Malaysia</a></li>
+                                                    <li><a href="http://s.si.edu/country-myanmar">Myanmar</a></li>
+                                                    <li><a href="http://s.si.edu/country-philippines">Philippines</a></li>
+                                                    <!--<li><span>Singapore</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-thailand">Thailand</a></li>
+                                                    <!--<li><span>Timor Leste</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-vietnam">Vietnam</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Southern Asia</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-afghanistan">Afghanistan</a></li>
+                                                    <li><a href="http://s.si.edu/country-bangladesh">Bangladesh</a></li>
+                                                    <li><a href="http://s.si.edu/country-bhutan">Bhutan</a></li>
+                                                    <li><a href="http://s.si.edu/country-india">India</a></li>
+                                                    <li><a href="http://s.si.edu/country-iran">Iran</a></li>
+                                                    <!--<li><span>Maldives</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-nepal">Nepal</a></li>
+                                                    <li><a href="http://s.si.edu/country-pakistan">Pakistan</a></li>
+                                                    <li><a href="http://s.si.edu/country-palestinian-territory">Palestinian Territory</a></li>
+                                                    <li><a href="http://s.si.edu/country-sri-lanka">Sri Lanka</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Western Asia</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-armenia">Armenia</a></li>
+                                                    <li><a href="http://s.si.edu/country-azerbaijan">Azerbaijan</a></li>
+                                                    <!--<li><span>Bahrain</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-cyprus">Cyprus</a></li>
+                                                    <!--<li><span>Georgia</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-iraq">Iraq</a></li>
+                                                    <li><a href="http://s.si.edu/country-israel">Israel</a></li>
+                                                    <li><a href="http://s.si.edu/country-jordan">Jordan</a></li>
+                                                    <!--<li><span>Kuwait</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-lebanon">Lebanon</a></li>
+                                                    <li><a href="http://s.si.edu/country-oman">Oman</a></li>
+                                                    <!--<li><span>Qatar</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-saudi-arabia">Saudi Arabia</a></li>
+                                                    <li><a href="http://s.si.edu/country-syria">Syria</a></li>
+                                                    <li><a href="http://s.si.edu/country-turkey">Turkey</a></li>
+                                                    <!--<li><span>United Arab Emirates</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-yemen">Yemen</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-dropdown-title">Europe</div>
+                                        <ul class="second-level-dropdown">
+                                            <li>
+                                                <div class="third-level-dropdown-title">Eastern Europe</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-belarus">Belarus</a></li>
+                                                    <li><a href="http://s.si.edu/country-bulgaria">Bulgaria</a></li>
+                                                    <li><a href="http://s.si.edu/country-byelorussia">Byelorussia</a></li>
+                                                    <li><a href="http://s.si.edu/country-czech-republic">Czech Republic</a></li>
+                                                    <li><a href="http://s.si.edu/country-hungary">Hungary</a></li>
+                                                    <li><a href="http://s.si.edu/country-moldova">Moldova</a></li>
+                                                    <li><a href="http://s.si.edu/country-poland">Poland</a></li>
+                                                    <li><a href="http://s.si.edu/country-romania">Romania</a></li>
+                                                    <li><a href="http://s.si.edu/country-russia">Russia</a></li>
+                                                    <li><a href="http://s.si.edu/country-slovakia">Slovakia</a></li>
+                                                    <li><a href="http://s.si.edu/country-ukraine">Ukraine</a></li>
+                                                    <li><a href="http://s.si.edu/country-ussr">USSR (former)</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Northern Europe</div>
+                                                <ul class="third-level-dropdown">
+                                                    <!--<li><span>Bouvet Island</span></li>
+                                                <li><span>Channel Islands</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-denmark">Denmark</a></li>
+                                                    <li><a href="http://s.si.edu/country-england">England</a></li>
+                                                    <li><a href="http://s.si.edu/country-estonia">Estonia</a></li>
+                                                    <!--<li><span>Faroe Islands</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-finland">Finland</a></li>
+                                                    <li><a href="http://s.si.edu/country-iceland">Iceland</a></li>
+                                                    <li><a href="http://s.si.edu/country-ireland">Ireland</a></li>
+                                                    <!--<li><span>Isle of Man</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-latvia">Latvia</a></li>
+                                                    <li><a href="http://s.si.edu/country-lithuania">Lithuania</a></li>
+                                                    <li><a href="http://s.si.edu/country-northern-ireland">Northern Ireland</a></li>
+                                                    <li><a href="http://s.si.edu/country-norway">Norway</a></li>
+                                                    <li><a href="http://s.si.edu/country-scotland">Scotland</a></li>
+                                                    <!--<li><span>Svalbard and Jan Mayen</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-sweden">Sweden</a></li>
+                                                    <li><a href="http://s.si.edu/country-united-kingdom">United Kingdom</a></li>
+                                                    <li><a href="http://s.si.edu/country-wales">Wales</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Southern Europe</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-albania">Albania</a></li>
+                                                    <!--<li><span>Andorra</span></li>
+                                                <li><span>Bosnia-Herzegovina</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-croatia">Croatia</a></li>
+                                                    <!--<li><span>Gibraltar</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-greece">Greece</a></li>
+                                                    <li><a href="http://s.si.edu/country-italy">Italy</a></li>
+                                                    <li><a href="http://s.si.edu/country-macedonia">Macedonia</a></li>
+                                                    <li><a href="http://s.si.edu/country-malta">Malta</a></li>
+                                                    <!--<li><span>Monaco</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-portugal">Portugal</a></li>
+                                                    <!--<li><span>San Marino</span></li>
+                                                <li><span>Serbia and Montenegro</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-slovenia">Slovenia</a></li>
+                                                    <li><a href="http://s.si.edu/country-spain">Spain</a></li>
+                                                    <!--<li><span>Vatican City (Holy See)</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-yugoslavia">Yugoslavia (former)</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="third-level-dropdown-title">Western Europe</div>
+                                                <ul class="third-level-dropdown">
+                                                    <li><a href="http://s.si.edu/country-austria">Austria</a></li>
+                                                    <li><a href="http://s.si.edu/country-belgium">Belgium</a></li>
+                                                    <li><a href="http://s.si.edu/country-france">France</a></li>
+                                                    <li><a href="http://s.si.edu/country-germany">Germany</a></li>
+                                                    <!--<li><span>Liechtenstein</span></li>
+                                                <li><span>Luxembourg</span></li>-->
+                                                    <li><a href="http://s.si.edu/country-netherlands">Netherlands</a></li>
+                                                    <li><a href="http://s.si.edu/country-switzerland">Switzerland</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-dropdown-title">Oceania</div>
+                                        <ul class="second-level-dropdown">
+                                            <li><a href="http://s.si.edu/country-australia">Australia</a></li>
+                                            <!--<li><span>Christmas Island</span></li>
+                                        <li><span>Cocos (Keeling) Islands</span></li>-->
+                                            <li><a href="http://s.si.edu/country-new-zealand">New Zealand</a></li>
+                                            <!--<li><span>Norfolk Island</span></li>-->
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="second-level-dropdown-title">Melanesia</div>
+                                        <ul class="second-level-dropdown">
+                                            <li><a href="http://s.si.edu/country-fiji">Fiji</a></li>
+                                            <!--<li><span>New Caledonia</span></li>-->
+                                            <li><a href="http://s.si.edu/country-papua-new-guinea">Papua New Guinea</a></li>
+                                            <li><a href="http://s.si.edu/country-solomon-islands">Solomon Islands</a></li>
+                                            <li><a href="http://s.si.edu/country-vanuatu">Vanuatu</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <div class="second-level-dropdown-title">Polynesia</div>
+                                        <ul class="second-level-dropdown">
+                                            <li><a href="http://s.si.edu/country-american-samoa">American Samoa</a></li>
+                                            <!--<li><span>Cook Islands</span></li>-->
+                                            <li><a href="http://s.si.edu/country-french-polynesia">French Polynesia</a></li>
+                                            <!--<li><span>Johnston Island</span></li>
+                                        <li><span>Niue</span></li>
+                                        <li><span>Pitcairn</span></li>-->
+                                            <li><a href="http://s.si.edu/country-samoa">Samoa</a></li>
+                                            <!--<li><span>Tokelau</span></li>-->
+                                            <li><a href="http://s.si.edu/country-tonga">Tonga</a></li>
+                                            <!--<li><span>Tuvalu</span></li>
+                                        <li><span>Wallis &amp; Futuna Islands</span></li>-->
+                                        </ul>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="col-sm-3">
                             <div class="dropdown">
                                 <div class="first-level-dropdown-title">Artists</div>
-                                <ul class="first-level-dropdown">
-                                    <li>Bobby Susser</li>
-                                    <li>Ensemble Hilka</li>
-                                    <li>Fannie Lou Hamer</li>
-                                    <li>Guillermo Velázquez y Los Leones de la Sierra de Xichú</li>
-                                    <li>Josh White</li>
-                                    <li>José-Luis Orozco</li>
-                                    <li>Koishimaru Izutsuya</li>
-                                    <li>Mariachi Los Camperos de Nati Cano</li>
-                                    <li>Ophie &amp; Da Websites, Bo Hog &amp; Da Rooters</li>
-                                    <li>Pete Seeger</li>
-                                    <li>Stanley and the Ten Sleepless Knights</li>
-                                    <li>The Brothers Nazaroff</li>
-                                    <li>Woodie Guthrie</li>
+                                <ul class="first-level-dropdown tall-dropdown">
+                                    <li><a href="/search?query=Beausoleil">Beausoleil</a></li>
+                                    <li><a href="/search?query=Big Mama Thornton">Big Mama Thornton</a></li>
+                                    <li><a href="/search?query=Big Bill Broonzy">Big Bill Broonzy</a></li>
+                                    <li><a href="/search?query=Brownie McGhee">Brownie McGhee</a></li>
+                                    <li><a href="/search?query=Dock Boggs">Dock Boggs</a></li>
+                                    <li><a href="/search?query=Clifton Chenier">Clifton Chenier</a></li>
+                                    <li><a href="/search?query=Elizabeth Cotten">Elizabeth Cotten</a></li>
+                                    <li><a href="/search?query=The Country Gentlemen">Country Gentlemen</a></li>
+                                    <li><a href="/search?query=Woody Guthrie">Woody Guthrie</a></li>
+                                    <li><a href="/search?query=Roscoe Holcomb">Roscoe Holcomb</a></li>
+                                    <li><a href="/search?query=Lightnin' Hopkins">Lightnin' Hopkins</a></li>
+                                    <li><a href="/search?query=Ella Jenkins">Ella Jenkins</a></li>
+                                    <li><a href="/search?query=Flaco Jiménez">Flaco Jiménez</a></li>
+                                    <li><a href="/search?query=Lead Belly">Lead Belly</a></li>
+                                    <li><a href="/search?query=Mance Lipscomb">Mance Lipscomb</a></li>
+                                    <li><a href="/search?query=Fred McDowell">Fred McDowell</a></li>
+                                    <li><a href="/search?query=Mary Lou Williams">Mary Lou Williams</a></li>
+                                    <li><a href="/search?query=Memphis Slim">Memphis Slim</a></li>
+                                    <li><a href="/search?query=Mighty Sparrow">Mighty Sparrow</a></li>
+                                    <li><a href="/search?query=Elizabeth Mitchell">Elizabeth Mitchell</a></li>
+                                    <li><a href="/search?query=Bill Monroe">Bill Monroe</a></li>
+                                    <li><a href="/search?query=The New Lost City Ramblers">New Lost City Ramblers</a></li>
+                                    <li><a href="/search?query=David Nzomo">David Nzomo</a></li>
+                                    <li><a href="/search?query=Suni Paz">Suni Paz</a></li>
+                                    <li><a href="/search?query=Jean Ritchie">Jean Ritchie</a></li>
+                                    <li><a href="/search?query=Tony Schwartz">Tony Schwartz</a></li>
+                                    <li><a href="/search?query=Mike Seeger">Mike Seeger</a></li>
+                                    <li><a href="/search?query=Peggy Seeger">Peggy Seeger</a></li>
+                                    <li><a href="/search?query=Pete Seeger">Pete Seeger</a></li>
+                                    <li><a href="/search?query=Mike Seeger">Mike Seeger</a></li>
+                                    <li><a href="/search?query=Snooks Eaglin">Snooks Eaglin</a></li>
+                                    <li><a href="/search?query=Sonny Terry">Sonny Terry</a></li>
+                                    <li><a href="/search?query=Dave Van Ronk">Dave Van Ronk</a></li>
                                     <li>...</li>
                                 </ul>
                             </div>
@@ -292,16 +682,23 @@
                         <li class="col-sm-3">
                             <div class="dropdown">
                                 <div class="first-level-dropdown-title">Label</div>
-                                <ul class="first-level-dropdown">
-                                    <li>Arhoolie Records</li>
-                                    <li>Cook Records</li>
-                                    <li>Fast Folk</li>
-                                    <li>Fast Folk Records</li>
-                                    <li>Folkways Records</li>
-                                    <li>M.O.R.E.</li>
-                                    <li>Monitor Records</li>
-                                    <li>Paredon Records</li>
-                                    <li>...</li>
+                                <ul class="first-level-dropdown tall-dropdown">
+                                    <li><a href="/search?query=Archives and Research Centre for Ethnomusicology (A.R.C.E.)">A.R.C.E.</a>
+                                    <li><a href="/search?query=Arhoolie Records">Arhoolie Records</a>
+                                    <li><a href="/search?query=Blue Ridge Institute">Blue Ridge Institute</a>
+                                    <li><a href="/search?query=Bobby Susser Songs for Children">Bobby Susser</a>
+                                    <li><a href="/search?query=Collector Records">Collector</a>
+                                    <li><a href="/search?query=Cook Records">Cook</a>
+                                    <li><a href="/search?query=Dyer-Bennet Records">Dyer-Bennet</a>
+                                    <li><a href="/search?query=Fast Folk Musical Magazine">Fast Folk</a>
+                                    <li><a href="/search?query=Folkways Records">Folkways Records</a>
+                                    <li><a href="/search?query=International Library of African Music (I.L.A.M.)">I.L.A.M.</a>
+                                    <li><a href="/search?query=Mickey Hart Collection">Mickey Hart</a>
+                                    <li><a href="/search?query=Minority Owned Record Enterprises (M.O.R.E.)">M.O.R.E.</a>
+                                    <li><a href="/search?query=Monitor Records">Monitor</a>
+                                    <li><a href="/search?query=Paredon Records">Paredon</a>
+                                    <li><a href="/search?query=Smithsonian Folkways Recordings">Smithsonian Folkways</a>
+                                    <li><a href="/search?query=UNESCO Collection of Traditional Music">UNESCO</a>
                                 </ul>
                             </div>
                         </li>
@@ -328,92 +725,98 @@
             <div class="short-newsletter-signup">
                 <div class="newsletter-signup clearfix">
                     <div class="newsletter-signup-copy">
-                        <div class="icon-mail"></div>
-                        Join our email list for the latest news from Smithsonian Center for Folklife and Cultural Heritage
+                        <div class="icon-mail-svg">
+                            <svg title="play button circle" class="svg-play-button-circle">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Images/icons/icons.svg#icon-mail"></use>
+                            </svg>
+                        </div>Join our email list for the latest news from Smithsonian Folkways and the Center for Folklife and Cultural Heritage
                     </div>
                 </div>
             </div>
             <div class="short-newsletter-signup short-newsletter-signup-form-wrapper">
-                <form action="/" class="newsletter-signup-form newsletter">
-                    <input type="email" placeholder="Enter your email" class="newsletter-input" />
-                </form>
+                <a href="/join-our-mailing-list/smithsonian" class="click-to-join-folkways newsletter-input">Click to Join</a>
             </div>
         </div>
     </div>
+    <!-- Go to Top Button-->
+    <div id="back-to-top" class="back-to-top is-visible"><a href="#top" title="Back to top">TOP</a></div>
+
     <footer id="footer" class="footer">
         <div class="container">
             <footer id="footer" class="footer">
                 <ul class="footer-row footer-row-1 row">
                     <li class="footer-nav-main-item col-sm-2">
-                        <a href="/explore/smithsonian" " class="footer-nav-title">Explore</a>
+                        <a href="/explore" class="footer-nav-title">Explore</a>
                         <ul class="footer-nav-list">
-                            <li class="footer-nav-sub-item visible-xs"><a href="/explore/smithsonian">Explore Overview</a></li>
-                            <li class="footer-nav-sub-item"><a href="/magazine">Folkways Magazine*</a></li>
-                            <li class="footer-nav-sub-item">Articles</li>
-                            <li class="footer-nav-sub-item">Sounds</li>
-                            <li class="footer-nav-sub-item">Videos</li>
+                            <li class="footer-nav-sub-item visible-xs"><a href="/explore">Explore Overview</a></li>
+                            <li class="footer-nav-sub-item"><a href="/magazine">Folkways Magazine</a></li>
+                            <li class="footer-nav-sub-item"><a href="/search?query=Article">Articles</a></li>
+                            <li class="footer-nav-sub-item"><a href="/search?query=Playlist">Playlists</a></li>
+                            <li class="footer-nav-sub-item"><a href="/search?query=Podcast">Podcasts</a></li>
+                            <li class="footer-nav-sub-item"><a href="/search?query=Video">Videos</a></li>
                         </ul>
                     </li>
                     <li class="footer-nav-main-item col-sm-2">
-                        <a href="/learn" class="footer-nav-title">Learn*</a>
+                        <a href="/learn" class="footer-nav-title">Learn</a>
                         <ul class="footer-nav-list">
-                            <li class="footer-nav-sub-item visible-xs"><a href="/learn">Learn Overview*</a></li>
-                            <li class="footer-nav-sub-item">Lesson Plans</li>
-                            <li class="footer-nav-sub-item">Workshops</li>
-                            <li class="footer-nav-sub-item">Interactives</li>
-                            <li class="footer-nav-sub-item">Libraries</li>
-                            <li class="footer-nav-sub-item">Partners</li>
+                            <li class="footer-nav-sub-item visible-xs"><a href="/learn">Learn Overview</a></li>
+                            <li class="footer-nav-sub-item"><a href="/search?query=Lesson Plan">Lesson Plans</a></li>
+                            <li class="footer-nav-sub-item"><a href="/workshops-teachers/smithsonian">Courses</a></li>
+                            <li class="footer-nav-sub-item"><a href="/interactive-features/smithsonian">Interactives</a></li>
+                            <li class="footer-nav-sub-item"><a href="/learn#Subscribe-to-Folkways">Libraries</a></li>
+                            <li class="footer-nav-sub-item"><a href="/music-partners/smithsonian">Partners</a></li>
                         </ul>
                     </li>
                     <li class="footer-nav-main-item col-sm-2">
-                        <div class="footer-nav-title">Join</div>
+                        <a href="/join" class="footer-nav-title">Join</a>
                         <ul class="footer-nav-list">
-                            <li class="footer-nav-sub-item"><a href="/join/membership">Memberships*</a></li>
-                            <li class="footer-nav-sub-item">Jobs &amp; Internships</li>
-                            <li class="footer-nav-sub-item">Proposals</li>
-                            <li class="footer-nav-sub-item">Mailing List</li>
-                            <li class="footer-nav-sub-item">Visit Us</li>
+                            <li class="footer-nav-sub-item"><a href="/membership">Memberships</a></li>
+                            <li class="footer-nav-sub-item"><a href="/jobs">Jobs &amp; Internships</a></li>
+                            <!--<li class="footer-nav-sub-item">Proposals*</li>-->
+                            <li class="footer-nav-sub-item"><a href="/join-our-mailing-list/smithsonian">Mailing List</a></li>
+                            <li class="footer-nav-sub-item"><a href="/join#visit-us">Visit Us</a></li>
                         </ul>
                     </li>
                     <li class="footer-nav-main-item col-sm-2">
-                        <a href="/shop" class="footer-nav-title">Shop*</a>
+                        <a href="/shop" class="footer-nav-title">Shop</a>
                         <ul class="footer-nav-list">
-                            <li class="footer-nav-sub-item visible-xs"><a href="/shop">Shop Overview*</a></li>
-                            <li class="footer-nav-sub-item"><a href="/shop#new-releases">New Releases</a></li>
-                            <li class="footer-nav-sub-item"><a href="/shop#best-sellers">Best Sellers</a></li>
-                            <li class="footer-nav-sub-item"><a href="/shop#essential-picks">Essential Picks</a></li>
-                            <li class="footer-nav-sub-item"><a href="/shop#vinyl">Vinyl</a></li>
-                            <li class="footer-nav-sub-item"><a href="/shop#books">Books</a></li>
-                            <li class="footer-nav-sub-item"><a href="/shop#dvds">DVDs</a></li>
-                            <li class="footer-nav-sub-item"><a href="/shop#merchandise">Merchandise</a></li>
+                            <li class="footer-nav-sub-item visible-xs"><a href="/shop">Shop Overview</a></li>
+                            <li class="footer-nav-sub-item"><a href="/new-releases">New Releases</a></li>
+                            <li class="footer-nav-sub-item"><a href="/best-sellers">Best Sellers</a></li>
+                            <li class="footer-nav-sub-item"><a href="/essential-picks">Essential Picks</a></li>
+                            <li class="footer-nav-sub-item"><a href="/vinyl">Vinyl</a></li>
+                            <li class="footer-nav-sub-item"><a href="/books">Books</a></li>
+                            <li class="footer-nav-sub-item"><a href="/dvds">DVDs</a></li>
+                            <li class="footer-nav-sub-item"><a href="/stickers">Stickers</a></li>
+                            <li class="footer-nav-sub-item"><a href="/posters">Posters</a></li>
                         </ul>
                     </li>
                     <li class="footer-nav-main-item col-sm-2">
-                        <div class="footer-nav-title">About</div>
+                        <a href="/mission-history/smithsonian" class="footer-nav-title">About</a>
                         <ul class="footer-nav-list">
-                            <li class="footer-nav-sub-item">Mission &amp; History</li>
-                            <li class="footer-nav-sub-item">Staff</li>
-                            <li class="footer-nav-sub-item">Awards</li>
+                            <li class="footer-nav-sub-item"><a href="/mission-history/smithsonian">Mission &amp; History</a></li>
+                            <li class="footer-nav-sub-item"><a href="/folkways-staff/smithsonian">Staff</a></li>
+                            <li class="footer-nav-sub-item"><a href="/awards/smithsonian">Awards</a></li>
                         </ul>
-                        <div class="footer-nav-title news-footer-nav hidden-xs">News</div>
+                        <a href="/news-and-press" class="footer-nav-title news-footer-nav hidden-xs">News & Press</a>
+                    </li>
+                    <li class="footer-nav-main-item col-sm-2 visible-xs">
+                        <a href="/news-and-press" class="footer-nav-title">News & Press</a>
                     </li>
                     <li class="footer-nav-main-item col-sm-2">
                         <div class="footer-nav-title">Customer Service</div>
                         <ul class="footer-nav-list">
-                            <li class="footer-nav-sub-item">Ordering Information </li>
-                            <li class="footer-nav-sub-item">Print Catalogs</li>
-                            <li class="footer-nav-sub-item">Distributors</li>
-                            <li class="footer-nav-sub-item">Educational Discounts</li>
-                            <li class="footer-nav-sub-item">Wholesale Inquiries</li>
-                            <li class="footer-nav-sub-item">Licensing Requests</li>
-                            <li class="footer-nav-sub-item">Download Manager</li>
-                            <li class="footer-nav-sub-item">Shopping Cart</li>
-                            <li class="footer-nav-sub-item">My Account</li>
-                            <li class="footer-nav-sub-item">FAQ</li>
+                            <li class="footer-nav-sub-item"><a href="/ordering-information/smithsonian">Ordering Information</a></li>
+                            <li class="footer-nav-sub-item"><a href="/world-of-sound-catalog/smithsonian">Print Catalogs</a></li>
+                            <li class="footer-nav-sub-item"><a href="/retailers-distribution/smithsonian">Distributors</a></li>
+                            <li class="footer-nav-sub-item"><a href="/libraries-educational-institutions/smithsonian">Educational Discounts</a></li>
+                            <li class="footer-nav-sub-item"><a href="/wholesale-inquiries/smithsonian">Wholesale Inquiries</a></li>
+                            <li class="footer-nav-sub-item"><a href="/licensing-requests/smithsonian">Licensing Requests</a></li>
+                            <li class="footer-nav-sub-item"><a href="/download-manager/smithsonian">Download Manager</a></li>
+                            <li class="footer-nav-sub-item"><a href="http://shopping.netsuite.com/s.nl?sc=3&amp;c=297799&amp;n=1&amp;ext=T">Shopping Cart</a></li>
+                            <li class="footer-nav-sub-item"><a href="https://checkout.netsuite.com/c.297799/myaccount-1-05-0/index.ssp">My Account</a></li>
+                            <li class="footer-nav-sub-item"><a href="/frequently-asked-questions/smithsonian">FAQ</a></li>
                         </ul>
-                    </li>
-                    <li class="footer-nav-main-item col-sm-2 visible-xs">
-                        <div class="footer-nav-title">News</div>
                     </li>
                 </ul>
 
@@ -421,25 +824,24 @@
                 <ul class="footer-row footer-row-2 row">
                     <li class="footer-main-item col-sm-3">
                         <div class="footer-logo active-footer-logo">
-                            <a href="/"><img src="/Themes/Folklife/assets/images/logo/smithsonian_folkways_recordings.png" alt="Smithsonian Folkways Recordings" class="footer-logo-img" /></a>
+                            <a href="/"><img src="/themes/folkways/assets/images/logo/smithsonian_folkways_recordings.png" alt="Smithsonian Folkways Recordings" class="footer-logo-img" /></a>
                         </div>
                     </li>
                     <li class="footer-main-item col-sm-3">
                         <div class="footer-logo">
-                            <a href="http://folklife.si.edu"><img src="/Themes/Folklife/assets/images/logo/smithsonian_center_for_folklife_and_cultural_heritage.png" alt="Smithsonian Center for Folklife and Cultural Heritage" class="footer-logo-img folklife-footer-logo-img" /></a>
+                            <a href="http://folklife.si.edu"><img src="/themes/folkways/assets/images/logo/smithsonian_center_for_folklife_and_cultural_heritage.png" alt="Smithsonian Center for Folklife and Cultural Heritage" class="footer-logo-img folklife-footer-logo-img" /></a>
                         </div>
                     </li>
                     <li class="footer-main-item col-sm-3">
                         <div class="footer-logo">
-                            <a href="http://festival.si.edu"><img src="/Themes/Folklife/assets/images/logo/smithsonian_folklife_festival.png" alt="Smithsonian Folklife Festival" class="footer-logo-img" /></a>
+                            <a href="http://festival.si.edu"><img src="/themes/folkways/assets/images/logo/smithsonian_folklife_festival.png" alt="Smithsonian Folklife Festival" class="footer-logo-img" /></a>
                         </div>
                     </li>
                     <li class="footer-main-item col-sm-1">
                         <ul class="footer-list copyright-list">
-                            <li class="footer-sub-item copyright-list-item"><a href="#">Copyright</a></li>
-                            <li class="footer-sub-item copyright-list-item"><a href="#">Contact</a></li>
-                            <li class="footer-sub-item copyright-list-item"><a href="#">Privacy</a></li>
-                            <li class="footer-sub-item copyright-list-item"><a href="#">Credits</a></li>
+                            <li class="footer-sub-item copyright-list-item"><a href="/folkways-staff/smithsonian">Contact</a></li>
+                            <li class="footer-sub-item copyright-list-item"><a href="http://www.si.edu/privacy/">Privacy</a></li>
+                            <li class="footer-sub-item copyright-list-item"><a href="/production-credits/smithsonian">Credits</a></li>
                         </ul>
                     </li>
                     <li class="footer-main-item col-sm-2 social-media">
@@ -456,12 +858,12 @@
                     </li>
                 </ul>
                 <ul class="footer-row footer-row-3 row">
-                    <li class="footer-main-item col-sm-3">
+                    @*<li class="footer-main-item col-sm-3">
                         <div class="smithsonian-institution-logo"><img src="/Themes/Folklife/assets/images/logo/smithsonian_institution.png" alt="Smithsonian Institution" /></div>
                     </li>
                     <li class="footer-main-item col-sm-4">
                         <div class="copyright">&copy; 2016 Smithsonian Institution</div>
-                    </li>
+                    </li>*@
                 </ul>
             </footer>
         </div>

@@ -228,22 +228,6 @@ a.imageLink img { width: 90px;}
 #loading_text #text { position: absolute; top: 50%; left: 38%;}
 #addToCartMessage{background:#fff;padding:1em;font-family:Verdana,Arial, sans-serif;border:1px solid #888;border-radius:0;box-shadow:none}
 
-.back-to-top {
-    position: fixed;
-    bottom: 2em;
-    right: 0px;
-    text-decoration: none;
-    color: #000000;
-    background-color: #EBEBEB;
-    font-size: 12px;
-    padding: 1em;
-    display: none;
-    opacity: 0.8;
-        /* IE 8 */ -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-        /* IE 5-7 */ filter: alpha(opacity=80);
-        /* Netscape */ -moz-opacity: 0.8;
-        /* Safari 1.x */ -khtml-opacity: 0.8;
-}
 .track-player {
     position: relative;
     height: 19px;
