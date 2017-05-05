@@ -3,7 +3,7 @@
 
 @if (Model.SpellingSuggestions.SpellingSuggestions.Any() || Model.IsSpellingSuggestionSearch)
 {
-    <div id="searchAlternative">
+    <div id="searchAlternative" class="container" style="margin-bottom:40px">
         @if (Model.SpellingSuggestions.SpellingSuggestions.Any() && !Model.IsSpellingSuggestionSearch)
         {
             <p><strong>Did you mean:</strong>

@@ -47,17 +47,21 @@
             </div>
             <div class="right-site-toggle">
                 <div class="hidden-xs site-toggle-text">
-                    <div class="tagline">Music of the people, by the people, for the people</div><a href="http://folklife-refresh.si.edu" class="site-toggle-link folkways-site-toggle-link">Folklife</a><a href="http://folkways-refresh.si.edu" class="site-toggle-link folkways-site-toggle-link">Folkways</a><a href="http://festival-refresh.si.edu" class="site-toggle-link festival-site-toggle-link">Festival</a>
+                    <div class="tagline">Music of the people, by the people, for the people</div><a href="http://folklife.si.edu" class="site-toggle-link folkways-site-toggle-link">Folklife</a><a href="http://folkways.si.edu" class="site-toggle-link folkways-site-toggle-link">Folkways</a><a href="http://festival.si.edu" class="site-toggle-link festival-site-toggle-link">Festival</a>
                 </div>
                 <div class="folkways-icons">
-                    <!--SSO LOGIN-->
-                    <!--a href="https://checkout.netsuite.com/c.297799/checkout-2-04-0/index.ssp?sso=true#login-register" target="_blank" class="folkways-icon-link"-->
-
-                    <a href="https://checkout.netsuite.com/c.297799/myaccount-1-05-0/index.ssp" class="folkways-icon-link">
-                        <div aria-hidden="true" class="icon-user folkways-icon nav-icon"></div>
-                    </a><a href="https://checkout.netsuite.com/c.297799/checkout-2-04-0/cart.ssp#cart" class="folkways-icon-link">
-                        <div aria-hidden="true" class="icon-basket folkways-icon nav-icon"></div>
-                    </a>
+                <!--SSO LOGIN-->
+                <!--a href="https://checkout.netsuite.com/c.297799/checkout-2-04-0/index.ssp?sso=true#login-register" class="folkways-icon-link"-->
+                <!--a href="https://checkout.netsuite.com/c.297799/myaccount-1-05-0/index.ssp" class="folkways-icon-link">
+                    <svg title="user" class="folkways-icon nav-icon">
+                        <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-user"></use>
+                    </svg>
+                </a-->
+                <a href="https://checkout.netsuite.com/c.297799/checkout-2-04-0/cart.ssp#cart" class="folkways-icon-link" id="cart-button">
+                    <svg title="basket" class="folkways-icon nav-icon">
+                        <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-basket"></use>
+                    </svg>
+                </a>
                 </div>
             </div>
         </div>
@@ -868,6 +872,16 @@
             </footer>
         </div>
     </footer>
+
+    <!-- CART ICON LIGHT -->
+    <script type="text/javascript">
+        //check cart quantity on page load
+        if (sessionStorage.getItem("hasItem") == "yes") {
+            //console.log("HI LUKE!");
+            jQuery('#cart-button').addClass('is-active');
+        }
+    </script>
+
 
     <script src="~/Scripts/folkways.pkgd.js" type="text/javascript"></script>
     <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
