@@ -8,9 +8,13 @@
     var imageSrc = string.IsNullOrEmpty(Model.ImageUrl) ? Url.Content("~/img/no_image.png") : Model.ImageUrl;
 }
 
-<li class="clearfix">
-    <a class="imageLink" href="@Model.Url"><img src="@imageSrc" alt="@imageAlt" /></a>
-    <ul>        
-        <li><h2><a href="@Model.Url" title="@Model.Title">@Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))</a></h2></li>
-    </ul>
+<li class="card album-card col-xs-6 col-sm-2 search-result">
+    <div class="image">
+        <a class="imageLink" href="@Model.Url"><img src="@imageSrc" alt="@imageAlt" /></a>
+    </div>
+    <div class="details">
+        <div class="details">
+            <a href="@Model.Url" title="@Model.Title">@Html.Raw(Model.Title.Truncate(Config.Instance.ItemTitleMaxLength))</a>
+        </div>
+    </div>
 </li>
