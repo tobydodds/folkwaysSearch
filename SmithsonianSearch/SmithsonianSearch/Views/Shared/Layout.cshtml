@@ -98,9 +98,9 @@
                 </form>
                 <!-- Main Navigation Icons-->
                 <div class="nav-icons col-sm-3 col-lg-2">
-                    <div id="menu-icon" aria-hidden="true" title="menu" tabindex="0" class="nav-icon">
-                        <svg title="menu" class="svg-nav-icon main-nav-icon">
-                            <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-menu-1"></use>
+                    <div id="search-icon" aria-hidden="true" title="search" tabindex="0" class="nav-icon">
+                        <svg title="search" class="svg-nav-icon main-nav-icon">
+                            <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-search"></use>
                         </svg>
                     </div>
                     <div id="share-icon" aria-hidden="true" title="share" tabindex="0" class="nav-icon">
@@ -108,9 +108,9 @@
                             <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-share"></use>
                         </svg>
                     </div>
-                    <div id="search-icon" aria-hidden="true" title="search" tabindex="0" class="nav-icon">
-                        <svg title="search" class="svg-nav-icon main-nav-icon">
-                            <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-search"></use>
+                    <div id="menu-icon" aria-hidden="true" title="menu" tabindex="0" class="nav-icon">
+                        <svg title="menu" class="svg-nav-icon main-nav-icon">
+                            <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-menu-1"></use>
                         </svg>
                     </div>
                 </div>
@@ -713,14 +713,9 @@
     </nav><!-- End Navbar-->
     <div id="navspacer" class="navspacer"></div>
     <div class="search-page">
-        @*<div class="title-bar">
-            <div class="container title-height">
-                <h1 class="page-title">
-                    Search
-                </h1>
-            </div>
-        </div>*@
-
+        <div class="visible-xs">
+            <div class="bottom-40">&nbsp;</div>
+        </div>
         <div class="general-content">
             @RenderBody()
         </div>
@@ -743,7 +738,7 @@
         </div>
     </div>
     <!-- Go to Top Button-->
-    <div id="back-to-top" class="back-to-top is-visible"><a href="#top" title="Back to top">TOP</a></div>
+    <div id="back-to-top" class="back-to-top is-visible"><a href="#top" title="Back to top"><div class="centered">TOP</div></a></div>
 
     <footer id="footer" class="footer">
         <div class="container">

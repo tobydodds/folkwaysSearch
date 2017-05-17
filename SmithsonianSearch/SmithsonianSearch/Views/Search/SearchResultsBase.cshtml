@@ -7,9 +7,9 @@
 
 <div class="container-height">
     <div id="GsaUrl" style="display:none">@Html.Raw(Model.SearchModel.ComposeGsaSearchUrl(Config.Instance))</div>
-    @*<div>
+    <div class="hidden-xs">
         @Html.Partial("Filters", Model.SearchModel)
-    </div>*@
+    </div>
         @Html.Partial("SpellingSuggestions", Model)
         @Html.Partial("RelatedQueries", Model)
         @Html.Partial("Tabs", Model.SearchModel)
