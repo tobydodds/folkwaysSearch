@@ -21,7 +21,7 @@
     <script src="~/Scripts/jquery.min.js" type="text/javascript"></script>
 
     <!--Folkways CSS-->
-    <link href="~/Styles/folkways.min.css" rel="stylesheet" />
+    <link href="/Themes/Folkways/Styles/folkways.min.css?v=2017.05.23" rel="stylesheet" />
     @*<link href="~/css/bootstrap.css" rel="stylesheet">*@
 
     <script type="text/javascript" src="@Url.Content("~/Scripts/pickle/pickle.js")"></script>
@@ -50,18 +50,18 @@
                     <div class="tagline">Music of the people, by the people, for the people</div><a href="http://folklife.si.edu" class="site-toggle-link folkways-site-toggle-link">Folklife</a><a href="http://folkways.si.edu" class="site-toggle-link folkways-site-toggle-link">Folkways</a><a href="http://festival.si.edu" class="site-toggle-link festival-site-toggle-link">Festival</a>
                 </div>
                 <div class="folkways-icons">
-                <!--SSO LOGIN-->
-                <!--a href="https://checkout.netsuite.com/c.297799/checkout-2-04-0/index.ssp?sso=true#login-register" class="folkways-icon-link"-->
-                <!--a href="https://checkout.netsuite.com/c.297799/myaccount-1-05-0/index.ssp" class="folkways-icon-link">
-                    <svg title="user" class="folkways-icon nav-icon">
-                        <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-user"></use>
-                    </svg>
-                </a-->
-                <a href="https://checkout.netsuite.com/c.297799/checkout-2-04-0/cart.ssp#cart" class="folkways-icon-link" id="cart-button">
-                    <svg title="basket" class="folkways-icon nav-icon">
-                        <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-basket"></use>
-                    </svg>
-                </a>
+                    <!--SSO LOGIN-->
+                    <!--a href="https://checkout.netsuite.com/c.297799/checkout-2-04-0/index.ssp?sso=true#login-register" class="folkways-icon-link"-->
+                    <!--a href="https://checkout.netsuite.com/c.297799/myaccount-1-05-0/index.ssp" class="folkways-icon-link">
+                        <svg title="user" class="folkways-icon nav-icon">
+                            <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-user"></use>
+                        </svg>
+                    </a-->
+                    <a href="https://checkout.netsuite.com/c.297799/checkout-2-04-0/cart.ssp#cart" class="folkways-icon-link" id="cart-button">
+                        <svg title="basket" class="folkways-icon nav-icon">
+                            <use xlink:href="/Themes/Folkways/Assets/icons/icons.svg#icon-basket"></use>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -215,502 +215,1064 @@
         <!-- Mobile Search-->
         <form action="/search" class="search-bar mobile-search-bar mobile-only">
             <input id="search-input" placeholder="Search..." type="search" name="query" value="" />
-        </form>  <div id="browsenav" class="browsenav">
-            <div class="container">
-                <div class="browsenav-title col-sm-4">Browse By</div>
-                <div class="browsenav-categories col-sm-8">
-                    <ul class="row dropdown-wrapper">
-                        <li class="col-sm-3">
-                            <div class="dropdown">
-                                <div class="first-level-dropdown-title">Genre</div>
-                                <ul class="first-level-dropdown tall-dropdown">
-                                    <li> <a href="/search?query=African%20American">African American Music</a></li>
-                                    <li> <a href="/search?query=African%20American%20Spoken">African American Spoken</a></li>
-                                    <li> <a href="/search?query=American%20Folk">American Folk</a></li>
-                                    <li> <a href="/search?query=American%20History">American History</a></li>
-                                    <li> <a href="/search?query=American%20Indian">American Indian</a></li>
-                                    <li> <a href="/search?query=American%20Popular">American Popular</a></li>
-                                    <li> <a href="/search?query=Bluegrass">Bluegrass</a></li>
-                                    <li> <a href="/search?query=Blues">Blues</a></li>
-                                    <li> <a href="/search?query=Cajun">Cajun</a></li>
-                                    <li> <a href="/search?query=Caribbean">Caribbean</a></li>
-                                    <li> <a href="/search?query=Celtic">Celtic</a></li>
-                                    <li> <a href="/search?query=Central%20Asia">Central Asia</a></li>
-                                    <li> <a href="/search?query=Children's">Children's</a></li>
-                                    <li> <a href="/search?query=Classical">Classical</a></li>
-                                    <li> <a href="/search?query=Contemporary">Contemporary &amp; Electronic</a></li>
-                                    <li> <a href="/search?query=Country">Country</a></li>
-                                    <li> <a href="/search?query=Documentary">Documentary</a></li>
-                                    <li> <a href="/search?query=Drama">Drama</a></li>
-                                    <li> <a href="/search?query=Gospel">Gospel</a></li>
-                                    <li> <a href="/search?query=Hawai'i">Hawai'i</a></li>
-                                    <li> <a href="/search?query=Historical%20Song">Historical Song</a></li>
-                                    <li> <a href="/search?query=Holiday">Holiday</a></li>
-                                    <li> <a href="/search?query=Humor">Humor</a></li>
-                                    <li> <a href="/search?query=India">India</a></li>
-                                    <li> <a href="/search?query=Islamica">Islamica</a></li>
-                                    <li> <a href="/search?query=Jazz">Jazz &amp; Ragtime</a></li>
-                                    <li> <a href="/search?query=Judaica">Judaica</a></li>
-                                    <li> <a href="/search?query=Language%20Instruction">Language Instruction</a></li>
-                                    <li> <a href="/search?query=Latin">Latin</a></li>
-                                    <li> <a href="/search?query=Music%20Instruction">Music Instruction</a></li>
-                                    <li> <a href="/search?query=Old%20Time">Old Time</a></li>
-                                    <li> <a href="/search?query=Oral%20History">Oral History &amp; Biography</a></li>
-                                    <li> <a href="/search?query=Poetry">Poetry</a></li>
-                                    <li> <a href="/search?query=Prose">Prose</a></li>
-                                    <li> <a href="/search?query=Psychology">Psychology &amp; Health</a></li>
-                                    <li> <a href="/search?query=Sacred">Sacred</a></li>
-                                    <li> <a href="/search?query=Science">Science &amp; Nature</a></li>
-                                    <li> <a href="/search?query=Sounds">Sounds</a></li>
-                                    <li> <a href="/search?query=Soundtracks">Soundtracks &amp; Musicals</a></li>
-                                    <li> <a href="/search?query=Spoken%20Word">Spoken Word</a></li>
-                                    <li> <a href="/search?query=Struggle">Struggle &amp; Protest</a></li>
-                                    <li> <a href="/search?query=World">World</a></li>
-                                    <li> <a href="/search?query=World%20History">World History</a></li>
+        </form>
 
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-                            <div class="dropdown">
-                                <div class="first-level-dropdown-title">Geography</div>
-                                <ul class="first-level-dropdown">
-                                    <li>
-                                        <div class="second-level-dropdown-title">Africa</div>
-                                        <ul class="second-level-dropdown">
-                                            <li>
-                                                <div class="third-level-dropdown-title">Eastern Africa</div>
-                                                <ul class="third-level-dropdown">
-                                                    <!--li><span>Comoros</span></!--li>
-                                                <li><span>Djibouti</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-eritrea">Eritrea</a></li>
-                                                    <li><a href="http://s.si.edu/country-ethiopia">Ethiopia</a></li>
-                                                    <li><a href="http://s.si.edu/country-kenya">Kenya</a></li>
-                                                    <li><a href="http://s.si.edu/country-madagascar">Madagascar</a></li>
-                                                    <li><a href="http://s.si.edu/country-malawi">Malawi</a></li>
-                                                    <!--<li><span>Mauritius</span></li>
-                                                <li><span>Mayotte</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-mozambique">Mozambique</a></li>
-                                                    <!--<li><span>Reunion</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-rwanda">Rwanda</a></li>
-                                                    <!--<li><span>Seychelles</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-somalia">Somalia</a></li>
-                                                    <li><a href="http://s.si.edu/country-tanzania">Tanzania</a></li>
-                                                    <li><a href="http://s.si.edu/country-uganda">Uganda</a></li>
-                                                    <li><a href="http://s.si.edu/country-zambia">Zambia</a></li>
-                                                    <li><a href="http://s.si.edu/country-zambia">Zimbabwe</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Middle Africa</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="/search?query=Burundi">Burundi</a></li>
-                                                    <li><a href="http://s.si.edu/country-angola">Angola</a></li>
-                                                    <li><a href="http://s.si.edu/country-cameroon">Cameroon</a></li>
-                                                    <li><a href="http://s.si.edu/country-central-african-republic">Central African Republic</a></li>
-                                                    <li><a href="http://s.si.edu/country-chad">Chad</a></li>
-                                                    <!--<li><span>Congo (Brazzaville)</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-congo-democratic-republic">Congo (Democratic Republic)</a></li>
-                                                    <li><a href="http://s.si.edu/country-equatorial-guinea">Equatorial Guinea</a></li>
-                                                    <li><a href="http://s.si.edu/country-gabon">Gabon</a></li>
-                                                    <!--<li><span>Sao Tome and Principe</span></li>-->
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Northern Africa</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="/search?query=Burundi">Burundi</a></li>
-                                                    <li><a href="http://s.si.edu/country-algeria">Algeria</a></li>
-                                                    <li><a href="http://s.si.edu/country-egypt">Egypt</a></li>
-                                                    <li><a href="http://s.si.edu/country-libya">Libya</a></li>
-                                                    <li><a href="http://s.si.edu/country-morocco">Morocco</a></li>
-                                                    <li><a href="http://s.si.edu/country-sudan">Sudan</a></li>
-                                                    <li><a href="http://s.si.edu/country-tunisia">Tunisia</a></li>
-                                                    <!--<li><span>Western Sahara</span></li>-->
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Southern Africa</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-botswana">Botswana</a></li>
-                                                    <li><a href="http://s.si.edu/country-lesotho">Lesotho</a></li>
-                                                    <li><a href="http://s.si.edu/country-namibia">Namibia</a></li>
-                                                    <li><a href="http://s.si.edu/country-south-africa">South Africa</a></li>
-                                                    <li><a href="http://s.si.edu/country-swaziland">Swaziland</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Western Africa</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-benin">Benin</a></li>
-                                                    <li><a href="http://s.si.edu/country-burkina-faso">Burkina Faso</a></li>
-                                                    <!--<li><span>Cape Verde</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-cote-divoire">Cote d'Ivoire</a></li>
-                                                    <li><a href="http://s.si.edu/country-gambia">Gambia</a></li>
-                                                    <li><a href="http://s.si.edu/country-ghana">Ghana</a></li>
-                                                    <li><a href="http://s.si.edu/country-guinea">Guinea</a></li>
-                                                    <li><a href="http://s.si.edu/country-guinea-bissau">Guinea-Bissau</a></li>
-                                                    <li><a href="http://s.si.edu/country-liberia">Liberia</a></li>
-                                                    <li><a href="http://s.si.edu/country-mali">Mali</a></li>
-                                                    <!--<li><span>Mauritania</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-niger">Niger</a></li>
-                                                    <li><a href="http://s.si.edu/country-nigeria">Nigeria</a></li>
-                                                    <!--<li><span>Saint Helena</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-senegal">Senegal</a></li>
-                                                    <li><a href="http://s.si.edu/country-sierra-leone">Sierra Leone</a></li>
-                                                    <li><a href="http://s.si.edu/country-togo">Togo</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <div class="second-level-dropdown-title">Americas</div>
-                                        <ul class="second-level-dropdown">
-                                            <li>
-                                                <div class="third-level-dropdown-title"> </div>
-                                                <ul class="third-level-dropdown">
-                                                    <!--<li><span>Anguilla</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-antigua-and-barbuda">Antigua and Barbuda</a></li>
-                                                    <!--<li><span>Aruba</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-bahamas">Bahamas</a></li>
-                                                    <li><a href="http://s.si.edu/country-barbados">Barbados</a></li>
-                                                    <li><a href="http://s.si.edu/country-british-virgin-islands">British Virgin Islands</a></li>
-                                                    <!--<li><span>Cayman Islands</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-cuba">Cuba</a></li>
-                                                    <!--<li><span>Dominica</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-dominican-republic">Dominican Republic</a></li>
-                                                    <li><a href="http://s.si.edu/country-grenada">Grenada</a></li>
-                                                    <li><a href="http://s.si.edu/country-guadeloupe">Guadeloupe</a></li>
-                                                    <li><a href="http://s.si.edu/country-haiti">Haiti</a></li>
-                                                    <li><a href="http://s.si.edu/country-jamaica">Jamaica</a></li>
-                                                    <li><a href="http://s.si.edu/country-martinique">Martinique</a></li>
-                                                    <!--<li><span>Montserrat</span></li>
-                                                <li><span>Netherlands Antilles</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-puerto-rico">Puerto Rico</a></li>
-                                                    <li><a href="http://s.si.edu/country-saint-kitts-and-nevis">Saint Kitts and Nevis</a></li>
-                                                    <li><a href="http://s.si.edu/country-saint-lucia">Saint Lucia</a></li>
-                                                    <!--<li><span>Saint Vincent and the Grenadines</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-trinidad-and-tobago">Trinidad and Tobago</a></li>
-                                                    <!--<li><span>Turks and Caicos</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-virgin-islands-of-the-us">Virgin Islands of the United States</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Central America</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-belize">Belize</a></li>
-                                                    <li><a href="http://s.si.edu/country-costa-rica">Costa Rica</a></li>
-                                                    <li><a href="http://s.si.edu/country-el-salvador">El Salvador</a></li>
-                                                    <li><a href="http://s.si.edu/country-guatemala">Guatemala</a></li>
-                                                    <li><a href="http://s.si.edu/country-honduras">Honduras</a></li>
-                                                    <li><a href="http://s.si.edu/country-nicaragua">Nicaragua</a></li>
-                                                    <li><a href="http://s.si.edu/country-panama">Panama</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Northern America</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-bermuda">Bermuda</a></li>
-                                                    <li><a href="http://s.si.edu/country-canada">Canada</a></li>
-                                                    <li><a href="http://s.si.edu/country-greenland">Greenland</a></li>
-                                                    <li><a href="/search?query=Hawaii">Hawaii</a></li>
-                                                    <li><a href="http://s.si.edu/country-mexico">Mexico</a></li>
-                                                    <!--<li><span>Saint Pierre and Miquelon</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-united-states">United States</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Southern America</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-argentina">Argentina</a></li>
-                                                    <li><a href="http://s.si.edu/country-bolivia">Bolivia</a></li>
-                                                    <li><a href="http://s.si.edu/country-brazil">Brazil</a></li>
-                                                    <li><a href="http://s.si.edu/country-chile">Chile</a></li>
-                                                    <li><a href="http://s.si.edu/country-colombia">Colombia</a></li>
-                                                    <li><a href="http://s.si.edu/country-ecuador">Ecuador</a></li>
-                                                    <!--<li><span>Falkland Islands (Islas Malvinas)</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-french-guiana">French Guiana</a></li>
-                                                    <li><a href="http://s.si.edu/country-guyana">Guyana</a></li>
-                                                    <li><a href="http://s.si.edu/country-paraguay">Paraguay</a></li>
-                                                    <li><a href="http://s.si.edu/country-peru">Peru</a></li>
-                                                    <li><a href="http://s.si.edu/country-suriname">Suriname</a></li>
-                                                    <li><a href="http://s.si.edu/country-uruguay">Uruguay</a></li>
-                                                    <li><a href="http://s.si.edu/country-venezuela">Venezuela</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <div class="second-level-dropdown-title">Asia</div>
-                                        <ul class="second-level-dropdown">
-                                            <li>
-                                                <div class="third-level-dropdown-title">Central Asia</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-kazakhstan">Kazakhstan</a></li>
-                                                    <li><a href="http://s.si.edu/country-kyrgyzstan">Kyrgyzstan</a></li>
-                                                    <li><a href="http://s.si.edu/country-tajikistan">Tajikistan</a></li>
-                                                    <li><a href="http://s.si.edu/country-turkmenistan">Turkmenistan</a></li>
-                                                    <li><a href="http://s.si.edu/country-uzbekistan">Uzbekistan</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Northeastern Asia</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-china">China</a></li>
-                                                    <li><a href="http://s.si.edu/country-hong-kong">Hong Kong</a></li>
-                                                    <li><a href="http://s.si.edu/country-japan">Japan</a></li>
-                                                    <li><a href="http://s.si.edu/country-north-korea">Korea, North</a></li>
-                                                    <li><a href="http://s.si.edu/country-south-korea">Korea, South</a></li>
-                                                    <!--<li><span>Macao</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-mongolia">Mongolia</a></li>
-                                                    <li><a href="http://s.si.edu/country-taiwan">Taiwan</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Southeastern Asia</div>
-                                                <ul class="third-level-dropdown">
-                                                    <!--<li><span>Brunei</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-cambodia">Cambodia</a></li>
-                                                    <li><a href="http://s.si.edu/country-indonesia">Indonesia</a></li>
-                                                    <li><a href="http://s.si.edu/country-laos">Laos</a></li>
-                                                    <li><a href="http://s.si.edu/country-malaysia">Malaysia</a></li>
-                                                    <li><a href="http://s.si.edu/country-myanmar">Myanmar</a></li>
-                                                    <li><a href="http://s.si.edu/country-philippines">Philippines</a></li>
-                                                    <!--<li><span>Singapore</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-thailand">Thailand</a></li>
-                                                    <!--<li><span>Timor Leste</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-vietnam">Vietnam</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Southern Asia</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-afghanistan">Afghanistan</a></li>
-                                                    <li><a href="http://s.si.edu/country-bangladesh">Bangladesh</a></li>
-                                                    <li><a href="http://s.si.edu/country-bhutan">Bhutan</a></li>
-                                                    <li><a href="http://s.si.edu/country-india">India</a></li>
-                                                    <li><a href="http://s.si.edu/country-iran">Iran</a></li>
-                                                    <!--<li><span>Maldives</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-nepal">Nepal</a></li>
-                                                    <li><a href="http://s.si.edu/country-pakistan">Pakistan</a></li>
-                                                    <li><a href="http://s.si.edu/country-palestinian-territory">Palestinian Territory</a></li>
-                                                    <li><a href="http://s.si.edu/country-sri-lanka">Sri Lanka</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Western Asia</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-armenia">Armenia</a></li>
-                                                    <li><a href="http://s.si.edu/country-azerbaijan">Azerbaijan</a></li>
-                                                    <!--<li><span>Bahrain</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-cyprus">Cyprus</a></li>
-                                                    <!--<li><span>Georgia</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-iraq">Iraq</a></li>
-                                                    <li><a href="http://s.si.edu/country-israel">Israel</a></li>
-                                                    <li><a href="http://s.si.edu/country-jordan">Jordan</a></li>
-                                                    <!--<li><span>Kuwait</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-lebanon">Lebanon</a></li>
-                                                    <li><a href="http://s.si.edu/country-oman">Oman</a></li>
-                                                    <!--<li><span>Qatar</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-saudi-arabia">Saudi Arabia</a></li>
-                                                    <li><a href="http://s.si.edu/country-syria">Syria</a></li>
-                                                    <li><a href="http://s.si.edu/country-turkey">Turkey</a></li>
-                                                    <!--<li><span>United Arab Emirates</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-yemen">Yemen</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <div class="second-level-dropdown-title">Europe</div>
-                                        <ul class="second-level-dropdown">
-                                            <li>
-                                                <div class="third-level-dropdown-title">Eastern Europe</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-belarus">Belarus</a></li>
-                                                    <li><a href="http://s.si.edu/country-bulgaria">Bulgaria</a></li>
-                                                    <li><a href="http://s.si.edu/country-byelorussia">Byelorussia</a></li>
-                                                    <li><a href="http://s.si.edu/country-czech-republic">Czech Republic</a></li>
-                                                    <li><a href="http://s.si.edu/country-hungary">Hungary</a></li>
-                                                    <li><a href="http://s.si.edu/country-moldova">Moldova</a></li>
-                                                    <li><a href="http://s.si.edu/country-poland">Poland</a></li>
-                                                    <li><a href="http://s.si.edu/country-romania">Romania</a></li>
-                                                    <li><a href="http://s.si.edu/country-russia">Russia</a></li>
-                                                    <li><a href="http://s.si.edu/country-slovakia">Slovakia</a></li>
-                                                    <li><a href="http://s.si.edu/country-ukraine">Ukraine</a></li>
-                                                    <li><a href="http://s.si.edu/country-ussr">USSR (former)</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Northern Europe</div>
-                                                <ul class="third-level-dropdown">
-                                                    <!--<li><span>Bouvet Island</span></li>
-                                                <li><span>Channel Islands</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-denmark">Denmark</a></li>
-                                                    <li><a href="http://s.si.edu/country-england">England</a></li>
-                                                    <li><a href="http://s.si.edu/country-estonia">Estonia</a></li>
-                                                    <!--<li><span>Faroe Islands</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-finland">Finland</a></li>
-                                                    <li><a href="http://s.si.edu/country-iceland">Iceland</a></li>
-                                                    <li><a href="http://s.si.edu/country-ireland">Ireland</a></li>
-                                                    <!--<li><span>Isle of Man</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-latvia">Latvia</a></li>
-                                                    <li><a href="http://s.si.edu/country-lithuania">Lithuania</a></li>
-                                                    <li><a href="http://s.si.edu/country-northern-ireland">Northern Ireland</a></li>
-                                                    <li><a href="http://s.si.edu/country-norway">Norway</a></li>
-                                                    <li><a href="http://s.si.edu/country-scotland">Scotland</a></li>
-                                                    <!--<li><span>Svalbard and Jan Mayen</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-sweden">Sweden</a></li>
-                                                    <li><a href="http://s.si.edu/country-united-kingdom">United Kingdom</a></li>
-                                                    <li><a href="http://s.si.edu/country-wales">Wales</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Southern Europe</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-albania">Albania</a></li>
-                                                    <!--<li><span>Andorra</span></li>
-                                                <li><span>Bosnia-Herzegovina</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-croatia">Croatia</a></li>
-                                                    <!--<li><span>Gibraltar</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-greece">Greece</a></li>
-                                                    <li><a href="http://s.si.edu/country-italy">Italy</a></li>
-                                                    <li><a href="http://s.si.edu/country-macedonia">Macedonia</a></li>
-                                                    <li><a href="http://s.si.edu/country-malta">Malta</a></li>
-                                                    <!--<li><span>Monaco</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-portugal">Portugal</a></li>
-                                                    <!--<li><span>San Marino</span></li>
-                                                <li><span>Serbia and Montenegro</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-slovenia">Slovenia</a></li>
-                                                    <li><a href="http://s.si.edu/country-spain">Spain</a></li>
-                                                    <!--<li><span>Vatican City (Holy See)</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-yugoslavia">Yugoslavia (former)</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="third-level-dropdown-title">Western Europe</div>
-                                                <ul class="third-level-dropdown">
-                                                    <li><a href="http://s.si.edu/country-austria">Austria</a></li>
-                                                    <li><a href="http://s.si.edu/country-belgium">Belgium</a></li>
-                                                    <li><a href="http://s.si.edu/country-france">France</a></li>
-                                                    <li><a href="http://s.si.edu/country-germany">Germany</a></li>
-                                                    <!--<li><span>Liechtenstein</span></li>
-                                                <li><span>Luxembourg</span></li>-->
-                                                    <li><a href="http://s.si.edu/country-netherlands">Netherlands</a></li>
-                                                    <li><a href="http://s.si.edu/country-switzerland">Switzerland</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <div class="second-level-dropdown-title">Oceania</div>
-                                        <ul class="second-level-dropdown">
-                                            <li><a href="http://s.si.edu/country-australia">Australia</a></li>
-                                            <!--<li><span>Christmas Island</span></li>
-                                        <li><span>Cocos (Keeling) Islands</span></li>-->
-                                            <li><a href="http://s.si.edu/country-new-zealand">New Zealand</a></li>
-                                            <!--<li><span>Norfolk Island</span></li>-->
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <div class="second-level-dropdown-title">Melanesia</div>
-                                        <ul class="second-level-dropdown">
-                                            <li><a href="http://s.si.edu/country-fiji">Fiji</a></li>
-                                            <!--<li><span>New Caledonia</span></li>-->
-                                            <li><a href="http://s.si.edu/country-papua-new-guinea">Papua New Guinea</a></li>
-                                            <li><a href="http://s.si.edu/country-solomon-islands">Solomon Islands</a></li>
-                                            <li><a href="http://s.si.edu/country-vanuatu">Vanuatu</a></li>
-                                        </ul>
-                                    </li>
+        <!--googleoff:all-->
+        <div id="browsenav" class="browsenav">
+            <div class="hidden-xs">
+                <div class="container">
+                    <div class="browsenav-title col-sm-4">Browse By</div>
+                    <div class="browsenav-categories col-sm-8">
+                        <ul class="row dropdown-wrapper">
+                            <li class="col-sm-3">
+                                <div class="dropdown">
+                                    <div class="first-level-dropdown-title">
+                                        Genre
+                                        <div aria-hidden="true" title="Genre" tabindex="0" class="filter-icon">
+                                            <svg title="Browse by Genre" class="svg-filter-icon">
+                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <ul class="first-level-dropdown tall-dropdown">
+                                        <li> <a href="/search?query=African%20American">African American Music</a></li>
+                                        <li> <a href="/search?query=African%20American%20Spoken">African American Spoken</a></li>
+                                        <li> <a href="/search?query=American%20Folk">American Folk</a></li>
+                                        <li> <a href="/search?query=American%20History">American History</a></li>
+                                        <li> <a href="/search?query=American%20Indian">American Indian</a></li>
+                                        <li> <a href="/search?query=American%20Popular">American Popular</a></li>
+                                        <li> <a href="/search?query=Bluegrass">Bluegrass</a></li>
+                                        <li> <a href="/search?query=Blues">Blues</a></li>
+                                        <li> <a href="/search?query=Cajun">Cajun</a></li>
+                                        <li> <a href="/search?query=Caribbean">Caribbean</a></li>
+                                        <li> <a href="/search?query=Celtic">Celtic</a></li>
+                                        <li> <a href="/search?query=Central%20Asia">Central Asia</a></li>
+                                        <li> <a href="/search?query=Children's">Children's</a></li>
+                                        <li> <a href="/search?query=Classical">Classical</a></li>
+                                        <li> <a href="/search?query=Contemporary">Contemporary &amp; Electronic</a></li>
+                                        <li> <a href="/search?query=Country">Country</a></li>
+                                        <li> <a href="/search?query=Documentary">Documentary</a></li>
+                                        <li> <a href="/search?query=Drama">Drama</a></li>
+                                        <li> <a href="/search?query=Gospel">Gospel</a></li>
+                                        <li> <a href="/search?query=Hawai'i">Hawai'i</a></li>
+                                        <li> <a href="/search?query=Historical%20Song">Historical Song</a></li>
+                                        <li> <a href="/search?query=Holiday">Holiday</a></li>
+                                        <li> <a href="/search?query=Humor">Humor</a></li>
+                                        <li> <a href="/search?query=India">India</a></li>
+                                        <li> <a href="/search?query=Islamica">Islamica</a></li>
+                                        <li> <a href="/search?query=Jazz">Jazz &amp; Ragtime</a></li>
+                                        <li> <a href="/search?query=Judaica">Judaica</a></li>
+                                        <li> <a href="/search?query=Language%20Instruction">Language Instruction</a></li>
+                                        <li> <a href="/search?query=Latin">Latin</a></li>
+                                        <li> <a href="/search?query=Music%20Instruction">Music Instruction</a></li>
+                                        <li> <a href="/search?query=Old%20Time">Old Time</a></li>
+                                        <li> <a href="/search?query=Oral%20History">Oral History &amp; Biography</a></li>
+                                        <li> <a href="/search?query=Poetry">Poetry</a></li>
+                                        <li> <a href="/search?query=Prose">Prose</a></li>
+                                        <li> <a href="/search?query=Psychology">Psychology &amp; Health</a></li>
+                                        <li> <a href="/search?query=Sacred">Sacred</a></li>
+                                        <li> <a href="/search?query=Science">Science &amp; Nature</a></li>
+                                        <li> <a href="/search?query=Sounds">Sounds</a></li>
+                                        <li> <a href="/search?query=Soundtracks">Soundtracks &amp; Musicals</a></li>
+                                        <li> <a href="/search?query=Spoken%20Word">Spoken Word</a></li>
+                                        <li> <a href="/search?query=Struggle">Struggle &amp; Protest</a></li>
+                                        <li> <a href="/search?query=World">World</a></li>
+                                        <li> <a href="/search?query=World%20History">World History</a></li>
 
-                                    <li>
-                                        <div class="second-level-dropdown-title">Polynesia</div>
-                                        <ul class="second-level-dropdown">
-                                            <li><a href="http://s.si.edu/country-american-samoa">American Samoa</a></li>
-                                            <!--<li><span>Cook Islands</span></li>-->
-                                            <li><a href="http://s.si.edu/country-french-polynesia">French Polynesia</a></li>
-                                            <!--<li><span>Johnston Island</span></li>
-                                        <li><span>Niue</span></li>
-                                        <li><span>Pitcairn</span></li>-->
-                                            <li><a href="http://s.si.edu/country-samoa">Samoa</a></li>
-                                            <!--<li><span>Tokelau</span></li>-->
-                                            <li><a href="http://s.si.edu/country-tonga">Tonga</a></li>
-                                            <!--<li><span>Tuvalu</span></li>
-                                        <li><span>Wallis &amp; Futuna Islands</span></li>-->
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-                            <div class="dropdown">
-                                <div class="first-level-dropdown-title">Artists</div>
-                                <ul class="first-level-dropdown tall-dropdown">
-                                    <li><a href="/search?query=Beausoleil">Beausoleil</a></li>
-                                    <li><a href="/search?query=Big Mama Thornton">Big Mama Thornton</a></li>
-                                    <li><a href="/search?query=Big Bill Broonzy">Big Bill Broonzy</a></li>
-                                    <li><a href="/search?query=Brownie McGhee">Brownie McGhee</a></li>
-                                    <li><a href="/search?query=Dock Boggs">Dock Boggs</a></li>
-                                    <li><a href="/search?query=Clifton Chenier">Clifton Chenier</a></li>
-                                    <li><a href="/search?query=Elizabeth Cotten">Elizabeth Cotten</a></li>
-                                    <li><a href="/search?query=The Country Gentlemen">Country Gentlemen</a></li>
-                                    <li><a href="/search?query=Woody Guthrie">Woody Guthrie</a></li>
-                                    <li><a href="/search?query=Roscoe Holcomb">Roscoe Holcomb</a></li>
-                                    <li><a href="/search?query=Lightnin' Hopkins">Lightnin' Hopkins</a></li>
-                                    <li><a href="/search?query=Ella Jenkins">Ella Jenkins</a></li>
-                                    <li><a href="/search?query=Flaco Jiménez">Flaco Jiménez</a></li>
-                                    <li><a href="/search?query=Lead Belly">Lead Belly</a></li>
-                                    <li><a href="/search?query=Mance Lipscomb">Mance Lipscomb</a></li>
-                                    <li><a href="/search?query=Fred McDowell">Fred McDowell</a></li>
-                                    <li><a href="/search?query=Mary Lou Williams">Mary Lou Williams</a></li>
-                                    <li><a href="/search?query=Memphis Slim">Memphis Slim</a></li>
-                                    <li><a href="/search?query=Mighty Sparrow">Mighty Sparrow</a></li>
-                                    <li><a href="/search?query=Elizabeth Mitchell">Elizabeth Mitchell</a></li>
-                                    <li><a href="/search?query=Bill Monroe">Bill Monroe</a></li>
-                                    <li><a href="/search?query=The New Lost City Ramblers">New Lost City Ramblers</a></li>
-                                    <li><a href="/search?query=David Nzomo">David Nzomo</a></li>
-                                    <li><a href="/search?query=Suni Paz">Suni Paz</a></li>
-                                    <li><a href="/search?query=Jean Ritchie">Jean Ritchie</a></li>
-                                    <li><a href="/search?query=Tony Schwartz">Tony Schwartz</a></li>
-                                    <li><a href="/search?query=Mike Seeger">Mike Seeger</a></li>
-                                    <li><a href="/search?query=Peggy Seeger">Peggy Seeger</a></li>
-                                    <li><a href="/search?query=Pete Seeger">Pete Seeger</a></li>
-                                    <li><a href="/search?query=Mike Seeger">Mike Seeger</a></li>
-                                    <li><a href="/search?query=Snooks Eaglin">Snooks Eaglin</a></li>
-                                    <li><a href="/search?query=Sonny Terry">Sonny Terry</a></li>
-                                    <li><a href="/search?query=Dave Van Ronk">Dave Van Ronk</a></li>
-                                    <li>...</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="col-sm-3">
-                            <div class="dropdown">
-                                <div class="first-level-dropdown-title">Label</div>
-                                <ul class="first-level-dropdown tall-dropdown">
-                                    <li><a href="/search?query=Archives and Research Centre for Ethnomusicology (A.R.C.E.)">A.R.C.E.</a>
-                                    <li><a href="/search?query=Arhoolie Records">Arhoolie Records</a>
-                                    <li><a href="/search?query=Blue Ridge Institute">Blue Ridge Institute</a>
-                                    <li><a href="/search?query=Bobby Susser Songs for Children">Bobby Susser</a>
-                                    <li><a href="/search?query=Collector Records">Collector</a>
-                                    <li><a href="/search?query=Cook Records">Cook</a>
-                                    <li><a href="/search?query=Dyer-Bennet Records">Dyer-Bennet</a>
-                                    <li><a href="/search?query=Fast Folk Musical Magazine">Fast Folk</a>
-                                    <li><a href="/search?query=Folkways Records">Folkways Records</a>
-                                    <li><a href="/search?query=International Library of African Music (I.L.A.M.)">I.L.A.M.</a>
-                                    <li><a href="/search?query=Mickey Hart Collection">Mickey Hart</a>
-                                    <li><a href="/search?query=Minority Owned Record Enterprises (M.O.R.E.)">M.O.R.E.</a>
-                                    <li><a href="/search?query=Monitor Records">Monitor</a>
-                                    <li><a href="/search?query=Paredon Records">Paredon</a>
-                                    <li><a href="/search?query=Smithsonian Folkways Recordings">Smithsonian Folkways</a>
-                                    <li><a href="/search?query=UNESCO Collection of Traditional Music">UNESCO</a>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="col-sm-3">
+                                <div class="dropdown">
+                                    <div class="first-level-dropdown-title">
+                                        Geography
+                                        <div aria-hidden="true" title="Geography" tabindex="0" class="filter-icon">
+                                            <svg title="Browse by Geography" class="svg-filter-icon">
+                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <ul class="first-level-dropdown">
+                                        <li>
+                                            <div class="second-level-dropdown-title">
+                                                Africa
+                                                <div aria-hidden="true" title="Africa" tabindex="0" class="filter-icon">
+                                                    <svg title="Africa" class="no-rotate svg-filter-icon">
+                                                        <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <ul class="second-level-dropdown">
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Eastern Africa
+                                                        <div aria-hidden="true" title="Eastern Africa" tabindex="0" class="filter-icon">
+                                                            <svg title="Eastern Africa" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li class="black-25"><span>Comoros</span></li>
+                                                        <li class="black-25"><span>Djibouti</span></li>
+                                                        <li><a href="http://s.si.edu/country-eritrea">Eritrea</a></li>
+                                                        <li><a href="http://s.si.edu/country-ethiopia">Ethiopia</a></li>
+                                                        <li><a href="http://s.si.edu/country-kenya">Kenya</a></li>
+                                                        <li><a href="http://s.si.edu/country-madagascar">Madagascar</a></li>
+                                                        <li><a href="http://s.si.edu/country-malawi">Malawi</a></li>
+                                                        <li class="black-25"><span>Mauritius</span></li>
+                                                        <li class="black-25"><span>Mayotte</span></li>
+                                                        <li><a href="http://s.si.edu/country-mozambique">Mozambique</a></li>
+                                                        <li class="black-25"><span>Reunion</span></li>
+                                                        <li><a href="http://s.si.edu/country-rwanda">Rwanda</a></li>
+                                                        <li class="black-25"><span>Seychelles</span></li>
+                                                        <li><a href="http://s.si.edu/country-somalia">Somalia</a></li>
+                                                        <li><a href="http://s.si.edu/country-tanzania">Tanzania</a></li>
+                                                        <li><a href="http://s.si.edu/country-uganda">Uganda</a></li>
+                                                        <li><a href="http://s.si.edu/country-zambia">Zambia</a></li>
+                                                        <li><a href="http://s.si.edu/country-zambia">Zimbabwe</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Middle Africa
+                                                        <div aria-hidden="true" title="Middle Africa" tabindex="0" class="filter-icon">
+                                                            <svg title="Middle Africa" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="/search?query=Burundi">Burundi</a></li>
+                                                        <li><a href="http://s.si.edu/country-angola">Angola</a></li>
+                                                        <li><a href="http://s.si.edu/country-cameroon">Cameroon</a></li>
+                                                        <li><a href="http://s.si.edu/country-central-african-republic">Central African Republic</a></li>
+                                                        <li><a href="http://s.si.edu/country-chad">Chad</a></li>
+                                                        <li class="black-25"><span>Congo (Brazzaville)</span></li>
+                                                        <li><a href="http://s.si.edu/country-congo-democratic-republic">Congo (Democratic Republic)</a></li>
+                                                        <li><a href="http://s.si.edu/country-equatorial-guinea">Equatorial Guinea</a></li>
+                                                        <li><a href="http://s.si.edu/country-gabon">Gabon</a></li>
+                                                        <li class="black-25"><span>Sao Tome and Principe</span></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Northern Africa
+                                                        <div aria-hidden="true" title="Northern Africa" tabindex="0" class="filter-icon">
+                                                            <svg title="Northern Africa" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="/search?query=Burundi">Burundi</a></li>
+                                                        <li><a href="http://s.si.edu/country-algeria">Algeria</a></li>
+                                                        <li><a href="http://s.si.edu/country-egypt">Egypt</a></li>
+                                                        <li><a href="http://s.si.edu/country-libya">Libya</a></li>
+                                                        <li><a href="http://s.si.edu/country-morocco">Morocco</a></li>
+                                                        <li><a href="http://s.si.edu/country-sudan">Sudan</a></li>
+                                                        <li><a href="http://s.si.edu/country-tunisia">Tunisia</a></li>
+                                                        <li class="black-25"><span>Western Sahara</span></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Southern Africa
+                                                        <div aria-hidden="true" title="Southern Africa" tabindex="0" class="filter-icon">
+                                                            <svg title="Southern Africa" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-botswana">Botswana</a></li>
+                                                        <li><a href="http://s.si.edu/country-lesotho">Lesotho</a></li>
+                                                        <li><a href="http://s.si.edu/country-namibia">Namibia</a></li>
+                                                        <li><a href="http://s.si.edu/country-south-africa">South Africa</a></li>
+                                                        <li><a href="http://s.si.edu/country-swaziland">Swaziland</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Western Africa
+                                                        <div aria-hidden="true" title="Western Africa" tabindex="0" class="filter-icon">
+                                                            <svg title="Western Africa" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-benin">Benin</a></li>
+                                                        <li><a href="http://s.si.edu/country-burkina-faso">Burkina Faso</a></li>
+                                                        <li class="black-25"><span>Cape Verde</span></li>
+                                                        <li><a href="http://s.si.edu/country-cote-divoire">Cote d'Ivoire</a></li>
+                                                        <li><a href="http://s.si.edu/country-gambia">Gambia</a></li>
+                                                        <li><a href="http://s.si.edu/country-ghana">Ghana</a></li>
+                                                        <li><a href="http://s.si.edu/country-guinea">Guinea</a></li>
+                                                        <li><a href="http://s.si.edu/country-guinea-bissau">Guinea-Bissau</a></li>
+                                                        <li><a href="http://s.si.edu/country-liberia">Liberia</a></li>
+                                                        <li><a href="http://s.si.edu/country-mali">Mali</a></li>
+                                                        <li class="black-25"><span>Mauritania</span></li>
+                                                        <li><a href="http://s.si.edu/country-niger">Niger</a></li>
+                                                        <li><a href="http://s.si.edu/country-nigeria">Nigeria</a></li>
+                                                        <li class="black-25"><span>Saint Helena</span></li>
+                                                        <li><a href="http://s.si.edu/country-senegal">Senegal</a></li>
+                                                        <li><a href="http://s.si.edu/country-sierra-leone">Sierra Leone</a></li>
+                                                        <li><a href="http://s.si.edu/country-togo">Togo</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="second-level-dropdown-title">
+                                                Americas
+                                                <div aria-hidden="true" title="Americas" tabindex="0" class="filter-icon">
+                                                    <svg title="Americas" class="no-rotate svg-filter-icon">
+                                                        <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <ul class="second-level-dropdown">
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Caribbean
+                                                        <div aria-hidden="true" title="Caribbean" tabindex="0" class="filter-icon">
+                                                            <svg title="Caribbean" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li class="black-25"><span>Anguilla</span></li>
+                                                        <li><a href="http://s.si.edu/country-antigua-and-barbuda">Antigua and Barbuda</a></li>
+                                                        <li class="black-25"><span>Aruba</span></li>
+                                                        <li><a href="http://s.si.edu/country-bahamas">Bahamas</a></li>
+                                                        <li><a href="http://s.si.edu/country-barbados">Barbados</a></li>
+                                                        <li><a href="http://s.si.edu/country-british-virgin-islands">British Virgin Islands</a></li>
+                                                        <li class="black-25"><span>Cayman Islands</span></li>
+                                                        <li><a href="http://s.si.edu/country-cuba">Cuba</a></li>
+                                                        <li class="black-25"><span>Dominica</span></li>
+                                                        <li><a href="http://s.si.edu/country-dominican-republic">Dominican Republic</a></li>
+                                                        <li><a href="http://s.si.edu/country-grenada">Grenada</a></li>
+                                                        <li><a href="http://s.si.edu/country-guadeloupe">Guadeloupe</a></li>
+                                                        <li><a href="http://s.si.edu/country-haiti">Haiti</a></li>
+                                                        <li><a href="http://s.si.edu/country-jamaica">Jamaica</a></li>
+                                                        <li><a href="http://s.si.edu/country-martinique">Martinique</a></li>
+                                                        <li class="black-25"><span>Montserrat</span></li>
+                                                        <li class="black-25"><span>Netherlands Antilles</span></li>
+                                                        <li><a href="http://s.si.edu/country-puerto-rico">Puerto Rico</a></li>
+                                                        <li><a href="http://s.si.edu/country-saint-kitts-and-nevis">Saint Kitts and Nevis</a></li>
+                                                        <li><a href="http://s.si.edu/country-saint-lucia">Saint Lucia</a></li>
+                                                        <li class="black-25"><span>Saint Vincent and the Grenadines</span></li>
+                                                        <li><a href="http://s.si.edu/country-trinidad-and-tobago">Trinidad and Tobago</a></li>
+                                                        <li class="black-25"><span>Turks and Caicos</span></li>
+                                                        <li><a href="http://s.si.edu/country-virgin-islands-of-the-us">Virgin Islands of the United States</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Central America
+                                                        <div aria-hidden="true" title="Central America" tabindex="0" class="filter-icon">
+                                                            <svg title="Central America" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-belize">Belize</a></li>
+                                                        <li><a href="http://s.si.edu/country-costa-rica">Costa Rica</a></li>
+                                                        <li><a href="http://s.si.edu/country-el-salvador">El Salvador</a></li>
+                                                        <li><a href="http://s.si.edu/country-guatemala">Guatemala</a></li>
+                                                        <li><a href="http://s.si.edu/country-honduras">Honduras</a></li>
+                                                        <li><a href="http://s.si.edu/country-nicaragua">Nicaragua</a></li>
+                                                        <li><a href="http://s.si.edu/country-panama">Panama</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Northern America
+                                                        <div aria-hidden="true" title="Northern America" tabindex="0" class="filter-icon">
+                                                            <svg title="Northern America" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-bermuda">Bermuda</a></li>
+                                                        <li><a href="http://s.si.edu/country-canada">Canada</a></li>
+                                                        <li><a href="http://s.si.edu/country-greenland">Greenland</a></li>
+                                                        <li><a href="/search?query=Hawaii">Hawaii</a></li>
+                                                        <li><a href="http://s.si.edu/country-mexico">Mexico</a></li>
+                                                        <li class="black-25"><span>Saint Pierre and Miquelon</span></li>
+                                                        <li><a href="http://s.si.edu/country-united-states">United States</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Southern America
+                                                        <div aria-hidden="true" title="Southern America" tabindex="0" class="filter-icon">
+                                                            <svg title="Southern America" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-argentina">Argentina</a></li>
+                                                        <li><a href="http://s.si.edu/country-bolivia">Bolivia</a></li>
+                                                        <li><a href="http://s.si.edu/country-brazil">Brazil</a></li>
+                                                        <li><a href="http://s.si.edu/country-chile">Chile</a></li>
+                                                        <li><a href="http://s.si.edu/country-colombia">Colombia</a></li>
+                                                        <li><a href="http://s.si.edu/country-ecuador">Ecuador</a></li>
+                                                        <li class="black-25"><span>Falkland Islands (Islas Malvinas)</span></li>
+                                                        <li><a href="http://s.si.edu/country-french-guiana">French Guiana</a></li>
+                                                        <li><a href="http://s.si.edu/country-guyana">Guyana</a></li>
+                                                        <li><a href="http://s.si.edu/country-paraguay">Paraguay</a></li>
+                                                        <li><a href="http://s.si.edu/country-peru">Peru</a></li>
+                                                        <li><a href="http://s.si.edu/country-suriname">Suriname</a></li>
+                                                        <li><a href="http://s.si.edu/country-uruguay">Uruguay</a></li>
+                                                        <li><a href="http://s.si.edu/country-venezuela">Venezuela</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="second-level-dropdown-title">
+                                                Asia
+                                                <div aria-hidden="true" title="Asia" tabindex="0" class="filter-icon">
+                                                    <svg title="Asia" class="no-rotate svg-filter-icon">
+                                                        <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <ul class="second-level-dropdown">
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Central Asia
+                                                        <div aria-hidden="true" title="Central Asia" tabindex="0" class="filter-icon">
+                                                            <svg title="Central Asia" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-kazakhstan">Kazakhstan</a></li>
+                                                        <li><a href="http://s.si.edu/country-kyrgyzstan">Kyrgyzstan</a></li>
+                                                        <li><a href="http://s.si.edu/country-tajikistan">Tajikistan</a></li>
+                                                        <li><a href="http://s.si.edu/country-turkmenistan">Turkmenistan</a></li>
+                                                        <li><a href="http://s.si.edu/country-uzbekistan">Uzbekistan</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Northeastern Asia
+                                                        <div aria-hidden="true" title="Northeastern Asia" tabindex="0" class="filter-icon">
+                                                            <svg title="Northeastern Asia" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-china">China</a></li>
+                                                        <li><a href="http://s.si.edu/country-hong-kong">Hong Kong</a></li>
+                                                        <li><a href="http://s.si.edu/country-japan">Japan</a></li>
+                                                        <li><a href="http://s.si.edu/country-north-korea">Korea, North</a></li>
+                                                        <li><a href="http://s.si.edu/country-south-korea">Korea, South</a></li>
+                                                        <li class="black-25"><span>Macao</span></li>
+                                                        <li><a href="http://s.si.edu/country-mongolia">Mongolia</a></li>
+                                                        <li><a href="http://s.si.edu/country-taiwan">Taiwan</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Southeastern Asia
+                                                        <div aria-hidden="true" title="Southeastern Asia" tabindex="0" class="filter-icon">
+                                                            <svg title="Southeastern Asia" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li class="black-25"><span>Brunei</span></li>
+                                                        <li><a href="http://s.si.edu/country-cambodia">Cambodia</a></li>
+                                                        <li><a href="http://s.si.edu/country-indonesia">Indonesia</a></li>
+                                                        <li><a href="http://s.si.edu/country-laos">Laos</a></li>
+                                                        <li><a href="http://s.si.edu/country-malaysia">Malaysia</a></li>
+                                                        <li><a href="http://s.si.edu/country-myanmar">Myanmar</a></li>
+                                                        <li><a href="http://s.si.edu/country-philippines">Philippines</a></li>
+                                                        <li class="black-25"><span>Singapore</span></li>
+                                                        <li><a href="http://s.si.edu/country-thailand">Thailand</a></li>
+                                                        <li class="black-25"><span>Timor Leste</span></li>
+                                                        <li><a href="http://s.si.edu/country-vietnam">Vietnam</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Southern Asia
+                                                        <div aria-hidden="true" title="Southern Asia" tabindex="0" class="filter-icon">
+                                                            <svg title="Southern Asia" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-afghanistan">Afghanistan</a></li>
+                                                        <li><a href="http://s.si.edu/country-bangladesh">Bangladesh</a></li>
+                                                        <li><a href="http://s.si.edu/country-bhutan">Bhutan</a></li>
+                                                        <li><a href="http://s.si.edu/country-india">India</a></li>
+                                                        <li><a href="http://s.si.edu/country-iran">Iran</a></li>
+                                                        <li class="black-25"><span>Maldives</span></li>
+                                                        <li><a href="http://s.si.edu/country-nepal">Nepal</a></li>
+                                                        <li><a href="http://s.si.edu/country-pakistan">Pakistan</a></li>
+                                                        <li><a href="http://s.si.edu/country-palestinian-territory">Palestinian Territory</a></li>
+                                                        <li><a href="http://s.si.edu/country-sri-lanka">Sri Lanka</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Western Asia
+                                                        <div aria-hidden="true" title="Western Asia" tabindex="0" class="filter-icon">
+                                                            <svg title="Western Asia" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-armenia">Armenia</a></li>
+                                                        <li><a href="http://s.si.edu/country-azerbaijan">Azerbaijan</a></li>
+                                                        <li class="black-25"><span>Bahrain</span></li>
+                                                        <li><a href="http://s.si.edu/country-cyprus">Cyprus</a></li>
+                                                        <li class="black-25"><span>Georgia</span></li>
+                                                        <li><a href="http://s.si.edu/country-iraq">Iraq</a></li>
+                                                        <li><a href="http://s.si.edu/country-israel">Israel</a></li>
+                                                        <li><a href="http://s.si.edu/country-jordan">Jordan</a></li>
+                                                        <li class="black-25"><span>Kuwait</span></li>
+                                                        <li><a href="http://s.si.edu/country-lebanon">Lebanon</a></li>
+                                                        <li><a href="http://s.si.edu/country-oman">Oman</a></li>
+                                                        <li class="black-25"><span>Qatar</span></li>
+                                                        <li><a href="http://s.si.edu/country-saudi-arabia">Saudi Arabia</a></li>
+                                                        <li><a href="http://s.si.edu/country-syria">Syria</a></li>
+                                                        <li><a href="http://s.si.edu/country-turkey">Turkey</a></li>
+                                                        <li class="black-25"><span>United Arab Emirates</span></li>
+                                                        <li><a href="http://s.si.edu/country-yemen">Yemen</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="second-level-dropdown-title">
+                                                Europe
+                                                <div aria-hidden="true" title="Europe" tabindex="0" class="filter-icon">
+                                                    <svg title="Europe" class="no-rotate svg-filter-icon">
+                                                        <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <ul class="second-level-dropdown">
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Eastern Europe
+                                                        <div aria-hidden="true" title="Eastern Europe" tabindex="0" class="filter-icon">
+                                                            <svg title="Eastern Europe" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-belarus">Belarus</a></li>
+                                                        <li><a href="http://s.si.edu/country-bulgaria">Bulgaria</a></li>
+                                                        <li><a href="http://s.si.edu/country-byelorussia">Byelorussia</a></li>
+                                                        <li><a href="http://s.si.edu/country-czech-republic">Czech Republic</a></li>
+                                                        <li><a href="http://s.si.edu/country-hungary">Hungary</a></li>
+                                                        <li><a href="http://s.si.edu/country-moldova">Moldova</a></li>
+                                                        <li><a href="http://s.si.edu/country-poland">Poland</a></li>
+                                                        <li><a href="http://s.si.edu/country-romania">Romania</a></li>
+                                                        <li><a href="http://s.si.edu/country-russia">Russia</a></li>
+                                                        <li><a href="http://s.si.edu/country-slovakia">Slovakia</a></li>
+                                                        <li><a href="http://s.si.edu/country-ukraine">Ukraine</a></li>
+                                                        <li><a href="http://s.si.edu/country-ussr">USSR (former)</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Northern Europe
+                                                        <div aria-hidden="true" title="Northern Europe" tabindex="0" class="filter-icon">
+                                                            <svg title="Northern Europe" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li class="black-25"><span>Bouvet Island</span></li>
+                                                        <li class="black-25"><span>Channel Islands</span></li>
+                                                        <li><a href="http://s.si.edu/country-denmark">Denmark</a></li>
+                                                        <li><a href="http://s.si.edu/country-england">England</a></li>
+                                                        <li><a href="http://s.si.edu/country-estonia">Estonia</a></li>
+                                                        <li class="black-25"><span>Faroe Islands</span></li>
+                                                        <li><a href="http://s.si.edu/country-finland">Finland</a></li>
+                                                        <li><a href="http://s.si.edu/country-iceland">Iceland</a></li>
+                                                        <li><a href="http://s.si.edu/country-ireland">Ireland</a></li>
+                                                        <li class="black-25"><span>Isle of Man</span></li>
+                                                        <li><a href="http://s.si.edu/country-latvia">Latvia</a></li>
+                                                        <li><a href="http://s.si.edu/country-lithuania">Lithuania</a></li>
+                                                        <li><a href="http://s.si.edu/country-northern-ireland">Northern Ireland</a></li>
+                                                        <li><a href="http://s.si.edu/country-norway">Norway</a></li>
+                                                        <li><a href="http://s.si.edu/country-scotland">Scotland</a></li>
+                                                        <li class="black-25"><span>Svalbard and Jan Mayen</span></li>
+                                                        <li><a href="http://s.si.edu/country-sweden">Sweden</a></li>
+                                                        <li><a href="http://s.si.edu/country-united-kingdom">United Kingdom</a></li>
+                                                        <li><a href="http://s.si.edu/country-wales">Wales</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Southern Europe
+                                                        <div aria-hidden="true" title="Southern Europe" tabindex="0" class="filter-icon">
+                                                            <svg title="Southern Europe" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-albania">Albania</a></li>
+                                                        <li class="black-25"><span>Andorra</span></li>
+                                                        <li class="black-25"><span>Bosnia-Herzegovina</span></li>
+                                                        <li><a href="http://s.si.edu/country-croatia">Croatia</a></li>
+                                                        <li class="black-25"><span>Gibraltar</span></li>
+                                                        <li><a href="http://s.si.edu/country-greece">Greece</a></li>
+                                                        <li><a href="http://s.si.edu/country-italy">Italy</a></li>
+                                                        <li><a href="http://s.si.edu/country-macedonia">Macedonia</a></li>
+                                                        <li><a href="http://s.si.edu/country-malta">Malta</a></li>
+                                                        <li class="black-25"><span>Monaco</span></li>
+                                                        <li><a href="http://s.si.edu/country-portugal">Portugal</a></li>
+                                                        <li class="black-25"><span>San Marino</span></li>
+                                                        <li class="black-25"><span>Serbia and Montenegro</span></li>
+                                                        <li><a href="http://s.si.edu/country-slovenia">Slovenia</a></li>
+                                                        <li><a href="http://s.si.edu/country-spain">Spain</a></li>
+                                                        <li class="black-25"><span>Vatican City (Holy See)</span></li>
+                                                        <li><a href="http://s.si.edu/country-yugoslavia">Yugoslavia (former)</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="third-level-dropdown-title">
+                                                        Western Europe
+                                                        <div aria-hidden="true" title="Western Europe" tabindex="0" class="filter-icon">
+                                                            <svg title="Western Europe" class="no-rotate svg-filter-icon">
+                                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="third-level-dropdown">
+                                                        <li><a href="http://s.si.edu/country-austria">Austria</a></li>
+                                                        <li><a href="http://s.si.edu/country-belgium">Belgium</a></li>
+                                                        <li><a href="http://s.si.edu/country-france">France</a></li>
+                                                        <li><a href="http://s.si.edu/country-germany">Germany</a></li>
+                                                        <li class="black-25"><span>Liechtenstein</span></li>
+                                                        <li class="black-25"><span>Luxembourg</span></li>
+                                                        <li><a href="http://s.si.edu/country-netherlands">Netherlands</a></li>
+                                                        <li><a href="http://s.si.edu/country-switzerland">Switzerland</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="second-level-dropdown-title">
+                                                Oceania
+                                                <div aria-hidden="true" title="Oceania" tabindex="0" class="filter-icon">
+                                                    <svg title="Oceania" class="no-rotate svg-filter-icon">
+                                                        <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <ul class="second-level-dropdown">
+                                                <li><a href="http://s.si.edu/country-australia">Australia</a></li>
+                                                <li class="black-25"><span>Christmas Island</span></li>
+                                                <li class="black-25"><span>Cocos (Keeling) Islands</span></li>
+                                                <li><a href="http://s.si.edu/country-new-zealand">New Zealand</a></li>
+                                                <li class="black-25"><span>Norfolk Island</span></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="second-level-dropdown-title">
+                                                Melanesia
+                                                <div aria-hidden="true" title="Melanesia" tabindex="0" class="filter-icon">
+                                                    <svg title="Melanesia" class="no-rotate svg-filter-icon">
+                                                        <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <ul class="second-level-dropdown">
+                                                <li><a href="http://s.si.edu/country-fiji">Fiji</a></li>
+                                                <li class="black-25"><span>New Caledonia</span></li>
+                                                <li><a href="http://s.si.edu/country-papua-new-guinea">Papua New Guinea</a></li>
+                                                <li><a href="http://s.si.edu/country-solomon-islands">Solomon Islands</a></li>
+                                                <li><a href="http://s.si.edu/country-vanuatu">Vanuatu</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <div class="second-level-dropdown-title">
+                                                Polynesia
+                                                <div aria-hidden="true" title="Polynesia" tabindex="0" class="filter-icon">
+                                                    <svg title="Polynesia" class="no-rotate svg-filter-icon">
+                                                        <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <ul class="second-level-dropdown">
+                                                <li><a href="http://s.si.edu/country-american-samoa">American Samoa</a></li>
+                                                <li class="black-25"><span>Cook Islands</span></li>
+                                                <li><a href="http://s.si.edu/country-french-polynesia">French Polynesia</a></li>
+                                                <li class="black-25"><span>Johnston Island</span></li>
+                                                <li class="black-25"><span>Niue</span></li>
+                                                <li class="black-25"><span>Pitcairn</span></li>
+                                                <li><a href="http://s.si.edu/country-samoa">Samoa</a></li>
+                                                <li class="black-25"><span>Tokelau</span></li>
+                                                <li><a href="http://s.si.edu/country-tonga">Tonga</a></li>
+                                                <li class="black-25"><span>Tuvalu</span></li>
+                                                <li class="black-25"><span>Wallis &amp; Futuna Islands</span></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="col-sm-3">
+                                <div class="dropdown">
+                                    <div class="first-level-dropdown-title">
+                                        Artist
+                                        <div aria-hidden="true" title="Artist" tabindex="0" class="filter-icon">
+                                            <svg title="Browse by Artist" class="svg-filter-icon">
+                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <ul class="first-level-dropdown tall-dropdown">
+                                        <li><a href="/search?query=Beausoleil">Beausoleil</a></li>
+                                        <li><a href="/search?query=Big Mama Thornton">Big Mama Thornton</a></li>
+                                        <li><a href="/search?query=Big Bill Broonzy">Big Bill Broonzy</a></li>
+                                        <li><a href="/search?query=Brownie McGhee">Brownie McGhee</a></li>
+                                        <li><a href="/search?query=Dock Boggs">Dock Boggs</a></li>
+                                        <li><a href="/search?query=Clifton Chenier">Clifton Chenier</a></li>
+                                        <li><a href="/search?query=Elizabeth Cotten">Elizabeth Cotten</a></li>
+                                        <li><a href="/search?query=The Country Gentlemen">Country Gentlemen</a></li>
+                                        <li><a href="/search?query=Woody Guthrie">Woody Guthrie</a></li>
+                                        <li><a href="/search?query=Roscoe Holcomb">Roscoe Holcomb</a></li>
+                                        <li><a href="/search?query=Lightnin' Hopkins">Lightnin' Hopkins</a></li>
+                                        <li><a href="/search?query=Ella Jenkins">Ella Jenkins</a></li>
+                                        <li><a href="/search?query=Flaco Jiménez">Flaco Jiménez</a></li>
+                                        <li><a href="/search?query=Lead Belly">Lead Belly</a></li>
+                                        <li><a href="/search?query=Mance Lipscomb">Mance Lipscomb</a></li>
+                                        <li><a href="/search?query=Fred McDowell">Fred McDowell</a></li>
+                                        <li><a href="/search?query=Mary Lou Williams">Mary Lou Williams</a></li>
+                                        <li><a href="/search?query=Memphis Slim">Memphis Slim</a></li>
+                                        <li><a href="/search?query=Mighty Sparrow">Mighty Sparrow</a></li>
+                                        <li><a href="/search?query=Elizabeth Mitchell">Elizabeth Mitchell</a></li>
+                                        <li><a href="/search?query=Bill Monroe">Bill Monroe</a></li>
+                                        <li><a href="/search?query=The New Lost City Ramblers">New Lost City Ramblers</a></li>
+                                        <li><a href="/search?query=David Nzomo">David Nzomo</a></li>
+                                        <li><a href="/search?query=Suni Paz">Suni Paz</a></li>
+                                        <li><a href="/search?query=Jean Ritchie">Jean Ritchie</a></li>
+                                        <li><a href="/search?query=Tony Schwartz">Tony Schwartz</a></li>
+                                        <li><a href="/search?query=Mike Seeger">Mike Seeger</a></li>
+                                        <li><a href="/search?query=Peggy Seeger">Peggy Seeger</a></li>
+                                        <li><a href="/search?query=Pete Seeger">Pete Seeger</a></li>
+                                        <li><a href="/search?query=Mike Seeger">Mike Seeger</a></li>
+                                        <li><a href="/search?query=Snooks Eaglin">Snooks Eaglin</a></li>
+                                        <li><a href="/search?query=Sonny Terry">Sonny Terry</a></li>
+                                        <li><a href="/search?query=Dave Van Ronk">Dave Van Ronk</a></li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="col-sm-3">
+                                <div class="dropdown">
+                                    <div class="first-level-dropdown-title">
+                                        Label
+                                        <div aria-hidden="true" title="Label" tabindex="0" class="filter-icon">
+                                            <svg title="Browse by Label" class="svg-filter-icon">
+                                                <use xlink:href="/Images/icons/icons.svg#icon-play"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <ul class="first-level-dropdown tall-dropdown">
+                                        <li><a href="/search?query=Archives and Research Centre for Ethnomusicology (A.R.C.E.)">A.R.C.E.</a>
+                                        <li><a href="/search?query=Arhoolie Records">Arhoolie Records</a>
+                                        <li><a href="/search?query=Blue Ridge Institute">Blue Ridge Institute</a>
+                                        <li><a href="/search?query=Bobby Susser Songs for Children">Bobby Susser</a>
+                                        <li><a href="/search?query=Collector Records">Collector</a>
+                                        <li><a href="/search?query=Cook Records">Cook</a>
+                                        <li><a href="/search?query=Dyer-Bennet Records">Dyer-Bennet</a>
+                                        <li><a href="/search?query=Fast Folk Musical Magazine">Fast Folk</a>
+                                        <li><a href="/search?query=Folkways Records">Folkways Records</a>
+                                        <li><a href="/search?query=International Library of African Music (I.L.A.M.)">I.L.A.M.</a>
+                                        <li><a href="/search?query=Mickey Hart Collection">Mickey Hart</a>
+                                        <li><a href="/search?query=Minority Owned Record Enterprises (M.O.R.E.)">M.O.R.E.</a>
+                                        <li><a href="/search?query=Monitor Records">Monitor</a>
+                                        <li><a href="/search?query=Paredon Records">Paredon</a>
+                                        <li><a href="/search?query=Smithsonian Folkways Recordings">Smithsonian Folkways</a>
+                                        <li><a href="/search?query=UNESCO Collection of Traditional Music">UNESCO</a>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+            <!--MOBILE BROWSE-->
+            <div class="visible-xs">
+                <div class="container">
+                    <div class="browsenav-title">Browse By</div>
+                    <select onchange="javascript:document.location.href = this.value;">
+                        <option value="default">Genre</option>
+                        <option value="/search?query=African%20American">African American Music</option>
+                        <option value="/search?query=African%20American%20Spoken">African American Spoken</option>
+                        <option value="/search?query=American%20Folk">American Folk</option>
+                        <option value="/search?query=American%20History">American History</option>
+                        <option value="/search?query=American%20Indian">American Indian</option>
+                        <option value="/search?query=American%20Popular">American Popular</option>
+                        <option value="/search?query=Bluegrass">Bluegrass</option>
+                        <option value="/search?query=Blues">Blues</option>
+                        <option value="/search?query=Cajun">Cajun</option>
+                        <option value="/search?query=Caribbean">Caribbean</option>
+                        <option value="/search?query=Celtic">Celtic</option>
+                        <option value="/search?query=Central%20Asia">Central Asia</option>
+                        <option value="/search?query=Children's">Children's</option>
+                        <option value="/search?query=Classical">Classical</option>
+                        <option value="/search?query=Contemporary">Contemporary &amp; Electronic</option>
+                        <option value="/search?query=Country">Country</option>
+                        <option value="/search?query=Documentary">Documentary</option>
+                        <option value="/search?query=Drama">Drama</option>
+                        <option value="/search?query=Gospel">Gospel</option>
+                        <option value="/search?query=Hawai'i">Hawai'i</option>
+                        <option value="/search?query=Historical%20Song">Historical Song</option>
+                        <option value="/search?query=Holiday">Holiday</option>
+                        <option value="/search?query=Humor">Humor</option>
+                        <option value="/search?query=India">India</option>
+                        <option value="/search?query=Islamica">Islamica</option>
+                        <option value="/search?query=Jazz">Jazz &amp; Ragtime</option>
+                        <option value="/search?query=Judaica">Judaica</option>
+                        <option value="/search?query=Language%20Instruction">Language Instruction</option>
+                        <option value="/search?query=Latin">Latin</option>
+                        <option value="/search?query=Music%20Instruction">Music Instruction</option>
+                        <option value="/search?query=Old%20Time">Old Time</option>
+                        <option value="/search?query=Oral%20History">Oral History &amp; Biography</option>
+                        <option value="/search?query=Poetry">Poetry</option>
+                        <option value="/search?query=Prose">Prose</option>
+                        <option value="/search?query=Psychology">Psychology &amp; Health</option>
+                        <option value="/search?query=Sacred">Sacred</option>
+                        <option value="/search?query=Science">Science &amp; Nature</option>
+                        <option value="/search?query=Sounds">Sounds</option>
+                        <option value="/search?query=Soundtracks">Soundtracks &amp; Musicals</option>
+                        <option value="/search?query=Spoken%20Word">Spoken Word</option>
+                        <option value="/search?query=Struggle">Struggle &amp; Protest</option>
+                        <option value="/search?query=World">World</option>
+                        <option value="/search?query=World%20History">World History</option>
+                    </select>
+
+                    <select onchange="javascript:document.location.href = this.value;">
+                        <option value="default">Country</option>
+                        <option value="http://s.si.edu/country-afghanistan">Afghanistan</option>
+                        <option value="http://s.si.edu/country-albania">Albania</option>
+                        <option value="http://s.si.edu/country-algeria">Algeria</option>
+                        <option value="http://s.si.edu/country-american-samoa">American Samoa</option>
+                        <!--<option class="black-25">Andorra</option>-->
+                        <option value="http://s.si.edu/country-angola">Angola</option>
+                        <!--<option class="black-25">Anguilla</option>-->
+                        <option value="http://s.si.edu/country-antigua-and-barbuda">Antigua and Barbuda</option>
+                        <option value="http://s.si.edu/country-argentina">Argentina</option>
+                        <option value="http://s.si.edu/country-armenia">Armenia</option>
+                        <!--<option class="black-25">Aruba</option>-->
+                        <option value="http://s.si.edu/country-australia">Australia</option>
+                        <option value="http://s.si.edu/country-austria">Austria</option>
+                        <option value="http://s.si.edu/country-azerbaijan">Azerbaijan</option>
+                        <option value="http://s.si.edu/country-bahamas">Bahamas</option>
+                        <!--<option class="black-25">Bahrain</option>-->
+                        <option value="http://s.si.edu/country-bangladesh">Bangladesh</option>
+                        <option value="http://s.si.edu/country-barbados">Barbados</option>
+                        <option value="http://s.si.edu/country-belarus">Belarus</option>
+                        <option value="http://s.si.edu/country-belgium">Belgium</option>
+                        <option value="http://s.si.edu/country-belize">Belize</option>
+                        <option value="http://s.si.edu/country-benin">Benin</option>
+                        <option value="http://s.si.edu/country-bermuda">Bermuda</option>
+                        <option value="http://s.si.edu/country-bhutan">Bhutan</option>
+                        <option value="http://s.si.edu/country-bolivia">Bolivia</option>
+                        <!--<option class="black-25">Bosnia-Herzegovina</option>-->
+                        <option value="http://s.si.edu/country-botswana">Botswana</option>
+                        <!--<option class="black-25">Bouvet Island</option>-->
+                        <option value="http://s.si.edu/country-brazil">Brazil</option>
+                        <option value="http://s.si.edu/country-british-virgin-islands">British Virgin Islands</option>
+                        <!--<option class="black-25">Brunei</option>-->
+                        <option value="http://s.si.edu/country-bulgaria">Bulgaria</option>
+                        <option value="http://s.si.edu/country-burkina-faso">Burkina Faso</option>
+                        <!--<option class="black-25">Burundi</option>-->
+                        <option value="http://s.si.edu/country-byelorussia">Byelorussia</option>
+                        <option value="http://s.si.edu/country-cambodia">Cambodia</option>
+                        <option value="http://s.si.edu/country-cameroon">Cameroon</option>
+                        <option value="http://s.si.edu/country-canada">Canada</option>
+                        <!--<option class="black-25">Cape Verde</option>
+                    <option class="black-25">Cayman Islands</option>-->
+                        <option value="http://s.si.edu/country-central-african-republic">Central African Republic</option>
+                        <option value="http://s.si.edu/country-chad">Chad</option>
+                        <!--<option class="black-25">Channel Islands</option>-->
+                        <option value="http://s.si.edu/country-chile">Chile</option>
+                        <option value="http://s.si.edu/country-china">China</option>
+                        <!--<option class="black-25">Christmas Island</option>
+                    <option class="black-25">Cocos (Keeling) Islands</option>-->
+                        <option value="http://s.si.edu/country-colombia">Colombia</option>
+                        <!--<option class="black-25">Comoros</option>
+                    <option class="black-25">Congo (Brazzaville)</option>-->
+                        <option value="http://s.si.edu/country-congo-democratic-republic">Congo (Democratic Republic)</option>
+                        <!--<option class="black-25">Cook Islands</option>-->
+                        <option value="http://s.si.edu/country-costa-rica">Costa Rica</option>
+                        <option value="http://s.si.edu/country-cote-divoire">Cote d'Ivoire</option>
+                        <option value="http://s.si.edu/country-croatia">Croatia</option>
+                        <option value="http://s.si.edu/country-cuba">Cuba</option>
+                        <option value="http://s.si.edu/country-cyprus">Cyprus</option>
+                        <option value="http://s.si.edu/country-czech-republic">Czech Republic</option>
+                        <option value="http://s.si.edu/country-denmark">Denmark</option>
+                        <!--<option class="black-25">Djibouti</option>
+                    <option class="black-25">Dominica</option>-->
+                        <option value="http://s.si.edu/country-dominican-republic">Dominican Republic</option>
+                        <option value="http://s.si.edu/country-ecuador">Ecuador</option>
+                        <option value="http://s.si.edu/country-egypt">Egypt</option>
+                        <option value="http://s.si.edu/country-el-salvador">El Salvador</option>
+                        <option value="http://s.si.edu/country-england">England</option>
+                        <option value="http://s.si.edu/country-equatorial-guinea">Equatorial Guinea</option>
+                        <option value="http://s.si.edu/country-eritrea">Eritrea</option>
+                        <option value="http://s.si.edu/country-estonia">Estonia</option>
+                        <option value="http://s.si.edu/country-ethiopia">Ethiopia</option>
+                        <!--<option class="black-25">Falkland Islands (Islas Malvinas)</option>
+                    <option class="black-25">Faroe Islands</option>-->
+                        <option value="http://s.si.edu/country-fiji">Fiji</option>
+                        <option value="http://s.si.edu/country-finland">Finland</option>
+                        <option value="http://s.si.edu/country-france">France</option>
+                        <option value="http://s.si.edu/country-french-guiana">French Guiana</option>
+                        <option value="http://s.si.edu/country-french-polynesia">French Polynesia</option>
+                        <option value="http://s.si.edu/country-gabon">Gabon</option>
+                        <option value="http://s.si.edu/country-gambia">Gambia</option>
+                        <!--<option class="black-25">Georgia</option>-->
+                        <option value="http://s.si.edu/country-germany">Germany</option>
+                        <option value="http://s.si.edu/country-ghana">Ghana</option>
+                        <!--<option class="black-25">Gibraltar</option>-->
+                        <option value="http://s.si.edu/country-greece">Greece</option>
+                        <option value="http://s.si.edu/country-greenland">Greenland</option>
+                        <option value="http://s.si.edu/country-grenada">Grenada</option>
+                        <option value="http://s.si.edu/country-guadeloupe">Guadeloupe</option>
+                        <option value="http://s.si.edu/country-guatemala">Guatemala</option>
+                        <option value="http://s.si.edu/country-guinea">Guinea</option>
+                        <option value="http://s.si.edu/country-guinea-bissau">Guinea-Bissau</option>
+                        <option value="http://s.si.edu/country-guyana">Guyana</option>
+                        <option value="http://s.si.edu/country-haiti">Haiti</option>
+                        <option value="/search?query=Hawaii">Hawaii</option>
+                        <option value="http://s.si.edu/country-honduras">Honduras</option>
+                        <option value="http://s.si.edu/country-hong-kong">Hong Kong</option>
+                        <option value="http://s.si.edu/country-hungary">Hungary</option>
+                        <option value="http://s.si.edu/country-iceland">Iceland</option>
+                        <option value="http://s.si.edu/country-india">India</option>
+                        <option value="http://s.si.edu/country-indonesia">Indonesia</option>
+                        <option value="http://s.si.edu/country-iran">Iran</option>
+                        <option value="http://s.si.edu/country-iraq">Iraq</option>
+                        <option value="http://s.si.edu/country-ireland">Ireland</option>
+                        <!--<option class="black-25">Isle of Man</option>-->
+                        <option value="http://s.si.edu/country-israel">Israel</option>
+                        <option value="http://s.si.edu/country-italy">Italy</option>
+                        <option value="http://s.si.edu/country-jamaica">Jamaica</option>
+                        <option value="http://s.si.edu/country-japan">Japan</option>
+                        <!--<option class="black-25">Johnston Island</option>-->
+                        <option value="http://s.si.edu/country-jordan">Jordan</option>
+                        <option value="http://s.si.edu/country-kazakhstan">Kazakhstan</option>
+                        <option value="http://s.si.edu/country-kenya">Kenya</option>
+                        <option value="http://s.si.edu/country-north-korea">Korea, North</option>
+                        <option value="http://s.si.edu/country-south-korea">Korea, South</option>
+                        <!--<option class="black-25">Kuwait</option>-->
+                        <option value="http://s.si.edu/country-kyrgyzstan">Kyrgyzstan</option>
+                        <option value="http://s.si.edu/country-laos">Laos</option>
+                        <option value="http://s.si.edu/country-latvia">Latvia</option>
+                        <option value="http://s.si.edu/country-lebanon">Lebanon</option>
+                        <option value="http://s.si.edu/country-lesotho">Lesotho</option>
+                        <option value="http://s.si.edu/country-liberia">Liberia</option>
+                        <option value="http://s.si.edu/country-libya">Libya</option>
+                        <!--<option class="black-25">Liechtenstein</option>-->
+                        <option value="http://s.si.edu/country-lithuania">Lithuania</option>
+                        <!--<option class="black-25">Luxembourg</option>
+                    <option class="black-25">Macao</option>-->
+                        <option value="http://s.si.edu/country-macedonia">Macedonia</option>
+                        <option value="http://s.si.edu/country-madagascar">Madagascar</option>
+                        <option value="http://s.si.edu/country-malawi">Malawi</option>
+                        <option value="http://s.si.edu/country-malaysia">Malaysia</option>
+                        <!--<option class="black-25">Maldives</option>-->
+                        <option value="http://s.si.edu/country-mali">Mali</option>
+                        <option value="http://s.si.edu/country-malta">Malta</option>
+                        <option value="http://s.si.edu/country-martinique">Martinique</option>
+                        <!--<option class="black-25">Mauritania</option>
+                    <option class="black-25">Mauritius</option>
+                    <option class="black-25">Mayotte</option>-->
+                        <option value="http://s.si.edu/country-mexico">Mexico</option>
+                        <option value="http://s.si.edu/country-moldova">Moldova</option>
+                        <option class="black-25">Monaco</option>
+                        <option value="http://s.si.edu/country-mongolia">Mongolia</option>
+                        <!--<option class="black-25">Montserrat</option>-->
+                        <option value="http://s.si.edu/country-morocco">Morocco</option>
+                        <option value="http://s.si.edu/country-mozambique">Mozambique</option>
+                        <option value="http://s.si.edu/country-myanmar">Myanmar</option>
+                        <option value="http://s.si.edu/country-namibia">Namibia</option>
+                        <option value="http://s.si.edu/country-nepal">Nepal</option>
+                        <option value="http://s.si.edu/country-netherlands">Netherlands</option>
+                        <!--<option class="black-25">Netherlands Antilles</option>
+                    <option class="black-25">New Caledonia</option>-->
+                        <option value="http://s.si.edu/country-new-zealand">New Zealand</option>
+                        <option value="http://s.si.edu/country-nicaragua">Nicaragua</option>
+                        <option value="http://s.si.edu/country-niger">Niger</option>
+                        <option value="http://s.si.edu/country-nigeria">Nigeria</option>
+                        <!--<option class="black-25">Niue</option>
+                    <option class="black-25">Norfolk Island</option>-->
+                        <option value="http://s.si.edu/country-northern-ireland">Northern Ireland</option>
+                        <option value="http://s.si.edu/country-norway">Norway</option>
+                        <option value="http://s.si.edu/country-oman">Oman</option>
+                        <option value="http://s.si.edu/country-pakistan">Pakistan</option>
+                        <option value="http://s.si.edu/country-palestinian-territory">Palestinian Territory</option>
+                        <option value="http://s.si.edu/country-panama">Panama</option>
+                        <option value="http://s.si.edu/country-papua-new-guinea">Papua New Guinea</option>
+                        <option value="http://s.si.edu/country-paraguay">Paraguay</option>
+                        <option value="http://s.si.edu/country-peru">Peru</option>
+                        <option value="http://s.si.edu/country-philippines">Philippines</option>
+                        <!--<option class="black-25">Pitcairn</option>-->
+                        <option value="http://s.si.edu/country-poland">Poland</option>
+                        <option value="http://s.si.edu/country-portugal">Portugal</option>
+                        <option value="http://s.si.edu/country-puerto-rico">Puerto Rico</option>
+                        <!--<option class="black-25">Qatar</option>
+                    <option class="black-25">Reunion</option>-->
+                        <option value="http://s.si.edu/country-romania">Romania</option>
+                        <option value="http://s.si.edu/country-russia">Russia</option>
+                        <option value="http://s.si.edu/country-rwanda">Rwanda</option>
+                        <!--<option class="black-25">Saint Helena</option>-->
+                        <option value="http://s.si.edu/country-saint-kitts-and-nevis">Saint Kitts and Nevis</option>
+                        <option value="http://s.si.edu/country-saint-lucia">Saint Lucia</option>
+                        <!--<option class="black-25">Saint Pierre and Miquelon</option>
+                    <option class="black-25">Saint Vincent and the Grenadines</option>-->
+                        <option value="http://s.si.edu/country-samoa">Samoa</option>
+                        <!--<option class="black-25">San Marino</option>
+                    <option class="black-25">Sao Tome and Principe</option>-->
+                        <option value="http://s.si.edu/country-saudi-arabia">Saudi Arabia</option>
+                        <option value="http://s.si.edu/country-scotland">Scotland</option>
+                        <option value="http://s.si.edu/country-senegal">Senegal</option>
+                        <!--<option class="black-25">Serbia and Montenegro</option>
+                    <option class="black-25">Seychelles</option>-->
+                        <option value="http://s.si.edu/country-sierra-leone">Sierra Leone</option>
+                        <!--<option class="black-25">Singapore</option>-->
+                        <option value="http://s.si.edu/country-slovakia">Slovakia</option>
+                        <option value="http://s.si.edu/country-slovenia">Slovenia</option>
+                        <option value="http://s.si.edu/country-solomon-islands">Solomon Islands</option>
+                        <option value="http://s.si.edu/country-somalia">Somalia</option>
+                        <option value="http://s.si.edu/country-south-africa">South Africa</option>
+                        <option value="http://s.si.edu/country-spain">Spain</option>
+                        <option value="http://s.si.edu/country-sri-lanka">Sri Lanka</option>
+                        <option value="http://s.si.edu/country-sudan">Sudan</option>
+                        <option value="http://s.si.edu/country-suriname">Suriname</option>
+                        <!--<option class="black-25">Svalbard and Jan Mayen</option>-->
+                        <option value="http://s.si.edu/country-swaziland">Swaziland</option>
+                        <option value="http://s.si.edu/country-sweden">Sweden</option>
+                        <option value="http://s.si.edu/country-switzerland">Switzerland</option>
+                        <option value="http://s.si.edu/country-syria">Syria</option>
+                        <option value="http://s.si.edu/country-taiwan">Taiwan</option>
+                        <option value="http://s.si.edu/country-tajikistan">Tajikistan</option>
+                        <option value="http://s.si.edu/country-tanzania">Tanzania</option>
+                        <option value="http://s.si.edu/country-thailand">Thailand</option>
+                        <!--<option class="black-25">Timor Leste</option>-->
+                        <option value="http://s.si.edu/country-togo">Togo</option>
+                        <!--<option class="black-25">Tokelau</option>-->
+                        <option value="http://s.si.edu/country-tonga">Tonga</option>
+                        <option value="http://s.si.edu/country-trinidad-and-tobago">Trinidad and Tobago</option>
+                        <option value="http://s.si.edu/country-tunisia">Tunisia</option>
+                        <option value="http://s.si.edu/country-turkey">Turkey</option>
+                        <option value="http://s.si.edu/country-turkmenistan">Turkmenistan</option>
+                        <!--<option class="black-25">Turks and Caicos</option>
+                    <option class="black-25">Tuvalu</option>-->
+                        <option value="http://s.si.edu/country-uganda">Uganda</option>
+                        <option value="http://s.si.edu/country-ukraine">Ukraine</option>
+                        <!--<option class="black-25">United Arab Emirates</option>-->
+                        <option value="http://s.si.edu/country-united-kingdom">United Kingdom</option>
+                        <option value="http://s.si.edu/country-united-states">United States</option>
+                        <option value="http://s.si.edu/country-uruguay">Uruguay</option>
+                        <option value="http://s.si.edu/country-ussr">USSR (former)</option>
+                        <option value="http://s.si.edu/country-uzbekistan">Uzbekistan</option>
+                        <option value="http://s.si.edu/country-vanuatu">Vanuatu</option>
+                        <!--<option class="black-25">Vatican City (Holy See)</option>-->
+                        <option value="http://s.si.edu/country-venezuela">Venezuela</option>
+                        <option value="http://s.si.edu/country-vietnam">Vietnam</option>
+                        <option value="http://s.si.edu/country-virgin-islands-of-the-us">Virgin Islands of the United States</option>
+                        <option value="http://s.si.edu/country-wales">Wales</option>
+                        <!--<option class="black-25">Wallis &amp; Futuna Islands</option>
+                    <option class="black-25">Western Sahara</option>-->
+                        <option value="http://s.si.edu/country-yemen">Yemen</option>
+                        <option value="http://s.si.edu/country-yugoslavia">Yugoslavia (former)</option>
+                        <option value="http://s.si.edu/country-zambia">Zambia</option>
+                        <option value="http://s.si.edu/country-zambia">Zimbabwe</option>
+                    </select>
+
+                    <select onchange="javascript:document.location.href = this.value;">
+                        <option value="default">Artist</option>
+                        <option value="/search?query=Beausoleil">Beausoleil</option>
+                        <option value="/search?query=Big Mama Thornton">Big Mama Thornton</option>
+                        <option value="/search?query=Big Bill Broonzy">Big Bill Broonzy</option>
+                        <option value="/search?query=Brownie McGhee">Brownie McGhee</option>
+                        <option value="/search?query=Dock Boggs">Dock Boggs</option>
+                        <option value="/search?query=Clifton Chenier">Clifton Chenier</option>
+                        <option value="/search?query=Elizabeth Cotten">Elizabeth Cotten</option>
+                        <option value="/search?query=The Country Gentlemen">Country Gentlemen</option>
+                        <option value="/search?query=Woody Guthrie">Woody Guthrie</option>
+                        <option value="/search?query=Roscoe Holcomb">Roscoe Holcomb</option>
+                        <option value="/search?query=Lightnin' Hopkins">Lightnin' Hopkins</option>
+                        <option value="/search?query=Ella Jenkins">Ella Jenkins</option>
+                        <option value="/search?query=Flaco Jiménez">Flaco Jiménez</option>
+                        <option value="/search?query=Lead Belly">Lead Belly</option>
+                        <option value="/search?query=Mance Lipscomb">Mance Lipscomb</option>
+                        <option value="/search?query=Fred McDowell">Fred McDowell</option>
+                        <option value="/search?query=Mary Lou Williams">Mary Lou Williams</option>
+                        <option value="/search?query=Memphis Slim">Memphis Slim</option>
+                        <option value="/search?query=Mighty Sparrow">Mighty Sparrow</option>
+                        <option value="/search?query=Elizabeth Mitchell">Elizabeth Mitchell</option>
+                        <option value="/search?query=Bill Monroe">Bill Monroe</option>
+                        <option value="/search?query=The New Lost City Ramblers">New Lost City Ramblers</option>
+                        <option value="/search?query=David Nzomo">David Nzomo</option>
+                        <option value="/search?query=Suni Paz">Suni Paz</option>
+                        <option value="/search?query=Jean Ritchie">Jean Ritchie</option>
+                        <option value="/search?query=Tony Schwartz">Tony Schwartz</option>
+                        <option value="/search?query=Mike Seeger">Mike Seeger</option>
+                        <option value="/search?query=Peggy Seeger">Peggy Seeger</option>
+                        <option value="/search?query=Pete Seeger">Pete Seeger</option>
+                        <option value="/search?query=Mike Seeger">Mike Seeger</option>
+                        <option value="/search?query=Snooks Eaglin">Snooks Eaglin</option>
+                        <option value="/search?query=Sonny Terry">Sonny Terry</option>
+                        <option value="/search?query=Dave Van Ronk">Dave Van Ronk</option>
+                    </select>
+
+                    <select onchange="javascript:document.location.href = this.value;">
+                        <option value="default">Label</option>
+                        <option value="/search?query=Archives and Research Centre for Ethnomusicology (A.R.C.E.)">A.R.C.E.</option>
+                        <option value="/search?query=Arhoolie Records">Arhoolie Records</option>
+                        <option value="/search?query=Blue Ridge Institute">Blue Ridge Institute</option>
+                        <option value="/search?query=Bobby Susser Songs for Children">Bobby Susser</option>
+                        <option value="/search?query=Collector Records">Collector</option>
+                        <option value="/search?query=Cook Records">Cook</option>
+                        <option value="/search?query=Dyer-Bennet Records">Dyer-Bennet</option>
+                        <option value="/search?query=Fast Folk Musical Magazine">Fast Folk</option>
+                        <option value="/search?query=Folkways Records">Folkways Records</option>
+                        <option value="/search?query=International Library of African Music (I.L.A.M.)">I.L.A.M.</option>
+                        <option value="/search?query=Mickey Hart Collection">Mickey Hart</option>
+                        <option value="/search?query=Minority Owned Record Enterprises (M.O.R.E.)">M.O.R.E.</option>
+                        <option value="/search?query=Monitor Records">Monitor</option>
+                        <option value="/search?query=Paredon Records">Paredon</option>
+                        <option value="/search?query=Smithsonian Folkways Recordings">Smithsonian Folkways</option>
+                        <option value="/search?query=UNESCO Collection of Traditional Music">UNESCO</option>
+                    </select>
+                </div>
+            </div>
+
         </div>
-    </nav><!-- End Navbar-->
+        <!--googleon:all-->
+    </nav>
+    <!-- End Navbar-->
     <div id="navspacer" class="navspacer"></div>
     <div class="search-page">
         <div class="visible-xs">
@@ -858,11 +1420,11 @@
                 </ul>
                 <ul class="footer-row footer-row-3 row">
                     @*<li class="footer-main-item col-sm-3">
-                        <div class="smithsonian-institution-logo"><img src="/Themes/Folklife/assets/images/logo/smithsonian_institution.png" alt="Smithsonian Institution" /></div>
-                    </li>
-                    <li class="footer-main-item col-sm-4">
-                        <div class="copyright">&copy; 2016 Smithsonian Institution</div>
-                    </li>*@
+                            <div class="smithsonian-institution-logo"><img src="/Themes/Folklife/assets/images/logo/smithsonian_institution.png" alt="Smithsonian Institution" /></div>
+                        </li>
+                        <li class="footer-main-item col-sm-4">
+                            <div class="copyright">&copy; 2016 Smithsonian Institution</div>
+                        </li>*@
                 </ul>
             </footer>
         </div>
@@ -878,7 +1440,7 @@
     </script>
 
 
-    <script src="~/Scripts/folkways.pkgd.js" type="text/javascript"></script>
+    <script src="/Themes/Folkways/Scripts/folkways.pkgd.js" type="text/javascript"></script>
     <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
 
 
@@ -891,55 +1453,61 @@
         }
     </script>
 
-<!-- GOOGLE ANALYTICS -->
-<script>// <![CDATA[
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <!-- GOOGLE ANALYTICS -->
+    <script>
+        // <![CDATA[
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-5756420-1', 'auto');
-  ga('send', 'pageview');
-// ]]></script>
-<!-- END GOOGLE ANALYTICS -->
-<p></p>
-<!-- FORESEE AUDIENCE SURVEY -->
-<script type="text/javascript">// <![CDATA[
-cpp_value="FOLKWAYS";
-// ]]></script>
-<script type="text/javascript" src="https://www.si.edu/fsrscripts/triggerParams.js"></script>
-<!-- END FORESEE AUDIENCE SURVEY -->
-<p></p>
-<!-- WEBTRENDS SMARTSOURCE DATA COLLECTOR -->
-<p></p>
-<!-- Copyright (c) 1996-2013 Webtrends Inc.  All rights reserved. -->
-<p></p>
-<!-- Version: 9.4.0 -->
-<p></p>
-<!-- Tag Builder Version: 4.1  -->
-<p></p>
-<!-- Created: 3/20/2013 7:23:01 PM -->
-<script type="text/javascript" src="/Themes/Folkways/Scripts/webtrends.js"></script>
-<!-- ----------------------------------------------------------------------------------- -->
-<p></p>
-<!-- Warning: The two script blocks below must remain inline. Moving them to an external -->
-<p></p>
-<!-- JavaScript include file can cause serious problems with cross-domain tracking.      -->
-<p></p>
-<!-- ----------------------------------------------------------------------------------- -->
-<script type="text/javascript">// <![CDATA[
-var _tag=new WebTrends();
-	_tag.dcsGetId();
-// ]]></script>
-<script type="text/javascript">// <![CDATA[
-_tag.dcsCustom=function(){
-	// Add custom parameters here.
-	//_tag.DCSext.param_name=param_value;
-	}
-	_tag.dcsCollect();
-// ]]></script>
-<noscript>
-	<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="//logs1.smithsonian.museum/dcsv9j192cdzpxzbkq69nf44i_9p1y/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.4.0&amp;dcssip=www.folkways.si.edu"/></div>
-	</noscript><!-- END WEBTRENDS SMARTSOURCE DATA COLLECTOR -->
+        ga('create', 'UA-5756420-1', 'auto');
+        ga('send', 'pageview');
+        // ]]></script>
+    <!-- END GOOGLE ANALYTICS -->
+    <p></p>
+    <!-- FORESEE AUDIENCE SURVEY -->
+    <script type="text/javascript">
+        // <![CDATA[
+        cpp_value = "FOLKWAYS";
+        // ]]></script>
+    <script type="text/javascript" src="https://www.si.edu/fsrscripts/triggerParams.js"></script>
+    <!-- END FORESEE AUDIENCE SURVEY -->
+    <p></p>
+    <!-- WEBTRENDS SMARTSOURCE DATA COLLECTOR -->
+    <p></p>
+    <!-- Copyright (c) 1996-2013 Webtrends Inc.  All rights reserved. -->
+    <p></p>
+    <!-- Version: 9.4.0 -->
+    <p></p>
+    <!-- Tag Builder Version: 4.1  -->
+    <p></p>
+    <!-- Created: 3/20/2013 7:23:01 PM -->
+    <script type="text/javascript" src="/Themes/Folkways/Scripts/webtrends.js"></script>
+    <!-- ----------------------------------------------------------------------------------- -->
+    <p></p>
+    <!-- Warning: The two script blocks below must remain inline. Moving them to an external -->
+    <p></p>
+    <!-- JavaScript include file can cause serious problems with cross-domain tracking.      -->
+    <p></p>
+    <!-- ----------------------------------------------------------------------------------- -->
+    <script type="text/javascript">
+        // <![CDATA[
+        var _tag = new WebTrends();
+        _tag.dcsGetId();
+        // ]]></script>
+    <script type="text/javascript">
+        // <![CDATA[
+        _tag.dcsCustom = function () {
+            // Add custom parameters here.
+            //_tag.DCSext.param_name=param_value;
+        }
+        _tag.dcsCollect();
+        // ]]></script>
+    <noscript>
+        <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="//logs1.smithsonian.museum/dcsv9j192cdzpxzbkq69nf44i_9p1y/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.4.0&amp;dcssip=www.folkways.si.edu" /></div>
+    </noscript><!-- END WEBTRENDS SMARTSOURCE DATA COLLECTOR -->
 </body>
 </html>
