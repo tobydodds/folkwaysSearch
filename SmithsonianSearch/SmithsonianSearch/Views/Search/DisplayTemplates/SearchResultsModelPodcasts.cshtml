@@ -1,7 +1,13 @@
-﻿@* This view is responsible for rendering merchandises in list view *@
-@model SmithsonianSearch.Models.SearchResultsModels.SearchResultsModelMerchandise
+﻿@* This view is responsible for rendering podcasts in list view *@
+@model SmithsonianSearch.Models.SearchResultsModels.SearchResultsModelPodcasts
 
-@helper GetRowClass(int rowIndex) { if (rowIndex % 2 == 0) { Html.Raw("alt"); } }
+@helper GetRowClass(int index)
+{
+    if (index % 2 == 0)
+    {
+        @:alt
+    }
+}
 
 @{
     bool printHeader = ViewData.ContainsKey("printHeader") ? (bool)ViewData["printHeader"] : true;
@@ -17,25 +23,25 @@
             <thead>
                 <tr class="header">
                     <th><img src="~/img/header_title.png" alt="Title" title="Title" /></th>
-                    <th width="175"><img src="~/img/header_price.png" alt="Price" title="Price" /></th>
+                    <th><img src="~/img/header_duration.png" alt="Duration" title="Duration" /></th>
                 </tr>
             </thead>
             <tbody>
      </text>
     }
 
-    foreach (var merchandise in Model.Items)
+    foreach (var podcast in Model.Items)
     {
                 <text>
                 <tr class="@GetRowClass(index++)">
-                    <td><a href='@merchandise.Url' title='@merchandise.Title'>@merchandise.Title</a></td>
-                    <td>@Html.Partial("BuyLinks", merchandise)</td>
+                    <td><a href='@podcast.Url' title='@podcast.Title'>@podcast.Title</a></td>
+                    <td>@podcast.Duration</td>
                 </tr>
                 </text>
     }
-
-    @ViewHelperMethods.RenderLazyLoadingLink(Model.SearchModel, 2)
     
+    @ViewHelperMethods.RenderLazyLoadingLink(Model.SearchModel, 2)
+
     if (printHeader)
     {
        @:</tbody></table>

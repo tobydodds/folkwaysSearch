@@ -1,7 +1,7 @@
-﻿@* This view is responsible for rendering an playlist in tiles view *@
+﻿@* This view is responsible for rendering an podcast in tiles view *@
 @using SmithsonianSearch.Configuration
 @using SmithsonianSearch.Helpers
-@model SmithsonianSearch.Models.ResultItems.Playlist
+@model SmithsonianSearch.Models.ResultItems.Podcast
 
 @{
     var imageAlt = HttpUtility.UrlDecode(string.IsNullOrEmpty(Model.Title) ? "Link" : Model.Title);
@@ -17,7 +17,7 @@
     </div>
     <div class="details">
         <div class="details-inner">
-            <span class="caption">PLAYLIST</span>
+            <span class="caption">PODCAST</span>
             <a href="@Model.Url" title="@Model.Title" class="high title">
                 <span class="light">
                     <span class="er">
