@@ -34,21 +34,26 @@
         /// <summary>
         /// The playlist.
         /// </summary>
-        Playlist = 5, 
+        Playlist = 5,
+
+        /// <summary>
+        /// The playlist.
+        /// </summary>
+        Podcast = 6,
 
         /// <summary>
         /// The merchandise.
         /// </summary>
-        Merchandise = 6, 
+        Merchandise = 7, 
 
         /// <summary>
         /// The tool for teaching.
         /// </summary>
-        ToolForTeaching = 7,
+        ToolForTeaching = 8,
 
         /// <summary>
         /// Purchasable media content
         /// </summary>
-        PurchasableMediaContent = 8,
+        PurchasableMediaContent = 9,
     }
 }

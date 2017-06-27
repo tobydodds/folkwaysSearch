@@ -61,6 +61,9 @@
                 case "playlist":
                     builtObject = new Playlist(item, config);
                     break;
+                case "podcast":
+                    builtObject = new Podcast(item, config);
+                    break;
                 case "merchandise":
                     builtObject = new Merchandise(item, searchPageUrl, config);
                     break;
@@ -122,6 +125,9 @@
                     break;
                 case ContentTypesEnum.Playlist:
                     model = new SearchResultsModelPlaylists(results, searchModel, config);
+                    break;
+                case ContentTypesEnum.Podcast:
+                    model = new SearchResultsModelPodcasts(results, searchModel, config);
                     break;
                 case ContentTypesEnum.ToolForTeaching:
                     model = new SearchResultsModelToolsForTeaching(results, searchModel, config);
